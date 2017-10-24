@@ -68,7 +68,7 @@ image::3415.jpg[Variable definition input field with the arrow for calling the e
 
 To model a process, do the following:
 
-. In Business Central, go to *Menu -> Projects* and click on the project name. For example, *MortgageProject*.
+. In Business Central, go to *Menu -> Projects* and click on the project name. For example, *Evaluation*.
 . Click *Create New Asset → Business Process*.
 . In the *Create new Business Process* window, provide the *Business Process* name and select the correct *Package*.
 +
