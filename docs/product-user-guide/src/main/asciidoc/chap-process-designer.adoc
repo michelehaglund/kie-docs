@@ -59,18 +59,18 @@ Due to BPMN2 type restrictions, it is _not_ recommended to use multibyte encodin
 +
 .Opening Variable Editor
 image::3415.jpg[Variable definition input field with the arrow for calling the editor.]
-. Define the process properties on the tab by clicking individual entries. For entries that require other input that just string input, the respective editors can be used by clicking the arrow icon. Note that editors for complex fields mostly provide validation and auto-completion features.
+. Define the process properties on the tab by clicking individual entries. For entries that require other input than just string input, the respective editors can be used by clicking the arrow icon. Note that editors for complex fields mostly provide validation and auto-completion features.
 . To save your changes, click *Save* in the top right corner.
 
 [[_sect_designing_a_process]]
-== Designing Process
+== Designing a Process
 
 
 To model a process, do the following:
 
-. In Business Central, go to *Authoring* -> *Project Authoring*. Locate your project in the *Project Explorer* and choose the respective process under *Business Processes*.
-+
-Alternatively, you can locate the process definition in the *Repository View* of the *Project Explorer*. To show the *Repository View*, click the image:settings-button.png[] button.
+. In Business Central, go to *Menu -> Projects* and click on the project name. For example, *MortgageProject*.
+. Click *Create New Asset → Business Process*.
+. In the *Create new Business Process* window, provide the *Business Process* name and select the correct *Package*.
 +
 The Process Designer opens.
 . Add and edit the required shapes to the process diagram on the canvas.
