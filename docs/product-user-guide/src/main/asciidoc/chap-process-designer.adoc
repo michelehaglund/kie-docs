@@ -27,15 +27,7 @@ Note that one process definition may contain exactly one process diagram; theref
 . The Object Library (palette) contains groups of BPMN2 elements.
 Details on execution semantics and properties of individual BPMN2 shapes are available in <<_appe_process_elements>>.
 . The Properties panel displays the properties of the selected element. If no element is selected, the panel contains process properties.
-. The editor toolbar enables you, for example, to select an operation to be applied to the Elements on the canvas. It also contains tools for validation, simulation, saving, and others. 
-
-[NOTE]
-====
-To enlarge the Process Designer screen (or any screen while working in Business Central), click on the button shown here: image:6577.png[]
-.
-This will make your current editor fill the entire Business Central screen.
-To go back, simply click the button again.
-====
+. The editor toolbar enables you, for example, to select an operation to be applied to the Elements on the canvas. It also contains tools for validation, simulation, saving, and others.
 
 [[_configuring_automatic_saving]]
 == Configuring Automatic Saving
@@ -373,9 +365,9 @@ Asynchronous continuation allows process designers to decide what activities sho
 . Under the *Extra Properties* menu, set the *Is Async* option to ``true``.
 
 
-The `Is Async` feature is available for all task types (Service, Send, Receive, Business Rule, Script, and User Tasks), subprocesses (embedded and reusable), and multi-instance task and subprocesses. When marked `Is Async`, the node execution is started in a separate thread. 
+The `Is Async` feature is available for all task types (Service, Send, Receive, Business Rule, Script, and User Tasks), subprocesses (embedded and reusable), and multi-instance task and subprocesses. When marked `Is Async`, the node execution is started in a separate thread.
 
-When the engine encounters one of the save point nodes, the transaction is commited into the database before continuing with the execution. This ensures that the state of the process is saved.   
+When the engine encounters one of the save point nodes, the transaction is commited into the database before continuing with the execution. This ensures that the state of the process is saved.
 
 [NOTE]
 ====
@@ -390,18 +382,18 @@ For fully asynchronous workflow execution, use the {KIE_SERVER} configured with 
 
 A _form_ is a layout definition for a page (defined as HTML) that is displayed as a dialog window to the user on:
 
-* Process instantiation 
+* Process instantiation
 * Task instantiation
 
 
-The form is then respectively called a _process form_ or a _task form_. Forms acquire data from a human user for both the proces instance execution, or the task instance execution: 
+The form is then respectively called a _process form_ or a _task form_. Forms acquire data from a human user for both the proces instance execution, or the task instance execution:
 
 * A process form can take as its input and output process variables.
 * A task form can take as its input Data Input Assignment variables with assignment defined, and as its output Data Output Assignments with assignment defined.
 
 For example:
 
-* With a process form, a user can provide the input parameters needed for process instantiation. 
+* With a process form, a user can provide the input parameters needed for process instantiation.
 * With a task form, you can use a Human Task to provide input for further process execution.
 
 The input is then mapped to the task using the data input assignment, which you can then use inside of a task. When the task is completed, the data is mapped as a data output assignment to provide the data to the parent process instance. For further information, see <<_sect_assignment>>.
@@ -439,7 +431,7 @@ To create a task form, do the following:
 
 
 Once you have created a form definition, you need to define its content: that is its fields and the data they are bound to.
-You can add either the pre-defined field types to your form, or define your own data origin and use the custom field types in your form definition. 
+You can add either the pre-defined field types to your form, or define your own data origin and use the custom field types in your form definition.
 
 [NOTE]
 ====
@@ -1068,7 +1060,7 @@ If you want to view or modify the attachments inside of the task forms, create a
 --
 * Name: `taskdoc_out`
 * Data Type: `Object`
-* Target: `document` 
+* Target: `document`
 --
 ---
 +
@@ -1283,7 +1275,7 @@ Their value can be changed by the process Activities using the Assignment, when 
 . Open the respective process in *Process Designer*.
 . Click on an empty space in the canvas and click image:3140.png[].
 . Click on the text field next to *Variable Definitions* and click image:6563.png[].
-. Define your variables in the *Editor for Variable Definitions* window. 
+. Define your variables in the *Editor for Variable Definitions* window.
 . Click *Ok* and *Save* to save your process.
 
 Note that process variables should be mapped to local variables. See <<_sect_local_variables>> for more information.
@@ -1721,7 +1713,7 @@ The *WorkDefinitions* asset is created by default and contains a number of pre-s
 
 [NOTE]
 ====
-The process designer allows you to assign pre-defined ListDataType or EnumDataType to your Work Item Definitions. For more information, see xref:pre_defined_list_enum[Assign Pre-Defined ListDataType or Enumeration to Work Item Definitions]. 
+The process designer allows you to assign pre-defined ListDataType or EnumDataType to your Work Item Definitions. For more information, see xref:pre_defined_list_enum[Assign Pre-Defined ListDataType or Enumeration to Work Item Definitions].
 
 Additionally, The icon defined in the WID must be set and exist in your project. Otherwise, Red Hat JBoss Developer Studio does not display the custom task.
 ====
@@ -1765,7 +1757,7 @@ The process designer allows you to add service task list of predefined values fo
       "Body" : new StringDataType()
     ],
     "parameterValues" : [
-      "To" : new EnumDataType("com.redhat.documentation.example.Department") 
+      "To" : new EnumDataType("com.redhat.documentation.example.Department")
     ],
     "displayName" : "Email",
     "icon" : "defaultemailicon.gif"
@@ -1952,7 +1944,7 @@ RuntimeEnvironment environment = RuntimeEnvironmentBuilder.Factory.get().newDefa
   .userGroupCallback(userGroupCallback)
   .addAsset(ResourceFactory.newClassPathResource("BPMN2-ScriptTask.bpmn2"), ResourceType.BPMN2)
   .registerableItemsFactory(new DefaultRegisterableItemsFactory() {
- 
+
     @Override
     public Map<String, WorkItemHandler> getWorkItemHandlers(RuntimeEngine runtime) {
       Map<String, WorkItemHandler> handlers = super.getWorkItemHandlers(runtime);
@@ -1961,7 +1953,7 @@ RuntimeEnvironment environment = RuntimeEnvironmentBuilder.Factory.get().newDefa
     }
   })
   .get();
- 
+
 manager = RuntimeManagerFactory.Factory.get().newSingletonRuntimeManager(environment);
 
 ----
@@ -2035,7 +2027,7 @@ After the service is successfully installed, a notification will appear on the s
 The automatic installation enables you to specify the repository URL and a list of services to be installed during the Business Central startup process. The services are then ready for use after you create or open a process in Process Designer.
 
 NOTE: Make sure you have the correct service names specified in the service's `.wid` file ready.
- 
+
 To install a service (for example Twitter) from the repository located at http://docs.jboss.org/jbpm/v6.4/repository/, start the server using the following command:
 
 [source]
@@ -2094,7 +2086,7 @@ Directories with work items must contain:
 * A work item configuration file.
 * All resources referenced in the work item configuration file: icon, documentation, and dependencies.
 
-A _work item configuration file_ is a file with the same name as the parent directory, for example `Twitter.wid`, that contains details about the work item resources in the service repository. The file is an extension of the work item definition file (see <<_sect_work_item_definition>>). Note that the configuration file must contain references to any dependencies the work item handler requires. Optionally, it can define the documentation property with a path to documentation and category which defines the category the custom work item is placed under in the repository. 
+A _work item configuration file_ is a file with the same name as the parent directory, for example `Twitter.wid`, that contains details about the work item resources in the service repository. The file is an extension of the work item definition file (see <<_sect_work_item_definition>>). Note that the configuration file must contain references to any dependencies the work item handler requires. Optionally, it can define the documentation property with a path to documentation and category which defines the category the custom work item is placed under in the repository.
 
 .Work Item Configuration File (MVEL)
 ====
@@ -2308,4 +2300,3 @@ Canceling is equivalent to the Error mechanism; however, it can be used only on 
 Technical exceptions happen when a technical component of a business process acts in an unexpected way.
 When using Java-based systems, this often results in a Java Exception being thrown by the system.
 Technical components used in a process fail in a way that cannot be described using BPMN (for further information, see _{DEVELOPMENT_GUIDE}_).
-
