@@ -68,7 +68,7 @@ image::3415.jpg[Variable definition input field with the arrow for calling the e
 
 To model a process, do the following:
 
-. In Business Central, go to *Menu -> Projects* and click on the project name. For example, *Evaluation*.
+. In Business Central, go to *Menu -> Design -> Projects* and click on the project name. For example, *Evaluation*.
 . Click *Create New Asset → Business Process*.
 . In the *Create new Business Process* window, provide the *Business Process* name and select the correct *Package*.
 +
@@ -273,7 +273,7 @@ You can now open the valid process and view it as a diagram on the canvas.
 
 To export your process definition into one of the supported formats (PNG, PDF, BPMN2, JSON, SVG, or ERDF), do the following:
 
-. In Business Central, go to *Menu -> Projects* and click on the project name. For example, *Evaluation*.
+. In Business Central, go to *Menu -> Design -> Projects* and click on the project name. For example, *Evaluation*.
 . Click the image:export-icon.png[] button and choose one of the following options:
 +
 
@@ -479,9 +479,9 @@ The form assigns this output data to the local variables of the task or process,
 
 To create a new form in Form Modeler, do the following:
 
-. In Business Central, go to *Authoring* -> *Project Authoring*.
-. On the perspective menu, select *New Item* -> *Form*.
-. In the *Create New Form* dialog window, enter the name of your form in *Resource Name*, select the package, and click *OK*.
+. . In Business Central, go to *Menu -> Design -> Projects* and click on the project name. For example, *Evaluation*.
+. Click *Create New Asset* -> *Form*.
+. In the *Create new Form* dialog window, enter the *Name* of your form, select the package, and click *OK*.
 
 
 The newly created form will open up. You can add various fields to it when you select the *Add fields by type* option on the Form Modeler tab.
@@ -930,8 +930,8 @@ For example, if your form has fields representing an object array, you can defin
 You cannot represent them as simple inputs such as text box, checkbox, text area, and date selector.
 
 .Procedure: To create and insert a subform containing a single object inside a parent form:
-. In Business Central, go to *Authoring* -> *Project Authoring*.
-. On the perspective menu, select *New Item* -> *Form*.
+. In Business Central, go to *Menu -> Design -> Projects* and click on the project name. For example, *Evaluation*.
+. Click *Create New Asset* -> *Form*.
 +
 A new form opens in the Form Modeler. You must now configure the new form with information of the object it must contain.
 . Enter the values for the required fields in the *Form data origin* tab and click *Add data holder*.
@@ -959,8 +959,8 @@ This inserts your subform containing a single Java object inside the parent form
 
 
 .Procedure: To insert a subform with multiple objects inside a parent form:
-. In Business Central, go to *Authoring* -> *Project Authoring*.
-. On the perspective menu, select *New Item* -> *Form*.
+. In Business Central, go to *Menu -> Design -> Projects* and click on the project name. For example, *Evaluation*.
+. Click *Create New Asset* -> *Form*.
 +
 A new form opens in the Form Modeler.
 You must now configure the new form with information on the object array it must contain.
@@ -994,7 +994,7 @@ Red Hat JBoss BPM Suite enables you to attach documents to a form by using the `
 .Setting the Marshalling Strategy
 . Set the marshalling strategy in the `_PROJECT_HOME_/META_INF/kie-deployment-descriptor.xml`. You can do so in the Business Central or by editing the file directly. In Business Central:
 
-.. Click *Authoring* -> *Project Authoring* and navigate to your project.
+.. In Business Central, go to *Menu -> Design -> Projects* and click on the project name. For example, *Evaluation*.
 .. Click *Open Project Editor*. Then, click *Project Settings: Project General Settings* -> *Deployment descriptor*.
 .. Under *Marshalling strategies*, click *Add*.
 .. In the *Value* field, click on *Enter Value* and enter: `org.jbpm.document.marshalling.DocumentMarshallingStrategy`.
@@ -1241,7 +1241,7 @@ The global variable is then associated with the local activity context, local ac
 
 To define a global variable, do the following:
 
-. In Business Central, go to *Menu -> Projects* and click on the project name. For example, *Evaluation*.
+. In Business Central, go to *Menu -> Design -> Projects* and click on the project name. For example, *Evaluation*.
 . Click image:left-arrow.png[] in the right hand corner of the *Process Designer* and in the *Properties (BPMN-Diagram)* panel that opens, locate the *Globals* property.
 +
 
@@ -1267,7 +1267,7 @@ Process variables are initialized when the process instance is created.
 Their value can be changed by the process Activities using the Assignment, when the global variable is associated with the local Activity context, local Activity variable, or by a direct call to the variable from a child context.
 
 .Procedure: Defining Process Variables
-. In Business Central, go to *Menu -> Projects* and click on the project name. For example, *Evaluation*.
+. In Business Central, go to *Menu -> Design -> Projects* and click on the project name. For example, *Evaluation*.
 . Click on an empty space in the canvas and click image:3140.png[].
 . Click on the text field next to *Variable Definitions* and click image:6563.png[].
 . Define your variables in the *Editor for Variable Definitions* window.
@@ -1674,7 +1674,7 @@ This file is identical to a work item definition file created in Business Centra
 
 To create a custom work item definition (WID) in the Web Process Designer, follow these steps:
 
-. In Business Central, go to *Menu -> Projects* and click on the project name. For example, *Evaluation*.
+. In Business Central, go to *Menu -> Design -> Projects* and click on the project name. For example, *Evaluation*.
 . Click *WORK ITEM DEFINITIONS* -> *WorkDefinitions*.
 +
 The *WorkDefinitions* asset is created by default and contains a number of pre-set work item definitions.
@@ -1862,21 +1862,22 @@ To register a work item handler in Business Central, follow these steps:
 
 .Procedure: Uploading JAR File
 . Log into Business Central.
-. Click *Authoring* -> *Artifact repository*.
+. Click *Authoring* -> *Artifact repository*. *<MH> Dev reviewers, is this still possible, or should we remove it?</MH>*
 . Click *Upload* and select the JAR file of your work item handler.
 . Click *Upload*.
 
 
 .Procedure: Adding Dependencies
-. Click *Authoring* -> *Project Authoring*.
+. . In Business Central, go to *Menu -> Design -> Projects* and click on the project name. For example, *Evaluation*.
+. Click *Create New Asset* -> *Form*.
 . Click *Open Project Editor*.
 . Click *Project Settings: Project General Settings* and select *Dependencies list* from the menu.
 . Click *Add from repository* and select the file you have uploaded.
 
 
 .Procedure: Registering Work Item Handler
-. Click *Authoring* -> *Project Authoring*.
-. Click *Open Project Editor*.
+. In Business Central, go to *Menu -> Design -> Projects* and click on the project name. For example, *Evaluation*.
+. Click *Create New Asset* -> *Form*.
 . Click *Project Settings: Project General Settings* and select *Deployment descriptor* from the menu.
 . Navigate to *Work Item handlers* and click *Add*.
 . Enter the name of your custom work item definition into the first `Value` field with no white spaces. For example, __GoogleCalendar__.
