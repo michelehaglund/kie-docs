@@ -210,8 +210,7 @@ To apply a new color scheme or any other defined scheme, click the image:5224.pn
 === Recording local history
 
 
-Local history keeps track of any changes, you apply to your process model so as to allow you to restore any previous status of the process model.
-By default, this feature is turned off.
+Local history keeps track of any changes you apply to your process model to allow you to restore any previous status of the process model. By default, this feature is turned off.
 
 To turn on local history recording, click the *Local History* image:5225.png[] button and select *Enable Local History* entry.
 From this menu, you can also display the local history records and apply the respective status to the process as well as disable the feature or clear the current local history log.
@@ -274,11 +273,9 @@ You can now open the valid process and view it as a diagram on the canvas.
 
 To export your process definition into one of the supported formats (PNG, PDF, BPMN2, JSON, SVG, or ERDF), do the following:
 
-. In Business Central, go to *Authoring* -> *Project Authoring*.
-. Open your process in *Process Designer*.
+. In Business Central, go to *Menu -> Projects* and click on the project name. For example, *Evaluation*.
 . Click the image:export-icon.png[] button and choose one of the following options:
 +
-
 
 image::5923.png[]
 
@@ -289,7 +286,7 @@ Note that Internet Explorer 11 does not support PDF objects in HTML.
 * *Download Process PNG*: generates a PNG file into the repository and the browser starts downloading the file.
 * *Download Process PDF*: generates a PDF file into the repository and the browser starts downloading the file.
 * *Download Process SVG*: generates an SVG file into the repository and the browser starts downloading the file.
-* *View Process Sources*: opens the *Process Sources* dialog box that contains the BPMN2, JSON, SVG, and ERDF source codes. You can download BPMN2 files by clicking *Download BPMN2* at the top. Pressing CTRL+A enables you to select the source code in a particular format, while pressing CTRL+F enables the find tool (use `/re/_SYNTAX_` for a regexp search).
+* *View Process Sources*: opens the *Process Sources* dialog box that contains the BPMN2, JSON, SVG, and ERDF source codes. You can download BPMN2 files by clicking *Download BPMN2* at the top. Pressing CTRL+a enables you to select the source code in a particular format, while pressing CTRL+f enables the find tool (use `/re/_SYNTAX_` for a regexp search).
 +
 
 
@@ -386,7 +383,7 @@ A _form_ is a layout definition for a page (defined as HTML) that is displayed a
 * Task instantiation
 
 
-The form is then respectively called a _process form_ or a _task form_. Forms acquire data from a human user for both the proces instance execution, or the task instance execution:
+The form is then respectively called a _process form_ or a _task form_. Forms acquire data from a human user for both the process instance execution, or the task instance execution:
 
 * A process form can take as its input and output process variables.
 * A task form can take as its input Data Input Assignment variables with assignment defined, and as its output Data Output Assignments with assignment defined.
@@ -1244,8 +1241,7 @@ The global variable is then associated with the local activity context, local ac
 
 To define a global variable, do the following:
 
-. In Business Central, go to *Authoring* -> *Project Authoring*.
-. Open the respective process in *Process Designer*.
+. In Business Central, go to *Menu -> Projects* and click on the project name. For example, *Evaluation*.
 . Click image:left-arrow.png[] in the right hand corner of the *Process Designer* and in the *Properties (BPMN-Diagram)* panel that opens, locate the *Globals* property.
 +
 
@@ -1271,8 +1267,7 @@ Process variables are initialized when the process instance is created.
 Their value can be changed by the process Activities using the Assignment, when the global variable is associated with the local Activity context, local Activity variable, or by a direct call to the variable from a child context.
 
 .Procedure: Defining Process Variables
-. In Business Central, click *Authoring* -> *Project Authoring*.
-. Open the respective process in *Process Designer*.
+. In Business Central, go to *Menu -> Projects* and click on the project name. For example, *Evaluation*.
 . Click on an empty space in the canvas and click image:3140.png[].
 . Click on the text field next to *Variable Definitions* and click image:6563.png[].
 . Define your variables in the *Editor for Variable Definitions* window.
@@ -1320,6 +1315,7 @@ The following example of a domain class called `ValidationError` containing a bo
 . Set a process variable called `validationError` of type `ValidationError`.
 . Instantiate the `ValidationError` object in the `ON ENTRY ACTION` field or in the `Script Tasks` placed before the `Business Rule Task`:
 [source]
++
 ----
 //Instantiate the object and set the flag to false
 demo1.hello1.ValidationError validationError1 = new demo1.hello1.ValidationError();
@@ -1393,7 +1389,7 @@ When a process instance is inserted into ksession as a fact, it can only be used
 
 Action scripts are pieces of code that define the [property]``Script`` property of a Script Task or an Element's interceptor action.
 They have access to globals, the process variables, and the predefined variable [var]``kcontext``.
-Accordingly, [var]``kcontext`` is an instance of `ProcessContext` class and the interface content can be found at the following location: http://docs.jboss.org/jbpm/v6.4/javadocs/org/kie/api/runtime/process/ProcessContext.html[Interface ProcessContext].
+Accordingly, [var]``kcontext`` is an instance of `ProcessContext` class and the interface content can be found at the following location: http://docs.jboss.org/jbpm/v7.0/javadocs/org/kie/api/runtime/process/ProcessContext.html[Interface ProcessContext].
 
 Currently, dialects Java and MVEL are supported for action script definitions.
 Note that MVEL accepts any valid Java code and additionally provides support for nested access of parameters, for example, the MVEL equivalent of Java call `person.getName()` is ``person.name``.
@@ -1469,13 +1465,7 @@ image::BasicIOEditor.png[]
 
 You can also open the Data I/O Editor to edit the Data Inputs and/or Outputs by editing the appropriate property for the activity: [parameter]``Assignments``, [parameter]``DataOutputAssociations``, or [parameter]``DataInputAssociations``.
 
-[NOTE]
-====
-The Data I/O Editor tool is available in Red Hat JBoss BPM Suite 6.2 or better.
-====
-
 === Data I/O Editor Example
-
 
 In the following example, the Data I/O Editor has been used to create some Data Inputs and Data Outputs for the user activity ``Check Invoice``.
 The example makes use of two process variables that have been defined in the process:
@@ -1558,7 +1548,7 @@ processInstance : WorkflowProcessInstance()
 Person( name == ( processInstance.getVariable("name") ) )
 ----
 
-This rule constraint retrieves the process variable [var]``name``.
+This constraint condition retrieves the process variable [var]``name``.
 ====
 
 
@@ -1684,9 +1674,7 @@ This file is identical to a work item definition file created in Business Centra
 
 To create a custom work item definition (WID) in the Web Process Designer, follow these steps:
 
-. Log into Business Central.
-. Click *Authoring* -> *Project Authoring*.
-. Choose the organizational unit and repository of your project to view the assets in your project.
+. In Business Central, go to *Menu -> Projects* and click on the project name. For example, *Evaluation*.
 . Click *WORK ITEM DEFINITIONS* -> *WorkDefinitions*.
 +
 The *WorkDefinitions* asset is created by default and contains a number of pre-set work item definitions.
@@ -1797,22 +1785,24 @@ You can customize the behavior of your work item by registering different work i
 
 Red Hat JBoss BPM Suite comes with multiple work item handlers in the following modules:
 
-* The `jbpm-bpm2` module in the `org.jbpm.bpmn2.handler` package contains the following work item handlers:
-* ReceiveTaskHandler (for the BPMN <receiveTask> element)
-* SendTaskHandler (for the BPMN <sendTask> element)
-* ServiceTaskHandler (for the BPMN <serviceTask> element)
-* The `jbpm-workitems` module in packages within `org.jbpm.process.workitem` contains, for example:
-* ArchiveWorkItemHandler
-* WebServiceWorkItemHandler
-* TransformWorkItemHandler
-* RSSWorkItemHandler
-* RESTWorkItemHandler
-* JavaInvocationWorkItemHandler
-* JabberWorkItemHandler
-* JavaHandlerWorkItemHandler
-* FTPUploadWorkItemHandler
-* ExecWorkItemHandler
-* EmailWorkItemHandler
+* The `org.jbpm.bpmn2.handler` package in the `jbpm-bpm2` module contains:
+** ReceiveTaskHandler (for the BPMN <receiveTask> element)
+** SendTaskHandler (for the BPMN <sendTask> element)
+** ServiceTaskHandler (for the BPMN <serviceTask> element)
++
+
+* The `org.jbpm.process.workitem` package in the `jbpm-workitems` module contains:
+** ArchiveWorkItemHandler
+** WebServiceWorkItemHandler
+** TransformWorkItemHandler
+** RSSWorkItemHandler
+** RESTWorkItemHandler
+** JavaInvocationWorkItemHandler
+** JabberWorkItemHandler
+** JavaHandlerWorkItemHandler
+** FTPUploadWorkItemHandler
+** ExecWorkItemHandler
+** EmailWorkItemHandler
 
 
 The work item handlers must define the `executeWorkItem()` and `abortWorkItem()` methods as defined by the [class]``WorkItemHandler`` interface.
@@ -1857,7 +1847,7 @@ If you use the work item in a maven project, you need to declare the following d
 <dependency>
 	<groupId>org.jbpm</groupId>
 	<artifactId>jbpm-workitems</artifactId>
-	<version>6.5.0.Final-redhat-2</version>
+	<version>7.0.0.Final-redhat-2</version>
 </dependency>
 ----
 
@@ -1978,7 +1968,7 @@ For a list of Maven dependencies, see example _Embedded jBPM Engine Dependencies
 
 [NOTE]
 ====
-The recommended practice is to use the https://github.com/droolsjbpm/jbpm/tree/6.5.x/jbpm-services/jbpm-services-api/src/main/java/org/jbpm/services/api[Service API] and register your work item handlers in KJAR in `kie-deployment-descriptor.xml`.
+The recommended practice is to use the https://github.com/droolsjbpm/jbpm/tree/7.0.x/jbpm-services/jbpm-services-api/src/main/java/org/jbpm/services/api[Service API] and register your work item handlers in KJAR in `kie-deployment-descriptor.xml`.
 ====
 
 [[_sect_service_repository]]
@@ -2032,14 +2022,14 @@ To install a service (for example Twitter) from the repository located at http:/
 
 [source]
 ----
-./standalone.sh -Dorg.jbpm.service.repository=http://docs.jboss.org/jbpm/v6.4/repository/ -Dorg.jbpm.service.servicetasknames=Twitter
+./standalone.sh -Dorg.jbpm.service.repository=http://docs.jboss.org/jbpm/v7.0/repository/ -Dorg.jbpm.service.servicetasknames=Twitter
 ----
 
 You can specify more services at once by separating them with a comma. Install-all option is not currently available.
 
 [source]
 ----
-./standalone.sh -Dorg.jbpm.service.repository=http://docs.jboss.org/jbpm/v6.4/repository/ -Dorg.jbpm.service.servicetasknames=Twitter,Jabber
+./standalone.sh -Dorg.jbpm.service.repository=http://docs.jboss.org/jbpm/v7.0/repository/ -Dorg.jbpm.service.servicetasknames=Twitter,Jabber
 ----
 
 [IMPORTANT]
@@ -2147,7 +2137,7 @@ Classes provided in the `org.jbpm.process.workitem` package allow you to connect
 
 [source,java]
 ----
-Map<String, WorkDefinitionImpl> workitemsFromRepo = WorkItemRepository.getWorkDefinitions("http://docs.jboss.org/jbpm/v6.4/repository/");
+Map<String, WorkDefinitionImpl> workitemsFromRepo = WorkItemRepository.getWorkDefinitions("http://docs.jboss.org/jbpm/v7.0/repository/");
 ----
 
 NOTE: In the following text, Twitter is used as an example service. To interact with a different service, replace `Twitter` with a name declared in the service `.wid` file.
