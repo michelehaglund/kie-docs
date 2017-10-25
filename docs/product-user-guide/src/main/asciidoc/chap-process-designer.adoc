@@ -1862,8 +1862,10 @@ For more information about asynchronous execution, see _{DEVELOPMENT_GUIDE}_.
 To register a work item handler in Business Central, follow these steps:
 
 .Procedure: Uploading JAR File
-. Log into Business Central.
-. Click *Authoring* -> *Artifact repository*. *<MH> Dev reviewers, is this still possible, or should we remove it?</MH>*
+. In Business Central, go to *Menu -> Design -> Projects* and click on the project name. For example, *Evaluation*.
+. Click *Settings*.
+. Click *Project Settings: Project General Settings* and select *Dependencies* from the menu.
+. Click *Add from repository* and select the file you have uploaded.
 . Click *Upload* and select the JAR file of your work item handler.
 . Click *Upload*.
 
@@ -1871,16 +1873,17 @@ To register a work item handler in Business Central, follow these steps:
 .Procedure: Adding Dependencies
 . In Business Central, go to *Menu -> Design -> Projects* and click on the project name. For example, *Evaluation*.
 . Click *Settings*.
-. Click *Project Settings: Project General Settings* and select *Dependencies list* from the menu.
-. Click *Add from repository* and select the file you have uploaded.
+. Click *Project Settings: Project General Settings* and select *Dependencies* from the menu.
+. Click *Add* and input the *Group ID*, *Artifact ID*, and *Version*.
+. Click *Ok*.
 
 
 .Procedure: Registering Work Item Handler
 . In Business Central, go to *Menu -> Design -> Projects* and click on the project name. For example, *Evaluation*.
 . Click *Settings*.
-. Click *Project Settings: Project General Settings* and select *Deployment descriptor* from the menu.
-. Navigate to *Work Item handlers* and click *Add*.
-. Enter the name of your custom work item definition into the first `Value` field with no white spaces. For example, __GoogleCalendar__.
+. Click *Project Settings: Project General Settings* and select *Deployment descriptor*.
+. Scroll down to *Work Item handlers* and click *Add*.
+. Double-click the *Name* field and enter the name of your custom work item definition. For example, __GoogleCalendar__.
 . Instantiate your work item handler in the second field. For example, if your work item is in the `com.sample` package, `new com.sample.GoogleCalendarHandler()`.
 . Click *Save*.
 
