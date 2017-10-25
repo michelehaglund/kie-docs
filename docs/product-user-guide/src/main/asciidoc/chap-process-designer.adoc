@@ -995,7 +995,8 @@ Red Hat JBoss BPM Suite enables you to attach documents to a form by using the `
 . Set the marshalling strategy in the `_PROJECT_HOME_/META_INF/kie-deployment-descriptor.xml`. You can do so in the Business Central or by editing the file directly. In Business Central:
 
 .. In Business Central, go to *Menu -> Design -> Projects* and click on the project name. For example, *Evaluation*.
-.. Click *Open Project Editor*. Then, click *Project Settings: Project General Settings* -> *Deployment descriptor*.
+.. Click *Settings*.
+.. Click *Project Settings: Project General Settings* -> *Deployment descriptor*.
 .. Under *Marshalling strategies*, click *Add*.
 .. In the *Value* field, click on *Enter Value* and enter: `org.jbpm.document.marshalling.DocumentMarshallingStrategy`.
 .. Set *Resolver type* to *reflection*.
