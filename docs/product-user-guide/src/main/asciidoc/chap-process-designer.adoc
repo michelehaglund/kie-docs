@@ -2279,13 +2279,10 @@ Handling of such exceptions is designed directly in the process model using BPMN
 When modeling business exception management, the following mechanisms are to be used:
 
 Errors::
-An Error is a signal that an unexpected situation occurred (see <<_errors>>). The mechanism can be used immediately when the problem arises and does not allow for any compensation.
+An Error is a signal that an unexpected situation occurred (see <<_errors>>). The mechanism can be used immediately when the problem arises and does not allow for any compensation. Note that the Error Start Event is only available for an event sub-process.
 
 Compensation::
 Compensation is equivalent to the Error mechanism; however, it can be used only on sub-processes when it is required that the execution flow continues after the compensation using the "regular" outgoing Flow (execution continues after the compensation as if no compensation occurred).
-
-Canceling::
-Canceling is equivalent to the Error mechanism; however, it can be used only on sub-processes and it is required that the sub-process takes the flow leaving the respective Cancel Intermediate Event so that the "normal" execution flow is never taken as opposed to compensation.
 
 [float]
 === Technical exceptions
@@ -2293,4 +2290,4 @@ Canceling is equivalent to the Error mechanism; however, it can be used only on 
 
 Technical exceptions happen when a technical component of a business process acts in an unexpected way.
 When using Java-based systems, this often results in a Java Exception being thrown by the system.
-Technical components used in a process fail in a way that cannot be described using BPMN (for further information, see _{DEVELOPMENT_GUIDE}_).
+Technical components used in a process fail in a way that cannot be described using BPMN (for further information, see _{DEVELOPMENT_GUIDE}_). For other technical issues, such as failure to connect to an external system, should be escalated to the system administrator.
