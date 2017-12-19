@@ -1,0 +1,28 @@
+[id='assembly_decision-manager-getting-started']
+
+include::product-shared-docs/document-attributes.adoc[]
+
+= Designing a driver's license suspension model using {CENTRAL}
+// Context attribute is assembly specific and enables module reuse between assemblies.
+:imagesdir: topics/product-shared-docs/images
+:context: decision-manager-getting-started
+include::product-shared-docs/author-group.adoc[]
+
+// Purpose statement for the assembly
+As a business analyst, you can use guided decision tables to define business rules in a wizard-led tabular format. These rules are compiled into DRL (Drools Rule Language) and form the core of the decision service for your project.
+
+// Modules - concepts, procedures, refs, etc.
+include::product-getting-started-guide/concept_key-benefits.adoc[leveloffset=+1]
+
+include::product-getting-started-guide/concept_prerequisites-target-users.adoc[leveloffset=+1]
+
+include::product-getting-started-guide/concept_use-cases.adoc[leveloffset=+1]
+
+include::product-getting-started-guide/task_new-project.adoc[leveloffset=+1]
+
+include::product-getting-started-guide/task_business-rules[leveloffset=+1]
+
+include::product-getting-started-guide/task_business-process[leveloffset=+1]
+
+// Versioning info
+include::product-shared-docs/versioning-information.adoc[]
