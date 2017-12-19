@@ -20,9 +20,9 @@ include::product-getting-started-guide/concept_use-cases.adoc[leveloffset=+1]
 
 include::product-getting-started-guide/task_new-project.adoc[leveloffset=+1]
 
-include::product-getting-started-guide/task_business-rules[leveloffset=+1]
+include::product-getting-started-guide/task_business-rules.adoc[leveloffset=+1]
 
-include::product-getting-started-guide/task_business-process[leveloffset=+1]
+include::product-getting-started-guide/task_business-process.adoc[leveloffset=+1]
 
 // Versioning info
 include::product-shared-docs/versioning-information.adoc[]
