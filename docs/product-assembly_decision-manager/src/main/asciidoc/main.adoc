@@ -9,14 +9,12 @@ include::product-shared-docs/document-attributes.adoc[]
 include::product-shared-docs/author-group.adoc[]
 
 // Purpose statement for the assembly
-As a business analyst, you can use guided decision tables to define business rules in a wizard-led tabular format. These rules are compiled into DRL (Drools Rule Language) and form the core of the decision service for your project.
+As a business analyst, <MH> REWRITE FOR DM </MH>.
 
 // Modules - concepts, procedures, refs, etc.
 include::product-getting-started-guide/concept_key-benefits.adoc[leveloffset=+1]
 
 include::product-getting-started-guide/concept_prerequisites-target-users.adoc[leveloffset=+1]
-
-include::product-getting-started-guide/concept_use-cases.adoc[leveloffset=+1]
 
 include::product-getting-started-guide/task_new-project.adoc[leveloffset=+1]
 
