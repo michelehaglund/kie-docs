@@ -14,7 +14,7 @@ Finished data object in {PRODUCT}.
 
 == Creating Guided Rules
 
- . Log in to Business Central. Click *Menu* -> *Design* -> *Projects*, then *process-app-start*.
+ . Log in to {CENTRAL}. Click *Menu* -> *Design* -> *Projects*, then *process-app-start*.
  . Click *Create New Asset* -> *Guided Rule*, then enter:
 
  * *Name*: `Validate Down Payment`
@@ -53,7 +53,7 @@ System.out.println("Executed Rule: " + drools.getRule().getName() );
 
 == Creating Guided Decision Tables
 
-. Log in to Business Central. Click *Menu* -> *Design* -> *Projects*, then *process-app-start*.
+. Log in to {CENTRAL}. Click *Menu* -> *Design* -> *Projects*, then *process-app-start*.
 . Click *Create New Asset* -> *Guided Decision Table*, then enter:
 +
 * *Name*: `Mortgage Decision Table`

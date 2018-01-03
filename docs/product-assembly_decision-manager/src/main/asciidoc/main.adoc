@@ -10,6 +10,13 @@ include::product-shared-docs/author-group.adoc[]
 
 // Purpose statement for the assembly
 As a business analyst, <MH> REWRITE FOR DM </MH>.
+//What are decision services and why care? (value prop)
+//From the planning doc: https://docs.google.com/document/d/1ZdgyvNgs-qG-7WclNKa-xcvRGdrZvUCMb5AqJYUKvDU/edit#
+//Getting started with Decision Services:
+//Basic “learning” of terms and overall flow of how decision services work
+//Has some basic graphics to help learn
+//Use cases for various industries
+//Tutorial that maps to exit criteria
 
 // Modules - concepts, procedures, refs, etc.
 include::product-getting-started-guide/concept_key-benefits.adoc[leveloffset=+1]
