@@ -2,14 +2,14 @@
 
 include::product-shared-docs/document-attributes.adoc[]
 
-= Getting started with decision services
+= Getting started with {CENTRAL}
 // Context attribute is assembly specific and enables module reuse between assemblies.
 :imagesdir: topics/product-shared-docs/images
 :context: decision-manager-getting-started
 include::product-shared-docs/author-group.adoc[]
 
 // Purpose statement for the assembly
-As a business analyst <MH> Confirm that this would be the analyst</MH>, you can use {CENTRAL} to design a variety of decision models, such as a driver's license suspension model. <MH>Would I alternatively mention "scenario" at some point?
+ As a business analyst or rules developer, you can use the {CENTRAL} in {PRODUCT} to design a variety of decision services. In this tutorial, you will create and test a driver's license suspension model.
 //What are decision services and why care? (value prop). See examples in https://redhat-documentation.github.io/modular-docs/#assembly-guidelines
 //From the planning doc regarding this GSG: https://docs.google.com/document/d/1ZdgyvNgs-qG-7WclNKa-xcvRGdrZvUCMb5AqJYUKvDU/edit#
 //Getting started with Decision Services:
