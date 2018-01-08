@@ -18,6 +18,8 @@ include::product-shared-docs/author-group.adoc[]
 //Use cases for various industries
 //Tutorial that maps to exit criteria
 
+//NOTE: We can't link to 7.5 anything yet, because there are no URLs yet. Once we get them, we can add them in the doc attributes. We don't put all possible doc links there, just the ones we refer to (or used to) frequently.
+
 // Modules - concepts, procedures, refs, etc.
 include::product-getting-started-guide/concept_key-benefits.adoc[leveloffset=+1]
 

@@ -1,7 +1,7 @@
 [id='_importing_a_getting_started_business_project']
-= Importing a Getting Started Business Project
+= Creating the project and data model
 
-The following chapter instructs you how to import an incomplete business process application. You will extend the application in later chapters.
+<MH> Explain both the project and the data model usage in this tutorial and in general</MH>
 
 [float]
 == Prerequisites
