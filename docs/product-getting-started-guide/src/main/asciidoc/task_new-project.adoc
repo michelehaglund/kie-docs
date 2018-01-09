@@ -9,7 +9,16 @@ To import the starter project:
 
 . Log in to {CENTRAL}.
 . Go to *Menu* -> *Design* -> *Projects*.
-. Click *Import* -> *Advanced Import*.
+. Click *Add Project*, expand *Hide Advanced Options*,then enter:
+
+* *Name*: `Driver department traffic violations`
+* *Group ID*: `org.jboss.example`
+* *Artifact ID*: `traffic-violations`
+* *Version*: `1.0.0-SNAPSHOT`
++
+
+. Click *Add*.
+
 . Next to the *Repository type* label, select *Custom*. Paste the following in to the *Repository URL* field: `https://github.com/ibek/bpms-getting-started.git`. Then, click *Next*.
 +
 image::import-example.png[]
