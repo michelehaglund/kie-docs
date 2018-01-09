@@ -1,7 +1,7 @@
 [id='_defining_business_rules']
-= Defining Business Rules
+= Defining the Driver License Suspension Rule
 
-The following chapter instructs you how to create business rules in {PRODUCT} using:
+The following chapter instructs you how to create a driver license suspension rule and a speed violation decision table in {PRODUCT} using:
 
 * The Guided Rule wizard
 * The Guided Decision Table wizard
@@ -9,16 +9,15 @@ The following chapter instructs you how to create business rules in {PRODUCT} us
 [float]
 == Prerequisites
 
-Finished data object in {PRODUCT}.
-// Removed for reuse in US-based GSG 7.0 guide. For further information, see <<_defining_a_data_model>>.
+Created both the Violation and Driver data objects.
 
-== Creating Guided Rules
+== Creating a driver license suspension rule
 
- . Log in to {CENTRAL}. Click *Menu* -> *Design* -> *Projects*, then *process-app-start*.
+ . Log in to Business Central. Click *Menu* -> *Design* -> *Projects*, then *Driver department traffic violations*.
  . Click *Create New Asset* -> *Guided Rule*, then enter:
 
- * *Name*: `Validate Down Payment`
- * *Package*: `org.jboss.example`
+ * *Guided Rule*: `DriverLicenseSuspensionRule`
+ * *Package*: `org.jboss.example.traffic_violations`
 +
 
 . Click *Ok* to open the Guided Rule Editor.

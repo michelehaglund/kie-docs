@@ -1,11 +1,7 @@
 [id='_importing_a_getting_started_business_project']
-= Creating the project and data model
+= Creating the Driver department traffic violations project
 
-<MH> Explain both the project and the data model usage in this tutorial and in general</MH>
-
-== Importing the Starter Project
-
-To import the starter project:
+<MH> Ivo, we are not importing anything for this project - correct? Creating one from scratch?</MH>
 
 . Log in to {CENTRAL}.
 . Go to *Menu* -> *Design* -> *Projects*.
@@ -20,7 +16,3 @@ To import the starter project:
 . Click *Add*.
 +
 image::addproject.png[]
-
-. Select *process-app-start*. Then, click *Finish*.
-
-The *Asset* view of the project opens when you successfully import the starter project.
