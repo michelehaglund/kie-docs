@@ -27,7 +27,6 @@ As a business analyst or rules developer, you can use {CENTRAL} in {PRODUCT} to 
 //NOTE: We can't link to 7.5 anything yet, because there are no URLs yet. Once we get them, we can add them in the doc attributes. We don't put all possible doc links there, just the ones we refer to (or used to) frequently.
 
 // Modules - concepts, procedures, refs, etc.
-include::product-getting-started-guide/concept_key-benefits.adoc[leveloffset=+1]
 
 include::product-getting-started-guide/task_new-project.adoc[leveloffset=+1]
 
