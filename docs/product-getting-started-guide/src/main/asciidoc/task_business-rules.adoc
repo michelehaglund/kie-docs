@@ -13,7 +13,7 @@ Created both the Violation and Driver data objects.
 
 == Creating a driver license suspension rule
 
-<MH> Ivo, is there a logical break point in this section? It contains 35 steps. Not user friendly</MH>
+*<MH> Ivo, is there a logical break point in this section? It contains 35 steps. Not user friendly</MH>*
 
  . Log in to Business Central. Click *Menu* -> *Design* -> *Projects*, then *Driver department traffic violations*.
  . Click *Create New Asset* -> *Guided Rule*, then enter:
@@ -62,7 +62,7 @@ eval((previousPts+totalNewPoints)>=20)
 
 == Creating a speed violation decision table
 
-<MH> This section has not been updated yet</MH>
+*<MH> Ivo, is there a logical break point in this section? Not user friendly</MH>*
 
 . Log in to {CENTRAL}. Click *Menu* -> *Design* -> *Projects*, then *process-app-start*.
 . Click *Create New Asset* -> *Guided Decision Table*, then enter:

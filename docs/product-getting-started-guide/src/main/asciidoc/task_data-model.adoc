@@ -23,8 +23,6 @@ You have created the Driver department traffic violations project.
 
 === Creating the Violation Data Object data fields
 
-<MH> Ivo, can we clarify the need for these fields for our readers?</MH>
-
 In the `Violation-general properties` section:
 
 . Locate the *Label* property and enter: *Violation*.
@@ -86,8 +84,6 @@ In the `Violation-general properties` section:
 
 === Creating the Driver Data Object data fields
 
-<MH> Ivo, can we clarify the need for these fields for our readers?</MH>
-
 In the `Driver-general properties` section:
 
 . Locate the *Label* property and enter: *Driver*.
@@ -113,7 +109,7 @@ In the `Driver-general properties` section:
 . Click *Create and continue*, then enter the following values:
 +
 * *Id*: `city`
-* *Label*: `city`
+* *Label*: `City`
 * *Type*: `String`
 
 . Click *Create and continue*, then enter the following values:

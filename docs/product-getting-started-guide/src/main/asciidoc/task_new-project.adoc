@@ -1,14 +1,12 @@
 [id='_importing_a_getting_started_business_project']
-= Creating the Driver department traffic violations project
-
-<MH> Ivo, we are not importing anything for this project - correct? Creating one from scratch?</MH>
+= Creating the traffic violations project
 
 . Log in to {CENTRAL}.
 . Go to *Menu* -> *Design* -> *Projects*.
 . Click *Add Project*, expand *Hide Advanced Options*, then enter:
 
 * *Name*: `Driver department traffic violations`
-* *Group ID*: `org.jboss.example`
+* *Group ID*: `org.jboss.example` 
 * *Artifact ID*: `traffic-violations`
 * *Version*: `1.0.0-SNAPSHOT`
 +
