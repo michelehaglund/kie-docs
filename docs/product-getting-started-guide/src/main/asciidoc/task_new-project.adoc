@@ -6,7 +6,7 @@
 . Click *Add Project*, expand *Hide Advanced Options*, then enter:
 
 * *Name*: `Driver department traffic violations`
-* *Group ID*: `org.jboss.example` 
+* *Group ID*: `org.jboss.example`
 * *Artifact ID*: `traffic-violations`
 * *Version*: `1.0.0-SNAPSHOT`
 +
