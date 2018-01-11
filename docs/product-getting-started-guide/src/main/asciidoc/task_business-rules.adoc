@@ -99,7 +99,7 @@ image::rulepanel.png[]
 . Select *Operator*, select *Value options*, then select *Additional info*.
 . Enter `Speed Limit (MPH) <` in the *Header (description)* field and click *Finish*.
 
-=== Inserting Violation Columns
+=== Inserting Result Columns and Data
 
 . Click *Insert Column*, select *Set the value of a field* -> *Pattern* and select *Violation[v]* from the *Pattern* pull-down menu.
 . Select *Field* and then *fineAmount* from the *Field* pull-down menu.
