@@ -5,7 +5,8 @@ The following chapter instructs you how to create a traffic violations data mode
 
 Data models are saved in data models definitions stored in your Project. {PRODUCT} provides the Data Modeler, a custom graphical editor, for defining data objects.
 
-The following illustrates..
+The following
+
 +
 image:data-model.png[]
 
