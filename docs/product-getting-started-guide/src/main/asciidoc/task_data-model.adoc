@@ -8,8 +8,10 @@ Data models are saved in data models definitions stored in your Project. {PRODUC
 *<MH>Ivo, let's expand on this drafted illustration to better assist the readers</MH>*
 
 The following illustrates..
+
 +
 image::data-model.png[]
+
 
 == Prerequisites
 
