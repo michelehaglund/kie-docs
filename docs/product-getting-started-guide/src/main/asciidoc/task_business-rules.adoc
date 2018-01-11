@@ -81,54 +81,47 @@ image::rulepanel.png[]
 . Select *Operator* and then *equal to* from the *Operator* pull-down menu.
 . Select *Value options* and enter `Driving while intoxicated,DWI=Driving while under the influence of drugs` in the *Value list (optional)* field.
 . Select *Additional info*, enter `Violation Type` in the *Header (description)* field, and click *Finish*.
+. Click *Insert Column*, select *Add a Condition* -> *Pattern* and select *Violation[v]* from the *Pattern* pull-down menu.
+. Select *Calculation type* -> *Predicate*.
+. Select *Field* and enter `actualSpeed-speedLimit > $param` in the *Field* field.
+. Select *Value options*, then select *Additional info* and enter `Speed Limit (MPH) >` in the *Header (description)* field.
+. Click *Finish*.
+. Click *Insert Column*, select *Add a Condition* -> *Pattern* and select *Violation[v]* from the *Pattern* pull-down menu.
+. Select *Calculation type* -> *Predicate*.
+. Select *Field* and enter `actualSpeed-speedLimit < $param` in the *Field* field.
+. Select *Operator*, select *Value options*, then select *Additional info*.
+. Enter `Speed Limit (MPH) <` in the *Header (description)* field and click *Finish*.
+. Click *Insert Column*, select *Set the value of a field* -> *Pattern* and select *Violation[v]* from the *Pattern* pull-down menu.
+. Select *Field* and then *fineAmount* from the *Field* pull-down menu.
+. Select *Value options*, then select *Additional info* and enter `Fine Amount` in the *Header (description)* field.
+. Select the *Update engine with changes* option and click *Finish*.
+. Click *Insert Column*, select *Set the value of a field* -> *Pattern* and select *Violation[v]* from the *Pattern* pull-down menu.
+. Select *Field* and then *points* from the *Field* pull-down menu.
+. Select *Value options*, then select *Additional info* and enter `Points` in the *Header (description)* field.
+. Select the *Update engine with changes* option and click *Finish*.
+. Click *Columns*, expand *Attribute columns*, and select the *Hide column* option.
+. Click *Editor* -> *Insert* -> *Append row*. Repeat this step to add a total of four table rows. *<MH> Replace all of the remaining steps with a proper screen capture from my UI test</MH>*
+. Click inside the first row of the *Violation Type* column and select *Speed* from the pull-down menu.
+. Click inside the second row of the *Violation Type* column and select *Speed* from the pull-down menu. Repeat the same for the third row.
+. Click inside the fourth row of the *Violation Type* column and select *Driving while intoxicated* from the pull-down menu.
+. Click inside the first row of the *Speed Limit (MPH) >* column and and enter `10`.
+. Click inside the second row of the *Speed Limit (MPH) >* column and and enter `20`.
+. Click inside the third row of the *Speed Limit (MPH) >* column and and enter `30`.
+. Click inside the first row of the *Speed Limit (MPH) <* column and and enter `20`.
+. Click inside the second row of the *Speed Limit (MPH) <* column and and enter `30`.
+. Click inside the third row of the *Speed Limit (MPH) <* column and and enter `40`.
+. Click inside the first row of the *Fine Amount* column and and enter `100`.
+. Click inside the second row of the *Fine Amount* column and and enter `200`.
+. Click inside the third row of the *Fine Amount* column and and enter `300`.
+. Click inside the fourth row of the *Fine Amount* column and and enter `500`.
+. Click inside the first row of the *Points* column and and enter `1`.
+. Click inside the second row of the *Points* column and and enter `2`.
+. Click inside the third row of the *Points* column and and enter `3`.
+. Click inside the fourth row of the *Points* column and and enter `4`.
+. Click inside the first row of the *Points* column and and enter `1`.
 
-
-
-
-. Click *+Ok* to open the *Guided Decision Table Wizard*.
-. Select *Add Fact Patterns*.
-. Move the *Applicant* and *Property* patterns to the *Chosen patterns* section.
-. Click *Add Constraints*, select *Applicant > annualincome:Whole number (interger)*, and move *annualincome..* to the *Conditions* section.
-. From *Conditions*, select *annualincome*, then enter:
-+
-* *Column header (description)*: `Annual Income (Greater Than)`
-* *Operator*: `greater than`
-+
-. Move *annualincome..* to the *Conditions* section again.
-. From *Conditions*, select *annualincome*, then enter:
-+
-* *Column header (description)*: `Annual Income (Less Than or Equal To)`
-* *Operator*: `less than or equal to`
-+
-. From *Available patterns*, select *Property*,  then from *Available fields*, select *saleprice:Whole number (interger)* and move it to the *Conditions* section.
-. From *Conditions*, select *saleprice*, then enter:
-+
-* *Column header (description)*: `Sale Price (Less Than)`
-* *Operator*: `less than`
-. From *Available fields*, select *age:Whole number (interger)*, and move it to the *Conditions* section.
-. From *Conditions*, select *age*, then enter:
-+
-* *Column header (description)*: `Property Age (Less Than)`
-* *Operator*: `less than`
-. From *Available fields*, select *locale:Text*, and move it to the *Conditions* section.
-. From *Conditions*, select *locale*, then enter:
-+
-* *Column header (description)*: `Location`
-* *Operator*: `equal to`
-* *(optional) value list*: `Urban,Rural`
-. Click *Next*.
-. Click *Add Actions to insert Facts*, select *Application* and move it to the *Chosen patterns* section.
-. From *Available fields*, select *mortgageamount:Whole number (integer)*, and move it to the *Chosen fields* section.
-. From *Chosen fields*, select *mortgageamount*.
-. Enter `Mortgage Amount` in the *Column header (description)* field and click *Finish*.
-. Click *Save*, then *Save*, to confirm your changes.
-. Click *Insert > Append row* and click *Save*.
-. Click *Add Column*.
-. From the *Add a new column* window, select *New Column*.
-. Select *Include advanced options*, then select *Add a new Attribute column*.
-. Select *Ruleflow-group*, then click *Finish*.
 . Fill out the table as shown in the following example:
 +
 image:guided-dt.png[]
 
-. Click *Validate* then *Save*.
+. Click *Save*, then click *Save* to confirm your changes.
