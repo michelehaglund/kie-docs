@@ -68,12 +68,23 @@ image::rulepanel.png[]
 *<MH> Ivo, is there a logical break point in this section? Not user friendly</MH>*
 
 . Log in to {CENTRAL}. Click *Menu* -> *Design* -> *Projects*, then *Driver department traffic violations*.
-. Click *Create New Asset* -> *Guided Decision Table*, then enter:
-+
-* *Name*: `Mortgage Decision Table`
-* *Package*: `org.jboss.example`
-+
-. Select *Use Wizard*.
+. Click *Create New Asset* -> *Guided Decision Table*.
+. Enter `SpeedViolationRule` in the *Guided Decision Table* field and click *+OK*.
+. Click *Columns* -> *Insert Column* and select *Include advanced options*.
+. Select *Add an Attribute column* and click *Next*.
+. Select *Ruleflow-group* and click *Finish*.
+. Expand *Attribute columns* and enter `trafficViolation` in the *Default value* field.
+. Click *Insert Column*, select *Add a Condition* -> *Pattern* -> *Create a new Fact Pattern*.
+. Select *Violation* from the *Fact type* pull-down menu, enter `v` in the *Binding* field, and click *+OK*.
+. Select *Calculation type* -> *Literal value*.
+. Select *Field* and then *type* from the *Field* pull-down menu.
+. Select *Operator* and then *equal to* from the *Operator* pull-down menu.
+. Select *Value options* and enter `Driving while intoxicated,DWI=Driving while under the influence of drugs` in the *Value list (optional)* field.
+. Select *Additional info*, enter `Violation Type` in the *Header (description)* field, and click *Finish*.
+
+
+
+
 . Click *+Ok* to open the *Guided Decision Table Wizard*.
 . Select *Add Fact Patterns*.
 . Move the *Applicant* and *Property* patterns to the *Chosen patterns* section.
