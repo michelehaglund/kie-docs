@@ -27,8 +27,7 @@ Created both the Violation and Driver data objects.
 . Click the *There is a Driver* label to open the *Modify contraints for Driver* window.
 . Enter `driver` in the *Variable name* field and click *Set*.
 . Click the *There is a Driver[driver]* label to open the *Modify contraints for Driver* window.
-. Click *Expression editor*
-. Click *[not bound]* to open the *Expression editor*.
+. Click *Expression editor* -> *[not bound]* to open the *Expression editor*.
 . In the *Bind the Expression to a new variable* field, enter: `previousPts` and click *Set*.
 . From the *Choose...* menu, select *totalPoints*.
 . Click image:6176.png[] next to line 1 (the *previousPts* label) to open the *Add a condition to the rule* window.
@@ -82,8 +81,7 @@ image::rulepanel.png[]
 . Select *Value options* and enter `Driving while intoxicated,DWI=Driving while under the influence of drugs` in the *Value list (optional)* field.
 . Select *Additional info*, enter `Violation Type` in the *Header (description)* field, and click *Finish*.
 . Click *Insert Column*, select *Add a Condition* -> *Pattern* and select *Violation[v]* from the *Pattern* pull-down menu.
-. Select *Calculation type* -> *Predicate*.
-. Select *Field* and enter `actualSpeed-speedLimit > $param` in the *Field* field.
+. Select *Calculation type* -> *Predicate* -> *Field* and enter `actualSpeed-speedLimit > $param`.
 . Select *Value options*, then select *Additional info* and enter `Speed Limit (MPH) >` in the *Header (description)* field.
 . Click *Finish*.
 . Click *Insert Column*, select *Add a Condition* -> *Pattern* and select *Violation[v]* from the *Pattern* pull-down menu.
