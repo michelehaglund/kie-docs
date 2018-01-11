@@ -100,26 +100,7 @@ image::rulepanel.png[]
 . Select *Value options*, then select *Additional info* and enter `Points` in the *Header (description)* field.
 . Select the *Update engine with changes* option and click *Finish*.
 . Click *Columns*, expand *Attribute columns*, and select the *Hide column* option.
-. Click *Editor* -> *Insert* -> *Append row*. Repeat this step to add a total of four table rows. *<MH> Replace all of the remaining steps with a proper screen capture from my UI test</MH>*
-. Click inside the first row of the *Violation Type* column and select *Speed* from the pull-down menu.
-. Click inside the second row of the *Violation Type* column and select *Speed* from the pull-down menu. Repeat the same for the third row.
-. Click inside the fourth row of the *Violation Type* column and select *Driving while intoxicated* from the pull-down menu.
-. Click inside the first row of the *Speed Limit (MPH) >* column and and enter `10`.
-. Click inside the second row of the *Speed Limit (MPH) >* column and and enter `20`.
-. Click inside the third row of the *Speed Limit (MPH) >* column and and enter `30`.
-. Click inside the first row of the *Speed Limit (MPH) <* column and and enter `20`.
-. Click inside the second row of the *Speed Limit (MPH) <* column and and enter `30`.
-. Click inside the third row of the *Speed Limit (MPH) <* column and and enter `40`.
-. Click inside the first row of the *Fine Amount* column and and enter `100`.
-. Click inside the second row of the *Fine Amount* column and and enter `200`.
-. Click inside the third row of the *Fine Amount* column and and enter `300`.
-. Click inside the fourth row of the *Fine Amount* column and and enter `500`.
-. Click inside the first row of the *Points* column and and enter `1`.
-. Click inside the second row of the *Points* column and and enter `2`.
-. Click inside the third row of the *Points* column and and enter `3`.
-. Click inside the fourth row of the *Points* column and and enter `4`.
-. Click inside the first row of the *Points* column and and enter `1`.
-
+. Click *Editor* -> *Insert* -> *Append row*. Repeat this step to add a total of four table rows. *<MH> Replace with a proper screen capture from my UI test</MH>*
 . Fill out the table as shown in the following example:
 +
 image:guided-dt.png[]
