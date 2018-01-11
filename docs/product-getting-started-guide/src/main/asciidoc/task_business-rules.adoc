@@ -7,7 +7,7 @@ The following chapter instructs you how to create a driver license suspension ru
 * The Guided Decision Table wizard
 
 [float]
-== Prerequisites
+== Prerequisite
 
 Created both the Violation and Driver data objects.
 
