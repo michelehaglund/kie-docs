@@ -3,9 +3,9 @@
 
 The following chapter instructs you how to create a traffic violation data model in {PRODUCT}. Data models are models of data objects. A data object is a custom complex data type (for example, a Violation data object containing data fields Violation Date, Fine Amount, and Speed Limit).
 
-Data models are saved in data models definitions stored in your Project. {PRODUCT} provides the Data Modeler, a custom graphical editor, for defining data objects.
+Data models are saved in data models definitions stored in your Project. {PRODUCT} provides the Data Modeler, a custom graphical editor, for defining data objects. *<MH> Ivo, I think that this paragraph might be a bit too low-level for the purpose of this tutorial. If you agree, I will remove it. Please advise</MH>*
 
-The following illustration shows the traffic violation data model that you will create in this chapter. 
+The following illustration shows the traffic violation data model that you will create in this chapter.
 
 image:data-model.png[]
 
