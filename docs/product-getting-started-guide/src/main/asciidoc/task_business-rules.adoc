@@ -22,7 +22,7 @@ Created both the Violation and Driver data objects.
  * *Package*: `org.jboss.example.traffic_violations`
 +
 
-. Click *Ok* to open the Guided Rule Editor.
+. Click *Ok* to open the *Guided Rule Editor*.
 
 === Setting the Suspension Rule Conditions
 
@@ -81,7 +81,7 @@ image::rulepanel.png[]
 
 . Select *Unique Hit* from the *Hit Policy* pull-down menu.
 . Select *Extended entry, values defined in table body* in the *Table format* section.
-. Click *Ok* to open the Guided Rule Editor.
+. Click *Ok* to open the *Guided Decision Tables* editor.
 
 === Inserting Violation Columns
 
@@ -106,7 +106,7 @@ image::rulepanel.png[]
 . Select *Operator*, select *Value options*, then select *Additional info*.
 . Enter `Speed Limit (MPH) <` in the *Header (description)* field and click *Finish*.
 
-=== Inserting Result Columns and Data
+=== Inserting Result Columns and Field Data
 
 . Click *Insert Column*, select *Set the value of a field* -> *Pattern* and select *Violation[v]* from the *Pattern* pull-down menu.
 . Select *Field* and then *fineAmount* from the *Field* pull-down menu.
