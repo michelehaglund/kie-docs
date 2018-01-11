@@ -7,7 +7,6 @@ Data models are saved in data models definitions stored in your Project. {PRODUC
 
 The following
 
-+
 image:data-model.png[]
 
 [float]
