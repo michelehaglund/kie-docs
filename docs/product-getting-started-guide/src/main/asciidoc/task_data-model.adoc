@@ -7,7 +7,7 @@ Data models are saved in data models definitions stored in your Project. {PRODUC
 
 The following illustrates..
 +
-image:guided-dt.png[]
+image:data-model.png[]
 
 [float]
 == Prerequisites
