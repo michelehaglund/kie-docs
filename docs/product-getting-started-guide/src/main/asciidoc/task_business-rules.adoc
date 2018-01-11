@@ -73,8 +73,15 @@ image::rulepanel.png[]
 *<MH> Ivo, is there a logical break point in this section? Not user friendly. Additionally, I will be adding more step-specific screen captures to assist the readers.</MH>*
 
 . Log in to {CENTRAL}. Click *Menu* -> *Design* -> *Projects*, then *Driver department traffic violations*.
-. Click *Create New Asset* -> *Guided Decision Table*.
-. Enter `SpeedViolationRule` in the *Guided Decision Table* field and click *+OK*.
+. Click *Create New Asset* -> *Guided Decision Table*, then enter:
+
+* *Guided Decision Table*: `SpeedViolationRule`
+* *Package*: `org.jboss.example.traffic_violations`
++
+
+. Select *Unique Hit* from the *Hit Policy* pull-down menu.
+. Select *Extended entry, values defined in table body* in the *Table format* section.
+. Click *Ok* to open the Guided Rule Editor.
 
 === Inserting Violation Columns
 
