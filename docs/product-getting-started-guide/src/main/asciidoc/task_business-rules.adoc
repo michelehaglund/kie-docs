@@ -13,7 +13,7 @@ Created both the Violation and Driver data objects.
 
 == Creating a driver license suspension rule
 
-*<MH> Ivo, is there a logical break point in this section? It contains 35 steps. Not user friendly. Additionally, I will be adding more step-specific screen captures to assist the readers.</MH>*
+*<MH>I will be adding more step-specific screen captures to assist the readers.</MH>*
 
  . Log in to Business Central. Click *Menu* -> *Design* -> *Projects*, then *Driver department traffic violations*.
  . Click *Create New Asset* -> *Guided Rule*, then enter:
@@ -70,7 +70,7 @@ image::rulepanel.png[]
 
 == Creating a speed violation decision table
 
-*<MH> Ivo, is there a logical break point in this section? Not user friendly. Additionally, I will be adding more step-specific screen captures to assist the readers.</MH>*
+*<MH>I will be adding more step-specific screen captures to assist the readers.</MH>*
 
 . Log in to {CENTRAL}. Click *Menu* -> *Design* -> *Projects*, then *Driver department traffic violations*.
 . Click *Create New Asset* -> *Guided Decision Table*, then enter:
