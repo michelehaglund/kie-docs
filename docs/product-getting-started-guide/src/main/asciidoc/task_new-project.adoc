@@ -14,3 +14,7 @@
 . Click *Add*.
 +
 image::addproject.png[]
+
+Red Hat Decision Manager provides a default Space called "myteam" so that a first time user does not need to create one and can proceed with creating a new project.
++
+image::space-team.png[]
