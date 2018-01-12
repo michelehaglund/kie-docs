@@ -3,6 +3,9 @@
 
 . Log in to {CENTRAL}.
 . Go to *Menu* -> *Design* -> *Projects*.
+*Tip:* Red Hat Decision Manager provides a default Space called *myteam* so that a first time user does not need to create one and can proceed with creating a new project.
+
+image::spaces-teams.png[]
 . Click *Add Project*, expand *Hide Advanced Options*, then enter:
 
 * *Name*: `Driver department traffic violations`
@@ -14,7 +17,3 @@
 . Click *Add*.
 +
 image::addproject.png[]
-
-*Tip:* Red Hat Decision Manager provides a default Space called *myteam* so that a first time user does not need to create one and can proceed with creating a new project.
-
-image::spaces-teams.png[]
