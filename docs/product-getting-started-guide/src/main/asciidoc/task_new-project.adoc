@@ -3,6 +3,8 @@
 
 . Log in to {CENTRAL}.
 . Go to *Menu* -> *Design* -> *Projects*.
++
+
 *Tip:* Red Hat Decision Manager provides a default Space called *myteam* so that a first time user does not need to create one and can proceed with creating a new project.
 
 image::spaces-teams.png[]
