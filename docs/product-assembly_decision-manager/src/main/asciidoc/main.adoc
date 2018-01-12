@@ -16,6 +16,10 @@ As a business analyst or rules developer, you can use {CENTRAL} in {PRODUCT} to 
 * Installed {PRODUCT}. For further information, see the {INSTALLATION_GUIDE}.
 * {PRODUCT} is running and you can log in to {CENTRAL} with the `admin` role. For further information, see the {INSTALLATION_GUIDE}.
 
+*Tip:* Red Hat Decision Manager provides a default Space called *myteam* so that a first time user does not need to create one and can proceed with creating a new project.
+
+image::spaces-teams.png[]
+
 //What are decision services and why care? (value prop). See examples in https://redhat-documentation.github.io/modular-docs/#assembly-guidelines
 //From the planning doc regarding this GSG: https://docs.google.com/document/d/1ZdgyvNgs-qG-7WclNKa-xcvRGdrZvUCMb5AqJYUKvDU/edit#
 //Getting started with Decision Services:
