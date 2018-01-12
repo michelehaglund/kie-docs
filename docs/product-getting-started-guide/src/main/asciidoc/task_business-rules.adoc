@@ -84,6 +84,10 @@ image::rulepanel.png[]
 . Select *Unique Hit* from the *Hit Policy* pull-down menu.
 . Select *Extended entry, values defined in table body* in the *Table format* section.
 . Click *Ok* to open the *Guided Decision Tables* editor.
++
+
+.Guided Decision Tables editor
+image::dec-table.png[]
 
 === Inserting Violation Columns
 
