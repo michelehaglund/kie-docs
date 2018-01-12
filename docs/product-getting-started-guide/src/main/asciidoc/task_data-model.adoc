@@ -5,7 +5,7 @@ The following chapter instructs you how to create a traffic violation data model
 
 Data models are saved in data models definitions stored in your Project. {PRODUCT} provides the Data Modeler, a custom graphical editor, for defining data objects. *<MH> Ivo, I think that this paragraph might be a bit too low-level for the purpose of this tutorial. If you agree, I will remove it. Please advise</MH>*
 
-The following illustration shows the traffic violation data model that you will create in this chapter. The data model consists of data objects containing data fields. 
+The following illustration shows the traffic violation data model that you will create in this chapter. The data model consists of data objects containing data fields.
 
 image:data-model.png[]
 
