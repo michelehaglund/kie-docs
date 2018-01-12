@@ -116,7 +116,7 @@ image::fact-pattern.png[]
 . Select *Additional info*, enter `Violation Type` in the *Header (description)* field, and click *Finish*.
 +
 
-.Violation column header creation
+.Violation Type header
 image::violation-columns.png[]
 . Click *Insert Column*, select *Add a Condition* -> *Pattern* and select *Violation[v]* from the *Pattern* pull-down menu.
 . Select *Calculation type* -> *Predicate* -> *Field* and enter `actualSpeed-speedLimit > $param`.
@@ -124,7 +124,7 @@ image::violation-columns.png[]
 . Click *Finish*.
 +
 
-.Speed Limit greater than condition
+.Speed Limit (MPH) > header
 image::speed-header.png[]
 . Click *Insert Column*, select *Add a Condition* -> *Pattern* and select *Violation[v]* from the *Pattern* pull-down menu.
 . Select *Calculation type* -> *Predicate*.
@@ -133,19 +133,27 @@ image::speed-header.png[]
 . Enter `Speed Limit (MPH) <` in the *Header (description)* field and click *Finish*.
 +
 
-.Speed Limit less than condition
+.Speed Limit (MPH) < header
 image::speed-less-header.png[]
 
-=== Inserting Result Columns and Field Data
+=== Inserting Result Columns
 
 . Click *Insert Column*, select *Set the value of a field* -> *Pattern* and select *Violation[v]* from the *Pattern* pull-down menu.
 . Select *Field* and then *fineAmount* from the *Field* pull-down menu.
 . Select *Value options*, then select *Additional info* and enter `Fine Amount` in the *Header (description)* field.
 . Select the *Update engine with changes* option and click *Finish*.
++
+
+.Fine Amount header
+image::fine-amount.png[]
 . Click *Insert Column*, select *Set the value of a field* -> *Pattern* and select *Violation[v]* from the *Pattern* pull-down menu.
 . Select *Field* and then *points* from the *Field* pull-down menu.
 . Select *Value options*, then select *Additional info* and enter `Points` in the *Header (description)* field.
 . Select the *Update engine with changes* option and click *Finish*.
++
+
+.Point Amount header
+image::point-amount.png[]
 . Click *Columns*, expand *Attribute columns*, and select the *Hide column* option.
 . Click *Editor* -> *Insert* -> *Append row*. Repeat this step to add a total of four table rows.
 . Fill out the table as shown in the following example.
