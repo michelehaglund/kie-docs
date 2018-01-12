@@ -66,6 +66,8 @@ eval((previousPts+totalNewPoints)>=20)
 . Enter `trafficViolation` in to the *ruleflow-group* field.
 . Click *Save*, then click *Save* to confirm your changes.
 +
+
+.Rules
 image::rulepanel.png[]
 
 == Creating a speed violation decision table
@@ -118,8 +120,9 @@ image::rulepanel.png[]
 . Select the *Update engine with changes* option and click *Finish*.
 . Click *Columns*, expand *Attribute columns*, and select the *Hide column* option.
 . Click *Editor* -> *Insert* -> *Append row*. Repeat this step to add a total of four table rows.
-. Fill out the table as shown in the following example *<MH> Replace with a proper screen capture from my UI test</MH>*:
+. Fill out the table as shown in the following example.
 +
-image:guided-dt.png[]
 
+.Populated data fields
+image:guided-dt.png[]
 . Click *Save*, then click *Save* to confirm your changes.

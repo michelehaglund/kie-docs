@@ -2,7 +2,7 @@
 
 include::product-shared-docs/document-attributes.adoc[]
 
-= Getting started with {CENTRAL}
+= Getting started with Decision Services
 // Context attribute is assembly specific and enables module reuse between assemblies.
 :imagesdir: topics/product-shared-docs/images
 :context: decision-manager-getting-started
@@ -14,7 +14,7 @@ As a business analyst or rules developer, you can use {CENTRAL} in {PRODUCT} to 
 .Prerequisites
 * Installed {EAP_LONG} 7.1.0. For details, see  https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.1/html-single/installation_guide/[_Red Hat JBoss EAP 7.1.0 Installation Guide_].
 * Installed {PRODUCT}. For further information, see the {INSTALLATION_GUIDE}.
-* {PRODUCT} is running and you can log in to {CENTRAL} with the `admin` role. For further information, see the {INSTALLATION_GUIDE}.
+* {PRODUCT} is running and you can log in to {CENTRAL} with the `admin` role. For further information, see the Installing Decision Manager on Premise guide.
 
 //What are decision services and why care? (value prop). See examples in https://redhat-documentation.github.io/modular-docs/#assembly-guidelines
 //From the planning doc regarding this GSG: https://docs.google.com/document/d/1ZdgyvNgs-qG-7WclNKa-xcvRGdrZvUCMb5AqJYUKvDU/edit#

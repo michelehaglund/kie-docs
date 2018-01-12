@@ -7,6 +7,7 @@ Data models are saved in data models definitions stored in your Project. {PRODUC
 
 The following illustration shows the traffic violation data model that you will create in this chapter. The data model consists of data objects containing data fields.
 
+.Traffic violation data model
 image:data-model.png[]
 
 [float]

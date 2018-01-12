@@ -5,8 +5,10 @@
 . Go to *Menu* -> *Design* -> *Projects*.
 +
 
-*Tip:* Red Hat Decision Manager provides a default Space called *myteam* so that a first time user does not need to create one and can proceed with creating a new project.
+*Tip*: Red Hat Decision Manager provides a default Space called *myteam* so that a first time user does not need to create one and can proceed with creating a new project.
++
 
+.Default spaces
 image::spaces-teams.png[]
 . Click *Add Project*, expand *Hide Advanced Options*, then enter:
 
@@ -18,4 +20,6 @@ image::spaces-teams.png[]
 
 . Click *Add*.
 +
+
+.Add Project window
 image::addproject.png[]
