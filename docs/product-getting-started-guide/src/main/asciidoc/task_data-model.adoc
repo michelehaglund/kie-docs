@@ -23,12 +23,18 @@ You have created the Driver department traffic violations project.
 .. *Data Object*: `Violation`.
 .. *Package*: select `org.jboss.example.traffic_violations`.
 . Click *Ok*.
++
+
+.Create new Data Object window
+image:data-object.png[]
 
 === Creating the Violation Data Object data fields
 
-In the `Violation-general properties` section:
+. In the `'Violation (Violation)'- general properties` section, locate the *Label* property and enter: *Violation*.
++
 
-. Locate the *Label* property and enter: *Violation*.
+.General properties
+image:gen-props.png[]
 . Click *+ add field*.
 . Enter the following values:
 +
@@ -84,12 +90,18 @@ In the `Violation-general properties` section:
 .. *Data Object*: `Driver`.
 .. *Package*: select `org.jboss.example.traffic_violations`.
 . Click *Ok*.
++
+
+.Create new Data Object window
+image:data-object2.png[]
 
 === Creating the Driver Data Object data fields
 
-In the `Driver-general properties` section:
+. In the `'Driver (Driver)'- general properties` section, locate the *Label* property and enter: *Driver*.
++
 
-. Locate the *Label* property and enter: *Driver*.
+.General properties
+image:gen-props2.png[]
 . Click *+ add field*.
 . Enter the following values:
 +

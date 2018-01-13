@@ -23,6 +23,10 @@ Created both the Violation and Driver data objects.
 +
 
 . Click *Ok* to open the *Guided Rule Editor*.
++
+
+.Create new Guided Rule window
+image::guided-rule.png[]
 
 === Setting the Suspension Rule Conditions
 
@@ -54,9 +58,14 @@ Created both the Violation and Driver data objects.
 ----
 eval((previousPts+totalNewPoints)>=20)
 ----
++
+
+.Suspension Rule conditions
+image::rule-conditions.png[]
 
 === Setting the Suspension Rule Actions
 
+. Click *(show options…​)*.
 . Click image:6176.png[] next to the *(show options...)* label and select *Change field values of driver...*, then click *Ok*.
 . Click the *Set value of Driver [driver]* field and select *state* from the *Add field* pull-down menu.
 . Click image:6191.png[] next to *state* in the *Set value of Driver [driver]* section to open the *Field value* window.
@@ -67,7 +76,7 @@ eval((previousPts+totalNewPoints)>=20)
 . Click *Save*, then click *Save* to confirm your changes.
 +
 
-.Rules
+.Suspension Rule actions
 image::rulepanel.png[]
 
 == Creating a speed violation decision table
