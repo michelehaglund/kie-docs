@@ -34,7 +34,7 @@ include::product-getting-started-guide/task_data-model.adoc[leveloffset=+1]
 
 include::product-getting-started-guide/task_business-rules.adoc[leveloffset=+1]
 
-include::product-getting-started-guide/test-speed.adoc[leveloffset=+1]
+include::product-getting-started-guide/task_test-speed.adoc[leveloffset=+1]
 
 // Versioning info
 include::product-shared-docs/versioning-information.adoc[]
