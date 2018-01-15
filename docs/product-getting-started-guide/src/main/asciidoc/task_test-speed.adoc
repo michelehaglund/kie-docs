@@ -1,0 +1,15 @@
+[id='_testing_speed_limit']
+= Testing the Speed Limit scenario
+
+The following chapter instructs you how to test the speed limit scenario using the traffic violation data model and its assigned rules.
+
+[float]
+== Prerequisites
+
+* Created the Driver department traffic violations project
+* Created the traffic violation data model
+* Defined the Driver License Suspension Rule
+
+== Testing the Speed Limit
+
+. 
