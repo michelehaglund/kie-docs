@@ -10,7 +10,7 @@
 
 .Default spaces
 image::spaces-teams.png[]
-. Click *Add Project*, expand *Hide Advanced Options*, then enter:
+. Click *Add Project*, expand *Hide Advanced Options*, then enter the following information:
 
 * *Name*: `Driver department traffic violations`
 * *Group ID*: `org.jboss.example`

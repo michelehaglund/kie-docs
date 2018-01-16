@@ -3,7 +3,7 @@
 
 The following chapter instructs you how to create a traffic violation data model in {PRODUCT}. Data models are models of data objects. A data object is a custom complex data type (for example, a Violation data object containing data fields Violation Date, Fine Amount, and Speed Limit).
 
-Data models are saved in data models definitions stored in your Project. {PRODUCT} provides the Data Modeler, a custom graphical editor, for defining data objects. *<MH> Ivo, I think that this paragraph might be a bit too low-level for the purpose of this tutorial. If you agree, I will remove it. Please advise</MH>*
+Data models are saved in data models definitions stored in your project. {PRODUCT} provides the Data Modeler, a custom graphical editor, for defining data objects. *<MH> Ivo, I think that this paragraph might be a bit too low-level for the purpose of this tutorial. If you agree, I will remove it. Please advise</MH>*
 
 The following illustration shows the traffic violation data model that you will create in this chapter. The data model consists of data objects containing data fields. *<MH>Ivo, please let me know ASAP if the following image is a good base to send off to the graphics team.</MH>*
 
@@ -17,7 +17,7 @@ You have created the Driver department traffic violations project.
 
 == Creating the Violation Data Object
 
-. Log in to Business Central. Click *Menu* -> *Design* -> *Projects*, then *Driver department traffic violations*.
+. Log in to {CENTRAL}. Click *Menu* -> *Design* -> *Projects*, then *Driver department traffic violations*.
 . Click *Create New Asset* -> *Data Object*.
 . In the *Create new Data Object* wizard, enter the following values:
 .. *Data Object*: `Violation`.
@@ -84,7 +84,7 @@ image:gen-props.png[]
 
 == Creating the Driver Data Object
 
-. Log in to Business Central. Click *Menu* -> *Design* -> *Projects*, then *Driver department traffic violations*.
+. Log in to {CENTRAL}. Click *Menu* -> *Design* -> *Projects*, then *Driver department traffic violations*.
 . Click *Create New Asset* -> *Data Object*.
 . In the *Create new Data Object* wizard, enter the following values:
 .. *Data Object*: `Driver`.
