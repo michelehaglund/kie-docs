@@ -1,4 +1,4 @@
-[id='_testing_speed_limit']
+[id='testing_speed_limit-scenario-proc']
 = Testing the Speed Limit scenario
 
 The following chapter instructs you how to test the speed limit scenario using the traffic violation data model and its assigned rules.

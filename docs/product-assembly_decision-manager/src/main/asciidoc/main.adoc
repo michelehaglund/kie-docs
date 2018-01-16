@@ -1,11 +1,11 @@
-[id='assembly_decision-manager-getting-started']
+[id='assembly_decision-services-getting-started']
 
 include::product-shared-docs/document-attributes.adoc[]
 
 = Getting started with decision services
 // Context attribute is assembly specific and enables module reuse between assemblies.
 :imagesdir: topics/product-shared-docs/images
-:context: decision-manager-getting-started
+:context: decision-services-getting-started
 include::product-shared-docs/author-group.adoc[]
 
 // Purpose statement for the assembly

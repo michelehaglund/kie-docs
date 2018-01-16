@@ -1,4 +1,4 @@
-[id='_defining_business_rules']
+[id='guided-rule-licence-suspension-create-proc']
 = Defining the Driver License Suspension Rule
 
 The following chapter instructs you how to create a driver license suspension rule and a speed violation decision table in {PRODUCT} using:
