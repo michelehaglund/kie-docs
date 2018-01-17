@@ -32,7 +32,7 @@ include::product-getting-started-guide/new-project-proc.adoc[leveloffset=+1]
 
 include::product-user-guide/data-objects-con.adoc[leveloffset=+1]
 
-The following illustration shows the Violation and Driver data objects that you will create in this chapter. *<MH>Ivo, please let me know ASAP if the following image is a good base to send off to the graphics team.</MH>*
+The following illustration shows the Violation and Driver data objects that you will create in this tutorial. *<MH>Ivo, please let me know ASAP if the following image is a good base to send off to the graphics team.</MH>*
 
 .Traffic violation data model
 image:data-model.png[]

@@ -26,7 +26,7 @@ Created both the Violation and Driver data objects.
 .Create new Guided Rule window
 image::guided-rule.png[]
 
-=== Setting the Suspension Rule Conditions
+=== Adding the Suspension Rule Conditions
 
 . Click image:6176.png[] next to the *WHEN* label to open the *Add a condition to the rule* window. . . Select *Driver...* and click *Ok*.
 . Click the *There is a Driver* label to open the *Modify contraints for Driver* window.
@@ -61,7 +61,7 @@ eval((previousPts+totalNewPoints)>=20)
 .Suspension Rule conditions
 image::rule-conditions.png[]
 
-=== Setting the Suspension Rule Actions
+=== Adding the Suspension Rule Actions
 
 . Click *(show options…​)*.
 . Click image:6176.png[] next to the *(show options...)* label and select *Change field values of driver...*, then click *Ok*.

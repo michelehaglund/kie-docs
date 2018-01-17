@@ -1,9 +1,7 @@
 [id='data-objects-create-proc']
-= Creating the traffic violation data model
+= Creating the data objects
 
 //The following chapter instructs you how to create a traffic violation data model in {PRODUCT}. Data models are models of data objects. A data object is a custom complex data type (for example, a Violation data object containing data fields Violation Date, Fine Amount, and Speed Limit).
-
-*<MH>Ivo, Stetson raised a good point in his peer review. I am inclined to agree with him after having worked in the latest UI and not seeing any mention of data models. Please take a look at his comment and tell me if you agree? If so, I'll rework the intro to this topic and recreate the below illustration to simply reflect the two data ojects and their contained fields. Here is Stetson's feedback on the subject: "I think we shouldn't be talking about data objects in terms of data models anymore. Central doesn't have any "Data Model" assets when you go to create stuff, for instance, nor is there much (if any) reference to it in the UI, from what I can tell. So talking about data objects in terms of their collection in data models might be helpful conceptually, but I don't think so, imo. If it were me, I'd just make this a chapter on creating the necessary data objects (two), since that's the bottom line anyway, from the user's perspective."</MH>*
 
 [float]
 == Prerequisites
