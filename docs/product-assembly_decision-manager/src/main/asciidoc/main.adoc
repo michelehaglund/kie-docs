@@ -17,16 +17,6 @@ As a business analyst or rules developer, you can use {CENTRAL} in {PRODUCT} to 
 * Installed {PRODUCT}. For further information, see the {INSTALLATION_GUIDE}.
 * {PRODUCT} is running and you can log in to {CENTRAL} with the `admin` role. For further information, see the Installing Decision Manager on premise guide.
 
-//What are decision services and why care? (value prop). See examples in https://redhat-documentation.github.io/modular-docs/#assembly-guidelines
-//From the planning doc regarding this GSG: https://docs.google.com/document/d/1ZdgyvNgs-qG-7WclNKa-xcvRGdrZvUCMb5AqJYUKvDU/edit#
-//Getting started with Decision Services:
-//Basic “learning” of terms and overall flow of how decision services work
-//Has some basic graphics to help learn
-//Use cases for various industries
-//Tutorial that maps to exit criteria
-
-//NOTE: We can't link to 7.5 anything yet, because there are no URLs yet. Once we get them, we can add them in the doc attributes. We don't put all possible doc links there, just the ones we refer to (or used to) frequently.
-
 // Modules - concepts, procedures, refs, etc.
 
 include::product-getting-started-guide/new-project-proc.adoc[leveloffset=+1]
@@ -34,6 +24,7 @@ include::product-getting-started-guide/new-project-proc.adoc[leveloffset=+1]
 include::product-user-guide/data-objects-con.adoc[leveloffset=+1]
 
 The following illustration shows the Violation and Driver data objects that you will create in this tutorial. *<MH>Ivo, please let me know ASAP if the following image is a good base to send off to the graphics team.</MH>*
++
 
 .Traffic violation data model
 image:data-model.png[]

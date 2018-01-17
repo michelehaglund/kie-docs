@@ -1,4 +1,4 @@
-[id='data-object-violation-create-proc']
+[id='data-object-violation-proc']
 = Creating the Violation data object
 
 The following chapter instructs you how to create the Violation data object containing data fields, such as: Violation Date, Fine Amount, and Speed Limit.
@@ -20,7 +20,7 @@ You have created the Driver department traffic violations project.
 .Create new Data Object window
 image:data-object.png[]
 
-=== Adding the Violation data object data fields
+== Adding the Violation data object data fields
 
 . In the `'Violation (Violation)'- general properties` section, locate the *Label* property and enter: *Violation*.
 +

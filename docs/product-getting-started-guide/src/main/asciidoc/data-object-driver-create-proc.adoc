@@ -1,4 +1,4 @@
-[id='data-object-driver-create-proc']
+[id='data-object-driver-proc']
 = Creating the Driver data object
 
 The following chapter instructs you how to create the Driver data object containing data fields, such as: Name, Age, and Total Points.
@@ -22,7 +22,7 @@ You have created the Driver department traffic violations project.
 .Create new Data Object window
 image:data-object2.png[]
 
-=== Adding the Driver data object data fields
+== Adding the Driver data object data fields
 
 . In the `'Driver (Driver)'- general properties` section, locate the *Label* property and enter: *Driver*.
 +
