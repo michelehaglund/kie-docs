@@ -30,6 +30,8 @@ As a business analyst or rules developer, you can use {CENTRAL} in {PRODUCT} to 
 
 include::product-getting-started-guide/new-project-proc.adoc[leveloffset=+1]
 
+include::product-user-guide/data-objects-con.adoc[leveloffset=+1]
+
 include::product-getting-started-guide/data-model-create-proc.adoc[leveloffset=+1]
 
 include::product-getting-started-guide/business-rules-create-proc.adoc[leveloffset=+1]
