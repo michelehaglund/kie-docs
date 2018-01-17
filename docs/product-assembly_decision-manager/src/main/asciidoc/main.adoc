@@ -9,7 +9,8 @@ include::product-shared-docs/document-attributes.adoc[]
 include::product-shared-docs/author-group.adoc[]
 
 // Purpose statement for the assembly
-As a business analyst or rules developer, you can use {CENTRAL} in {PRODUCT} to design a variety of decision services. In this tutorial, you will create and test a driver's license suspension model by creating a data model that is made up of data objects with data fields, such as Violation Date, Fine Amount, and so on.
+As a business analyst or rules developer, you can use {CENTRAL} in {PRODUCT} to design a variety of decision services. In this tutorial, you will create and test a driver's license suspension scenario.
+//by creating data objects with data fields, such as Violation Date, Fine Amount, and so on.
 
 .Prerequisites
 * Installed {EAP_LONG} 7.1.0. For details, see  https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.1/html-single/installation_guide/[_Red Hat JBoss EAP 7.1.0 Installation Guide_].
@@ -37,7 +38,9 @@ The following illustration shows the Violation and Driver data objects that you 
 .Traffic violation data model
 image:data-model.png[]
 
-include::product-getting-started-guide/data-model-create-proc.adoc[leveloffset=+1]
+include::product-getting-started-guide/data-object-validate-create-proc.adoc[leveloffset=+1]
+
+include::product-getting-started-guide/data-object-driver-create-proc.adoc[leveloffset=+1]
 
 include::product-getting-started-guide/business-rules-create-proc.adoc[leveloffset=+1]
 
