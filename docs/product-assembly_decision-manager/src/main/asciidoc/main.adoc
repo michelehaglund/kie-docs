@@ -38,7 +38,7 @@ The following illustration shows the Violation and Driver data objects that you 
 .Traffic violation data model
 image:data-model.png[]
 
-include::product-getting-started-guide/data-object-validate-create-proc.adoc[leveloffset=+1]
+include::product-getting-started-guide/data-object-violation-create-proc.adoc[leveloffset=+1]
 
 include::product-getting-started-guide/data-object-driver-create-proc.adoc[leveloffset=+1]
 
