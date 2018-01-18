@@ -24,7 +24,7 @@ Created both the Violation and Driver data objects.
 .Guided Decision Tables editor
 image::dec-table.png[]
 
-== Inserting Violation Columns
+== Inserting Violation columns
 
 . Click *Columns* -> *Insert Column* and select *Include advanced options*.
 . Select *Add an Attribute column* and click *Next*.
@@ -71,7 +71,7 @@ image::speed-header.png[]
 .Speed Limit (MPH) < header
 image::speed-less-header.png[]
 
-== Inserting Result Columns
+== Inserting Result columns
 
 . Click *Insert Column*, select *Set the value of a field* -> *Pattern* and select *Violation[v]* from the *Pattern* pull-down menu.
 . Select *Field* and then *fineAmount* from the *Field* pull-down menu.
