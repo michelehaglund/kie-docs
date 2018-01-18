@@ -32,11 +32,11 @@ include::product-getting-started-guide/data-object-violation-create-proc.adoc[le
 
 include::product-getting-started-guide/data-object-driver-create-proc.adoc[leveloffset=+2]
 
-include::product-user-guide/guided-traffic-rules-con.adoc[leveloffset=+1]
+include::product-getting-started-guide/guided-traffic-rules-con.adoc[leveloffset=+1]
 
 include::product-getting-started-guide/business-rules-create-proc.adoc[leveloffset=+2]
 
-include::product-user-guide/decision-tables-use-case-con.adoc[leveloffset=+1]
+include::product-user-guide/decision-tables-con.adoc[leveloffset=+1]
 
 include::product-getting-started-guide/decision-table-create-proc.adoc[leveloffset=+2]
 
