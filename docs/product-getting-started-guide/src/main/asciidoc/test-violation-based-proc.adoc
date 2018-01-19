@@ -1,4 +1,4 @@
-[id='testing_suspend-scenario-proc']
+[id='testing_violation_numbers-proc']
 = Testing the driver license suspension scenario
 
 The following chapter instructs you how to test the driver license suspension scenario using the traffic violation data model and its assigned rules.
