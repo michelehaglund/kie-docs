@@ -1,15 +1,14 @@
 [id='testing_suspend-proc']
 = Testing the driver license suspension scenario
 
-The following chapter instructs you how to test the driver license suspension scenario using the traffic violation data model and its assigned rules.
+The following chapter instructs you how to test the driver license suspension scenario using the data that you specified when you set the Driver License Suspension rules and actions.
 
 [float]
 == Prerequisites
 
 * Created the Driver department traffic violations project
 * Created the Violation and Driver data models
-* Defined the driver license suspension rule
-* Tested the the speed limit scenario
+* Set the Driver License Suspension rules and actions
 
 .Procedure
 .

@@ -1,14 +1,14 @@
 [id='testing_speed_limit-proc']
 = Testing the speed limit scenario
 
-The following chapter instructs you how to test the speed limit scenario using the traffic violation data model and its assigned rules.
+The following chapter instructs you how to test the speed limit scenario using the data that you specified when you created the speed violation guided decision table.
 
 [float]
 == Prerequisites
 
 * Created the Driver department traffic violations project
 * Created the Violation and Driver data models
-* Defined the driver license suspension rule
+* Created the speed violation guided decision table
 
 .Procedure
 . Log in to {CENTRAL}. Click *Menu* -> *Design* -> *Projects*, then *Driver department traffic violations*.
