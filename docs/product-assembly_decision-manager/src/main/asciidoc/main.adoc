@@ -40,11 +40,13 @@ include::product-user-guide/decision-tables-con.adoc[leveloffset=+1]
 
 include::product-getting-started-guide/decision-table-create-proc.adoc[leveloffset=+2]
 
-include::product-getting-started-guide/test-speed-proc.adoc[leveloffset=+1]
+include::product-getting-started-guide/testing-scenarios-con.adoc[leveloffset=+1]
 
-include::product-getting-started-guide/test-suspend-proc.adoc[leveloffset=+1]
+include::product-getting-started-guide/test-speed-proc.adoc[leveloffset=+2]
 
-include::product-getting-started-guide/test-violation-based-proc.adoc[leveloffset=+1]
+include::product-getting-started-guide/test-suspend-proc.adoc[leveloffset=+2]
+
+include::product-getting-started-guide/test-violation-based-proc.adoc[leveloffset=+2]
 
 // Versioning info
 include::product-shared-docs/versioning-information.adoc[]

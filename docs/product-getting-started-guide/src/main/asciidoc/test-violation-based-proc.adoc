@@ -1,7 +1,7 @@
 [id='testing_violation_numbers-proc']
-= Testing the driver license suspension scenario
+= Testing the multiple violations scenario
 
-The following chapter instructs you how to test the driver license suspension scenario using the traffic violation data model and its assigned rules.
+The following chapter instructs you how to test the driver license suspension scenario for drivers with multiple violations using the traffic violation data model and its assigned rules.
 
 [float]
 == Prerequisites
@@ -11,6 +11,8 @@ The following chapter instructs you how to test the driver license suspension sc
 * Defined the driver license suspension rule
 
 .Procedure
+. 
+
 . Log in to {CENTRAL}. Click *Menu* -> *Design* -> *Projects*, then *Driver department traffic violations*.
 . Click *Build & Deploy* -> *Create New Asset* -> *Test Scenario*.
 . In the *Create new Test Scenario window*, enter `Speed limit 10-20` in the *Test Scenario* field, and click *+OK*.
