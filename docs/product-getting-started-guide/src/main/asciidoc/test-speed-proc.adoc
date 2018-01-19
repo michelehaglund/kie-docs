@@ -32,10 +32,10 @@ The following chapter instructs you how to test the speed limit scenario using t
 . Click *+Expect* to open the *New expectation* window and click *Add* next to *Fact value: violation*.
 . Click *Violation 'violation' has values:* to open the *Choose a field to add* window.
 . Select *fineAmount* from the *Choose a field to add* pull-down menu and click *+OK*.
-. Enter `100` in the *fineAmount: equals* field.
+. Enter `100.0` in the *fineAmount: equals* field.
 . Click *Violation 'violation' has values:* to open the *Choose a field to add* window.
 . Select *points* from the *Choose a field to add* pull-down menu and click *+OK*.
-. Enter `1` in the *fineAmount: equals* field.
+. Enter `1` in the *points: equals* field.
 . Click *Save*, then click *Save* to confirm your changes.
 . Click *Run scenario*.
 
