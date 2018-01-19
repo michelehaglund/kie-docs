@@ -16,7 +16,7 @@ Created both the Violation and Driver data objects.
  * *Package*: `org.jboss.example.traffic_violations`
 +
 
-. Click *Ok* to open the *Guided Rule Editor*.
+. Click *Ok* to open the *Guided Rule designer*.
 +
 
 .Create new Guided Rule window

@@ -18,10 +18,10 @@ Created both the Violation and Driver data objects.
 
 . Select *Unique Hit* from the *Hit Policy* pull-down menu.
 . Select *Extended entry, values defined in table body* in the *Table format* section.
-. Click *Ok* to open the *Guided Decision Tables* editor.
+. Click *Ok* to open the *Guided Decision Tables* designer.
 +
 
-.Guided Decision Tables editor
+.Guided Decision Tables designer
 image::dec-table.png[]
 
 == Inserting Violation columns
