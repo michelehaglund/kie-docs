@@ -21,9 +21,11 @@ The following chapter instructs you how to copy the *Suspend due to total points
 . In the *totalPoints* field, change the value from `10` to `5`.
 +
 
+.Second violation field
 image::points_addition.png[new points field in UI]
 . Click *Save*, then click *Save* to confirm your changes.
 . Click *Run scenario*.
++
 
 .Suspension test results screen
 image::suspend_multi_test_results.png[Suspension test results screen]

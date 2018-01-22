@@ -20,7 +20,7 @@ You have created the Driver department traffic violations project.
 +
 
 .Create new Data Object window
-image:data-object2.png[]
+image::data-object2.png[]
 
 == Adding the Driver data object data fields
 
@@ -28,7 +28,7 @@ image:data-object2.png[]
 +
 
 .General properties
-image:gen-props2.png[]
+image::gen-props2.png[]
 . Click *+ add field*.
 . Enter the following values:
 +

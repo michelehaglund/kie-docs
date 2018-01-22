@@ -103,5 +103,5 @@ image::append-row.png[]
 +
 
 .Populated data fields
-image:guided-dt.png[]
+image::guided-dt.png[]
 . Click *Save*, then click *Save* to confirm your changes.
