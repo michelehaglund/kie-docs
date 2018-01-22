@@ -13,7 +13,7 @@ A project is the container for assets, such as data objects, guided decision tab
 
 .Default spaces
 image::spaces-teams.png[]
-. Click *Add Project*, expand *Hide Advanced Options*, then enter the following information:
+. Click *Add Project*, expand *Show Advanced Options*, then enter the following information:
 
 * *Name*: `Driver department traffic violations`
 * *Group ID*: `org.jboss.example`
