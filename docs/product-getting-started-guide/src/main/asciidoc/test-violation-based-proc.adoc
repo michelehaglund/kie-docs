@@ -14,8 +14,8 @@ The following chapter instructs you how to test the driver license suspension sc
 . Log in to {CENTRAL}. Click *Menu* -> *Design* -> *Projects*, then *Driver department traffic violations*.
 . Click *Build & Deploy* -> *Create New Asset* -> *Test Scenario*.
 .
-. 
+.
 . Click *Save*, then click *Save* to confirm your changes.
 . Click *Run scenario*.
 
-*<MH> Ivo, let's expand on the expected results for the reader. The demo simply closed without showing any real results.</MH>*
+*<MH> Ivo, let's expand on the expected results for the reader.</MH>*
