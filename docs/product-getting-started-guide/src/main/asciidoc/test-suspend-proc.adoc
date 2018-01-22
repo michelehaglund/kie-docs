@@ -29,7 +29,6 @@ The following chapter instructs you how to test the driver license suspension sc
 . Input `10` in the *points* field.
 . Click *+Expect* to open the *New expectation* window.
 . Expand the *Rule* pull-down menu, select *DriverLicenseSuspensionRule*, and click *OK*.
-. Click *Save*.
 . Click *+GIVEN* to open the *New input* window, enter `trafficViolation` in the *Activate rule flow group* field, and click *Add*.
 . Click *+Expect* to open the *New expectation* window and click *Add* next to *Fact value: driver*.
 . Click *Driver 'driver' has values:* to open the *Choose a field to add* window.
@@ -37,3 +36,6 @@ The following chapter instructs you how to test the driver license suspension sc
 . Enter `suspend` in the *state: equals* field.
 . Click *Save*, then click *Save* to confirm your changes.
 . Click *Run scenario*. *<MH> Ivo, let's expand on the expected results for the reader.</MH>*
+
+.Suspension test results screen
+image::supendtest_results.png[Suspension test results screen]

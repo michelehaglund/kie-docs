@@ -1,7 +1,7 @@
 [id='testing_violation_numbers-proc']
 = Testing the multiple violations scenario
 
-The following chapter instructs you how to test the driver license suspension scenario for drivers with multiple violations using the data that you specified when you set the Driver License Suspension rules and actions.
+The following chapter instructs you how to copy the *Suspend due to total points* asset and modify it to create the driver license suspension scenario for drivers with multiple violations using the data that you specified when you set the Driver License Suspension rules and actions.
 
 [float]
 == Prerequisites
@@ -12,10 +12,12 @@ The following chapter instructs you how to test the driver license suspension sc
 
 .Procedure
 . Log in to {CENTRAL}. Click *Menu* -> *Design* -> *Projects*, then *Driver department traffic violations*.
-. Click *Build & Deploy* -> *Create New Asset* -> *Test Scenario*.
-.
-.
+. Click *Suspend due to total points* -> *Copy*, enter `Suspend due to multiple violations` in the *New Asset Name* field, and click *Make a Copy*.
+. Click *Space* -> *myteam* -> *Driver department traffic violations*, and then select the *Suspend due to multiple violations* Asset.
+. Click *+GIVEN* to open the *New input* window.
+. Select *Violation* from the *Insert a new fact* pull-down menu.
+. Enter `violation2` in the *Fact name* field and click *Add*.
+. Click image:6191.png[] next to *points*, click *Literal value*, then input `5` in the *points* new field.
+. In the *totalPoints* field, change the value from `10` to `5`.
 . Click *Save*, then click *Save* to confirm your changes.
-. Click *Run scenario*.
-
-*<MH> Ivo, let's expand on the expected results for the reader.</MH>*
+. Click *Run scenario*. *<MH> Ivo, let's expand on the expected results for the reader.</MH>*
