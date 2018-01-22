@@ -38,4 +38,4 @@ The following chapter instructs you how to test the driver license suspension sc
 . Click *Run scenario*. *<MH> Ivo, let's expand on the expected results for the reader.</MH>*
 
 .Suspension test results screen
-image::supendtest_results.png[Suspension test results screen]
+image::suspendtest_results.png[Suspension test results screen]
