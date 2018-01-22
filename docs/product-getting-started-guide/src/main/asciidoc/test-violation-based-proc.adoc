@@ -17,7 +17,7 @@ The following chapter instructs you how to copy the *Suspend due to total points
 . Click *+GIVEN* to open the *New input* window.
 . Select *Violation* from the *Insert a new fact* pull-down menu.
 . Enter `violation2` in the *Fact name* field and click *Add*.
-. Click image:6191.png[] next to *points*, click *Literal value*, then input `5` in the *points* new field.
+. Click image:6191.png[] next to *points*, click *Literal value*, then input `5` in the *points* -> *violation2* field.
 . In the *totalPoints* field, change the value from `10` to `5`.
 +
 
