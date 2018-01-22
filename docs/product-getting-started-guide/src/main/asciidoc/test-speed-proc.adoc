@@ -39,4 +39,7 @@ The following chapter instructs you how to test the speed limit scenario using t
 . Click *Save*, then click *Save* to confirm your changes.
 . Click *Run scenario*.
 
+.Speed test results screen
+image::speedtest_results.png[Speed test results screen]
+
 *<MH> Ivo, let's expand on the expected results for the reader. The demo simply closed without showing any real results.</MH>*
