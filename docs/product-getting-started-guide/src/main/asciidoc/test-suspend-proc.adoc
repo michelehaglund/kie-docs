@@ -12,7 +12,7 @@ The following chapter instructs you how to test the driver license suspension sc
 
 .Procedure
 . Log in to {CENTRAL}. Click *Menu* -> *Design* -> *Projects*, then *Driver department traffic violations*.
-. Click *Build & Deploy* -> *Create New Asset* -> *Test Scenario*.
+. Click *Create New Asset* -> *Test Scenario*.
 . In the *Create new Test Scenario window*, enter `Suspend due to total points` in the *Test Scenario* field, and click *+OK*.
 . Click *+GIVEN* to open the *New input* window.
 . Select *Driver* from the *Insert a new fact* pull-down menu.
@@ -35,7 +35,11 @@ The following chapter instructs you how to test the driver license suspension sc
 . Select *state* from the *Choose a field to add* pull-down menu and click *+OK*.
 . Enter `suspend` in the *state: equals* field.
 . Click *Save*, then click *Save* to confirm your changes.
-. Click *Run scenario*. *<MH> Ivo, let's expand on the expected results for the reader.</MH>*
+. Click *Run scenario*. 
++
+
+.Result
+The rule is fired and the driver's license is suspended because the total number of points is >= 20.
 +
 
 .Suspension test results screen

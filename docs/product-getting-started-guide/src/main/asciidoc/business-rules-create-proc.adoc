@@ -36,7 +36,7 @@ image::add-condition.png[]
 . In the *Bind the Expression to a new variable* field, enter: `previousPts` and click *Set*.
 . From the *Choose...* menu, select *totalPoints*.
 . Click image:6176.png[] next to line 1 (the *previousPts* label) to open the *Add a condition to the rule* window.
-. Select *From Accumulate...* and click *Ok*.
+. Select *From Accumulate...* and click *+Ok*.
 . Select *click to add pattern...* above the *From Accumulate* label and select *Number* from the *choose fact type* pull-down menu.
 . Click *There is a number* label to open the *Modify contraints for Driver* window.
 . Click *Expression editor* and select *intValue()* from the
@@ -49,14 +49,9 @@ image::add-condition.png[]
 . Click image:6191.png[], then click *Literal value*.
 . Click the *points* label to open the *Add a field* window and input `vPoints` and click *Set*.
 . In the *Function* field, enter `sum(vPoints)`.
-. Click image:6176.png[] next to line 2 (the *vPoints* label) to open the *Add a condition to the rule* window.
-. Select *Free from DRL* and click *Ok*.
-. Enter the following in the _Add free form DRL..._ text box (line 3):
-+
-----
-eval((previousPts+totalNewPoints)>=20)
-----
-+
+. Select *greater than or equal to* from the *totalNewPoints* -> *please choose* pull-down menu.
+. Click image:6176.png[] next to *greater than or equal to*, click *New formula*, and enter `20-previousPts` in the new field.
+. Click *Save*, then click *Save* to confirm your changes.
 
 .Suspension Rule conditions
 image::rule-conditions.png[]
