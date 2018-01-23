@@ -16,7 +16,7 @@ Created both the Violation and Driver data objects.
  * *Package*: `org.jboss.example.traffic_violations`
 +
 
-. Click *Ok* to open the *Guided Rule designer*.
+. Click *+Ok* to open the *Guided Rule designer*.
 +
 
 .Create new Guided Rule window
@@ -25,10 +25,14 @@ image::guided-rule.png[]
 == Setting the Suspension rule conditions
 
 . Click image:6176.png[] next to the *WHEN* label to open the *Add a condition to the rule* window. . . Select *Driver...* and click *Ok*.
++
+
+.Create new Guided Rule window
+image::add-condition.png[]
 . Click the *There is a Driver* label to open the *Modify contraints for Driver* window.
 . Enter `driver` in the *Variable name* field and click *Set*.
-. Click the *There is a Driver[driver]* label to open the *Modify contraints for Driver* window.
-. Click *Expression editor* -> *[not bound]* to open the *Expression editor*.
+. Click the *There is a Driver[driver] with* and click *Expression editor*
+. Click *[not bound]* to open the *Expression editor*.
 . In the *Bind the Expression to a new variable* field, enter: `previousPts` and click *Set*.
 . From the *Choose...* menu, select *totalPoints*.
 . Click image:6176.png[] next to line 1 (the *previousPts* label) to open the *Add a condition to the rule* window.
