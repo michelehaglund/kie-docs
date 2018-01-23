@@ -1,4 +1,4 @@
-[id='guided_decision_tables_con']
+[id='decision_tables_con']
 = Decision Tables
 
 Rules can be stored in spreadsheet decision tables. Each row in the spreadsheet is a rule, and each column is either a condition, an action, or an option.
