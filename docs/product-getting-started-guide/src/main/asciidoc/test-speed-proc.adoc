@@ -37,7 +37,7 @@ The following chapter instructs you how to test the speed limit scenario using t
 . Select *points* from the *Choose a field to add* pull-down menu and click *+OK*.
 . Enter `1` in the *points: equals* field.
 . Click *Save*, then click *Save* to confirm your changes.
-. Click *Run scenario*. *<MH> Ivo, let's expand on the expected results for the reader.</MH>*
+. Click *Run scenario*.
 +
 
 .Speed test results screen
