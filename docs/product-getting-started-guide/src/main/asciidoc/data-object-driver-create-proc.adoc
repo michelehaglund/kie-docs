@@ -25,10 +25,6 @@ image::data-object2.png[]
 == Adding the Driver data object data fields
 
 . In the `'Driver'- general properties` section, locate the *Label* property and enter: *Driver*.
-+
-
-.General properties
-image::gen-props2.png[]
 . Click *+ add field*.
 . Enter the following values:
 +
