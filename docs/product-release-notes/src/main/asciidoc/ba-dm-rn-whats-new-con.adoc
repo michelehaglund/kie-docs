@@ -1,11 +1,10 @@
-
 [id='ba-dm-rn-whats-new-con']
 = What's New
 
 This section highlights new features in {PRODUCT} {PRODUCT_VERSION} Limited Availability.
 
 == Business Central
- 
+
 === Improved Navigation
 
 .Navigation between views
@@ -117,20 +116,20 @@ When tasks are assigned to a group of users, you can use pluggable task assignme
 The process execution server (also known as kie-server) has been extended to support core engine features and offers a remote API for these operations. In addition the following architectural changes were introduced.
 
 ==== Separate Business Central from execution server
-Business Central now delegates all of its requests to the execution server. The main advantage is that Business Central can now be used to monitor any set of execution servers. By linking the execution server to Business Central, the process and task monitoring UIs in Business Central can now connect to this execution server and show all relevant information. When multiple independent execution servers are used, you can either connect to a specific one or use the smart router to aggregate information across multiple servers. 
+Business Central now delegates all of its requests to the execution server. The main advantage is that Business Central can now be used to monitor any set of execution servers. By linking the execution server to Business Central, the process and task monitoring UIs in Business Central can now connect to this execution server and show all relevant information. When multiple independent execution servers are used, you can either connect to a specific one or use the smart router to aggregate information across multiple servers.
 
 ==== Smart router
 The smart router (also known as kie-server-router) can be used as a proxy to help manage multiple independent process execution servers.
 
 ==== Aliases
 You can now use aliases instead of container IDs in the remote REST APIs of the execution server. For more information, see the "Editing container aliases through Business Central" section of the _{PRODUCT} User Guide_.
- 
+
 === Business Central Monitoring web application
 This release includes a new distribution `war` file that enables you to build custom cloud images. Use the Business Central Monitoring web application with Decision Server instances to manage containers, process instances, tasks, dashboards, and other runtime capabilities in the cloud. Unlike the standard Business Central distribution, no authoring capabilities are available.
 
 NOTE:
 For on-premise deployments, use the standard Business Central `war` file.
- 
+
 === Work Item archetype
 
 To help users build custom service tasks (work items), {PRODUCT} comes with the Work Item archetype that generates the majority of items required to build a custom service task.  The archetype includes the following:
@@ -145,7 +144,7 @@ The Maven assembly (zip) packages everything at build time so it can be consumed
 KIE Server has been enhanced with additional Maven plugins that enable interaction with the KIE Server and KIE Controller REST API directly from within a build. This interaction facilitates easier integration with CI/CD pipelines when building KJars so they can be directly deployed to the execution environment (both managed and unmanaged KIE Servers).
 
 == Business Resource Planner
-* Multi-threaded partitioned search is available. Business Resource Planner now has out-of-the box support for solving a single data set by partitioning across multiple threads. This enhancement makes use of multiple CPU cores for a single problem. Partitioned search can implement geo-fencing for Vehicle Routing use cases. 
+* Multi-threaded partitioned search is available. Business Resource Planner now has out-of-the box support for solving a single data set by partitioning across multiple threads. This enhancement makes use of multiple CPU cores for a single problem. Partitioned search can implement geo-fencing for Vehicle Routing use cases.
 * The Solution interface is deprecated. Your solution class requires only the `@PlanningSolution` annotation.
 * You no longer need to define the score type in the solver configuration. Business Resource Planner now determines it automatically from the domain model.
 * The Business Resource Planner Solver editor screen now supports adding all termination types, including composite termination. The phase configuration section enables you to tweak Construction Heuristic settings and select the local search algorithm to optimize your planning problem.
@@ -153,4 +152,26 @@ KIE Server has been enhanced with additional Maven plugins that enable interacti
 * The Business Resource Planner domain editor can now specify a planning entity difficulty. Navigate through the object hierarchy and define the sorting attributes. Several construction heuristic algorithms use this information to construct a better initial solution.
 * The Business Resource Planner execution server now supports real-time planning.
 
+== Business Application Templates
 
+=== Packages
+A package includes a collection of application templates. You can download any available package containing the application that meets your business requirements. {PRODUCT} {PRODUCT_VERSION} will contain the *Employee Roster* template *<MH> or Package</MH>*. The *Vehicle Routing* template *<MH> or Package</MH>* will be added in {PRODUCT} 7.1 and Red Hat Business Automation 7.0.
+
+The notion here is over time we continue to build this package with additional templates that helps drive adoption of our technologies.
+
+=== Package delivery
+This package would be downloadable from Customer Portal.
+Included in both DM and BA distributions.
+This package delivery could coincide with the product GA release or a follow on distributions.
+In theory we should be able to update the content of this package anytime.
+
+=== Package contents
+For immediate release, it would only include Employee Roster template.  Fro DM 7.1 / BA 7.0 release it would include Vehicle Routing as well.
+We will continuously evaluate possible value adds that we could include in the package.
+
+=== Package support
+This package is not an integral part of the product.  It is a template that we encourage customers to adopt, modify and make it work for their needs.
+This is intended for development purposes of customer solution.
+The content of the package itself does not carry specific product SLAs.  We encourage customers to report issues, feedback and request for enhancements.
+We would consider them for future updates of the templates.
+However the standard support entitlement of bug fixes, patches etc is limited to product bits only.
