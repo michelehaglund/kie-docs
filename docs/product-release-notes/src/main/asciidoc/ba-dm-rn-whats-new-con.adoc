@@ -160,18 +160,11 @@ A package includes a collection of application templates. You can download any a
 We will continue to add new packages in future releases to introduce and assist users with building solutions for a variety of {PRODUCT} implementations.
 
 === Package delivery
-This package would be downloadable from Customer Portal.
-Included in both DM and BA distributions.
-This package delivery could coincide with the product GA release or a follow on distributions.
-In theory we should be able to update the content of this package anytime.
-
-=== Package contents
-For immediate release, it would only include Employee Roster template.  Fro DM 7.1 / BA 7.0 release it would include Vehicle Routing as well.
-We will continuously evaluate possible value adds that we could include in the package.
+Packages are downloaded from the Customer Portal and are included in both {PRODUCT} and Red Hat Business Automation distributions.
 
 === Package support
-This package is not an integral part of the product.  It is a template that we encourage customers to adopt, modify and make it work for their needs.
-This is intended for development purposes of customer solution.
-The content of the package itself does not carry specific product SLAs.  We encourage customers to report issues, feedback and request for enhancements.
-We would consider them for future updates of the templates.
-However the standard support entitlement of bug fixes, patches etc is limited to product bits only.
+Packages are not an integral part of {PRODUCT} and Red Hat Business Automation distributions and are intended for development purposes of customer solutions. They are provided to encourage customers to adopt and modify them to work for their specific needs.
+The content of the package itself does not carry specific product Service Level Agreements (SLAs). We encourage you to report issues, request for enhancements, and any other feedback, which we will consider for package updates.
+
+NOTE:
+Support of bug fixes, patches, and so on is limited to {PRODUCT} and Red Hat Business Automation distributions.
