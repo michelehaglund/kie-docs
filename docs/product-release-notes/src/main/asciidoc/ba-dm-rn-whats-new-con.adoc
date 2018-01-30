@@ -152,19 +152,19 @@ KIE Server has been enhanced with additional Maven plugins that enable interacti
 * The Business Resource Planner domain editor can now specify a planning entity difficulty. Navigate through the object hierarchy and define the sorting attributes. Several construction heuristic algorithms use this information to construct a better initial solution.
 * The Business Resource Planner execution server now supports real-time planning.
 
-== Business Application packages
+== Business Application templates
 
-=== Packages
-A package includes a collection of application templates that you can modify to meet your business requirements. {PRODUCT} {PRODUCT_VERSION} contains the *Employee Roster* package. The *Vehicle Routing* package will be added in {PRODUCT} 7.1 and Red Hat Business Automation 7.0.
+=== Templates
+Business application templates are packaged and provided with {PRODUCT} and can be modified to meet your business requirements. {PRODUCT} {PRODUCT_VERSION} contains the *Employee Roster* template. The *Vehicle Routing* template will be added in {PRODUCT} 7.1 and Red Hat Business Automation 7.0.
 
-We will continue to add new packages in future releases to introduce and assist users with building solutions for a variety of {PRODUCT} implementations.
+We will continue to add new templates in future releases to introduce and assist users with building solutions for a variety of {PRODUCT} implementations.
 
-=== Package delivery
-Packages are downloaded from the Customer Portal and are included in both {PRODUCT} and Red Hat Business Automation distributions.
+=== Template delivery
+Templates are downloaded from the Customer Portal and are included in both {PRODUCT} and Red Hat Business Automation distributions.
 
-=== Package support
-Packages are not an integral part of {PRODUCT} and Red Hat Business Automation distributions and are intended for development purposes of customer solutions. Packages are provided to encourage customers to adopt and modify them to work for their specific needs.
-The content of the package itself does not carry product-specific Service Level Agreements (SLAs). We encourage you to report issues, request for enhancements, and any other feedback for consideration in package updates.
+=== Template support
+Business application templates are not an integral part of {PRODUCT} and Red Hat Business Automation distributions and are intended for development purposes of customer solutions. Templates are provided to encourage customers to adopt and modify them to work for their specific needs.
+The content of the template itself does not carry product-specific Service Level Agreements (SLAs). We encourage you to report issues, request for enhancements, and any other feedback for consideration in template updates.
 
 NOTE:
 Support of bug fixes, patches, and so on is limited to {PRODUCT} and Red Hat Business Automation distributions.
