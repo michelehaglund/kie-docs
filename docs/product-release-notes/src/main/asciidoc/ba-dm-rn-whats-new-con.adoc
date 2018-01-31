@@ -167,4 +167,4 @@ Business application templates are not an integral part of {PRODUCT} and Red Hat
 The content of the template itself does not carry product-specific Service Level Agreements (SLAs). We encourage you to report issues, request for enhancements, and any other feedback for consideration in template updates.
 
 NOTE:
-[Production support|https://access.redhat.com/support/offerings/production/soc] is limited to {PRODUCT} and Red Hat Business Automation distributions.
+https://access.redhat.com/support/offerings/production/soc[Production support] is limited to {PRODUCT} and Red Hat Business Automation distributions.
