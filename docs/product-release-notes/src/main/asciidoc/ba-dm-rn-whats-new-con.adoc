@@ -166,5 +166,7 @@ Templates are downloaded from the Customer Portal and are included in both {PROD
 Business application templates are not an integral part of {PRODUCT} and Red Hat Business Automation distributions and are intended for development purposes of customer solutions. Templates are provided to encourage customers to adopt and modify them to work for their specific needs.
 The content of the template itself does not carry product-specific Service Level Agreements (SLAs). We encourage you to report issues, request for enhancements, and any other feedback for consideration in template updates.
 
+Red Hat Support will provide guidance on the use of this template on a commercially reasonable basis for its intended use, excluding the provided example UI code provided within.
+
 NOTE:
 https://access.redhat.com/support/offerings/production/soc[Production support] is limited to {PRODUCT} and Red Hat Business Automation distributions.
