@@ -156,11 +156,11 @@ KIE Server has been enhanced with additional Maven plugins that enable interacti
 == New product names
 The following components have been renamed in {PRODUCT} {PRODUCT_VERSION}:
 
-*<MH>SME reviewer - I have added most of what I can find from the https://docs.google.com/document/d/1vypMG1ple4OXG9krcZ5-VbsQm_AGCOap_7pe6pMI4qs/edit#heading=h.nb7wjb26zsjt doc. Please advise on anything that needs correction. Also, let me know if I should remove anything that definitely does pertain to RHDM.</MH>*
+*<MH>SME reviewer* - I have added most of what I can find from the https://docs.google.com/document/d/1vypMG1ple4OXG9krcZ5-VbsQm_AGCOap_7pe6pMI4qs/edit#heading=h.nb7wjb26zsjt doc. Please advise on anything that needs correction. Also, let me know if I should remove anything that definitely does pertain to RHDM.</MH>
 
 .Renamed components
 --
-[cols="1,2,3",options="header"]
+[cols="1,2,3",grid="all",options="header"]
 |===
 | Component
 | Old name
