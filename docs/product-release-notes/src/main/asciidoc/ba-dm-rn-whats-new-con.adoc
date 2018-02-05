@@ -156,57 +156,37 @@ KIE Server has been enhanced with additional Maven plugins that enable interacti
 == New product names
 The following components have been renamed in {PRODUCT} {PRODUCT_VERSION}:
 
-*<MH>SME reviewer* - I have added most of what I can find from the https://docs.google.com/document/d/1vypMG1ple4OXG9krcZ5-VbsQm_AGCOap_7pe6pMI4qs/edit#heading=h.nb7wjb26zsjt doc. Please advise on anything that needs correction. Also, let me know if I should remove anything that definitely does pertain to RHDM.</MH>
-
 .Renamed components
 --
-[cols="1,2,3",grid="all",options="header"]
+[cols="1,2",grid="all",options="header"]
 |===
-| Component
 | Old name
 | New name
 
-| Business automation
-| Business Rule Management System (BRMS)
+| Red Hat JBoss BRMS
 | Red Hat Decision Manager (RHDM)
 
-| Planner *<MH>Need SME clarification of the following for "Planner" and "Business Resource Planner". Which of the two rows is best?
 | Business Resource Planner
 | Business Optimizer
 
-| Business Resource Planner
-| OptaPlanner; planner
-| Resource Optimizer, OptaPlanner, or just Planner
-
-| Process designer
 | Guided editor
 | Process designer
 
-| Guided Decision Table designer
 | Guided Decision Table editor
 | Guided Decision Table designer
 
-| Process server
 | Process server; KIE server
 | Process Server
 
-| Decision server
 | Decision server; KIE server
 | Decision Server
 
-| Planner server
 | KIE server
-| Planner Server
+| Planner Server, KIE server
 
-| KIE server
-| KIE server
-| KIE Server
-
-| Controller
 | Standalone Controller
 | Controller
 
-| Interface engine
 | Drools engine; Rules engine
 | Decision engine, Process engine
 
