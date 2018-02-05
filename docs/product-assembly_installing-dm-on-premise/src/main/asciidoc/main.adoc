@@ -1,4 +1,4 @@
-[id='assembly_installing-dm-on-premise']
+[[assembly_installing-dm-on-premise]]
 
 include::product-shared-docs/document-attributes.adoc[]
 
@@ -9,22 +9,81 @@ include::product-shared-docs/document-attributes.adoc[]
 include::product-shared-docs/author-group.adoc[]
 
 // Purpose statement for the assembly
-As a business analyst, you can use guided decision tables to define business rules in a wizard-led tabular format. These rules are compiled into Drools Rule Language (DRL) and form the core of the decision service for your project.
-
-Red Hat JBoss Enterprise Application Platform 7.0 (JBoss EAP 7) is a certified implementation of the Java Enterprise Edition 7 (Java EE 7) Full and Web profile specifications. JBoss EAP provides preconfigured options for features such as high-availability clustering, messaging, and distributed caching. It also enables users to write, deploy, and run applications using the various APIs and services that JBoss EAP provides.
-
-[NOTE]
-====
-This section describes configuring Business Central and Execution Server in the same container. In production environments, they are usually run in different containers.
-====
-
-Unlike previous versions of {PRODUCT}, the installation of version {PRODUCT_VERSION} {RELEASE} on EAP consists of multiple deployable ZIP files, each for one component of the product, to provide additional flexibility.
-
-For information on how to install {EAP} 7.0.8 on your computer, see the https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/installation_guide/[{EAP} Installation Guide].
-
 include::product-installation-guide/ba-dm-installing-con.adoc[leveloffset=+1]
-include::product-installation-guide/ba-dm-supported-platforms-ref.adoc[leveloffset=+2]
-include::product-installation-guide/ba-dm-supported-component-versions-ref.adoc[leveloffset=+2]
-include::product-installation-guide/assembly_installing-on-eap.adoc[leveloffset=+1]
+
+== Planning the installation
+COMMENT: This section needs to tell the user everything that needs to be considered before installation. Give an overview of the products and components and highlight any decisions that they will have to make during installation, for example clustering.
+
+=== Supporting tools 
+
+* What tools do you need? Why? 
+* What comes in the packages?
+
+include::product-installation-guide/dm-components-con.adoc[leveloffset=+2]
+include::product-installation-guide/install-options-proc.adoc[leveloffset=+3]
+include::product-installation-guide/ba-dm-supported-platforms-ref.adoc[leveloffset=+3]
+include::product-installation-guide/ba-dm-supported-component-versions-ref.adoc[leveloffset=+3]
+
+=== High Availability and Clustering
+* What is high availability?
+* What is clustering?
+* Why should you do it? 
+* How do you implement it?
+
+//include::product-installation-guide/clustering-con.adoc[leveloffset=+3]
+//include::product-installation-guide/clustering-git-repo-con.adoc[leveloffset=+3]
+//include::product-installation-guide/clustering-maven-repo-con.adoc[leveloffset=+3]
+include::product-installation-guide/roles-users-con.adoc[leveloffset=+2]
+
+COMMENT: We need to make sure that this section sets up a real production environment, including high availability and clustering. Some information about configuration topics needed from previous chapter 3 and the appendix in the BRMS admin/cfg guide.
+
+include::product-installation-guide/installing-on-eap-con.adoc[leveloffset=+1]
+include::product-installation-guide/install-download-proc.adoc[leveloffset=+2]
+include::product-installation-guide/assembly_installing-on-eap-installer.adoc[leveloffset=+2]
+include::product-installation-guide/assembly_installing-on-eap-deployable.adoc[leveloffset=+2]
+
+== Configuring Clustering
+
+=== Clustering on Red Hat JBoss EAP 
+
+COMMENT: to be written
+COMMENT: Do we need to tell users how to cluster on other containers?
+
+== Configuring the Maven repository
+include::product-development-guide/maven-con.adoc[leveloffset=+2]
+include::product-development-guide/maven-repos-con.adoc[leveloffset=+2]
+include::product-development-guide/maven-repo-using-con.adoc[leveloffset=+2]
+
+== Installing supporting tools
+COMMENT: 6.4 content. Needs review.
+
+include::product-development-guide/dev-studio-install-proc.adoc[leveloffset=+2]
+include::product-development-guide/dev-studio-plug-in-install-proc.adoc[leveloffset=+2]
+include::product-development-guide/dm-server-configure-proc.adoc[leveloffset=+2]
+include::product-development-guide/dev-studio-import-projects-from-git-repo-con.adoc[leveloffset=+2]
+include::product-development-guide/dev-studio-clone-remote-git-repo-proc.adoc[leveloffset=+3]
+include::product-development-guide/dev-studio-import-local-git-repo-proc.adoc[leveloffset=+3]
+
+=== Verifying the installation by importing and running a sample in the test environment
+Comment: to be written
+
+== Configuring the Repository
+Comment: This section is about the initial set up of {CENTRAL}. Explain the way the repository is set up and how assets are managed. May be some content reusable from the old chapters 1 and 2 from the old BRMS Admin/Cfg guide.
+
+include::product-administration-and-configuration-guide/asset-repo-con.adoc[leveloffset=+2]
+include::product-administration-and-configuration-guide/org-unit-create-proc.adoc[leveloffset=+2]
+include::product-administration-and-configuration-guide/repo-create-proc.adoc[leveloffset=+2]
+
+=== Configure access control on {CENTRAL}
+include::product-administration-and-configuration-guide/access-control-con.adoc[leveloffset=+2]
+
+== Customize {CENTRAL}
+include::product-administration-and-configuration-guide/central-login-customize-proc.adoc[leveloffset=+2]
+include::product-administration-and-configuration-guide/central-app-header-customize-proc.adoc[leveloffset=+2]
+include::product-administration-and-configuration-guide/central-help-customize-proc.adoc[leveloffset=+2]
+
+COMMENT: How much of this section do we need?
+
+include::product-administration-and-configuration-guide/chap-integrating-red-hat-jboss-bxms-with-red-hat-sso.adoc[leveloffset=+1]
 
 include::product-shared-docs/versioning-information.adoc[]

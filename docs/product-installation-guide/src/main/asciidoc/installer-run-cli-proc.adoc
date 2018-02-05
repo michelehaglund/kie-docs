@@ -1,0 +1,79 @@
+[id='installer-run-cli-proc']
+= Installing {PRODUCT} Using the installer in CLI Mode
+
+The installer for {PRODUCT} can also be executed through the command-line interface (CLI). 
+
+[NOTE]
+====
+For security reasons, you should run the installer as a non-root user.
+====
+
+.Prerequisite
+
+* A backed up {EAP} installation, version 7.1 or higher. 
+* Sufficient user permissions to complete the installation.
+* The JAR binary inclcuded in `$PATH` environment variable. On Red Hat Enterprise Linux, it is included in the `java-$_JAVA_VERSION_-openjdk-devel` package.
+
+.Procedure
+. In a terminal window, navigate to the directory where you downloaded the installer file and enter the following command:
++
+[source]
+----
+java -jar rhdm-installer-7.0.0.CR1.jar -console
+
+----
++
+The command-line interactive process will start and display the End-User License Agreement. 
++
+[source]
+----
+press 1 to continue, 2 to quit, 3 to redisplay.
+----
+. Read the license agreement then enter `1` to continue:
++
+[source]
+----
+The location below must specify the JBOSS_HOME of an existing {EAP} installation.
+
+[/home/user/RHDM-7.0.0/jboss-eap-7.1]
+----
++
+. Enter the parent directory of an existing {EAP} 7.1 installation.
++
+The installer will verify the location of the {EAP} installation at the location provided. Enter `1` to confirm and continue.
+. Select the components that you want to install by entering the numbers next to the components, then enter `0` to confirm your selection.
+. Press `1` to continue.
+COMMENT: Need information on the TomCat8 options.
++
+[NOTE]
+====
+It is possible install Decision Manager and {KIE_SERVER} in the same container. However, you should install them in separate containers. To do this, run the installer twice, on different containers.
+====
++
+[source]
+----
+Create an administrative user
+This user will be added to the host container's management realm for administrative purposes. It can be used to access the management console, the management CLI or other applications secured in this realm.
+----
+. Press the Enter key to accept the default admin user name (`rhdmAdmin`) or enter a name of your choice.
+. Create and confirm a password for the admin user.
++
+[NOTE]
+====
+Make sure that the specified user name does not conflict with any known title of a role or a group. For example, if there is a role called `admin`, you should not create a user with the user name `admin`.
+
+The password must have at least eight characters and must contain at least one number and one non-alphanumeric character (_not_ including the character `&`).
+====
++
+Make a note of the user name and password. You will need them to access Decision Central or {KIE_SERVER} (or both).
++
+. Enter `1` to start the installation. When the installation has completed, you will see this message:
++
+[source]
+----
+Would you like to generate an automatic installation script and properties file?
+----
+. Enter `y` to create an XML file that contains the installatin date, or `n` to complete the installation. If you enter `y`, you are prompted to specify a path for the XML file. 
+. Enter a path or press the Enter key to accept the suggested path.
+
+You have successfully installed {PRODUCT}. If you installed only Decision Central, repeat these steps to install {KIE_SERVER} in a separate container.
