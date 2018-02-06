@@ -160,7 +160,7 @@ The following components have been renamed in {PRODUCT} {PRODUCT_VERSION}:
 --
 [cols="1,2",grid="all",options="header"]
 |===
-| Current downstream name
+| Red Hat JBoss BRMS 6.x
 | New name
 
 | Red Hat JBoss BRMS
