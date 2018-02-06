@@ -153,14 +153,14 @@ KIE Server has been enhanced with additional Maven plugins that enable interacti
 * The Business Resource Planner domain editor can now specify a planning entity difficulty. Navigate through the object hierarchy and define the sorting attributes. Several construction heuristic algorithms use this information to construct a better initial solution.
 * The Business Resource Planner execution server now supports real-time planning.
 
-== New product names
+== New component names
 The following components have been renamed in {PRODUCT} {PRODUCT_VERSION}:
 
 .Renamed components
 --
 [cols="1,2",grid="all",options="header"]
 |===
-| Old name
+| Current downstream name
 | New name
 
 | Red Hat JBoss BRMS
@@ -175,9 +175,6 @@ The following components have been renamed in {PRODUCT} {PRODUCT_VERSION}:
 | Guided Decision Table editor
 | Guided Decision Table designer
 
-| Process server; KIE server
-| Process Server
-
 | Decision server; KIE server
 | Decision Server
 
@@ -188,7 +185,7 @@ The following components have been renamed in {PRODUCT} {PRODUCT_VERSION}:
 | Controller
 
 | Drools engine; Rules engine
-| Decision engine, Process engine
+| Decision engine
 
 |===
 --
