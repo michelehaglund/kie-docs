@@ -1,0 +1,681 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE book [
+<!ENTITY % BOOK_ENTITIES SYSTEM "master.ent">
+%BOOK_ENTITIES;
+<!ENTITY % sgml.features "IGNORE">
+<!ENTITY % xml.features "INCLUDE">
+<!ENTITY % DOCBOOK_ENTS PUBLIC "-//OASIS//ENTITIES DocBook Character Entities V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/dbcentx.mod">
+%DOCBOOK_ENTS;
+]>
+<book version="5.0" xml:lang="en-US" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<?asciidoc-toc ?><?asciidoc-numbered ?>
+	<info>
+		<title>DRAFT Release Notes</title>
+		<subtitle> For Red Hat Decision Manager 7.0 </subtitle>
+		 <date>2018-02-05</date>
+		<xi:include href="Author_Group.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+		<authorinitials>RC</authorinitials><productname>Red Hat Decision Manager</productname>
+		<productnumber>7.0</productnumber>
+		<abstract>
+			<para>
+				This document contains release notes for Red Hat Decision Manager 7.0
+			</para>
+		</abstract>
+		<xi:include href="Common_Content/Legal_Notice.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+	</info>
+	<preface>
+		<title>Preface</title>
+		<simpara>
+			These release notes highlight new features in Red Hat Decision Manager 7.0, list features that are in technical preview, and include any known issues.
+		</simpara>
+	</preface>
+	<chapter xml:id="ba-dm-rn-intro-con">
+		<title>About Red Hat Decision Manager</title>
+		<simpara>
+			Red Hat Decision Manager is an open source decision management platform that combines business rules management and complex event processing. It automates business decisions and makes that logic available to the entire business.
+		</simpara>
+		<simpara>
+			Red Hat Decision Manager uses a centralized repository where all resources are stored. This ensures consistency, transparency, and the ability to audit across the business. Business users can modify business logic without requiring assistance from IT personnel.
+		</simpara>
+		<simpara>
+			Red Hat Decision Manager 7.0 Limited Availability further expands the product capabilities by providing an enhanced user experience, a simplified process design workflow, case management capabilities, an improved comprehensive dashboard, and optimized task handling and collaboration features.
+		</simpara>
+		<simpara>
+			The list of supported configurations for Red Hat Decision Manager is available at the <link xlink:href="https://access.redhat.com/articles/705183">Red Hat Customer Portal</link>. COMMENT: current?
+		</simpara>
+	</chapter>
+	<chapter xml:id="ba-dm-rn-whats-new-con">
+		<title>What’s New</title>
+		<simpara>
+			This section highlights new features in Red Hat Decision Manager 7.0.
+		</simpara>
+		<section remap="_business_central" xml:id="business_central">
+			<title>Business Central</title>
+			<section remap="_improved_navigation" xml:id="improved_navigation">
+				<title>Improved Navigation</title>
+				<formalpara>
+					<title>Navigation between views</title>
+					<para>
+						You can now navigate as follows:
+					</para>
+				</formalpara>
+				<itemizedlist>
+					<listitem>
+						<simpara>
+							From a process instance to the associated jobs
+						</simpara>
+					</listitem>
+					<listitem>
+						<simpara>
+							From a job to the associated process instance
+						</simpara>
+					</listitem>
+					<listitem>
+						<simpara>
+							From a process instance to the associated tasks
+						</simpara>
+					</listitem>
+				</itemizedlist>
+				<formalpara>
+					<title>Business Central Home page</title>
+					<para>
+						The Business Central Home page has been redesigned for easier navigation. For more information, see the "Business Central" chapter of the <emphasis>Red Hat Decision Manager User Guide</emphasis>.
+					</para>
+				</formalpara>
+			</section>
+			<section remap="_guided_decision_table" xml:id="guided_decision_table">
+				<title>Guided Decision Table</title>
+				<itemizedlist>
+					<listitem>
+						<simpara>
+							Guided Decision Table has a new wizard for creating and editing columns.
+						</simpara>
+					</listitem>
+					<listitem>
+						<simpara>
+							Hit policies are now available. Hit policies determine the order in which rules (rows) in a guided decision table are applied.
+						</simpara>
+					</listitem>
+					<listitem>
+						<simpara>
+							New support to display multiple linked guided decision tables in the Guided Decision Table Editor has been added.
+						</simpara>
+					</listitem>
+				</itemizedlist>
+			</section>
+			<section remap="_projects_metrics_dashboard" xml:id="projects_metrics_dashboard">
+				<title>Projects Metrics dashboard</title>
+				<simpara>
+					A new dashboard is available for every project listed in the Projects perspective. The Projects Metrics dashboard displays all of your project contribution metrics in one place. This new dashboard replaces the Contributors page, which was part of the Authoring group. For more information, see the "Projects Metrics dashboard" section of the <emphasis>Red Hat Decision Manager User Guide</emphasis>.
+				</simpara>
+			</section>
+			<section remap="_team_metrics_dashboard" xml:id="team_metrics_dashboard">
+				<title>Team Metrics dashboard</title>
+				<simpara>
+					The Team Metrics dashboard shows all of the project metrics for a team in a single page. This new dashboard replaces the older Contributors page, which was part of the Authoring group. For more information, see the "Team Metrics dashboard" section of the <emphasis>Red Hat Decision Manager User Guide</emphasis>.
+				</simpara>
+			</section>
+			<section remap="_new_columns_available_on_process_instances_tasks_and_jobs" xml:id="new_columns_available_on_process_instances_tasks_and_jobs">
+				<title>New columns available on process instances, tasks, and jobs</title>
+				<simpara>
+					The following columns have been added to the corresponding perspectives:
+				</simpara>
+				<itemizedlist>
+					<listitem>
+						<simpara>
+							Process instance list perspective: Last update and correlation key.
+						</simpara>
+					</listitem>
+					<listitem>
+						<simpara>
+							Task list: Last update, correlation key (of the associated process instance ID), process instance description (of the associated process instance).
+						</simpara>
+					</listitem>
+					<listitem>
+						<simpara>
+							Jobs perspective: Name of the associated process (if any), ID of the associated process instance (if any), Description of the associated process instance (if any).
+						</simpara>
+					</listitem>
+				</itemizedlist>
+			</section>
+			<section remap="_advanced_search_filter" xml:id="advanced_search_filter">
+				<title>Advanced search filter</title>
+				<simpara>
+					You can now search for specific data by using the <emphasis role="strong">Search</emphasis> tab on the Jobs, Process Instances, Task Administration, and Execution Errors perspectives. For information about the new search feature, see the "Using the advanced search filter pages" section of the <emphasis>Red Hat Decision Manager Limited Availability User Guide</emphasis>.
+				</simpara>
+			</section>
+			<section remap="_new_task_list_and_task_administration_perspectives" xml:id="new_task_list_and_task_administration_perspectives">
+				<title>New Task List and Task Administration perspectives</title>
+				<simpara>
+					The former Task List perspective has been divided into the Task List and Task Administration perspectives. The Task List perspective is used by task operators to work with their assigned (or potentially assigned) tasks. The Task Administration perspective is used by administrators to manage tasks assigned to other users. This perspective is only available for users with admin or process-admin roles. It is similar to the Admin filter tab on the former Task List perspective.
+				</simpara>
+			</section>
+			<section remap="_improved_validation_in_deployment_descriptor_editor" xml:id="improved_validation_in_deployment_descriptor_editor">
+				<title>Improved validation in deployment descriptor editor</title>
+				<simpara>
+					The deployment descriptor editor in Business Central has been improved to validate data entered for the following:
+				</simpara>
+				<itemizedlist>
+					<listitem>
+						<simpara>
+							Work item handlers
+						</simpara>
+					</listitem>
+					<listitem>
+						<simpara>
+							Event listeners
+						</simpara>
+					</listitem>
+					<listitem>
+						<simpara>
+							Marshalling strategies
+						</simpara>
+					</listitem>
+					<listitem>
+						<simpara>
+							Globals
+						</simpara>
+					</listitem>
+					<listitem>
+						<simpara>
+							Environment entries
+						</simpara>
+					</listitem>
+					<listitem>
+						<simpara>
+							Configuration
+						</simpara>
+					</listitem>
+				</itemizedlist>
+				<simpara>
+					The deployment descriptor editor performs the validation when a build is invoked or manually when a user clicks <emphasis role="strong">Validate</emphasis>.
+				</simpara>
+			</section>
+			<section remap="_error_handling" xml:id="error_handling">
+				<title>Error Handling</title>
+				<simpara>
+					While running a process instance or a job, the system now detects and stores execution errors such as exceptions after the maximum number of retries has been exceeded. If an error occurs, the system generates an event that contains the following data:
+				</simpara>
+				<informaltable colsep="1" frame="all" rowsep="1">
+					<tgroup cols="2">
+						<colspec colname="col_1" colwidth="33*"></colspec>
+						<colspec colname="col_2" colwidth="67*"></colspec>
+						<thead>
+							<row>
+								<entry align="left" valign="top">Data</entry>
+								<entry align="left" valign="top">Fields</entry>
+							</row>
+						</thead>
+						<tbody>
+							<row>
+								<entry align="left" morerows="2" valign="top">
+								<simpara>
+									Process model
+								</simpara>
+								</entry>
+								<entry align="left" valign="top">
+								<simpara>
+									processModelID
+								</simpara>
+								</entry>
+							</row>
+							<row>
+								<entry align="left" valign="top">
+								<simpara>
+									processModelVersion
+								</simpara>
+								</entry>
+							</row>
+							<row>
+								<entry align="left" valign="top">
+								<simpara>
+									processModelName
+								</simpara>
+								</entry>
+							</row>
+							<row>
+								<entry align="left" morerows="1" valign="top">
+								<simpara>
+									Process instance that has failed
+								</simpara>
+								</entry>
+								<entry align="left" valign="top">
+								<simpara>
+									processInstanceID
+								</simpara>
+								</entry>
+							</row>
+							<row>
+								<entry align="left" valign="top">
+								<simpara>
+									customProcessID
+								</simpara>
+								</entry>
+							</row>
+							<row>
+								<entry align="left" morerows="4" valign="top">
+								<simpara>
+									Activity that has failed
+								</simpara>
+								</entry>
+								<entry align="left" valign="top">
+								<simpara>
+									activityID
+								</simpara>
+								</entry>
+							</row>
+							<row>
+								<entry align="left" valign="top">
+								<simpara>
+									activityName
+								</simpara>
+								</entry>
+							</row>
+							<row>
+								<entry align="left" valign="top">
+								<simpara>
+									activityType
+								</simpara>
+								</entry>
+							</row>
+							<row>
+								<entry align="left" valign="top">
+								<simpara>
+									iteration
+								</simpara>
+								</entry>
+							</row>
+							<row>
+								<entry align="left" valign="top">
+								<simpara>
+									status
+								</simpara>
+								</entry>
+							</row>
+							<row>
+								<entry align="left" morerows="1" valign="top">
+								<simpara>
+									Error data
+								</simpara>
+								</entry>
+								<entry align="left" valign="top">
+								<simpara>
+									errorMessage: Message with the error that has occurred.
+								</simpara>
+								</entry>
+							</row>
+							<row>
+								<entry align="left" valign="top">
+								<simpara>
+									errorStack: Stack with error detail.
+								</simpara>
+								</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</informaltable>
+				<simpara>
+					The process instance list includes a new column that displays the number of errors per process instance which are not marked as acknowledged. When you select the column, a window appears which enables you to navigate to the new Error perspective.
+				</simpara>
+				<simpara>
+					The Execution Errors perspective lists any errors that occur during process instances or executor service jobs on a Decision Server. Use this perspective to help troubleshoot issues. It is visible to users with the admin and process-admin roles.
+				</simpara>
+			</section>
+		</section>
+		<section remap="_process_engine" xml:id="process_engine">
+			<title>Process Engine</title>
+			<section remap="_process_api_and_task_administration_api" xml:id="process_api_and_task_administration_api">
+				<title>Process API and task administration API</title>
+				<simpara>
+					A process administration API and task administration API have been introduced to simplify some of the more complex administrator use cases. You can use the process administration API to do the following:
+				</simpara>
+				<itemizedlist>
+					<listitem>
+						<simpara>
+							Retrieve all process definition nodes
+						</simpara>
+					</listitem>
+					<listitem>
+						<simpara>
+							Cancel node instances
+						</simpara>
+					</listitem>
+					<listitem>
+						<simpara>
+							Retrigger node instances
+						</simpara>
+					</listitem>
+					<listitem>
+						<simpara>
+							Update the timer (absolute or relative)
+						</simpara>
+					</listitem>
+					<listitem>
+						<simpara>
+							List timer instances
+						</simpara>
+					</listitem>
+					<listitem>
+						<simpara>
+							Trigger nodes
+						</simpara>
+					</listitem>
+				</itemizedlist>
+				<simpara>
+					You can use the task administration API to do the following:
+				</simpara>
+				<itemizedlist>
+					<listitem>
+						<simpara>
+							Add and remove potential owners and excluded owners and business administrators
+						</simpara>
+					</listitem>
+					<listitem>
+						<simpara>
+							Add and remove task inputs and outputs
+						</simpara>
+					</listitem>
+					<listitem>
+						<simpara>
+							List, create, and cancel escalations and notifications
+						</simpara>
+					</listitem>
+				</itemizedlist>
+			</section>
+			<section remap="_advanced_task_routing" xml:id="advanced_task_routing">
+				<title>Advanced task routing</title>
+				<simpara>
+					When tasks are assigned to a group of users, you can use pluggable task assignment strategies to automatically assign tasks to a suitable individual immediately. This enables more efficient task allocation, based on all properties associated with the task. For example, potential owners and task priority but also task data that includes information such as geography, required skills, and so on. You can use business rules to define the assignment logic, making it easy to customize this to your needs.
+				</simpara>
+			</section>
+			<section remap="_process_execution_server" xml:id="process_execution_server">
+				<title>Process execution server</title>
+				<simpara>
+					The process execution server (also known as kie-server) has been extended to support core engine features and offers a remote API for these operations. In addition the following architectural changes were introduced.
+				</simpara>
+				<section remap="_separate_business_central_from_execution_server" xml:id="separate_business_central_from_execution_server">
+					<title>Separate Business Central from execution server</title>
+					<simpara>
+						Business Central now delegates all of its requests to the execution server. The main advantage is that Business Central can now be used to monitor any set of execution servers. By linking the execution server to Business Central, the process and task monitoring UIs in Business Central can now connect to this execution server and show all relevant information. When multiple independent execution servers are used, you can either connect to a specific one or use the smart router to aggregate information across multiple servers.
+					</simpara>
+				</section>
+				<section remap="_smart_router" xml:id="smart_router">
+					<title>Smart router</title>
+					<simpara>
+						The smart router (also known as kie-server-router) can be used as a proxy to help manage multiple independent process execution servers.
+					</simpara>
+				</section>
+				<section remap="_aliases" xml:id="aliases">
+					<title>Aliases</title>
+					<simpara>
+						You can now use aliases instead of container IDs in the remote REST APIs of the execution server. For more information, see the "Editing container aliases through Business Central" section of the <emphasis>Red Hat Decision Manager User Guide</emphasis>.
+					</simpara>
+				</section>
+			</section>
+			<section remap="_business_central_monitoring_web_application" xml:id="business_central_monitoring_web_application">
+				<title>Business Central Monitoring web application</title>
+				<simpara>
+					This release includes a new distribution <literal>war</literal> file that enables you to build custom cloud images. Use the Business Central Monitoring web application with Decision Server instances to manage containers, process instances, tasks, dashboards, and other runtime capabilities in the cloud. Unlike the standard Business Central distribution, no authoring capabilities are available.
+				</simpara>
+				<simpara>
+					NOTE: For on-premise deployments, use the standard Business Central <literal>war</literal> file.
+				</simpara>
+			</section>
+			<section remap="_work_item_archetype" xml:id="work_item_archetype">
+				<title>Work Item archetype</title>
+				<simpara>
+					To help users build custom service tasks (work items), Red Hat Decision Manager comes with the Work Item archetype that generates the majority of items required to build a custom service task. The archetype includes the following:
+				</simpara>
+				<itemizedlist>
+					<listitem>
+						<simpara>
+							A Work Item Definition (WID) file
+						</simpara>
+					</listitem>
+					<listitem>
+						<simpara>
+							The Work Item Handler implementation class
+						</simpara>
+					</listitem>
+					<listitem>
+						<simpara>
+							The Work Item Handler test class
+						</simpara>
+					</listitem>
+				</itemizedlist>
+				<simpara>
+					The Maven assembly (zip) packages everything at build time so it can be consumed by the Service Repository and therefore be used from within the Web Designer.
+				</simpara>
+			</section>
+			<section remap="_kie_server_maven_plugins" xml:id="kie_server_maven_plugins">
+				<title>KIE Server Maven plugins</title>
+				<simpara>
+					KIE Server has been enhanced with additional Maven plugins that enable interaction with the KIE Server and KIE Controller REST API directly from within a build. This interaction facilitates easier integration with CI/CD pipelines when building KJars so they can be directly deployed to the execution environment (both managed and unmanaged KIE Servers).
+				</simpara>
+			</section>
+		</section>
+		<section remap="_business_resource_planner" xml:id="business_resource_planner">
+			<title>Business Resource Planner</title>
+			<itemizedlist>
+				<listitem>
+					<simpara>
+						Multi-threaded partitioned search is available. Business Resource Planner now has out-of-the box support for solving a single data set by partitioning across multiple threads. This enhancement makes use of multiple CPU cores for a single problem. Partitioned search can implement geo-fencing for Vehicle Routing use cases.
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						The Solution interface is deprecated. Your solution class requires only the <literal>@PlanningSolution</literal> annotation.
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						You no longer need to define the score type in the solver configuration. Business Resource Planner now determines it automatically from the domain model.
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						The Business Resource Planner Solver editor screen now supports adding all termination types, including composite termination. The phase configuration section enables you to tweak Construction Heuristic settings and select the local search algorithm to optimize your planning problem.
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						Examples are now part of Business Central and they work offline as well. Leverage tag-based filtering to quickly access projects from the field you are interested in.
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						The Business Resource Planner domain editor can now specify a planning entity difficulty. Navigate through the object hierarchy and define the sorting attributes. Several construction heuristic algorithms use this information to construct a better initial solution.
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						The Business Resource Planner execution server now supports real-time planning.
+					</simpara>
+				</listitem>
+			</itemizedlist>
+		</section>
+		<section remap="_new_product_names" xml:id="new_product_names">
+			<title>New product names</title>
+			<simpara>
+				<link xlink:href="https://issues.jboss.org/browse/BXMSDOC-2129">https://issues.jboss.org/browse/BXMSDOC-2129</link>
+			</simpara>
+		</section>
+		<section remap="_oracle_real_application_clusters_rac_12c" xml:id="oracle_real_application_clusters_rac_12c">
+			<title>Oracle Real Application Clusters (RAC) 12c</title>
+			<simpara>
+				Oracle Real Application Clusters (RAC) 12c is now supported with Red Hat Decision Manager. <link xlink:href="https://issues.jboss.org/browse/BXMSDOC-1750">https://issues.jboss.org/browse/BXMSDOC-1750</link>
+			</simpara>
+		</section>
+	</chapter>
+	<chapter xml:id="ba-dm-rn-tech-preview-con">
+		<title>Technical Preview</title>
+		<simpara>
+			COMMENT: Needs Review <link xlink:href="https://issues.jboss.org/browse/BXMSDOC-2103">https://issues.jboss.org/browse/BXMSDOC-2103</link>
+		</simpara>
+		<simpara>
+			This section lists features that are in technical preview in Red Hat Decision Manager 7.0. Where they are listed in the documentation these features also have a note similar to the following:
+		</simpara>
+		<important>
+			<simpara>
+				This feature a Technology Preview feature only. Technology Preview features are not supported with Red Hat production service level agreements (SLAs), might not be functionally complete, and Red Hat does not recommend to use them for production. These features provide early access to upcoming product features, enabling customers to test functionality and provide feedback during the development process. For more information on Red Hat Technology Preview features support scope, see <link xlink:href="https://access.redhat.com/support/offerings/techpreview/">https://access.redhat.com/support/offerings/techpreview/</link>
+			</simpara>
+		</important>
+		<itemizedlist>
+			<listitem>
+				<simpara>
+					Provising UI. It is part of Red Hat Decision Manager and disabled by default. COMMENT: how do we enable?
+				</simpara>
+			</listitem>
+			<listitem>
+				<simpara>
+					Ability to embed perspectives
+				</simpara>
+			</listitem>
+			<listitem>
+				<simpara>
+					Deployments perspective
+				</simpara>
+			</listitem>
+			<listitem>
+				<simpara>
+					Guided Decision Trees
+				</simpara>
+			</listitem>
+			<listitem>
+				<simpara>
+					Guided Score Cards
+				</simpara>
+			</listitem>
+			<listitem>
+				<simpara>
+					XLS Score Cards
+				</simpara>
+			</listitem>
+			<listitem>
+				<simpara>
+					New jBPM Designer
+				</simpara>
+			</listitem>
+		</itemizedlist>
+		<orderedlist numeration="arabic">
+			<title>Enabling the Deployments perspective</title>
+			<listitem>
+				<simpara>
+					Go to <emphasis role="strong">Settings</emphasis> → <emphasis role="strong">Roles</emphasis>.
+				</simpara>
+			</listitem>
+			<listitem>
+				<simpara>
+					Select the role that you want to enable. Note that the Deployments perspective is available only for the admin, analyst, and developer roles.
+				</simpara>
+			</listitem>
+			<listitem>
+				<simpara>
+					In the Permissions section, click the arrow next to Perspectives.
+				</simpara>
+			</listitem>
+			<listitem>
+				<simpara>
+					Do one of the following:
+				</simpara>
+				<itemizedlist>
+					<listitem>
+						<simpara>
+							If the Deployments perspective is listed, click <emphasis role="strong">Read</emphasis> next to Deployments.
+						</simpara>
+					</listitem>
+					<listitem>
+						<simpara>
+							If the Deployments perspective is not listed, select it from the <emphasis role="strong">Select Perspective</emphasis> menu, then click <emphasis role="strong">Read</emphasis> next to Deployments.
+						</simpara>
+					</listitem>
+					<listitem>
+						<simpara>
+							If the <emphasis role="strong">Select Perspective</emphasis> menu is not visible, click <emphasis role="strong">Add Exception</emphasis> to make is visible, select <emphasis role="strong">Deployments</emphasis> from the <emphasis role="strong">Select Perspective</emphasis> menu, then click <emphasis role="strong">Read</emphasis> next to Deployments.
+						</simpara>
+						<simpara>
+							The <emphasis role="strong">Read</emphasis> button turns blue.
+						</simpara>
+					</listitem>
+				</itemizedlist>
+			</listitem>
+			<listitem>
+				<simpara>
+					Click <emphasis role="strong">Save</emphasis>. The DevOps → <emphasis role="strong">Deployments</emphasis> link is now available on the Home page.
+				</simpara>
+			</listitem>
+		</orderedlist>
+		<orderedlist numeration="arabic">
+			<title>Enabling the Guided Decision Tree editor, Guided Score Card editor, XLS Score Card editor, and the New jBPM Designer editor</title>
+			<listitem>
+				<simpara>
+					Go to <emphasis role="strong">Settings</emphasis> → <emphasis role="strong">Roles</emphasis>.
+				</simpara>
+			</listitem>
+			<listitem>
+				<simpara>
+					Select the role that you want to enable. These editors are available for all roles.
+				</simpara>
+			</listitem>
+			<listitem>
+				<simpara>
+					In the Permissions section, click the arrow next to Editors.
+				</simpara>
+			</listitem>
+			<listitem>
+				<simpara>
+					Click <emphasis role="strong">Read</emphasis> next to the editor that you want to enable. The <emphasis role="strong">Read</emphasis> button turns blue.
+				</simpara>
+			</listitem>
+			<listitem>
+				<simpara>
+					Click <emphasis role="strong">Save</emphasis>. The editor is now enabled for the selected role.
+				</simpara>
+			</listitem>
+		</orderedlist>
+	</chapter>
+	<chapter xml:id="ba-dm-rn-known-issues-con">
+		<title>Known Issues</title>
+		<simpara>
+			This section lists known issues with Red Hat Decision Manager 7.0 Limited Availability.
+		</simpara>
+		<itemizedlist>
+			<listitem>
+				<simpara>
+					The OpenShift product images have been removed for this release.
+				</simpara>
+			</listitem>
+			<listitem>
+				<simpara>
+					RHBRMS-2928 After creation of a perspective security management throws exception
+				</simpara>
+				<simpara>
+					If a new perspective is created and security management settings are changed, an exception is displayed in a dialog box.
+				</simpara>
+			</listitem>
+			<listitem>
+				<simpara>
+					RHBPMS-4976 Java-level deadlock after cloning a repository
+				</simpara>
+				<simpara>
+					After cloning repositories, creating, or deleting teams, Workbench stops responding and several threads are in the BLOCKED state on the server.
+				</simpara>
+			</listitem>
+			<listitem>
+				<simpara>
+					RHBPMS-5061 [Security management] Rediscovered permission exception
+				</simpara>
+				<simpara>
+					When there is some permission exception for specific name of an item (perspective, repository, org. unit or project) and the item is deleted or renamed, the exception disappears. When you create another item with the same name, the exception is back in the list of exceptions.
+				</simpara>
+			</listitem>
+		</itemizedlist>
+	</chapter>
+	<appendix remap="_versioning_information" xml:id="versioning_information">
+		<title>Versioning information</title>
+		<simpara>
+			Documentation last updated on: Fri Sep 29, 2017.
+		</simpara>
+	</appendix>
+</book>
+
