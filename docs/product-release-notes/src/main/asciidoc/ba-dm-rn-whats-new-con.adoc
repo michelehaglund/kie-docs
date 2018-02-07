@@ -61,7 +61,8 @@ Business application templates are provided with {PRODUCT} and can be modified t
 Templates are downloaded from the Customer Portal and are included in the {PRODUCT} distribution.
 
 === Template support
-*Don and Martin need to confirm this info*
+*Don and Martin need to confirm this info - Per 2/7 email from Don: Michele, The template support statement looks OK to me.*
+
 Business application templates are not an integral part of {PRODUCT} and are intended for development purposes of customer solutions. Templates are provided to encourage customers to adopt and modify them to work for their specific needs.
 The content of the template itself does not carry product-specific Service Level Agreements (SLAs). We encourage you to report issues, request for enhancements, and any other feedback for consideration in template updates.
 
