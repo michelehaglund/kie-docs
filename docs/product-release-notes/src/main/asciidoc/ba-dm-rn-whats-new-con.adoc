@@ -28,7 +28,7 @@ The {KIE_SERVER} (also known as kie-server) has been extended to support core en
 {PRODUCT} now delegates all of its requests to the execution server. The main advantage is that {PRODUCT} can now be used to monitor any set of execution servers. *Edson - Still valid, anything missing?*
 
 ==== Smart router
-The smart router (also known as kie-server-router) can be used as a proxy to help manage multiple independent process execution servers. *<MH>Emily may know if the smart router is needed for DM</MH>*
+The smart router (also known as kie-server-router) can be used as a proxy to help manage multiple independent process execution servers. *<MH>Is the smart router is needed for DM?</MH>*
 
 ==== Aliases
 You can now use aliases instead of container IDs in the remote REST APIs of the execution server. *Edson - still valid, or even necessary to add here?*
@@ -42,15 +42,15 @@ For on-premise deployments, use the standard {PRODUCT} `war` file.
 === KIE Server Maven plugins
 KIE Server has been enhanced with additional Maven plugins that enable interaction with the KIE Server and KIE Controller REST API directly from within a build. This interaction facilitates easier integration with CI/CD pipelines when building KJars so they can be directly deployed to the execution environment (both managed and unmanaged KIE Servers).*Edson - still valid, or also, shouldn't this be {KIE_SERVER}?*
 
-== Business Optimizer - Reword throughout!
-* Multi-threaded partitioned search is available. Business Resource Planner now has out-of-the box support for solving a single data set by partitioning across multiple threads. This enhancement makes use of multiple CPU cores for a single problem. Partitioned search can implement geo-fencing for Vehicle Routing use cases.
+== Business Optimizer
+* Multi-threaded partitioned search is available. Business Optimizer now has out-of-the box support for solving a single data set by partitioning across multiple threads. This enhancement makes use of multiple CPU cores for a single problem. Partitioned search can implement geo-fencing for Vehicle Routing use cases.
 * The Solution interface is deprecated. Your solution class requires only the `@PlanningSolution` annotation.
-* You no longer need to define the score type in the solver configuration. Business Resource Planner now determines it automatically from the domain model.
-* The Business Resource Planner Solver editor screen now supports adding all termination types, including composite termination. The phase configuration section enables you to tweak Construction Heuristic settings and select the local search algorithm to optimize your planning problem.
+* You no longer need to define the score type in the solver configuration. Business Optimizer now determines it automatically from the domain model.
+* The Business Optimizer editor screen now supports adding all termination types, including composite termination. The phase configuration section enables you to tweak Construction Heuristic settings and select the local search algorithm to optimize your planning problem.
 
 *Geoffrey De Smet and Jiri Locker - Since employee roster is the only one we are providing this release, should we rework, or remove this section?*
-* The Business Resource Planner domain editor can now specify a planning entity difficulty. Navigate through the object hierarchy and define the sorting attributes. Several construction heuristic algorithms use this information to construct a better initial solution.
-* The Business Resource Planner execution server now supports real-time planning.
+* The Business Optimizer domain editor can now specify a planning entity difficulty. Navigate through the object hierarchy and define the sorting attributes. Several construction heuristic algorithms use this information to construct a better initial solution.
+* The Business Optimizer execution server now supports real-time planning.
 
 == Business Application templates
 
