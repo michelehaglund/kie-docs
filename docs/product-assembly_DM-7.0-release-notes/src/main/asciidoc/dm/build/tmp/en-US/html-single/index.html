@@ -1,0 +1,292 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" class="chrometwo"><head><title>Release notes</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css"/><meta name="generator" content="publican v4.3.4"/><meta name="description" content="This document contains release notes for Red Hat Decision Manager 7.0"/><link rel="next" href="#idm140127092709152" title="Preface"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><script type="text/javascript" src="Common_Content/scripts/jquery-1.7.1.min.js"> </script><script type="text/javascript" src="Common_Content/scripts/utils.js"> </script><script type="text/javascript" src="Common_Content/scripts/highlight.js/highlight.pack.js"> </script></head><body><div id="chrometwo"><div id="main"><div xml:lang="en-US" class="book" id="idm140127092632752"><div class="titlepage"><div><div class="producttitle"><span class="productname">Red Hat Decision Manager</span> <span class="productnumber">7.0</span></div><div><h1 class="title">Release notes</h1></div><div><h2 class="subtitle"> For Red Hat Decision Manager 7.0 </h2></div><div><div xml:lang="en-US" class="authorgroup"><div class="author"><h3 class="author"><span class="firstname">Red Hat</span> <span class="surname">Customer Content Services</span></h3><code class="email"><a class="email" href="mailto:brms-docs@redhat.com">brms-docs@redhat.com</a></code></div></div></div><div><a href="#idm140127098770448">Legal Notice</a></div><div><div class="abstract"><p class="title"><strong>Abstract</strong></p><div class="para">
+				This document contains release notes for Red Hat Decision Manager 7.0
+			</div></div></div></div><hr/></div><div class="toc"><ul class="toc"><li><span class="preface"><a href="#idm140127092709152">Preface</a></span></li><li><span class="chapter"><a href="#ba-dm-rn-intro-con">1. About Red Hat Decision Manager</a></span></li><li><span class="chapter"><a href="#ba-dm-rn-whats-new-con">2. What’s new</a></span><ul><li><span class="section"><a href="#business_central">2.1. Business Central</a></span><ul><li><span class="section"><a href="#improved_navigation">2.1.1. Improved navigation</a></span></li><li><span class="section"><a href="#guided_decision_table">2.1.2. Guided Decision Table</a></span></li><li><span class="section"><a href="#projects_metrics_dashboard">2.1.3. Projects Metrics dashboard</a></span></li><li><span class="section"><a href="#team_metrics_dashboard">2.1.4. Team Metrics dashboard</a></span></li><li><span class="section"><a href="#new_columns_available_on_process_instances_tasks_and_jobs">2.1.5. New columns available on process instances, tasks, and jobs</a></span></li><li><span class="section"><a href="#advanced_search_filter">2.1.6. Advanced search filter</a></span></li><li><span class="section"><a href="#new_task_list_and_task_administration_perspectives">2.1.7. New Task List and Task Administration perspectives</a></span></li><li><span class="section"><a href="#improved_validation_in_deployment_descriptor_editor">2.1.8. Improved validation in deployment descriptor editor</a></span></li><li><span class="section"><a href="#error_handling">2.1.9. Error handling</a></span></li></ul></li><li><span class="section"><a href="#process_engine">2.2. Process Engine</a></span><ul><li><span class="section"><a href="#process_api_and_task_administration_api">2.2.1. Process API and task administration API</a></span></li><li><span class="section"><a href="#advanced_task_routing">2.2.2. Advanced task routing</a></span></li><li><span class="section"><a href="#process_execution_server">2.2.3. Process execution server</a></span></li><li><span class="section"><a href="#business_central_monitoring_web_application">2.2.4. Business Central Monitoring web application</a></span></li><li><span class="section"><a href="#work_item_archetype">2.2.5. Work Item archetype</a></span></li><li><span class="section"><a href="#kie_server_maven_plugins">2.2.6. KIE Server Maven plugins</a></span></li></ul></li><li><span class="section"><a href="#business_resource_planner">2.3. Business Resource Planner</a></span></li><li><span class="section"><a href="#new_product_names">2.4. New product names</a></span></li><li><span class="section"><a href="#oracle_real_application_clusters_rac_12c">2.5. Oracle Real Application Clusters (RAC) 12c</a></span></li></ul></li><li><span class="chapter"><a href="#ba-dm-rn-tech-preview-con">3. Technical preview</a></span></li><li><span class="chapter"><a href="#ba-dm-rn-known-issues-con">4. Known issues</a></span></li><li><span class="appendix"><a href="#versioning_information">A. Versioning information</a></span></li></ul></div><section class="preface" id="idm140127092709152"><div class="titlepage"><div><div><h1 class="title">Preface</h1></div></div></div><p>
+			These release notes highlight new features in Red Hat Decision Manager 7.0, list features that are in technical preview, and include any known issues.
+		</p></section><section class="chapter" id="ba-dm-rn-intro-con"><div class="titlepage"><div><div><h1 class="title">Chapter 1. About Red Hat Decision Manager</h1></div></div></div><p>
+			Red Hat Decision Manager is an open source decision management platform that combines business rules management, complex event processing, Decision Model &amp; Notation (DMN) execution, and Business Optimizer for solving planning problems. It automates business decisions and makes that logic available to the entire business.
+		</p><p>
+			Business assets such as rules, decision tables, and DMN models are stored in a central repository. This ensures consistency, transparency, and the ability to audit across the business. Business users can modify business logic without requiring assistance from IT personnel.
+		</p><p>
+			Red Hat Decision Manager is fully supported on OpenShift and can be installed on various platforms.
+		</p></section><section class="chapter" id="ba-dm-rn-whats-new-con"><div class="titlepage"><div><div><h1 class="title">Chapter 2. What’s new</h1></div></div></div><p>
+			This section highlights new features in Red Hat Decision Manager 7.0.
+		</p><section class="section" id="business_central"><div class="titlepage"><div><div><h2 class="title">2.1. Business Central</h2></div></div></div><section class="section" id="improved_navigation"><div class="titlepage"><div><div><h3 class="title">2.1.1. Improved navigation</h3></div></div></div><div class="formalpara"><p class="title"><strong>Navigation between views</strong></p><p>
+						You can now navigate as follows:
+					</p></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+							From a process instance to the associated jobs
+						</li><li class="listitem">
+							From a job to the associated process instance
+						</li><li class="listitem">
+							From a process instance to the associated tasks
+						</li></ul></div><div class="formalpara"><p class="title"><strong>Business Central home page</strong></p><p>
+						The Business Central Home page has been redesigned for easier navigation. For more information, see the "Business Central" chapter of the <span class="emphasis"><em>Red Hat Decision Manager User Guide</em></span>.
+					</p></div></section><section class="section" id="guided_decision_table"><div class="titlepage"><div><div><h3 class="title">2.1.2. Guided Decision Table</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+							Guided Decision Table has a new wizard for creating and editing columns.
+						</li><li class="listitem">
+							Hit policies are now available. Hit policies determine the order in which rules (rows) in a guided decision table are applied.
+						</li><li class="listitem">
+							New support to display multiple linked guided decision tables in the Guided Decision Table Editor has been added.
+						</li></ul></div></section><section class="section" id="projects_metrics_dashboard"><div class="titlepage"><div><div><h3 class="title">2.1.3. Projects Metrics dashboard</h3></div></div></div><p>
+					A new dashboard is available for every project listed in the Projects perspective. The Projects Metrics dashboard displays all of your project contribution metrics in one place. This new dashboard replaces the Contributors page, which was part of the Authoring group. For more information, see the "Projects Metrics dashboard" section of the <span class="emphasis"><em>Red Hat Decision Manager User Guide</em></span>.
+				</p></section><section class="section" id="team_metrics_dashboard"><div class="titlepage"><div><div><h3 class="title">2.1.4. Team Metrics dashboard</h3></div></div></div><p>
+					The Team Metrics dashboard shows all of the project metrics for a team in a single page. This new dashboard replaces the older Contributors page, which was part of the Authoring group. For more information, see the "Team Metrics dashboard" section of the <span class="emphasis"><em>Red Hat Decision Manager User Guide</em></span>.
+				</p></section><section class="section" id="new_columns_available_on_process_instances_tasks_and_jobs"><div class="titlepage"><div><div><h3 class="title">2.1.5. New columns available on process instances, tasks, and jobs</h3></div></div></div><p>
+					The following columns have been added to the corresponding perspectives:
+				</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+							Process instance list perspective: Last update and correlation key.
+						</li><li class="listitem">
+							Task list: Last update, correlation key (of the associated process instance ID), process instance description (of the associated process instance).
+						</li><li class="listitem">
+							Jobs perspective: Name of the associated process (if any), ID of the associated process instance (if any), Description of the associated process instance (if any).
+						</li></ul></div></section><section class="section" id="advanced_search_filter"><div class="titlepage"><div><div><h3 class="title">2.1.6. Advanced search filter</h3></div></div></div><p>
+					You can now search for specific data by using the <span class="strong strong"><strong>Search</strong></span> tab on the Jobs, Process Instances, Task Administration, and Execution Errors perspectives. For information about the new search feature, see the "Using the advanced search filter pages" section of the <span class="emphasis"><em>Red Hat Decision Manager Limited Availability User Guide</em></span>.
+				</p></section><section class="section" id="new_task_list_and_task_administration_perspectives"><div class="titlepage"><div><div><h3 class="title">2.1.7. New Task List and Task Administration perspectives</h3></div></div></div><p>
+					The former Task List perspective has been divided into the Task List and Task Administration perspectives. The Task List perspective is used by task operators to work with their assigned (or potentially assigned) tasks. The Task Administration perspective is used by administrators to manage tasks assigned to other users. This perspective is only available for users with admin or process-admin roles. It is similar to the Admin filter tab on the former Task List perspective.
+				</p></section><section class="section" id="improved_validation_in_deployment_descriptor_editor"><div class="titlepage"><div><div><h3 class="title">2.1.8. Improved validation in deployment descriptor editor</h3></div></div></div><p>
+					The deployment descriptor editor in Business Central has been improved to validate data entered for the following:
+				</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+							Work item handlers
+						</li><li class="listitem">
+							Event listeners
+						</li><li class="listitem">
+							Marshalling strategies
+						</li><li class="listitem">
+							Globals
+						</li><li class="listitem">
+							Environment entries
+						</li><li class="listitem">
+							Configuration
+						</li></ul></div><p>
+					The deployment descriptor editor performs the validation when a build is invoked or manually when a user clicks <span class="strong strong"><strong>Validate</strong></span>.
+				</p></section><section class="section" id="error_handling"><div class="titlepage"><div><div><h3 class="title">2.1.9. Error handling</h3></div></div></div><p>
+					While running a process instance or a job, the system now detects and stores execution errors such as exceptions after the maximum number of retries has been exceeded. If an error occurs, the system generates an event that contains the following data:
+				</p><div class="informaltable"><table class="lt-4-cols lt-7-rows"><colgroup><col style="width: 33%; " class="col_1"/><col style="width: 67%; " class="col_2"/></colgroup><thead><tr><th align="left" valign="top" id="idm140127097576752" scope="col">Data</th><th align="left" valign="top" id="idm140127097575664" scope="col">Fields</th></tr></thead><tbody><tr><td rowspan="3" align="left" valign="top" headers="idm140127097576752">
+								<p>
+									Process model
+								</p>
+								</td><td align="left" valign="top" headers="idm140127097575664">
+								<p>
+									processModelID
+								</p>
+								</td></tr><tr><td align="left" valign="top" headers="idm140127097575664">
+								<p>
+									processModelVersion
+								</p>
+								</td></tr><tr><td align="left" valign="top" headers="idm140127097575664">
+								<p>
+									processModelName
+								</p>
+								</td></tr><tr><td rowspan="2" align="left" valign="top" headers="idm140127097576752">
+								<p>
+									Process instance that has failed
+								</p>
+								</td><td align="left" valign="top" headers="idm140127097575664">
+								<p>
+									processInstanceID
+								</p>
+								</td></tr><tr><td align="left" valign="top" headers="idm140127097575664">
+								<p>
+									customProcessID
+								</p>
+								</td></tr><tr><td rowspan="5" align="left" valign="top" headers="idm140127097576752">
+								<p>
+									Activity that has failed
+								</p>
+								</td><td align="left" valign="top" headers="idm140127097575664">
+								<p>
+									activityID
+								</p>
+								</td></tr><tr><td align="left" valign="top" headers="idm140127097575664">
+								<p>
+									activityName
+								</p>
+								</td></tr><tr><td align="left" valign="top" headers="idm140127097575664">
+								<p>
+									activityType
+								</p>
+								</td></tr><tr><td align="left" valign="top" headers="idm140127097575664">
+								<p>
+									iteration
+								</p>
+								</td></tr><tr><td align="left" valign="top" headers="idm140127097575664">
+								<p>
+									status
+								</p>
+								</td></tr><tr><td rowspan="2" align="left" valign="top" headers="idm140127097576752">
+								<p>
+									Error data
+								</p>
+								</td><td align="left" valign="top" headers="idm140127097575664">
+								<p>
+									errorMessage: Message with the error that has occurred.
+								</p>
+								</td></tr><tr><td align="left" valign="top" headers="idm140127097575664">
+								<p>
+									errorStack: Stack with error detail.
+								</p>
+								</td></tr></tbody></table></div><p>
+					The process instance list includes a new column that displays the number of errors per process instance which are not marked as acknowledged. When you select the column, a window appears which enables you to navigate to the new Error perspective.
+				</p><p>
+					The Execution Errors perspective lists any errors that occur during process instances or executor service jobs on a Decision Server. Use this perspective to help troubleshoot issues. It is visible to users with the admin and process-admin roles.
+				</p></section></section><section class="section" id="process_engine"><div class="titlepage"><div><div><h2 class="title">2.2. Process Engine</h2></div></div></div><section class="section" id="process_api_and_task_administration_api"><div class="titlepage"><div><div><h3 class="title">2.2.1. Process API and task administration API</h3></div></div></div><p>
+					A process administration API and task administration API have been introduced to simplify some of the more complex administrator use cases. You can use the process administration API to do the following:
+				</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+							Retrieve all process definition nodes
+						</li><li class="listitem">
+							Cancel node instances
+						</li><li class="listitem">
+							Retrigger node instances
+						</li><li class="listitem">
+							Update the timer (absolute or relative)
+						</li><li class="listitem">
+							List timer instances
+						</li><li class="listitem">
+							Trigger nodes
+						</li></ul></div><p>
+					You can use the task administration API to do the following:
+				</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+							Add and remove potential owners and excluded owners and business administrators
+						</li><li class="listitem">
+							Add and remove task inputs and outputs
+						</li><li class="listitem">
+							List, create, and cancel escalations and notifications
+						</li></ul></div></section><section class="section" id="advanced_task_routing"><div class="titlepage"><div><div><h3 class="title">2.2.2. Advanced task routing</h3></div></div></div><p>
+					When tasks are assigned to a group of users, you can use pluggable task assignment strategies to automatically assign tasks to a suitable individual immediately. This enables more efficient task allocation, based on all properties associated with the task. For example, potential owners and task priority but also task data that includes information such as geography, required skills, and so on. You can use business rules to define the assignment logic, making it easy to customize this to your needs.
+				</p></section><section class="section" id="process_execution_server"><div class="titlepage"><div><div><h3 class="title">2.2.3. Process execution server</h3></div></div></div><p>
+					The process execution server (also known as kie-server) has been extended to support core engine features and offers a remote API for these operations. In addition the following architectural changes were introduced.
+				</p><section class="section" id="separate_business_central_from_execution_server"><div class="titlepage"><div><div><h4 class="title">2.2.3.1. Separate Business Central from execution server</h4></div></div></div><p>
+						Business Central now delegates all of its requests to the execution server. The main advantage is that Business Central can now be used to monitor any set of execution servers. By linking the execution server to Business Central, the process and task monitoring UIs in Business Central can now connect to this execution server and show all relevant information. When multiple independent execution servers are used, you can either connect to a specific one or use the smart router to aggregate information across multiple servers.
+					</p></section><section class="section" id="smart_router"><div class="titlepage"><div><div><h4 class="title">2.2.3.2. Smart router</h4></div></div></div><p>
+						The smart router (also known as kie-server-router) can be used as a proxy to help manage multiple independent process execution servers.
+					</p></section><section class="section" id="aliases"><div class="titlepage"><div><div><h4 class="title">2.2.3.3. Aliases</h4></div></div></div><p>
+						You can now use aliases instead of container IDs in the remote REST APIs of the execution server. For more information, see the "Editing container aliases through Business Central" section of the <span class="emphasis"><em>Red Hat Decision Manager User Guide</em></span>.
+					</p></section></section><section class="section" id="business_central_monitoring_web_application"><div class="titlepage"><div><div><h3 class="title">2.2.4. Business Central Monitoring web application</h3></div></div></div><p>
+					This release includes a new distribution <code class="literal">war</code> file that enables you to build custom cloud images. Use the Business Central Monitoring web application with Decision Server instances to manage containers, process instances, tasks, dashboards, and other runtime capabilities in the cloud. Unlike the standard Business Central distribution, no authoring capabilities are available.
+				</p><p>
+					NOTE: For on-premise deployments, use the standard Business Central <code class="literal">war</code> file.
+				</p></section><section class="section" id="work_item_archetype"><div class="titlepage"><div><div><h3 class="title">2.2.5. Work Item archetype</h3></div></div></div><p>
+					To help users build custom service tasks (work items), Red Hat Decision Manager comes with the Work Item archetype that generates the majority of items required to build a custom service task. The archetype includes the following:
+				</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+							A Work Item Definition (WID) file
+						</li><li class="listitem">
+							The Work Item Handler implementation class
+						</li><li class="listitem">
+							The Work Item Handler test class
+						</li></ul></div><p>
+					The Maven assembly (zip) packages everything at build time so it can be consumed by the Service Repository and therefore be used from within the Web Designer.
+				</p></section><section class="section" id="kie_server_maven_plugins"><div class="titlepage"><div><div><h3 class="title">2.2.6. KIE Server Maven plugins</h3></div></div></div><p>
+					KIE Server has been enhanced with additional Maven plugins that enable interaction with the KIE Server and KIE Controller REST API directly from within a build. This interaction facilitates easier integration with CI/CD pipelines when building KJars so they can be directly deployed to the execution environment (both managed and unmanaged KIE Servers).
+				</p></section></section><section class="section" id="business_resource_planner"><div class="titlepage"><div><div><h2 class="title">2.3. Business Resource Planner</h2></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+						Multi-threaded partitioned search is available. Business Resource Planner now has out-of-the box support for solving a single data set by partitioning across multiple threads. This enhancement makes use of multiple CPU cores for a single problem. Partitioned search can implement geo-fencing for Vehicle Routing use cases.
+					</li><li class="listitem">
+						The Solution interface is deprecated. Your solution class requires only the <code class="literal">@PlanningSolution</code> annotation.
+					</li><li class="listitem">
+						You no longer need to define the score type in the solver configuration. Business Resource Planner now determines it automatically from the domain model.
+					</li><li class="listitem">
+						The Business Resource Planner Solver editor screen now supports adding all termination types, including composite termination. The phase configuration section enables you to tweak Construction Heuristic settings and select the local search algorithm to optimize your planning problem.
+					</li><li class="listitem">
+						Examples are now part of Business Central and they work offline as well. Leverage tag-based filtering to quickly access projects from the field you are interested in.
+					</li><li class="listitem">
+						The Business Resource Planner domain editor can now specify a planning entity difficulty. Navigate through the object hierarchy and define the sorting attributes. Several construction heuristic algorithms use this information to construct a better initial solution.
+					</li><li class="listitem">
+						The Business Resource Planner execution server now supports real-time planning.
+					</li></ul></div></section><section class="section" id="new_product_names"><div class="titlepage"><div><div><h2 class="title">2.4. New product names</h2></div></div></div><p>
+				<a class="link" href="https://issues.jboss.org/browse/BXMSDOC-2129">https://issues.jboss.org/browse/BXMSDOC-2129</a>
+			</p></section><section class="section" id="oracle_real_application_clusters_rac_12c"><div class="titlepage"><div><div><h2 class="title">2.5. Oracle Real Application Clusters (RAC) 12c</h2></div></div></div><p>
+				Oracle Real Application Clusters (RAC) 12c is now supported with Red Hat Decision Manager. <a class="link" href="https://issues.jboss.org/browse/BXMSDOC-1750">https://issues.jboss.org/browse/BXMSDOC-1750</a>
+			</p></section></section><section class="chapter" id="ba-dm-rn-tech-preview-con"><div class="titlepage"><div><div><h1 class="title">Chapter 3. Technical preview</h1></div></div></div><p>
+			COMMENT: Needs Review <a class="link" href="https://issues.jboss.org/browse/BXMSDOC-2103">https://issues.jboss.org/browse/BXMSDOC-2103</a>
+		</p><p>
+			This section lists features that are in technical preview in Red Hat Decision Manager 7.0. Where they are listed in the documentation these features also have a note similar to the following:
+		</p><div class="admonition important"><div class="admonition_header">Important</div><div><p>
+				This feature a Technology Preview feature only. Technology Preview features are not supported with Red Hat production service level agreements (SLAs), might not be functionally complete, and Red Hat does not recommend to use them for production. These features provide early access to upcoming product features, enabling customers to test functionality and provide feedback during the development process. For more information on Red Hat Technology Preview features support scope, see <a class="link" href="https://access.redhat.com/support/offerings/techpreview/">https://access.redhat.com/support/offerings/techpreview/</a>
+			</p></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+					Provising UI. It is part of Red Hat Decision Manager and disabled by default. COMMENT: how do we enable?
+				</li><li class="listitem">
+					Ability to embed perspectives
+				</li><li class="listitem">
+					Deployments perspective
+				</li><li class="listitem">
+					Guided Decision Trees
+				</li><li class="listitem">
+					Guided Score Cards
+				</li><li class="listitem">
+					XLS Score Cards
+				</li><li class="listitem">
+					New jBPM Designer
+				</li></ul></div><div class="orderedlist"><p class="title"><strong>Enabling the Deployments perspective</strong></p><ol class="orderedlist" type="1"><li class="listitem">
+					Go to <span class="strong strong"><strong>Settings</strong></span> → <span class="strong strong"><strong>Roles</strong></span>.
+				</li><li class="listitem">
+					Select the role that you want to enable. Note that the Deployments perspective is available only for the admin, analyst, and developer roles.
+				</li><li class="listitem">
+					In the Permissions section, click the arrow next to Perspectives.
+				</li><li class="listitem"><p class="simpara">
+					Do one of the following:
+				</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+							If the Deployments perspective is listed, click <span class="strong strong"><strong>Read</strong></span> next to Deployments.
+						</li><li class="listitem">
+							If the Deployments perspective is not listed, select it from the <span class="strong strong"><strong>Select Perspective</strong></span> menu, then click <span class="strong strong"><strong>Read</strong></span> next to Deployments.
+						</li><li class="listitem"><p class="simpara">
+							If the <span class="strong strong"><strong>Select Perspective</strong></span> menu is not visible, click <span class="strong strong"><strong>Add Exception</strong></span> to make is visible, select <span class="strong strong"><strong>Deployments</strong></span> from the <span class="strong strong"><strong>Select Perspective</strong></span> menu, then click <span class="strong strong"><strong>Read</strong></span> next to Deployments.
+						</p><p class="simpara">
+							The <span class="strong strong"><strong>Read</strong></span> button turns blue.
+						</p></li></ul></div></li><li class="listitem">
+					Click <span class="strong strong"><strong>Save</strong></span>. The DevOps → <span class="strong strong"><strong>Deployments</strong></span> link is now available on the Home page.
+				</li></ol></div><div class="orderedlist"><p class="title"><strong>Enabling the Guided Decision Tree editor, Guided Score Card editor, XLS Score Card editor, and the new jBPM Designer editor</strong></p><ol class="orderedlist" type="1"><li class="listitem">
+					Go to <span class="strong strong"><strong>Settings</strong></span> → <span class="strong strong"><strong>Roles</strong></span>.
+				</li><li class="listitem">
+					Select the role that you want to enable. These editors are available for all roles.
+				</li><li class="listitem">
+					In the Permissions section, click the arrow next to Editors.
+				</li><li class="listitem">
+					Click <span class="strong strong"><strong>Read</strong></span> next to the editor that you want to enable. The <span class="strong strong"><strong>Read</strong></span> button turns blue.
+				</li><li class="listitem">
+					Click <span class="strong strong"><strong>Save</strong></span>. The editor is now enabled for the selected role.
+				</li></ol></div></section><section class="chapter" id="ba-dm-rn-known-issues-con"><div class="titlepage"><div><div><h1 class="title">Chapter 4. Known issues</h1></div></div></div><p>
+			This section lists known issues with Red Hat Decision Manager 7.0 Limited Availability.
+		</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+					The OpenShift product images have been removed for this release.
+				</li><li class="listitem"><p class="simpara">
+					RHBRMS-2928 After creation of a perspective security management throws exception
+				</p><p class="simpara">
+					If a new perspective is created and security management settings are changed, an exception is displayed in a dialog box.
+				</p></li><li class="listitem"><p class="simpara">
+					RHBPMS-4976 Java-level deadlock after cloning a repository
+				</p><p class="simpara">
+					After cloning repositories, creating, or deleting teams, Workbench stops responding and several threads are in the BLOCKED state on the server.
+				</p></li><li class="listitem"><p class="simpara">
+					RHBPMS-5061 [Security management] Rediscovered permission exception
+				</p><p class="simpara">
+					When there is some permission exception for specific name of an item (perspective, repository, org. unit or project) and the item is deleted or renamed, the exception disappears. When you create another item with the same name, the exception is back in the list of exceptions.
+				</p></li></ul></div></section><section class="appendix" id="versioning_information"><div class="titlepage"><div><div><h1 class="title">Appendix A. Versioning information</h1></div></div></div><p>
+			Documentation last updated on: Fri Sep 29, 2017.
+		</p></section><div><div xml:lang="en-US" class="legalnotice" id="idm140127098770448"><h1 class="legalnotice">Legal Notice</h1><div class="para">
+		Copyright <span class="trademark"/>© 2018 Red Hat, Inc.
+	</div><div class="para">
+		The text of and illustrations in this document are licensed by Red Hat under a Creative Commons Attribution–Share Alike 3.0 Unported license ("CC-BY-SA"). An explanation of CC-BY-SA is available at <a class="uri" href="http://creativecommons.org/licenses/by-sa/3.0/">http://creativecommons.org/licenses/by-sa/3.0/</a>. In accordance with CC-BY-SA, if you distribute this document or an adaptation of it, you must provide the URL for the original version.
+	</div><div class="para">
+		Red Hat, as the licensor of this document, waives the right to enforce, and agrees not to assert, Section 4d of CC-BY-SA to the fullest extent permitted by applicable law.
+	</div><div class="para">
+		Red Hat, Red Hat Enterprise Linux, the Shadowman logo, JBoss, OpenShift, Fedora, the Infinity logo, and RHCE are trademarks of Red Hat, Inc., registered in the United States and other countries.
+	</div><div class="para">
+		<span class="trademark">Linux</span>® is the registered trademark of Linus Torvalds in the United States and other countries.
+	</div><div class="para">
+		<span class="trademark">Java</span>® is a registered trademark of Oracle and/or its affiliates.
+	</div><div class="para">
+		<span class="trademark">XFS</span>® is a trademark of Silicon Graphics International Corp. or its subsidiaries in the United States and/or other countries.
+	</div><div class="para">
+		<span class="trademark">MySQL</span>® is a registered trademark of MySQL AB in the United States, the European Union and other countries.
+	</div><div class="para">
+		<span class="trademark">Node.js</span>® is an official trademark of Joyent. Red Hat Software Collections is not formally related to or endorsed by the official Joyent Node.js open source or commercial project.
+	</div><div class="para">
+		The <span class="trademark">OpenStack</span>® Word Mark and OpenStack logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.
+	</div><div class="para">
+		All other trademarks are the property of their respective owners.
+	</div></div></div></div></div></div><script type="text/javascript">
+                        jQuery(document).ready(function() {
+                            initSwitchery();
+                            jQuery('pre[class*="language-"]').each(function(i, block){hljs.highlightBlock(block);});
+                        });
+                    </script></body></html>
