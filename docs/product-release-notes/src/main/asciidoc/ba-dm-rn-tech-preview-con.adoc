@@ -1,8 +1,6 @@
 
 [id='ba-dm-rn-tech-preview-con']
-= Technical Preview
-COMMENT: Needs Review
-https://issues.jboss.org/browse/BXMSDOC-2103
+= Technical preview
 
 This section lists features that are in technical preview in {PRODUCT} {PRODUCT_VERSION}. Where they are listed in the documentation these features also have a note similar to the following:
 
@@ -14,11 +12,11 @@ not be functionally complete, and Red Hat does not recommend to use them for
 production. These features provide early access to upcoming product features,
 enabling customers to test functionality and provide feedback during the
 development process.
-For more information on Red Hat Technology Preview features support scope, 
+For more information on Red Hat Technology Preview features support scope,
 see https://access.redhat.com/support/offerings/techpreview/
 ====
 
-* Provising UI. It is part of {PRODUCT} and disabled by default. COMMENT: how do we enable?
+* Provising UI. It is part of {PRODUCT} and disabled by default. 
 * Ability to embed perspectives
 * Deployments perspective
 * Guided Decision Trees
@@ -32,14 +30,13 @@ see https://access.redhat.com/support/offerings/techpreview/
 . In the Permissions section, click the arrow next to Perspectives.
 . Do one of the following:
 +
-* If the Deployments perspective is listed, click *Read* next to Deployments. 
-* If the Deployments perspective is not listed, select it from the *Select Perspective* menu, then click *Read* next to Deployments. 
-* If the *Select Perspective* menu is not visible, click *Add Exception* to make is visible, select *Deployments* from the *Select Perspective* menu,  then click *Read* next to Deployments. 
+* If the Deployments perspective is listed, click *Read* next to Deployments.
+* If the Deployments perspective is not listed, select it from the *Select Perspective* menu, then click *Read* next to Deployments.
+* If the *Select Perspective* menu is not visible, click *Add Exception* to make is visible, select *Deployments* from the *Select Perspective* menu,  then click *Read* next to Deployments.
 +
 The *Read* button turns blue.
 . Click *Save*. The DevOps -> *Deployments* link is now available on the Home page.
 +
-
 
 .Enabling the Guided Decision Tree editor, Guided Score Card editor, XLS Score Card editor, and the New jBPM Designer editor
 . Go to *Settings* -> *Roles*.
@@ -47,6 +44,3 @@ The *Read* button turns blue.
 . In the Permissions section, click the arrow next to Editors.
 . Click *Read* next to the editor that you want to enable. The *Read* button turns blue.
 . Click *Save*. The editor is now enabled for the selected role.
-
-
-
