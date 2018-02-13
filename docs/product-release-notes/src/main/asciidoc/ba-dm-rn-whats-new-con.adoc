@@ -161,10 +161,10 @@ The following components have been renamed in {PRODUCT} {PRODUCT_VERSION}:
 [cols="1,2",grid="all",options="header"]
 |===
 | Red Hat JBoss BRMS
-| Red Hat Decision Manager (RHDM)
+| {PRODUCT} (RHDM)
 
-| BRMS 6.x
-| {PRODUCT} {PRODUCT_VERSION}
+| BRMS
+| Decision Manager
 
 | Business Central
 | Decision Central
@@ -176,10 +176,10 @@ The following components have been renamed in {PRODUCT} {PRODUCT_VERSION}:
 | Guided Decision Table designer
 
 | Realtime Decision Server
-| Decision Server (for Decision Management capabilities)
+| Decision Server
 
 | KIE Execution Server
-| Decision Server, Planner Server, KIE Server (represents both Decision and Planner servers )
+| Decision Server (for Decision Management capabilities), Planner Server (for Business Optimization capabilities), KIE Server (represents both Decision server and Planner servers )
 
 | Organizational units
 | Spaces
