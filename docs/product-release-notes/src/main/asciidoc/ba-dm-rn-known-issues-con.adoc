@@ -1,7 +1,7 @@
 [id='ba-dm-rn-known-issues-con']
 = Known issues
 
-This section lists known issues with {PRODUCT} {PRODUCT_VERSION} {RELEASE}.
+This section lists known issues with {PRODUCT} {PRODUCT_VERSION}.
 
 == RHDM-371 Decision-central fails to deploy on EAP with space in its path
 
