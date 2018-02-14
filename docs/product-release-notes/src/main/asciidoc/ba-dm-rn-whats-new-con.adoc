@@ -1,7 +1,7 @@
 [id='ba-dm-rn-whats-new-con']
 = What's new
 
-This section highlights the new features in {PRODUCT} {PRODUCT_VERSION}.
+This section highlights new features in {PRODUCT} {PRODUCT_VERSION}.
 
 == {PRODUCT}
 
