@@ -108,3 +108,4 @@ Red Hat Support will provide guidance on the use of this template on a commercia
 [NOTE]
 ====
 https://access.redhat.com/support/offerings/production/soc[Production support] is limited to {PRODUCT} distribution.
+====
