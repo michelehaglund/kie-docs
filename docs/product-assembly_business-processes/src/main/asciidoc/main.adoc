@@ -22,6 +22,8 @@ Each of the nodes represents one step in the overall process while the connectio
 
 include::product-development-guide/chap-about-this-guide.adoc[leveloffset=+1]
 
+include::product-user-guide/assets-business-processes-gloss.adoc[leveloffset=+1]
+
 include::product-development-guide/chap-getting-started-with-processes.adoc[leveloffset=+1]
 
 
