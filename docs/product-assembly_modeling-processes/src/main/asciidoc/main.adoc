@@ -20,17 +20,11 @@ Each of the nodes represents one step in the overall process while the connectio
 
 // Modules - concepts, procedures, refs, etc.
 
-include::product-getting-started-guide/form-modeler-con.adoc[leveloffset=+1]
+include::form-modeler-pizza-con.adoc[leveloffset=+1]
 
-include::product-getting-started-guide/new-project-proc.adoc[leveloffset=+1]
+include::new-pizza-project-proc.adoc[leveloffset=+1]
 
-include::product-getting-started-guide/task_data-model.adoc[leveloffset=+1]
-
-include::product-getting-started-guide/task_business-process.adoc[leveloffset=+1]
-
-include::product-getting-started-guide/business-rules-tables-con.adoc[leveloffset=+1]
-
-include::product-getting-started-guide/business-rules-proc.adoc[leveloffset=+2]
+include::pizza-business-process-proc.adoc[leveloffset=+1]
 
 // Versioning info
 include::product-shared-docs/versioning-information.adoc[]
