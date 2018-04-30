@@ -9,9 +9,7 @@ include::product-shared-docs/document-attributes.adoc[]
 include::product-shared-docs/author-group.adoc[]
 
 // Purpose statement for the assembly
-As a business analyst, you can use {CENTRAL} in {PRODUCT} to design a variety of business processes. A business process is a graph that describes the order in which a series of steps must be executed using a flow chart.
-A process consists of a collection of predefined node types that are linked to each other using connections.
-Each of the nodes represents one step in the overall process while the connections specify how to transition from one node to the other.
+As a business analyst or business rules developer, you can use the Form Modeler in {PRODUCT} to model forms for human tasks, providing a rich interface for collecting data. In this example, you will create a form to process a pizza ordering scenario. This process consists of a customer completing an order form and the pizza place processing the order.
 
 .Prerequisites
 * Installed {EAP_LONG} 7.1.0. See  https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.1/html-single/installation_guide/[_Red Hat JBoss EAP 7.1.0 Installation Guide_].
@@ -20,11 +18,11 @@ Each of the nodes represents one step in the overall process while the connectio
 
 // Modules - concepts, procedures, refs, etc.
 
-include::form-modeler-pizza-con.adoc[leveloffset=+1]
-
 include::new-pizza-project-proc.adoc[leveloffset=+1]
 
 include::pizza-business-process-proc.adoc[leveloffset=+1]
+
+include::generate-forms-proc.adoc[leveloffset=+1]
 
 // Versioning info
 include::product-shared-docs/versioning-information.adoc[]
