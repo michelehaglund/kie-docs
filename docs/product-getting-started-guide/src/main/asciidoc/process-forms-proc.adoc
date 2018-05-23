@@ -8,33 +8,32 @@ The following chapter shows you how to automatically generate forms for collecti
 Finished business process model of the started project. For further information, see <<_modeling_a_business_process>>.
 
 == Automatic Form Generation
-
 {PRODUCT} enables you to automatically generate forms. For this business process you will automatically generate the following forms:
 
 * Applicant form
 * Property form
 * Application form
 
-. Log in to {CENTRAL}. Click *Menu* -> *Design* -> *Projects*, then *Mortgage_Process*.
+. Log in to {CENTRAL}. Click *Menu* -> *Design* -> *Projects*, then *Mortgage Process*.
 . From the asset list, select the *MortgageApprovalProcess* business process.
 . Click on the *Form Generation* menu in the upper-right menu and select *Generate all forms*.
 +
 image::auto-forms-select.png[]
 
-. Click *Menu* -> *Design* -> *Projects*, then *Mortgage_Process*.
+. Click *Menu* -> *Design* -> *Projects*, then *Mortgage Process*.
 . From the asset list, select the *Applicant* form.
 +
 The *Applicant* form should look as follows:
 +
 image::applicantForm.png[]
 +
-. Click *Menu* -> *Design* -> *Projects*, then *Mortgage_Process*.
+. Click *Menu* -> *Design* -> *Projects*, then *Mortgage Process*.
 . From the asset list, select the *Property* form.
 The *Property* form should look as follows:
 +
 image::propertyForm2.png[]
 +
-. Click *Menu* -> *Design* -> *Projects*, then *Mortgage_Process*.
+. Click *Menu* -> *Design* -> *Projects*, then *Mortgage Process*.
 . From the asset list, select the *Application* form.
 The *Application* form should look as follows:
 +
@@ -46,7 +45,7 @@ image::applicationForm.png[]
 == Editing forms (Optional)
 The following optional process shows you how to edit the Applicant form that you previously defined as part of this tutorial business process:
 
-. Log in to {CENTRAL}. Click *Menu* -> *Design* -> *Projects*, then *Mortgage_Process*.
+. Log in to {CENTRAL}. Click *Menu* -> *Design* -> *Projects*, then *Mortgage Process*.
 . Click the *Applicant* data object form and add a new *Address* row.
 .. Expand the *Form Controls* menu and drag the *TextBox* field in to the existing form.
 .. Complete the form field properties for the new Address row.
