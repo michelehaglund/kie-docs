@@ -3,6 +3,6 @@
 <subtitle>
 </subtitle>
 <abstract>
-	<para>This document explains how to manage and monitor your running business processes in {PRODUCT} {PRODUCT_VERSION}.</para>
+	<para>This document explains how to mangage, modify, create, and delete assets {CENTRAL}.</para>
 </abstract>
 <xi:include href="Common_Content/Legal_Notice.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
