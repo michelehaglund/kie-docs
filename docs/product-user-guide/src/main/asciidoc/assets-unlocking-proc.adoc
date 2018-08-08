@@ -27,4 +27,4 @@ The following confirmation pop-up message is displayed:
 +
 . Click *Yes* to confirm.
 +
-The asset returns to an unlocked state.
+The asset returns to an unlocked state and the lock icon option will appear next to the asset.

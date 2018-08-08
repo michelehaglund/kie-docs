@@ -8,15 +8,15 @@ The following image shows the available assets in in {PRODUCT} {PRODUCT_VERSION}
 
 image::asset-list.png[]
 
-The following sections describe each asset in {PRODUCT} {PRODUCT_VERSION}.
+The following sections describe each asset type in {PRODUCT} {PRODUCT_VERSION}.
 
 * Business Process
 +
-Business Processes are flow charts that describe the steps necessary to achieve business goals (see the https://access.redhat.com/documentation/en-US/JBoss_Enterprise_BRMS_Platform/5/html-single/BRMS_Business_Process_Management_Guide/index.html[_{PRODUCT} Business Process Management Guide_] for more details).
+Business Processes are diagrams that describe the steps necessary to achieve business goals (see the https://access.redhat.com/documentation/en-US/JBoss_Enterprise_BRMS_Platform/5/html-single/BRMS_Business_Process_Management_Guide/index.html[_{PRODUCT} Business Process Management Guide_] for more details).
 
 * Business Process (legacy)
 +
-Starting in {PRODUCT} {PRODUCT_VERSION}, Stunner is the default process designer. As it's still not fully feature complete, {PRODUCT} {PRODUCT_VERSION} also includes support for the _jBPM process designer_ designer. Thus providing two designers for business processes, the _Business Process_, which relies on _Stunner_, and the _Business Process (legacy)_ one, which relies on the legacy process designer.
+Starting in {PRODUCT} {PRODUCT_VERSION}, Stunner is the default process designer. As it's still not fully feature complete, {PRODUCT} {PRODUCT_VERSION} also includes support for the _jBPM process designer_. Thus providing two designers for business processes, the _Business Process_, which relies on _Stunner_, and the _Business Process (legacy)_ one, which relies on the legacy process designer.
 
 * Case definition
 +
@@ -40,11 +40,11 @@ However, you are also able to spread your rules across multiple rule files (in t
 
 * DSL definition
 +
-Domain Specific Languages (DSLs) are rule languages that are dedicated to problem domains.
+Domain Specific Languages (DSLs) are a way of creating a rule language that is dedicated to your problem domains. A set of DSL definitions consists of transformations from DSL "sentences" to DRL constructs, which lets you use of all the underlying rule language and engine features.
 
 * Enumeration
 +
-Data enumerations are an optional asset type that can be configured to provide drop down lists for the guided designer. They are stored and edited just like any other asset, and apply to the package that they belong to.
+Data enumerations are an optional asset type that can be configured to provide drop-down lists for the guided designer. They are stored and edited just like any other asset, and apply to the package that they belong to.
 
 * Form
 +
@@ -75,7 +75,7 @@ Guided rule templates provide a reusable rule structure for multiple rules that 
 
 * Package
 +
-All assets are contained in packages in Drools Workbench. A package is like a folder (it also serves as a "namespace"). A home folder for rule assets to live in.
+All assets are contained in packages in {CENTRAL}. A package is a folder for rules and also serves as a "namespace".
 
 * Solver configuration
 +

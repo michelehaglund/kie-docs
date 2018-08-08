@@ -8,12 +8,12 @@ A set of DSL definitions consists of transformations from DSL "sentences" to DRL
 Given a DSL, you write rules in DSL rule (or DSLR) files, which will be translated into DRL files.
 
 DSL and DSLR files are plain text files, and you can use any text editor to create and modify them.
-But there are also DSL and DSLR editors, both in the IDE as well as in the web based BRMS, and you can use those as well, although they may not provide you with the full DSL functionality. 
+But there are also DSL and DSLR editors, both in the IDE as well as in the web based BRMS, and you can use those as well, although they may not provide you with the full DSL functionality.
 
 == When to Use a DSL
 
 
-DSLs can serve as a layer of separation between rule authoring (and rule authors) and the technical intricacies resulting from the modelling of domain object and the rule engine's native language and methods.
+DSLs can serve as a layer of separation between rule authoring (and rule authors) and the technical intricacies resulting from the modeling of domain object and the rule engine's native language and methods.
 If your rules need to be read and validated by domain experts (such as business analysts, for instance) who are not programmers, you should consider  using a DSL; it hides implementation details and focuses on the rule logic proper.
 DSL sentences can also act as "templates" for conditional elements and consequence actions that are used repeatedly in your rules, possibly with minor variations.
 You may define DSL sentences as being mapped to these repeated phrases, with parameters providing a means for accommodating those variations.
@@ -108,7 +108,7 @@ If braces "{" and "}" should appear in the replacement string of a DSL definitio
 
 Given the above DSL examples, the following examples show the expansion of various DSLR snippets:
 
-.Examples of DSL expansions 
+.Examples of DSL expansions
 ====
 [source]
 ----
@@ -164,7 +164,7 @@ The DSL definitions given below result in three DSL phrases which may be used to
 ----
 
 
-You can then write rules with conditions like the following: 
+You can then write rules with conditions like the following:
 [source]
 ----
 There is a Cheese with
@@ -172,7 +172,7 @@ There is a Cheese with
         - type is 'stilton'
 ----
  The parser will pick up a line beginning with "-" and add it as a constraint to  the preceding pattern, inserting a comma when it is required.
-For the preceding example, the resulting DRL is: 
+For the preceding example, the resulting DRL is:
 [source]
 ----
 Cheese(age<42, type=='stilton')
@@ -257,10 +257,10 @@ A DSL entry consists of the following four parts:
 * A scope definition, written as one of the keywords "when" or "condition", "then" or "consequence", "*" and "keyword", enclosed in brackets ("[" and "]"). This indicates whether the DSL entry is valid for the condition or the consequence of a rule, or both. A scope indication of "keyword" means that the entry has global significance, i.e., it is recognized anywhere in a DSLR file.
 * A type definition, written as a Java class name, enclosed in brackets. This part is optional unless the the next part begins with an opening bracket. An empty pair of brackets is valid, too.
 * A DSL expression consists of a (Java) regular expression, with any number of embedded _variable definitions,_ terminated by an equal sign ("="). A variable definition is enclosed in braces ("{" and "}"). It consists of a variable name and two optional attachments, separated by colons (":"). If there is one attachment, it is a regular expression for matching text that is to be assigned to the variable; if there are two attachments, the first one is a hint for the GUI editor and the second one the regular expression.
-+ 
++
 Note that all characters that are "magic" in regular expressions must be escaped with a preceding backslash ("\") if they should occur literally within the expression.
 * The remaining part of the line after the delimiting equal sign is the replacement text for any DSLR text matching the regular expression. It may contain variable references, i.e., a variable name enclosed in braces. Optionally, the variable name may be followed by an exclamation mark ("!") and a transformation function, see below.
-+ 
++
 Note that braces ("{" and "}") must be escaped with a preceding backslash ("\") if they should occur literally within the replacement string.
 
 
@@ -322,17 +322,17 @@ The transformation of a DSLR file proceeds as follows:
 . The text is read into memory.
 . Each of the "keyword" entries is applied to the entire text. First, the regular expression from the keyword definition is modified by replacing white space sequences with a pattern matching any number of white space characters, and by replacing variable definitions with a capture made from the regular expression provided with the definition, or with the default (".*?"). Then, the DSLR text is searched exhaustively for occurrences of strings matching the modified regular expression. Substrings of a matching string corresponding to variable captures are extracted and replace variable references in the corresponding replacement text, and this text replaces the matching string in the DSLR text.
 . Sections of the DSLR text between "when" and "then", and "then" and "end", respectively, are located and processed in a uniform manner, line by line, as described below.
-+ 
++
 For a line, each DSL entry pertaining to the line's section is taken in turn, in the order it appears in the DSL file.
 Its regular expression part is modified: white space is replaced by a pattern matching any number of white space characters; variable definitions with a regular expression are replaced by a capture with this regular expression, its default being ".*?". If the resulting regular expression matches all or part of the line, the matched part is replaced by the suitably modified replacement text.
-+ 
++
 Modification of the replacement text is done by replacing variable references with the text corresponding to the regular expression capture.
 This text may be modified according to the string transformation function given in the variable reference; see below for details.
-+ 
++
 If there is a variable reference naming a variable that is not defined in the same entry, the expander substitutes a value bound to a variable of that name, provided it was defined in one of the preceding lines of the current rule.
 . If a DSLR line in a condition is written with a leading hyphen, the expanded result is inserted into the last line, which should contain a pattern CE, i.e., a type name followed by a pair of parentheses. if this pair is empty, the expanded line (which should contain a valid constraint) is simply inserted, otherwise a comma (",") is inserted beforehand.
-+ 
-If a DSLR line in a consequence is written with a leading hyphen, the expanded result is inserted into the last line, which should contain a "modify" statement, ending in a pair of braces ("{" and "}"). If this pair is empty, the expanded line (which should contain a valid method call) is simply inserted, otherwise a comma (",") is inserted beforehand. 
++
+If a DSLR line in a consequence is written with a leading hyphen, the expanded result is inserted into the last line, which should contain a "modify" statement, ending in a pair of braces ("{" and "}"). If this pair is empty, the expanded line (which should contain a valid method call) is simply inserted, otherwise a comma (",") is inserted beforehand.
 
 
 [NOTE]

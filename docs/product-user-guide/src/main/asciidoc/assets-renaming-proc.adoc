@@ -11,3 +11,8 @@ After an asset has been created and defined, you can use the *Repository View* o
 +
 .Copy, Rename, Delete, or Archive Assets
 image::assets-renaming.png[Copy, rename, delete, or archive assets]
+
+You can also use the following toolbar buttons to copy, rename, or delete assets.
+
+.Toolbar options
+image::tools.png[Copy, rename, or delete assets]
