@@ -6,7 +6,7 @@
 So where do we get started? There are so many use cases and so much functionality in a rule engine such as Drools that it becomes beguiling.
 Have no fear my intrepid adventurer, the complexity is layered and you can ease yourself in with simple use cases.
 
-Stateless session, not utilising inference, forms the simplest use case.
+Stateless session, not utilizing inference, forms the simplest use case.
 A stateless session can be called like a function passing it some data and then receiving some results back.
 Some common use cases for stateless sessions are, but not limited to:
 
@@ -125,14 +125,14 @@ package com.company.license
 rule "Is of valid age"
 when
     Applicant( age < 18 )
-    $a : Application()     
+    $a : Application()
 then
     $a.setValid( false );
 end
 
 rule "Application was made this year"
 when
-    $a : Application( dateApplied > "01-jan-2009" )     
+    $a : Application( dateApplied > "01-jan-2009" )
 then
     $a.setValid( false );
 end
@@ -307,7 +307,7 @@ Finally there is a general health status message that is printed when the applic
 rule "Status output when things are ok"
 when
     not Alarm()
-    not Sprinkler( on == true ) 
+    not Sprinkler( on == true )
 then
     System.out.println( "Everything is ok" );
 end

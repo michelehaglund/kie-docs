@@ -30,13 +30,13 @@ Decision tables also provide a degree of insulation from the underlying object m
 
 Here are some examples of real world decision tables (slightly edited to protect the innocent).
 
-.Using Excel to edit a decision table 
+.Using Excel to edit a decision table
 image::DecisionTables/excel.png[align="center"]
 
-.Multiple actions for a rule row 
+.Multiple actions for a rule row
 image::DecisionTables/actions.png[align="center"]
 
-.Using OpenOffice.org 
+.Using OpenOffice.org
 image::DecisionTables/open_office.png[align="center"]
 
 In the above examples, the technical aspects of the decision table have been collapsed away (using a standard spreadsheet feature).
@@ -60,7 +60,7 @@ It is possible to clear the agenda when a rule fires and simulate a very simple 
 This way, rules can be grouped where they share common templates, yet at the end of the day they are all combined into one rule package.
 Decision tables are essentially a tool to generate DRL rules automatically.
 
-.A real world example using multiple tables for grouping like rules 
+.A real world example using multiple tables for grouping like rules
 image::DecisionTables/multi_table.png[align="center"]
 
 == How Decision Tables Work
@@ -68,7 +68,7 @@ image::DecisionTables/multi_table.png[align="center"]
 
 The key point to keep in mind is that in a decision table each row is a rule, and each column in that row is either a condition or action for that rule.
 
-.Rows and columns 
+.Rows and columns
 image::DecisionTables/row_col.png[align="center"]
 
 
@@ -79,7 +79,7 @@ Everything to the left of this is ignored.
 
 If we expand the hidden sections, it starts to make more sense how it works; note the keywords in column C.
 
-.Expanded for rule templates 
+.Expanded for rule templates
 image::DecisionTables/expanded.png[align="center"]
 
 
@@ -96,9 +96,8 @@ The sheet name and row numbers are appended to guarantee unique rule names.
 ====
 The RuleTable name combined with the sheet name must be unique across all spreadsheet files in the same KieBase.
 If that's not the case, some rules might have the same name and only 1 of them will be applied.
-To show such ignored rules, <<_changingthedefaultbuildresultseverity,raise the severity of such rule name conflicts>>.
 ====
-
+//To show such ignored rules, <<_changingthedefaultbuildresultseverity,raise the severity of such rule name conflicts>>.
 
 The column of RuleTable indicates the column in which the rules start; columns to the left are ignored.
 
@@ -222,7 +221,7 @@ This sequence of cell pairs may be interrupted by blank rows or even a Rule Tabl
 |Optional, at most once. If omitted, quotation marks are escaped.
 
 |NumericDisabled
-|"true" or "false". If "true", then a String representation is used for DRL instead of a double value 
+|"true" or "false". If "true", then a String representation is used for DRL instead of a double value
               from a Numeric cell
 |Optional, at most once. If omitted, a double value is used.
 
@@ -375,20 +374,20 @@ For a column header, either use the keyword or any other word beginning with the
 Given a column headed CONDITION, the cells in successive lines result in a conditional element.
 
 * Text in the first cell below CONDITION develops into a pattern for the rule condition, with the snippet in the next line becoming a constraint. If the cell is merged with one or more neighbours, a single pattern with multiple constraints is formed: all constraints are combined into a parenthesized list and appended to the text in this cell. The cell may be left blank, which means that the code snippet in the next row must result in a valid conditional element on its own.
-+ 
++
 To include a pattern without constraints, you can write the pattern in front of the text for another pattern.
-+ 
++
 The pattern may be written with or without an empty pair of parentheses.
 A "from" clause may be appended to the pattern.
-+ 
++
 If the pattern ends with "eval", code snippets are supposed to produce boolean expressions for inclusion into a pair of parentheses after "eval".
 * Text in the second cell below CONDITION is processed in two steps.
 .. The code snippet in this cell is modified by interpolating values from cells farther down in the column. If you want to create a constraint consisting of a comparison using "==" with the value from the cells below, the field selector alone is sufficient. Any other comparison operator must be specified as the last item within the snippet, and the value from the cells below is appended. For all other constraint forms, you must mark the position for including the contents of a cell with the symbol ``$param``. Multiple insertions are possible by using the symbols ``$1``, ``$2``, etc., and a comma-separated list of values in the cells below.
-+ 
++
 A text according to the pattern ``forall(``__delimiter__``){``__snippet__``}`` is expanded by repeating the _snippet_ once for each of the values of the comma-separated list of values in each of the cells below, inserting the value in place of the symbol `$` and by joining these expansions by the given __delimiter__.
 Note that the forall construct may be surrounded by other text.
 .. If the cell in the preceding row is not empty, the completed code snippet is added to the conditional element from that cell. A pair of parentheses is provided automatically, as well as a separating comma if multiple constraints are added to a pattern in a merged cell.
-+ 
++
 If the cell above is empty, the interpolated result is used as is.
 * Text in the third cell below CONDITION is for documentation only. It should be used to indicate the column's purpose to a human reader.
 * From the fourth row on, non-blank entries provide data for interpolation as described above. A blank cell results in the omission of the conditional element or constraint for this rule.
@@ -399,13 +398,13 @@ Given a column headed ACTION, the cells in successive lines result in an action 
 * Text in the first cell below ACTION is optional. If present, it is interpreted as an object reference.
 * Text in the second cell below ACTION is processed in two steps.
 .. The code snippet in this cell is modified by interpolating values from cells farther down in the column. For a singular insertion, mark the position for including the contents of a cell with the symbol ``$param``. Multiple insertions are possible by using the symbols ``$1``, ``$2``, etc., and a comma-separated list of values in the cells below.
-+ 
++
 A method call without interpolation can be achieved by a text without any marker symbols.
 In this case, use any non-blank entry in a row below to include the statement.
-+ 
++
 The forall construct is available here, too.
 .. If the first cell is not empty, its text, followed by a period, the text in the second cell and a terminating semicolon are stringed together, resulting in a method call which is added as an action statement for the consequence.
-+ 
++
 If the cell above is empty, the interpolated result is used as is.
 * Text in the third cell below ACTION is for documentation only. It should be used to indicate the column's purpose to a human reader.
 * From the fourth row on, non-blank entries provide data for interpolation as described above. A blank cell results in the omission of the action statement for this rule.
@@ -441,7 +440,7 @@ The template `forall(&&){bar != $}` with a cell containing `42,43` results in ``
 ====
 
 
-The next example demonstrates the joint effect of a cell defining the pattern type and the code snippet below it. 
+The next example demonstrates the joint effect of a cell defining the pattern type and the code snippet below it.
 
 
 image::DecisionTables/spanned_column.png[align="center"]
@@ -449,7 +448,7 @@ image::DecisionTables/spanned_column.png[align="center"]
 This spreadsheet section shows how the `Person` type declaration spans 2 columns, and thus both constraints will appear as ``Person(age == ..., type == ...)``.
 Since only the field names are present in the snippet, they imply an equality test.
 
-In the following example the marker symbol `$param` is used. 
+In the following example the marker symbol `$param` is used.
 
 
 image::DecisionTables/with_param.png[align="center"]
@@ -457,7 +456,7 @@ image::DecisionTables/with_param.png[align="center"]
 The result of this column is the pattern ``Person(age == "42"))``.
 You may have noticed that the marker and the operator "==" are redundant.
 
-The next example illustrates that a trailing insertion marker can be omitted. 
+The next example illustrates that a trailing insertion marker can be omitted.
 
 image::DecisionTables/operator_completion.png[align="center"]
 
@@ -471,7 +470,7 @@ Here, the result is `c: Cheese(type == "stilton").` Note that the quotes are pro
 Actually, anything can be placed in the object type row.
 Apart from the definition of a binding variable, it could also be an additional pattern that is to be inserted literally.
 
-A simple construction of an action statement with the insertion of a single value is shown below. 
+A simple construction of an action statement with the insertion of a single value is shown below.
 
 image::DecisionTables/consequence.png[align="center"]
 
@@ -480,14 +479,14 @@ Using this style, anything can be placed in the consequence, not just a single m
 (The same technique is applicable within a CONDITION column as well.)
 
 Below is a comprehensive example, showing the use of various column headers.
-It is not an error to have no value below a column header (as in the NO-LOOP column): here, the attribute will not be applied in any of the rules. 
+It is not an error to have no value below a column header (as in the NO-LOOP column): here, the attribute will not be applied in any of the rules.
 
-.Example usage of keywords for imports, headers, etc. 
+.Example usage of keywords for imports, headers, etc.
 image::DecisionTables/Key.png[align="center"]
 
-And, finally, here is an example of Import, Variables and Functions. 
+And, finally, here is an example of Import, Variables and Functions.
 
-.Example usage of keywords for functions, etc. 
+.Example usage of keywords for functions, etc.
 image::DecisionTables/keywords.png[align="center"]
 
 Multiple package names within the same cell must be separated by a comma.
@@ -507,9 +506,9 @@ There is really only one class to look at: ``SpreadsheetCompiler``.
 This class will take spreadsheets in various formats, and generate rules in DRL (which you can then use in the normal way). The `SpreadsheetCompiler` can just be used to generate partial rule files if it is wished, and assemble it into a complete rule package after the fact (this allows the separation of technical and non-technical aspects of the rules if needed).
 
 To get started, a sample spreadsheet can be used as a base.
-Alternatively, if the plug-in is being used (Rule Workbench IDE), the wizard can generate a spreadsheet from a template (to edit it an xls compatible spreadsheet editor will need to be used).  
+Alternatively, if the plug-in is being used (Rule Workbench IDE), the wizard can generate a spreadsheet from a template (to edit it an xls compatible spreadsheet editor will need to be used).
 
-.Wizard in the IDE 
+.Wizard in the IDE
 image::DecisionTables/wizard.png[align="center"]
 
 
@@ -534,7 +533,7 @@ Typically, the whole process of authoring rules (coming up with a new decision t
 === Using spreadsheet features
 
 Features of applications like Excel can be used to provide assistance in entering data into spreadsheets, such as validating fields.
-Lists that are stored in other worksheets can be used to provide valid lists of values for cells, like in the following diagram. 
+Lists that are stored in other worksheets can be used to provide valid lists of values for cells, like in the following diagram.
 
 image::DecisionTables/lists.png[align="center"]
 
@@ -557,7 +556,7 @@ So whilst you can do everything you could do in decision tables you can also do 
 
 As an example, a more classic decision table is shown, but without any hidden rows for the rule meta data (so the spreadsheet only contains the raw data to generate the rules).
 
-.Template data 
+.Template data
 image::DecisionTables/template1.png[align="center"]
 
 
@@ -592,7 +591,7 @@ So what does the template look like?
 20 end template
 ----
 
-Annotations to the preceding program listing: 
+Annotations to the preceding program listing:
 
 * Line 1: All rule templates start with ``template header``.
 * Lines 2-4: Following the header is the list of columns in the order they appear in the data. In this case we are calling the first column ``age``, the second `type` and the third ``log``.
