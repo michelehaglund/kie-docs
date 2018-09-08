@@ -1,0 +1,63 @@
+[id='inference-con']
+= Inference
+
+Inference refers to the gathering of knowledge of something from using previous knowledge. Rules create new data that other rules can execute. For example, given a `Person` fact with an age field and a rule that provides age policy control, we can infer whether a person is an adult or a child and act on the outcome.
+
+In the following example, an instance of `IsAdult` is inserted for every person who is 18 years of age or over.
+
+[source]
+----
+rule "Infer Adult"
+when
+  $p : Person( age >= 18 )
+then
+  insert( new IsAdult( $p ) )
+end
+----
+
+The following example shows that you can use this inferred relation in any rule:
+
+[source]
+----
+$p : Person()
+IsAdult( person == $p )
+----
+
+So now we know what inference is, and have a basic example, how does this facilitate good rule design and maintenance?
+
+Let's take a government department, referred to in this example as the ID department, that is responsible for issuing ID cards when children become adults. They might have a decision table that includes logic like this, which says when an adult living in London is 18 years of age or over, issue a card:
+
+image::UserGuide/monolithic.png[align="center"]
+
+However the ID department does not set the policy on who an adult is. That is done at the central government level.
+If the central government were to change that age policy to 21, it would initiate a change management process. As a result, someone would have to communicate this change with the ID department to ensure that their systems are updated before the new law is enforced.
+
+This change management process and communication between departments is not ideal for an agile environment. Additionally, such a change can be costly and error prone.
+
+In contrast to this, let's look at an approach where we split (de-couple) the authoring responsibilities, so that both the central government and the ID department maintain their own rules.
+
+It is the central government's job to determine who is an adult. If they change the law they simply update their central repository with the new rules:
+
+image::UserGuide/InferIsAdult.png[align="center"]
+
+The `IsAdult` fact, as discussed previously, is inferred from the policy rules. It encapsulates the seemingly arbitrary piece of logic "age >= 18" and provides semantic abstractions for its meaning. Now if anyone uses the above rules, they no longer need to be aware of explicit information that determines whether someone is an adult or not. They can just use the inferred fact:
+
+image::UserGuide/IssueIdCard.png[align="center"]
+
+While the example is very minimal and trivial, it illustrates some important points.
+We started with a monolithic and leaky approach to our knowledge engineering.
+We created a single decision table that had all possible information in it and that leaks information from central government that the ID department did not care about and did not want to manage.
+
+We first de-coupled the knowledge process so each department was responsible for only what it needed to know.
+We then encapsulated this leaky knowledge using an inferred fact `IsAdult`.
+The use of the term `IsAdult` also gave a semantic abstraction to the previously arbitrary logic "age >= 18".
+
+So a general rule of thumb when doing your knowledge engineering is:
+
+* *Bad*
+** Monolithic
+** Leaky
+* *Good*
+** De-couple knowledge responsibilities
+** Encapsulate knowledge
+** Provide semantic abstractions for those encapsulations

@@ -1,0 +1,17 @@
+[id='methods-rules-con']
+= Methods versus rules
+
+Rule conditions are often configured using Java methods, which can become difficult to configure and troubleshoot for complex business rule definitions.
+
+Methods are useful and easy to define for simple `if` rule conditions as shown in the following example:
+
+[source,java]
+----
+public void helloWorld(Person person) {
+    if ( person.getName().equals( "Chuck" ) ) {
+        System.out.println( "Hello Chuck" );
+    }
+}
+----
+
+{PRODUCT} provides a user interface that simplifies the process of defining rules that are comprised of complex decision conditions within a decision process. See {URL_GETTING_STARTED_DECISION_SERVICE}[_{GETTING_STARTED_DECISION_SERVICE}_] to familiarize yourself with the UI-based guided rules designer in {CENTRAL}.

@@ -1,4 +1,4 @@
-[id='assembly_architect-descision-services']
+[id='assembly_architect-decision-services']
 
 include::_artifacts/document-attributes.adoc[]
 
@@ -13,33 +13,17 @@ include::_artifacts/author-group.adoc[]
 As a business analyst or rules developer, you must consider the implications of various options for rule authoring before you begin designing a decision service in in {PRODUCT} {PRODUCT_VERSION}.
 
 .Prerequisites
-*<MH>Duncan, what should we list as prereqs? I suggest having the reader review the Getting started with decision services document (http://file.rdu.redhat.com/~mhaglund/BXMSDOC-2436)</MH>?*
 You are familiar with basic decision service concepts, including business rules and decision tables. For details, see {URL_GETTING_STARTED_DECISION_SERVICE}[_{GETTING_STARTED_DECISION_SERVICE}_].
-//* {EAP_LONG} 7.1.0 is installed. See  https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.1/html-single/installation_guide/[_Red Hat JBoss EAP 7.1.0 Installation Guide_].
-//* {PRODUCT} is installed. For more information, see {URL_INSTALLING_ON_EAP}[_{INSTALLING_ON_EAP}_].
-//* {PRODUCT} is running and you can log in to {CENTRAL} with the `admin` role.
 
 // Modules - concepts, procedures, refs, etc.
 
-include::{drools-dir}/UserGuide/TheBasics-section.adoc[leveloffset=+1]
+include::methods-rules-con.adoc[leveloffset=+1]
 
-include::{enterprise-dir}/rules/guided-rules-con.adoc[leveloffset=+1]
+include::inference-con.adoc[leveloffset=+1]
+
+include::states-con.adoc[leveloffset=+1]
 
 include::{enterprise-dir}/rules/guided-decision-tables-con.adoc[leveloffset=+1]
-
-include::{drools-dir}/UserGuide/DecisionTables-section.adoc[leveloffset=+1]
-
-include::{drools-dir}/DroolsRunning-chapter.adoc[leveloffset=+1]
-
-include::{drools-dir}/UserGuide/ExecutionControl-section.adoc[leveloffset=+1]
-
-include::{drools-dir}/UserGuide/Inference-section.adoc[leveloffset=+1]
-
-
-
-//include::{enterprise-dir}/project-data/data-objects-con.adoc[leveloffset=+1]
-
-//For more information about creating data objects, see {URL_GUIDED_RULES}#data-objects-create-proc_guided-rules["Creating data objects"] in _{GUIDED_DECISION_TABLES}_.
 
 == Additional resources
 * {URL_GUIDED_RULES}[_{GUIDED_RULES}_]
