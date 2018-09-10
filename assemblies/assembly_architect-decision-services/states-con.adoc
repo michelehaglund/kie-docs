@@ -1,17 +1,12 @@
 [id='states-con']
 = Stateless versus stateful sessions
 
-Main difference, you can only call a stateless session once, provide data, fire rules, get the result and then the session is gone. A stateful session takes the specified data, executes the rules, and after the rules fire, you can add more rules and fire it again.
+When planning your rule authoring, you must decide between stateless versus stateful sessions.
 
-Stateful sessions are more difficult to manage and utilizes more resources.
-
-Where in our product do they specify that they are using stateless or stateful? Config option in the kmodule.xml you can define the attribute in the ksession element. By default it is set to stateful in the ksession element in the kmodule.xml.
+You define either stateless or stateful in the `ksession` element in the `kmodule.xml` file. By default it is set to stateful.
 
 == Stateless sessions
-A stateless session
-
-A stateless session can be called like a function passing it some data and then receiving some results back.
-Some common use cases for stateless sessions are, but not limited to:
+A stateless session can be called like a function passing it some data and then receiving some results back. Some common use cases for stateless sessions are, but not limited to:
 
 * Validation
 ** Is this person eligible for a mortgage?
@@ -21,8 +16,7 @@ Some common use cases for stateless sessions are, but not limited to:
 ** Filter incoming messages, such as emails, into folders.
 ** Send incoming messages to a destination.
 
-
-So let's start with a very simple example using a driving license application.
+Let's start with a very simple example using a driver license application.
 
 [source,java]
 ----
@@ -34,9 +28,8 @@ public class Applicant {
 }
 ----
 
+Now that we have our data model we can write our first rule. We assume that the application uses rules to reject invalid applications.
 
-Now that we have our data model we can write our first rule.
-We assume that the application uses rules to reject invalid applications.
 As this is a simple validation use case we will add a single rule to disqualify any applicant younger than 18.
 
 [source]
@@ -51,21 +44,15 @@ then
 end
 ----
 
-To make the engine aware of data, so it can be processed against the rules, we have to _insert_ the data, much like with a database.
-When the Applicant instance is inserted into the engine it is evaluated against the constraints of the rules, in this case just two constraints for one rule.
-We say _two_ because the type Applicant is the first object type constraint, and `age < 18` is the second field constraint.
-An object type constraint plus its zero or more field constraints is referred to as a pattern.
-When an inserted instance satisfies both the object type constraint and all the field constraints, it is said to be matched.
-The `$a` is a binding variable which permits us to reference the matched object in the consequence.
-There its properties can be updated.
-The dollar character ('$') is optional, but it helps to differentiate variable names from field names.
-The process of matching patterns against the inserted data is, not surprisingly, often referred to as __pattern matching__.
+To make the engine aware of data that will be processed against the rules, we have to insert the data, much like with a database. When the Applicant instance is inserted into the engine it is evaluated against the constraints of the rules. In this case only two constraints for one rule.
+We use two because the `Applicant` type is the first object type constraint and `age < 18` is the second field constraint. An object type constraint plus its zero or more field constraints is referred to as a pattern. When an inserted instance satisfies both the object type constraint and all the field constraints, it is said to be matched.
 
-To use this rule it is necessary to put it a Drools file, just a plain text file with .drl extension , short for "Drools Rule Language". Let's call this file licenseApplication.drl, and store it in a Kie Project.
-A Kie Project has the structure of a normal Maven project with an additional file (kmodule.xml) defining the ``KieBase``s and ``KieSession``s that can be created.
-This file has to be placed in the resources/META-INF folder of the Maven project while all the other Drools artifacts, such as the licenseApplication.drl containing the former rule, must be stored in the resources folder or in any other subfolder under it.
+The `$a` is a binding variable which enables us to reference the matched object in the consequence. The dollar character `$` is optional, but it helps to differentiate variable names from field names. The process of matching patterns against the inserted data is often referred to as `pattern matching`.
 
-Since meaningful defaults have been provided for all configuration aspects, the simplest kmodule.xml file can contain just an empty kmodule tag like the following:
+To use this rule you must place it in a Drools file as a plain text file with .drl extension. For this example, we will name this file `licenseApplication.drl` and store it in a Kie project. A Kie project has the structure of a normal Maven project with an additional kmodule.xml file that defines the ``KieBase``s and ``KieSession``s that can be created.
+The file must be located in the resources/META-INF folder of the Maven project, while all the other Drools artifacts, such as the `licenseApplication.drl` containing the former rule, must be stored in the resources folder or in any other subfolder.
+
+Since meaningful defaults are provided for all configuration aspects, the simplest `kmodule.xml` file can contain just an empty kmodule tag as shown here:
 
 [source,xml]
 ----
@@ -73,8 +60,7 @@ Since meaningful defaults have been provided for all configuration aspects, the 
 <kmodule xmlns="http://www.drools.org/xsd/kmodule"/>
 ----
 
-
-At this point it is possible to create a `KieContainer` that reads the files to be built, from the classpath.
+At this point it is possible to create a `KieContainer` that reads the files to be built from the classpath.
 
 [source,java]
 ----
@@ -82,9 +68,7 @@ KieServices kieServices = KieServices.Factory.get();
 KieContainer kContainer = kieServices.getKieClasspathContainer();
 ----
 
-
-The above code snippet compiles all the DRL files found on the classpath and put the result of this compilation, a ``KieModule``, in the ``KieContainer``.
-If there are no errors, we are now ready to create our session from the `KieContainer` and execute against some data:
+The above code snippet compiles all the DRL files found on the classpath and adds the result of this compilation, a ``KieModule``, in the ``KieContainer``. If there are no errors, we create our session from the `KieContainer` and execute against some data:
 
 [source,java]
 ----
@@ -95,12 +79,9 @@ ksession.execute( applicant );
 assertFalse( applicant.isValid() );
 ----
 
+The preceding code executes the data against the rules. Since the applicant is under the age of 18, the application is marked as invalid.
 
-The preceding code executes the data against the rules.
-Since the applicant is under the age of 18, the application is marked as invalid.
-
-So far we've only used a single instance, but what if we want to use more than one? We can execute against any object implementing Iterable, such as a collection.
-Let's add another class called ``Application``, which has the date of the application, and we'll also move the boolean valid field to the `Application` class.
+So far we've only used a single instance, but what if we want to use more than one, we can execute against any object implementing Iterable interface, such as a collection. We will add another class called `Application`, which has the date of the application, and we will move the `boolean valid` field to the `Application` class.
 
 [source,java]
 ----
@@ -118,7 +99,7 @@ public class Application {
 ----
 
 
-We will also add another rule to validate that the application was made within a period of time.
+Now, we can add another rule to validate that the application was submitted within a certain period of time.
 
 [source]
 ----
@@ -140,8 +121,7 @@ then
 end
 ----
 
-
-Unfortunately a Java array does not implement the `Iterable` interface, so we have to use the JDK converter method ``Arrays.asList(...)``.
+As Java arrays do not implement the `Iterable` interface, we use the `Arrays.asList(...)` JDK converter method .
 The code shown below executes against an iterable list, where all collection elements are inserted before any matched rules are fired.
 
 [source,java]
@@ -154,18 +134,16 @@ ksession.execute( Arrays.asList( new Object[] { application, applicant } ) );
 assertFalse( application.isValid() );
 ----
 
+The `execute(Object object)` and `execute(Iterable objects)` execute methods are convenience methods for the interface ``BatchExecutor``'s method ``execute(Command command)``.
 
-The two execute methods `execute(Object object)` and `execute(Iterable objects)` are actually convenience methods for the interface ``BatchExecutor``'s method ``execute(Command command)``.
-
-The `KieCommands` commands factory, obtainable from the `KieServices` like all other factories of the KIE API, is used to create commands, so that the following is equivalent to ``execute(Iterable it)``:
+The `KieCommands` commands factory, which is obtainable from the `KieServices` like all other factories of the KIE API, is used to create commands, so that the following is equivalent to ``execute(Iterable it)``:
 
 [source,java]
 ----
 ksession.execute( kieServices.getCommands().newInsertElements( Arrays.asList( new Object[] { application, applicant } ) );
 ----
 
-
-Batch Executor and Command Factory are particularly useful when working with multiple Commands and with output identifiers for obtaining results.
+Batch Executor and Command Factory are useful when working with multiple Commands and with output identifiers for obtaining results.
 
 [source,java]
 ----
@@ -179,28 +157,22 @@ assertEquals( new Person( "Mr John Smith" ), results.getValue( "mrSmith" ) );
 
 `CommandFactory` supports many other Commands that can be used in the `BatchExecutor` like ``StartProcess``, ``Query``, and ``SetGlobal``.
 
-== Stateful Knowledge Session
 
-
-Stateful Sessions are long lived and allow iterative changes over time.
-Some common use cases for Stateful Sessions are, but not limited to:
+== Stateful sessions
+Stateful sessions takes the specified data, executes the rules. After the rules fire, you can add more rules and fire it again. Stateful sessions are more difficult to manage and utilize more resources. Stateful Sessions are long lived and allow iterative changes over time. Some common use cases for stateful sessions are, but not limited to:
 
 * Monitoring
-** Stock market monitoring and analysis for semi-automatic buying.
+** Stock market monitoring and analysis for semi-automatic buying
 * Diagnostics
 ** Fault finding, medical diagnostics
 * Logistics
 ** Parcel tracking and delivery provisioning
 * Compliance
-** Validation of legality for market trades.
+** Validation of legality for market trades
 
+In contrast to a stateless session, the `dispose()` method must be called afterwards to ensure there are no memory leaks, as the KieBase contains references to stateful knowledge sessions when they are created. Since stateful sessions are the most commonly used session type it, is named `KieSession` in the KIE API. `KieSession` also supports the `BatchExecutor` interface, like ``StatelessKieSession``, the only difference being that the `FireAllRules` command is not automatically called at the end for a stateful session.
 
-In contrast to a Stateless Session, the `dispose()` method must be called afterwards to ensure there are no memory leaks, as the KieBase contains references to Stateful Knowledge Sessions when they are created.
-Since Stateful Knowledge Session is the most commonly used session type it is just named `KieSession` in the KIE API. `KieSession` also supports the `BatchExecutor` interface, like ``StatelessKieSession``, the only difference being that the `FireAllRules` command is not automatically called at the end for a Stateful Session.
-
-We illustrate the monitoring use case with an example for raising a fire alarm.
-Using just four classes, we represent rooms in a house, each of which has one sprinkler.
-If a fire starts in a room, we represent that with a single `Fire` instance.
+The following example illustrates the monitoring use case with an example for raising a fire alarm. Using just four classes, we represent rooms in a house, each of which has one sprinkler. If a fire starts in one room, we represent that with a single `Fire` instance.
 
 [source,java]
 ----
@@ -221,15 +193,9 @@ public class Alarm {
 }
 ----
 
+In the previous section on stateless sessions the concepts of inserting and matching against data were introduced. That example assumed that only a single instance of each object type was inserted and only used literal constraints. However, a house has many rooms, so rules must express relationships between objects, such as a sprinkler being in a certain room. This is best done by using a binding variable as a constraint in a pattern. This "join" process results in cross products, which are covered in the next section.
 
-In the previous section on Stateless Sessions the concepts of inserting and matching against data were introduced.
-That example assumed that only a single instance of each object type was ever inserted and thus only used literal constraints.
-However, a house has many rooms, so rules must express relationships between objects, such as a sprinkler being in a certain room.
-This is best done by using a binding variable as a constraint in a pattern.
-This "join" process results in what is called cross products, which are covered in the next section.
-
-When a fire occurs an instance of the `Fire` class is created, for that room, and inserted into the session.
-The rule uses a binding on the `room` field of the `Fire` object to constrain matching to the sprinkler for that room, which is currently off.
+When a fire occurs, an instance of the `Fire` class is created for that room and inserted into the session. The rule uses a binding on the `room` field of the `Fire` object to constrain matching to the sprinkler for that room, which is currently off.
 When this rule fires and the consequence is executed the sprinkler is turned on.
 
 [source]
@@ -244,18 +210,13 @@ then
 end
 ----
 
+Whereas the stateless session uses standard Java syntax to modify a field, in the above rule we use the `modify` statement, which acts as a sort of "with" statement. It may contain a series of comma separated Java expressions. For example, calls to setters of the object selected by the `modify` statement's control expression. This modifies the data, and makes the engine aware of those changes so it can reason over them once more. This process is called inference, and it is essential for the stateful session's functionality.
 
-Whereas the Stateless Session uses standard Java syntax to modify a field, in the above rule we use the `modify` statement, which acts as a sort of "with" statement.
-It may contain a series of comma separated Java expressions, i.e., calls to setters of the object selected by the `modify` statement's control expression.
-This modifies the data, and makes the engine aware of those changes so it can reason over them once more.
-This process is called inference, and it's essential for the working of a Stateful Session.
-Stateless Sessions typically do not use inference, so the engine does not need to be aware of changes to data.
-Inference can also be turned off explicitly by using the __sequential mode__.
+Stateless sessions typically do not use inference, so the engine does not need to be aware of changes to data. Inference can also be turned off explicitly by using the __sequential mode__.
 
-So far we have rules that tell us when matching data exists, but what about when it does _not_ exist? How do we determine that a fire has been extinguished, i.e., that there isn't a `Fire` object any more? Previously the constraints have been sentences according to Propositional Logic, where the engine is constraining against individual instances.
-Drools also has support for First Order Logic that allows you to look at sets of data.
-A pattern under the keyword `not` matches when something does not exist.
-The rule given below turns the sprinkler off as soon as the fire in that room has disappeared.
+So far we have rules that tell us when matching data exists, but what about when it does not exist? How do we determine that a fire has been extinguished? For example, there isn't a `Fire` object. Previously, the constraints were sentences according to Propositional Logic, where the engine is constraining against individual instances. Drools also has support for First Order Logic that allows you to look at sets of data. A pattern under the keyword `not` matches when something does not exist.
+
+The following rule turns the sprinkler off as soon as the fire in that room is extinguished.
 
 [source]
 ----
@@ -270,10 +231,7 @@ then
 end
 ----
 
-
-While there is one sprinkler per room, there is just a single alarm for the building.
-An `Alarm` object is created when a fire occurs, but only one `Alarm` is needed for the entire building, no matter how many fires occur.
-Previously `not` was introduced to match the absence of a fact; now we use its complement `exists` which matches for one or more instances of some category.
+While there is one sprinkler per room, there is just a single alarm for the building. An `Alarm` object is created when a fire occurs, but only one `Alarm` is needed for the entire building, no matter how many fires occur. Previously `not` was introduced to match the absence of a fact; now we use its complement `exists` which matches for one or more instances of some category.
 
 [source]
 ----
@@ -285,7 +243,6 @@ then
     System.out.println( "Raise the alarm" );
 end
 ----
-
 
 Likewise, when there are no fires we want to remove the alarm, so the `not` keyword can be used again.
 
@@ -301,8 +258,7 @@ then
 end
 ----
 
-
-Finally there is a general health status message that is printed when the application first starts and after the alarm is removed and all sprinklers have been turned off.
+Finally there is a general health status message that is printed when the application first starts and after the alarm is removed and all sprinklers are turned off.
 
 [source]
 ----
@@ -315,10 +271,8 @@ then
 end
 ----
 
-
-As we did in the Stateless Session example, the above rules should be placed in a single DRL file and saved into the resouces folder of your Maven project or any of its subfolder.
-As before, we can then obtain a `KieSession` from the ``KieContainer``.
-The only difference is that this time we create a Stateful Session, whereas before we created a Stateless Session.
+As we did in the stateless session example, the above rules should be placed in a single DRL file and saved into the resources folder of your Maven project or one of its subfolders. We can then obtain a `KieSession` from the ``KieContainer``.
+The only difference is that this time we create a stateful session, whereas before we created a stateless session.
 
 [source,java]
 ----
@@ -328,9 +282,7 @@ KieSession ksession = kContainer.newKieSession();
 ----
 
 
-With the session created it is now possible to iteratively work with it over time.
-Four `Room` objects are created and inserted, as well as one `Sprinkler` object for each room.
-At this point the engine has done all of its matching, but no rules have fired yet.
+With the session created you can now iterate your work with it. Four `Room` objects are created and inserted, as well as one `Sprinkler` object for each room. At this point the engine has done all of its matching, but no rules have fired yet.
 Calling `ksession.fireAllRules()` allows the matched rules to fire, but without a fire that will just produce the health message.
 
 [source,java]
@@ -353,9 +305,7 @@ ksession.fireAllRules();
 > Everything is ok
 ----
 
-
-We now create two fires and insert them; this time a reference is kept for the returned ``FactHandle``.
-A Fact Handle is an internal engine reference to the inserted instance and allows instances to be retracted or modified at a later point in time.
+Now, we will create two fires and insert them; this time a reference is kept for the returned ``FactHandle``. A fact handle is an internal engine reference to the inserted instance and allows instances to be retracted or modified at a later point in time.
 With the fires now in the engine, once `fireAllRules()` is called, the alarm is raised and the respective sprinklers are turned on.
 
 [source,java]
@@ -376,9 +326,7 @@ ksession.fireAllRules();
 > Turn on the sprinkler for room office
 ----
 
-
-After a while the fires will be put out and the `Fire` instances are retracted.
-This results in the sprinklers being turned off, the alarm being cancelled, and eventually the health message is printed again.
+After all fires are extinguished the `Fire` instances are retracted. This results in the sprinklers being turned off, the alarm being cancelled, and eventually the health message is printed again.
 
 [source,java]
 ----
@@ -395,6 +343,3 @@ ksession.fireAllRules();
 > Turn off the sprinkler for room kitchen
 > Everything is ok
 ----
-
-
-Everyone still with me? That wasn't so hard and already I'm hoping you can start to see the value and power of a declarative rule system.
