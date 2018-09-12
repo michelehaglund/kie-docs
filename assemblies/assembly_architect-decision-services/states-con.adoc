@@ -73,10 +73,10 @@ The above code snippet compiles all the DRL files found on the classpath and add
 [source,java]
 ----
 StatelessKieSession kSession = kContainer.newStatelessKieSession();
-Applicant applicant = new Applicant( "Mr John Smith", 16 );
-assertTrue( applicant.isValid() );
-ksession.execute( applicant );
-assertFalse( applicant.isValid() );
+Applicant applicant = new Applicant("Mr John Smith", 16);
+assertTrue(applicant.isValid());
+ksession.execute(applicant);
+assertFalse(applicant.isValid());
 ----
 
 The preceding code executes the data against the rules. Since the applicant is under the age of 18, the application is marked as invalid.
@@ -107,17 +107,17 @@ package com.company.license
 
 rule "Is of valid age"
 when
-    Applicant( age < 18 )
+    Applicant(age < 18)
     $a : Application()
 then
-    $a.setValid( false );
+    $a.setValid(false);
 end
 
 rule "Application was made this year"
 when
-    $a : Application( dateApplied > "01-jan-2009" )
+    $a : Application(dateApplied > "01-jan-2009")
 then
-    $a.setValid( false );
+    $a.setValid(false);
 end
 ----
 
@@ -127,11 +127,11 @@ The code shown below executes against an iterable list, where all collection ele
 [source,java]
 ----
 StatelessKieSession kSession = kContainer.newStatelessKieSession();
-Applicant applicant = new Applicant( "Mr John Smith", 16 );
+Applicant applicant = new Applicant("Mr John Smith", 16);
 Application application = new Application();
-assertTrue( application.isValid() );
-ksession.execute( Arrays.asList( new Object[] { application, applicant } ) );
-assertFalse( application.isValid() );
+assertTrue(application.isValid());
+ksession.execute(Arrays.asList(application, applicant));
+assertFalse(application.isValid());
 ----
 
 The `execute(Object object)` and `execute(Iterable objects)` execute methods are convenience methods for the interface ``BatchExecutor``'s method ``execute(Command command)``.
@@ -140,7 +140,10 @@ The `KieCommands` commands factory, which is obtainable from the `KieServices` l
 
 [source,java]
 ----
-ksession.execute( kieServices.getCommands().newInsertElements( Arrays.asList( new Object[] { application, applicant } ) );
+ksession.execute(
+    kieServices.getCommands()
+                .newInsertElements(Arrays.asList(application, applicant))
+  );
 ----
 
 Batch Executor and Command Factory are useful when working with multiple Commands and with output identifiers for obtaining results.
@@ -149,17 +152,17 @@ Batch Executor and Command Factory are useful when working with multiple Command
 ----
 KieCommands kieCommands = kieServices.getCommands();
 List<Command> cmds = new ArrayList<Command>();
-cmds.add( kieCommands.newInsert( new Person( "Mr John Smith" ), "mrSmith", true, null ) );
-cmds.add( kieCommands.newInsert( new Person( "Mr John Doe" ), "mrDoe", true, null ) );
-BatchExecutionResults results = ksession.execute( kieCommands.newBatchExecution( cmds ) );
-assertEquals( new Person( "Mr John Smith" ), results.getValue( "mrSmith" ) );
+cmds.add(kieCommands.newInsert(new Person("Mr John Smith"), "mrSmith", true, null));
+cmds.add(kieCommands.newInsert(new Person("Mr John Doe"), "mrDoe", true, null));
+BatchExecutionResults results = ksession.execute(kieCommands.newBatchExecution(cmds));
+assertEquals(new Person("Mr John Smith"), results.getValue("mrSmith"));
 ----
 
 `CommandFactory` supports many other Commands that can be used in the `BatchExecutor` like ``StartProcess``, ``Query``, and ``SetGlobal``.
 
 
 == Stateful sessions
-Stateful sessions takes the specified data, executes the rules. After the rules fire, you can add more rules and fire it again. Stateful sessions are more difficult to manage and utilize more resources. Stateful Sessions are long lived and allow iterative changes over time. Some common use cases for stateful sessions are, but not limited to:
+Stateful sessions takes the specified data, executes the rules. After the rules fire, you can add more rules and fire it again. Stateful sessions are more difficult to manage and utilize more resources. Stateful sessions are long lived and allow iterative changes over time. Some common use cases for stateful sessions are, but not limited to:
 
 * Monitoring
 ** Stock market monitoring and analysis for semi-automatic buying
@@ -177,7 +180,7 @@ The following example illustrates the monitoring use case with an example for ra
 [source,java]
 ----
 public class Room {
-    private String name
+    private String name;
     // getter and setter methods here
 }
 public class Sprinkler {
@@ -203,10 +206,10 @@ When this rule fires and the consequence is executed the sprinkler is turned on.
 rule "When there is a fire turn on the sprinkler"
 when
     Fire($room : room)
-    $sprinkler : Sprinkler( room == $room, on == false )
+    $sprinkler : Sprinkler(room == $room, on == false)
 then
-    modify( $sprinkler ) { setOn( true ) };
-    System.out.println( "Turn on the sprinkler for room " + $room.getName() );
+    modify($sprinkler) {setOn(true)};
+    System.out.println("Turn on the sprinkler for room " + $room.getName());
 end
 ----
 
@@ -223,11 +226,11 @@ The following rule turns the sprinkler off as soon as the fire in that room is e
 rule "When the fire is gone turn off the sprinkler"
 when
     $room : Room( )
-    $sprinkler : Sprinkler( room == $room, on == true )
+    $sprinkler : Sprinkler(room == $room, on == true)
     not Fire( room == $room )
 then
-    modify( $sprinkler ) { setOn( false ) };
-    System.out.println( "Turn off the sprinkler for room " + $room.getName() );
+    modify($sprinkler) {setOn(false)};
+    System.out.println("Turn off the sprinkler for room " + $room.getName());
 end
 ----
 
@@ -239,8 +242,8 @@ rule "Raise the alarm when we have one or more fires"
 when
     exists Fire()
 then
-    insert( new Alarm() );
-    System.out.println( "Raise the alarm" );
+    insert(new Alarm());
+    System.out.println("Raise the alarm");
 end
 ----
 
@@ -253,8 +256,8 @@ when
     not Fire()
     $alarm : Alarm()
 then
-    delete( $alarm );
-    System.out.println( "Cancel the alarm" );
+    delete($alarm);
+    System.out.println("Cancel the alarm");
 end
 ----
 
@@ -265,9 +268,9 @@ Finally there is a general health status message that is printed when the applic
 rule "Status output when things are ok"
 when
     not Alarm()
-    not Sprinkler( on == true )
+    not Sprinkler(on == true)
 then
-    System.out.println( "Everything is ok" );
+    System.out.println("Everything is ok");
 end
 ----
 
@@ -287,14 +290,14 @@ Calling `ksession.fireAllRules()` allows the matched rules to fire, but without 
 
 [source,java]
 ----
-String[] names = new String[]{"kitchen", "bedroom", "office", "livingroom"};
-Map<String,Room> name2room = new HashMap<String,Room>();
-for( String name: names ){
-    Room room = new Room( name );
-    name2room.put( name, room );
-    ksession.insert( room );
-    Sprinkler sprinkler = new Sprinkler( room );
-    ksession.insert( sprinkler );
+String[] names = new String[] {"kitchen", "bedroom", "office", "livingroom"};
+Map<String, Room> name2room = new HashMap<String, Room>();
+for (String name: names) {
+    Room room = new Room(name);
+    name2room.put(name, room);
+    ksession.insert(room);
+    Sprinkler sprinkler = new Sprinkler(room);
+    ksession.insert(sprinkler);
 }
 
 ksession.fireAllRules();
@@ -310,11 +313,11 @@ With the fires now in the engine, once `fireAllRules()` is called, the alarm is 
 
 [source,java]
 ----
-Fire kitchenFire = new Fire( name2room.get( "kitchen" ) );
-Fire officeFire = new Fire( name2room.get( "office" ) );
+Fire kitchenFire = new Fire(name2room.get("kitchen"));
+Fire officeFire = new Fire(name2room.get("office"));
 
-FactHandle kitchenFireHandle = ksession.insert( kitchenFire );
-FactHandle officeFireHandle = ksession.insert( officeFire );
+FactHandle kitchenFireHandle = ksession.insert(kitchenFire);
+FactHandle officeFireHandle = ksession.insert(officeFire);
 
 ksession.fireAllRules();
 ----
@@ -330,8 +333,8 @@ After all fires are extinguished the `Fire` instances are retracted. This result
 
 [source,java]
 ----
-ksession.delete( kitchenFireHandle );
-ksession.delete( officeFireHandle );
+ksession.delete(kitchenFireHandle);
+ksession.delete(officeFireHandle);
 
 ksession.fireAllRules();
 ----

@@ -8,8 +8,8 @@ Methods are useful and easy to define for simple `if` rule conditions as shown i
 [source,java]
 ----
 public void helloWorld(Person person) {
-    if ( person.getName().equals( "Chuck" ) ) {
-        System.out.println( "Hello Chuck" );
+    if ( person.getName().equals("Chuck") ) {
+        System.out.println("Hello Chuck");
     }
 }
 ----

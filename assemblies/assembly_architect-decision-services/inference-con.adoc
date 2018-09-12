@@ -9,9 +9,9 @@ In the following example, an instance of `IsAdult` is inserted for every person 
 ----
 rule "Infer Adult"
 when
-  $p : Person( age >= 18 )
+  $p : Person(age >= 18)
 then
-  insert( new IsAdult( $p ) )
+  insert(new IsAdult($p))
 end
 ----
 
@@ -20,7 +20,7 @@ The following example shows that you can use this inferred relation in any rule:
 [source]
 ----
 $p : Person()
-IsAdult( person == $p )
+IsAdult(person == $p)
 ----
 
 So now we know what inference is, and have a basic example, how does this facilitate good rule design and maintenance?
