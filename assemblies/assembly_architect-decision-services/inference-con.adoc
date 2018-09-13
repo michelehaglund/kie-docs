@@ -52,7 +52,7 @@ We first de-coupled the knowledge process so each department was responsible for
 We then encapsulated this leaky knowledge using an inferred fact `IsAdult`.
 The use of the term `IsAdult` also gave a semantic abstraction to the previously arbitrary logic "age >= 18".
 
- == Simple planning guidelines:
+== Simple planning guidelines
 
 * *Bad*
 ** Monolithic

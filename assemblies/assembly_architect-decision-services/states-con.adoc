@@ -3,10 +3,10 @@
 
 When planning your rule authoring, you must decide between stateless versus stateful sessions.
 
-You define either stateless or stateful in the `ksession` element in the `kmodule.xml` file. By default it is set to stateful.
+You can use `KieContainer` APIs to retrieve a stateful or stateless session.
 
 == Stateless sessions
-A stateless session can be called like a function passing it some data and then receiving some results back. Some common use cases for stateless sessions are, but not limited to:
+A stateless session can be called like a function passing it some data and then receiving some results back. After the rules have executed and you get the results, the stateless session is destroyed, and resources are released. Some common use cases for stateless sessions are, but not limited to:
 
 * Validation
 ** Is this person eligible for a mortgage?
@@ -44,12 +44,12 @@ then
 end
 ----
 
-To make the engine aware of data that will be processed against the rules, we have to insert the data, much like with a database. When the Applicant instance is inserted into the engine it is evaluated against the constraints of the rules. In this case only two constraints for one rule.
+To make the engine aware of data that will be processed against the rules, we have to insert the data, much like with a method or a function. When the Applicant instance is inserted into the engine it is evaluated against the constraints of the rules. In this case only two constraints for one rule.
 We use two because the `Applicant` type is the first object type constraint and `age < 18` is the second field constraint. An object type constraint plus its zero or more field constraints is referred to as a pattern. When an inserted instance satisfies both the object type constraint and all the field constraints, it is said to be matched.
 
 The `$a` is a binding variable which enables us to reference the matched object in the consequence. The dollar character `$` is optional, but it helps to differentiate variable names from field names. The process of matching patterns against the inserted data is often referred to as `pattern matching`.
 
-To use this rule you must place it in a Drools file as a plain text file with .drl extension. For this example, we will name this file `licenseApplication.drl` and store it in a Kie project. A Kie project has the structure of a normal Maven project with an additional kmodule.xml file that defines the ``KieBase``s and ``KieSession``s that can be created.
+To use this rule you must place it in a Drools file as a plain text file with .drl extension. For this example, we will name this file `licenseApplication.drl` and store it in a KIE project. A KIE project has the structure of a normal Maven project with an additional kmodule.xml file that defines the ``KieBase``s and ``KieSession``s that can be created.
 The file must be located in the resources/META-INF folder of the Maven project, while all the other Drools artifacts, such as the `licenseApplication.drl` containing the former rule, must be stored in the resources folder or in any other subfolder.
 
 Since meaningful defaults are provided for all configuration aspects, the simplest `kmodule.xml` file can contain just an empty kmodule tag as shown here:
@@ -97,7 +97,6 @@ public class Application {
     // getter and setter methods here
 }
 ----
-
 
 Now, we can add another rule to validate that the application was submitted within a certain period of time.
 
@@ -162,7 +161,7 @@ assertEquals(new Person("Mr John Smith"), results.getValue("mrSmith"));
 
 
 == Stateful sessions
-Stateful sessions takes the specified data, executes the rules. After the rules fire, you can add more rules and fire it again. Stateful sessions are more difficult to manage and utilize more resources. Stateful sessions are long lived and allow iterative changes over time. Some common use cases for stateful sessions are, but not limited to:
+Stateful sessions takes the specified data, executes the rules. After the rules fire, you can add more facts (data) and fire the rules again. Stateful sessions are more difficult to manage and utilize more resources. Stateful sessions are long lived and allow iterative changes over time. Some common use cases for stateful sessions are, but not limited to:
 
 * Monitoring
 ** Stock market monitoring and analysis for semi-automatic buying
@@ -173,7 +172,7 @@ Stateful sessions takes the specified data, executes the rules. After the rules 
 * Compliance
 ** Validation of legality for market trades
 
-In contrast to a stateless session, the `dispose()` method must be called afterwards to ensure there are no memory leaks, as the KieBase contains references to stateful knowledge sessions when they are created. Since stateful sessions are the most commonly used session type it, is named `KieSession` in the KIE API. `KieSession` also supports the `BatchExecutor` interface, like ``StatelessKieSession``, the only difference being that the `FireAllRules` command is not automatically called at the end for a stateful session.
+In contrast to a stateless session, the `dispose()` method must be called afterwards to ensure there are no memory leaks, as the KieBase contains references to stateful knowledge sessions when they are created. Since stateful sessions are the most commonly used session type it, is named `KieSession` in the KIE API. `KieSession` also supports the `BatchExecutor` interface, like ``StatelessKieSession``, the `FireAllRules` command and the `dispose()` method are not automatically called at the end for a stateful session.
 
 The following example illustrates the monitoring use case with an example for raising a fire alarm. Using just four classes, we represent rooms in a house, each of which has one sprinkler. If a fire starts in one room, we represent that with a single `Fire` instance.
 
@@ -213,9 +212,7 @@ then
 end
 ----
 
-Whereas the stateless session uses standard Java syntax to modify a field, in the above rule we use the `modify` statement, which acts as a sort of "with" statement. It may contain a series of comma separated Java expressions. For example, calls to setters of the object selected by the `modify` statement's control expression. This modifies the data, and makes the engine aware of those changes so it can reason over them once more. This process is called inference, and it is essential for the stateful session's functionality.
-
-Stateless sessions typically do not use inference, so the engine does not need to be aware of changes to data. Inference can also be turned off explicitly by using the __sequential mode__.
+In the above rule we use the `modify` statement, which acts as a sort of "with" statement. It may contain a series of comma separated Java expressions. For example, calls to setters of the object selected by the `modify` statement's control expression. This modifies the data, and makes the engine aware of those changes so it can reason over them once more. This process is called inference, and it is essential for the stateful session's functionality.
 
 So far we have rules that tell us when matching data exists, but what about when it does not exist? How do we determine that a fire has been extinguished? For example, there isn't a `Fire` object. Previously, the constraints were sentences according to Propositional Logic, where the engine is constraining against individual instances. Drools also has support for First Order Logic that allows you to look at sets of data. A pattern under the keyword `not` matches when something does not exist.
 
@@ -274,8 +271,7 @@ then
 end
 ----
 
-As we did in the stateless session example, the above rules should be placed in a single DRL file and saved into the resources folder of your Maven project or one of its subfolders. We can then obtain a `KieSession` from the ``KieContainer``.
-The only difference is that this time we create a stateful session, whereas before we created a stateless session.
+As we did in the stateless session example, you can spread these rules over multiple DRLs files in the same project. By default, the KieBase will load all Drools ResourceTypes it finds in the project. This can be controlled using the `packages` attribute on the `kiebase` element in the `kmodule.xml` descriptor. The only difference is that this time we create a stateful session, whereas before we created a stateless session.
 
 [source,java]
 ----
