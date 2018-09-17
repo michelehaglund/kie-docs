@@ -106,17 +106,17 @@ package com.company.license
 
 rule "Is of valid age"
 when
-    Applicant(age < 18)
+    Applicant( age < 18 )
     $a : Application()
 then
-    $a.setValid(false);
+    $a.setValid( false );
 end
 
 rule "Application was made this year"
 when
-    $a : Application(dateApplied > "01-jan-2009")
+    $a : Application( dateApplied > "01-jan-2009" )
 then
-    $a.setValid(false);
+    $a.setValid( false );
 end
 ----
 
@@ -205,10 +205,10 @@ When this rule fires and the consequence is executed the sprinkler is turned on.
 rule "When there is a fire turn on the sprinkler"
 when
     Fire($room : room)
-    $sprinkler : Sprinkler(room == $room, on == false)
+    $sprinkler : Sprinkler( room == $room, on == false )
 then
-    modify($sprinkler) {setOn(true)};
-    System.out.println("Turn on the sprinkler for room " + $room.getName());
+    modify( $sprinkler ) {setOn( true )};
+    System.out.println( "Turn on the sprinkler for room" + $room.getName() );
 end
 ----
 
@@ -223,11 +223,11 @@ The following rule turns the sprinkler off as soon as the fire in that room is e
 rule "When the fire is gone turn off the sprinkler"
 when
     $room : Room( )
-    $sprinkler : Sprinkler(room == $room, on == true)
+    $sprinkler : Sprinkler( room == $room, on == true )
     not Fire( room == $room )
 then
-    modify($sprinkler) {setOn(false)};
-    System.out.println("Turn off the sprinkler for room " + $room.getName());
+    modify( $sprinkler ) {setOn(false)};
+    System.out.println( "Turn off the sprinkler for room" + $room.getName() );
 end
 ----
 
@@ -239,8 +239,8 @@ rule "Raise the alarm when we have one or more fires"
 when
     exists Fire()
 then
-    insert(new Alarm());
-    System.out.println("Raise the alarm");
+    insert( new Alarm() );
+    System.out.println( "Raise the alarm" );
 end
 ----
 
@@ -254,7 +254,7 @@ when
     $alarm : Alarm()
 then
     delete($alarm);
-    System.out.println("Cancel the alarm");
+    System.out.println( "Cancel the alarm" );
 end
 ----
 
@@ -265,9 +265,9 @@ Finally there is a general health status message that is printed when the applic
 rule "Status output when things are ok"
 when
     not Alarm()
-    not Sprinkler(on == true)
+    not Sprinkler( on == true )
 then
-    System.out.println("Everything is ok");
+    System.out.println( "Everything is ok" );
 end
 ----
 
@@ -297,6 +297,8 @@ for (String name: names) {
 }
 
 ksession.fireAllRules();
+
+ksession.dispose(); // Stateful rule session must always be disposed when finished
 ----
 
 [source]
@@ -316,6 +318,8 @@ FactHandle kitchenFireHandle = ksession.insert(kitchenFire);
 FactHandle officeFireHandle = ksession.insert(officeFire);
 
 ksession.fireAllRules();
+
+ksession.dispose(); // Stateful rule session must always be disposed when finished
 ----
 
 [source]
@@ -333,6 +337,8 @@ ksession.delete(kitchenFireHandle);
 ksession.delete(officeFireHandle);
 
 ksession.fireAllRules();
+
+ksession.dispose(); // Stateful rule session must always be disposed when finished
 ----
 
 [source]
