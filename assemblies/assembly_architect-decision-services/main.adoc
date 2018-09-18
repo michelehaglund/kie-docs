@@ -10,20 +10,22 @@ include::_artifacts/document-attributes.adoc[]
 include::_artifacts/author-group.adoc[]
 
 // Purpose statement for the assembly
-As a business analyst or rules developer, you must consider the implications of various options for rule authoring before you begin designing a decision service in in {PRODUCT} {PRODUCT_VERSION}.
+As a business analyst or rules developer, you must determine which assets to use and understand some basic terms for rule authoring before you begin designing a decision service in {PRODUCT} {PRODUCT_VERSION}.
 
 .Prerequisites
 You are familiar with basic decision service concepts, including business rules and decision tables. For details, see {URL_GETTING_STARTED_DECISION_SERVICE}[_{GETTING_STARTED_DECISION_SERVICE}_].
 
 // Modules - concepts, procedures, refs, etc.
 
-include::methods-rules-con.adoc[leveloffset=+1]
+include::{enterprise-dir}/rules/rules-authoring-assets-ref.adoc[leveloffset=+1]
 
-include::inference-con.adoc[leveloffset=+1]
+include::{enterprise-dir}/rules/planning-ds-con.adoc[leveloffset=+1]
 
-include::states-con.adoc[leveloffset=+1]
+include::{enterprise-dir}/rules/methods-rules-con.adoc[leveloffset=+2]
 
-include::{enterprise-dir}/rules/guided-decision-tables-con.adoc[leveloffset=+1]
+include::{enterprise-dir}/rules/inference-con.adoc[leveloffset=+2]
+
+include::{enterprise-dir}/rules/states-con.adoc[leveloffset=+2]
 
 == Additional resources
 * {URL_GUIDED_RULES}[_{GUIDED_RULES}_]

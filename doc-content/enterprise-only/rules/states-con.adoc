@@ -1,12 +1,10 @@
 [id='states-con']
-= Stateless versus stateful sessions
+= Stateless versus stateful KIE sessions
 
-When planning your rule authoring, you must decide between stateless versus stateful sessions.
+When planning your rule authoring, you must decide between stateless versus stateful KIE sessions. You can use `KieContainer` APIs to retrieve a stateful or stateless KIE session.
 
-You can use `KieContainer` APIs to retrieve a stateful or stateless session.
-
-== Stateless sessions
-A stateless session can be called like a function passing it some data and then receiving some results back. After the rules have executed and you get the results, the stateless session is destroyed, and resources are released. Some common use cases for stateless sessions are, but not limited to:
+== Stateless KIE sessions
+A stateless session can be called like a function passing it some data and then receiving some results back. After the rules have executed and you get the results, the stateless session is destroyed, and resources are released. The following are some common use cases for stateless KIE sessions:
 
 * Validation
 ** Is this person eligible for a mortgage?
@@ -160,8 +158,8 @@ assertEquals(new Person("Mr John Smith"), results.getValue("mrSmith"));
 `CommandFactory` supports many other Commands that can be used in the `BatchExecutor` like ``StartProcess``, ``Query``, and ``SetGlobal``.
 
 
-== Stateful sessions
-Stateful sessions takes the specified data, executes the rules. After the rules fire, you can add more facts (data) and fire the rules again. Stateful sessions are more difficult to manage and utilize more resources. Stateful sessions are long lived and allow iterative changes over time. Some common use cases for stateful sessions are, but not limited to:
+== Stateful KIE sessions
+Stateful sessions takes the specified data, executes the rules. After the rules fire, you can add more facts (data) and fire the rules again. Stateful sessions are more difficult to manage and utilize more resources. Stateful sessions are long lived and allow iterative changes. The following are some common use cases for stateful KIE sessions:
 
 * Monitoring
 ** Stock market monitoring and analysis for semi-automatic buying

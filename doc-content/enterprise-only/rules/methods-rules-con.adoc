@@ -1,0 +1,41 @@
+[id='methods-rules-con']
+= Methods and rules
+It is important that you understand the difference between methods and rules before you begin to define your business solutions.
+
+It is common practice to configure simple rule conditions using Java methods and rules; however, they can become difficult to configure and troubleshoot for more complex business rule definitions. {PRODUCT} provides a user interface that simplifies the process of defining methods and rules that comprise complex decision conditions within a decision process.
+
+== Methods
+Methods are useful and easy to define for simple `if` rule conditions as shown in the following example:
+
+[source,java]
+----
+public void helloWorld(Person person) {
+    if ( person.getName().equals("Chuck") ) {
+        System.out.println("Hello Chuck");
+    }
+}
+----
+
+=== Basic facts about methods:
+* Methods are called directly
+* Specific instance variables can be passed to methods
+* One call to a method results in a single execution
+
+
+== Rules
+Like methods, rules are useful for simple data definitions as shown in the following example:
+
+[source]
+----
+rule "Hello World" when
+    Person( name == "Chuck" )
+then
+    System.out.println( "Hello Chuck" );
+end
+----
+
+=== Basic facts about rules:
+* Rules are executed by matching data defined in the engine
+* Rules cannot be called directly
+* Specific instance variables cannot be passed to rules
+* Rules can execute more than once or not at all

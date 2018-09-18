@@ -1,0 +1,4 @@
+[id='planning-ds-con']
+= Basic concepts for rule authoring
+
+Before you begin defining rules in {PRODUCT}, you must ensure that you understand some basic rule creation terms.
