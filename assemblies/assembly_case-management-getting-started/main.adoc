@@ -15,12 +15,16 @@ As a case worker or process administrator, you can use case management to create
 
 Case management differs from business process management (BPM) in that it focuses on the actual data being handled throughout the case and less on the sequence of steps taken to complete a goal. Case data is the most important piece of information in case handling, while business context and decision-making is in the hands of the human case worker.
 
-Use this document to get started with case management while referring to the IT Orders sample project in {CENTRAL}. Deploy the project in {CENTRAL} to view and interact with the case assets described in this tutorial, or recreate the project yourself.
+Use this document to get started with case management by creating and deploying a new IT order project. Before you create the new project, you will review the existing *IT_Orders* sample project in {CENTRAL} for reference.
+
+*<MH> Cristiano - A general thought to refine this getting started experience.. What do you think about working together to create an actual tutorial as we have done for the PAM and DS GSGs. We can still point them to the IT_Orders sample case project for reference, but hand hold them through a specific case creation. The current steps are vague and don't tell them to actually provide specific data for their case creation. An example might be something like creating a case for a warehouse order scenario. That approach seems to be well received by folks that want to practice creating a project and testing it. Basically a start to finish tutorial. What do you think?</MH>*
+
+*Michele Haglund regarding a tutorial, I think we should still use what we got in here, the IT Order example. In my opinion, I think the document as it is now is mixing general instructions for case management, a walk through the IT Order project and actually building it. Perhaps if we break down the content that would help in making it clear. For example, a guided step by step on how to build the IT Order example. The other benefit I see is that people would still have the sample project to compare with that they built. Maciej Swiderski wdyt? Maciej Swiderski added a comment - 9 hours agoCristiano Nicolai agreed, it would make it more clear and easier to follow to have it broken down like you suggested.*
 
 
 .Prerequisites
 
-* {EAP_LONG} 7.1.0 is installed. For installation information, see the https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.1/html-single/installation_guide/[_Red Hat JBoss EAP 7.1.0 Installation Guide_].
+* {EAP_LONG} 7.2.0 is installed. For installation information, see the https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.2/html-single/installation_guide/[_Red Hat JBoss EAP 7.2.0 Installation Guide_].
 * {PRODUCT} is installed and configured with {KIE_SERVER}. For more information see {URL_INSTALLING_ON_EAP}[_{INSTALLING_ON_EAP}_].
 //xreflink
 * {PRODUCT} is running and you can log in to {CENTRAL} with the `kie-server` and `user` roles.
