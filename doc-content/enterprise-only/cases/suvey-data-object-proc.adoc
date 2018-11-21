@@ -1,2 +1,0 @@
-[id='survey-data-object-proc-{context}']
-= Creating the Survey data object
