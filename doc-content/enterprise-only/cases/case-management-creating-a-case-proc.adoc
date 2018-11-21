@@ -1,5 +1,5 @@
 [id='case-management-creating-a-case-proc']
-= Creating the IT Orders case project
+= Creating a new IT Orders case project
 
 A case project is a type of project in {CENTRAL} that is configured for case management. When you create a new case project, the following configurations are set automatically in {CENTRAL}:
 
@@ -8,15 +8,20 @@ A case project is a type of project in {CENTRAL} that is configured for case man
 * `WorkDefinition.wid` files are created in the project and its packages to ensure case-related nodes such as `Milestone` and `Cases` are available in the case definition design palette.
 
 .Procedure
-. In the *MySpace* space in {CENTRAL}, click the down arrow next to the *Add Project* -> *Case project*.
+. Log in to {CENTRAL} and go to *Menu* -> *Design* -> *Projects*.
 +
-.Select Case project
- image::cases/add-case-proj.png[Selecting Case project from the Add Project menu]
 
- . Enter the new case *Name* in the *Add Project* window and click *Add*.
- . Enter `IT Orders` in the *Name* field and click *Add*.
- +
- The *Assets* view of the project opens.
-. Confirm that the case project is set up correctly:
-.. Click *Settings* -> *Deployments*.
-.. Verify that the *Runtime Strategy* is set to `Per case` and that the *Marshalling Strategies* include a case file marshaller and a documents marshaller.
+*Tip*: {CENTRAL} provides a default space called *MySpace*, as shown in the following image. You can use the default space to create and test example projects.
++
+
+.Default spaces
+image::getting-started/spaces-teams-bc.png[]
+. Click *Add Project* -> *Case project*.
+. Enter `IT_Orders_New` in the *Name* field.
+. Click *Add*.
++
+
+.Add Project window
+image::getting-started/addproject-case.png[]
+
+The Assets view of the project opens.
