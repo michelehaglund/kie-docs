@@ -13,7 +13,7 @@ include::_artifacts/author-group.adoc[]
 
 As a developer you can use case management to create unpredictable and ad hoc case processes. A case worker or process administrator will focus on case management and execution.
 
-Use this document to get started with case management by creating and deploying a new IT order project. Before you create the new project, you will review the existing *IT_Orders* sample project in {CENTRAL} for reference.
+This document will familiarize you with the concepts of case management by showing you how to create and deploy a new IT order project. Before you create the new project, you will review the existing *IT_Orders* sample project in {CENTRAL} for reference. Additionally, you will use the Case management Showcase application, which is included in the {PRODUCT} to demonstrate the capabilities of case management.
 
 .Prerequisites
 
@@ -25,6 +25,12 @@ Use this document to get started with case management by creating and deploying 
 // modules
 include::{enterprise-dir}/cases/case-management-overview-con.adoc[leveloffset=+1]
 include::{enterprise-dir}/cases/case-management-it-order-sample-proc.adoc[leveloffset=+1]
+
+// include::{enterprise-dir}/cases/case-management-apps-con.adoc[leveloffset=+1]
+include::{enterprise-dir}/cases/case-management-showcase-application-con.adoc[leveloffset=+1]
+include::{enterprise-dir}/cases/case-management-install-and-login-to-showcase-proc.adoc[leveloffset=+2]
+include::{enterprise-dir}/cases/case-management-starting-itorders-in-showcase-proc.adoc[leveloffset=+2]
+
 include::{enterprise-dir}/cases/case-management-creating-a-case-proc.adoc[leveloffset=+1]
 include::{enterprise-dir}/project-data/data-objects-con.adoc[leveloffset=+1]
 include::{enterprise-dir}/cases/order-service-data-object-proc.adoc[leveloffset=+2]
@@ -55,11 +61,6 @@ include::{enterprise-dir}/cases/case-management-itorders-milestones-ref.adoc[lev
 
 include::{enterprise-dir}/cases/case-management-comments-con.adoc[leveloffset=+1]
 // include::{enterprise-dir}/cases/case-management-itorders-adding-a-comment-proc.adoc[leveloffset=+2]
-
-// include::{enterprise-dir}/cases/case-management-apps-con.adoc[leveloffset=+1]
-include::{enterprise-dir}/cases/case-management-showcase-application-con.adoc[leveloffset=+1]
-include::{enterprise-dir}/cases/case-management-install-and-login-to-showcase-proc.adoc[leveloffset=+2]
-include::{enterprise-dir}/cases/case-management-starting-itorders-in-showcase-proc.adoc[leveloffset=+2]
 
 include::{enterprise-dir}/cases/case-management-closing-cases-ref.adoc[leveloffset=+1]
 include::{enterprise-dir}/cases/case-management-close-case-using-API-proc.adoc[leveloffset=+2]
