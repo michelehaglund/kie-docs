@@ -9,13 +9,6 @@ The IT Orders sample case management project includes the following roles:
 * `manager`: The employee's manager; the person who will approve or deny the requested hardware. The role cardinality is set to `1`, which means that only one person or group can be assigned to this role.
 * `supplier`: The available suppliers of IT hardware in the system. The role cardinality is set to `2`, which means that more than one supplier can be assigned to this role.
 
-These roles are configured at the case definition level:
-
-.ITOrders Case Roles
-image::cases/case_roles.png[Case Roles]
-
-Assign users or groups to these roles when starting a new case file instance.
-
 .Prerequisites
 
 * You have imported and deployed the IT Orders sample project in {CENTRAL}.

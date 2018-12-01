@@ -22,11 +22,11 @@ The *IT_Orders_New* project is created.
 * *Identifier*: `deliveredOnTime`
 * *Label*: Leave empty
 * *Type*: `Boolean`
-.. Click *Create and continue*, then enter the following values:* *Id*:
+.. Click *Create and continue*, then enter the following values:
 * *Identifier*: `missingEquipment`
 * *Label*: Leave empty
 * *Type*: `String`
-.. Click *Create and continue*, then enter the following values:* *Id*:
+.. Click *Create and continue*, then enter the following values:
 * *Identifier*: `satisfied`
 * *Label*: Leave empty
 * *Type*: `Boolean`

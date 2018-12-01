@@ -1,7 +1,7 @@
 [id='order-service-data-object-proc-{context}']
 = Creating the ITOrderService data object
 
-The ITOrderService data object specifies the data type that will be used to define the IT Orders variables. *<MH>Cristiano, this may not be accurate. I was guessing. Please advise if there is a better description. Thank you. </MH>*
+The ITOrderService data object specifies the data type that will be used to define the IT Orders variables.
 
 .Prerequisite
 The *IT_Orders_New* project is created.
@@ -14,5 +14,5 @@ The *IT_Orders_New* project is created.
 . Click *Ok*.
 . Click image:cases/plus-sign.png[] next to the *Package* pull-down menu to specify a new package for the data object.
 . Input `org.jbpm.demo.it_orders.services`
-. Click *Add* -> *Yes, Move*.
-. Click *Save*, then click *Save* to confirm your changes.
+. Click *Add*.
+. Click *Save* -> *Yes, Move*, then click *Save* to confirm your changes.

@@ -10,7 +10,7 @@ Case milestones can be configured to start automatically when a case instance st
 
 .Procedure
 . In the process designer, click image:cases/3898.png[right arrows] to open the *Object Library* on the left of the design palette.
-. From the list, open *Milestone* and drag the `Milestone` object onto the palette.
+. Expand *Milestone* in the Object Library and drag a new milestone on the canvas.
 +
 image::cases/milestone.png[Milestone]
 +
@@ -29,4 +29,4 @@ image::cases/milestone.png[Milestone]
 +
 image::cases/milestone-trigger-expression.png[Milestone trigger expression]
 +
-Click *Ok* to finish.
+Click *Ok*.
