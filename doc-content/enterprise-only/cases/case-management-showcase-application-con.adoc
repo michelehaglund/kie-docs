@@ -1,7 +1,7 @@
 [id='case-management-showcase-application-con-{context}']
 = Case management Showcase application
 
-The Showcase application is included in the {PRODUCT} distribution to demonstrate the capabilities of case management in an application environment. Showcase is intended to be used as a proof of concept that aims to show the interaction between business process management (BPM) and case management. You can use the application to start/close, monitor, and interact with cases.
+The Showcase application is included in the {PRODUCT} distribution to demonstrate the capabilities of case management in an application environment. Showcase is intended to be used as a proof of concept that aims to show the interaction between business process management (BPM) and case management. You can use the application to start, close, monitor, and interact with cases.
 
 Showcase must be installed in addition to the {CENTRAL} application and {KIE_SERVER}. The Showcase application is required to start new case instances, however the case work is still performed in {CENTRAL}.
 

@@ -1,6 +1,6 @@
 [id='case-management-security-configuration-proc-{context}']
 = Configuring security for case management
-*<MH>Cristiano, Can this process be simplified by using the showcase app? If so, how?</MH>*
+*<MH>Cristiano, Can this process be simplified by using the showcase app? If so, how? Also, would this configuration be done by the developer, case worker, or process admin?</MH>*
 You can turn off case instance authorization by setting the following system property to `false`:
 
 `org.jbpm.cases.auth.enabled`

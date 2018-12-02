@@ -15,12 +15,14 @@ As a developer you can use case management to create unpredictable and ad hoc ca
 
 This document will familiarize you with the concepts of case management by showing you how to create and deploy a new IT order project. Before you create the new project, you will review the existing *IT_Orders* sample project in {CENTRAL} for reference. Additionally, you will use the Case management Showcase application, which is included in the {PRODUCT} to demonstrate the capabilities of case management.
 
+*<MH>Cristiano, we need to complete the process by adding steps for deploying the project and how and where they review the results</MH>*
+
 .Prerequisites
 
 * {EAP_LONG} 7.2.0 is installed. For installation information, see the https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.2/html-single/installation_guide/[_Red Hat JBoss EAP 7.2.0 Installation Guide_].
 * {PRODUCT} is installed and configured with {KIE_SERVER}. For more information see {URL_INSTALLING_ON_EAP}[_{INSTALLING_ON_EAP}_].
 //xreflink
-* {PRODUCT} is running and you can log in to {CENTRAL} with the `kie-server` and `user` roles.
+* {PRODUCT} is running and you can log in to {CENTRAL} with the `kie-server`, `user`, and `admin` roles.
 
 // modules
 include::{enterprise-dir}/cases/case-management-overview-con.adoc[leveloffset=+1]
@@ -41,6 +43,7 @@ include::{enterprise-dir}/cases/order-service-data-object-proc.adoc[leveloffset=
 include::{enterprise-dir}/cases/survey-data-object-proc.adoc[leveloffset=+2]
 include::{enterprise-dir}/cases/case-management-create-sub-proc-proc.adoc[leveloffset=+1]
 include::{enterprise-dir}/cases/case-management-designing-a-case-proc.adoc[leveloffset=+1]
+include::{enterprise-dir}/cases/case-management-deploy-test-proc.adoc[leveloffset=+1]
 // include::{enterprise-dir}/cases/case-management-subcases-proc.adoc[leveloffset=+1]
 
 //include::{enterprise-dir}/cases/case-management-role-authorization-proc.adoc[leveloffset=+2]
