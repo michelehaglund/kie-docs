@@ -61,9 +61,9 @@ WARNING: Ensure the names of the {PRODUCT} deployments you are copying do not co
 
 . Add the following system property to your deployment’s EAP_HOME/jboss-eap-7.2/standalone/configuration/standalone-full.xml file:
 `<property name="org.jbpm.casemgmt.showcase.url" value="/rhpam-case-mgmt-showcase"/>`
-. In a terminal window, enter the following command to start {CENTRAL}:
+. In a terminal application, navigate to *_EAP_HOME_/bin* and run the standalone configuration to start {CENTRAL}:
 +
-`_EAP_HOME_/bin/standalone.sh -c standalone-full.xml`
+`./standalone.sh -c standalone-full.xml`
 . In a web browser, enter
 ifdef::PAM[]
 `localhost:8080/{URL_COMPONENT_CENTRAL}`.
