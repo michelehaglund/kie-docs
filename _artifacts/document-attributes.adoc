@@ -87,6 +87,7 @@ endif::OP[]
 :PACKAGING_DEPLOYING_PROJECT: Packaging and deploying a {PRODUCT} project
 :REVISING_PROJECTS: Revising existing projects
 :DESIGNING_CASES: Designing and building cases
+:USING_SHOWCASE_APPLICATION: Using the Showcase application for case management
 :MANAGING_PROCESSES: Managing and monitoring business processes in {CENTRAL}
 :MODELING_PROCESSES: Modeling a new business process
 :IMPLEMENT_PROCESS_DEF: Implementing a process definition
@@ -100,7 +101,7 @@ endif::OP[]
 :INSTALLING_PLANNER: Installing and configuring {PLANNER}
 :INSTALLING_KIE_ON_WAS: Installing and configuring {KIE_SERVER} on {WEBSPHERE}
 :INSTALLING_KIE_ON_WLS: Installing and configuring {KIE_SERVER} on {WEBLOGIC}
-:INSTALLING_ON_EAP: Installing and configuring {PRODUCT} on {EAP} 
+:INSTALLING_ON_EAP: Installing and configuring {PRODUCT} on {EAP}
 :INSTALLING_ON_EAP_CLUSTER: Installing and configuring {PRODUCT} in a {EAP} clustered environment
 :INSTALLING_ON_JWS: Installing and configuring {PRODUCT} on Red Hat JBoss Web Server
 :INTEGRATING_JBDS: Integrating Red Hat JBoss Developer Studio with {PRODUCT}
@@ -150,6 +151,7 @@ endif::OP[]
 :URL_PACKAGING_DEPLOYING_PROJECT: {URL_BASE_ENTERPRISE}/packaging_and_deploying_a_{URL_COMPONENT_PRODUCT}_project
 :URL_REVISING_PROJECTS: {URL_BASE_ENTERPRISE}/revising_existing_projects
 :URL_DESIGNING_CASES: {URL_BASE_ENTERPRISE}/designing_and_building_cases
+:URL_USING_SHOWCASE_APPLICATION: {URL_BASE_ENTERPRISE}/using_the_showcase_application_for_case_management
 :URL_MANAGING_PROCESSES: {URL_BASE_ENTERPRISE}/managing_and_monitoring_business_processes_in_{URL_COMPONENT_CENTRAL_UNDER}
 :URL_MODELING_PROCESSES: {URL_BASE_ENTERPRISE}/modeling_a_new_business_process
 :URL_IMPLEMENT_PROCESS_DEF: {URL_BASE_ENTERPRISE}/implementing_a_process_definition
