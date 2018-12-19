@@ -24,6 +24,15 @@ You are logged in to {CENTRAL} and a case instance has been started using the Sh
 . Open the list of available endpoints under *Case instances :: Case Management*.
 . Locate the `POST` method endpoints for creating dynamic activities.
 +
+`POST /server/containers/{id}/cases/instances/{caseId}/tasks` Adds dynamic task (user or service depending on the payload) to case instance
++
+`POST /server/containers/{id}/cases/instances/{caseId}/stages/{caseStageId}/tasks` Adds dynamic task (user or service depending on the payload) to given stage within case instance
++
+`POST /server/containers/{id}/cases/instances/{caseId}/processes/{pId}`
+Adds dynamic subprocess identified by process id to case instance
++
+`POST /server/containers/{id}/cases/instances/{caseId}/stages/{caseStageId}/processes/{pId}` Adds dynamic subprocess identified by process id to stage within case instance
++
 image::cases/swagger-case-management-dynamic.png[]
 . Click the REST endpoint required to create the dynamic task or process to open the documentation.
 . Click *Try it out* and provide the parameters and body required to create the dynamic activity.

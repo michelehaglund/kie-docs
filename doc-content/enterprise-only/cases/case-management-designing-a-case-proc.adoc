@@ -13,7 +13,7 @@ You can refer to and interact with this case definition by importing the sample 
 You have followed the procedure in <<case-management-creating-a-case-proc>> to create a new case in {CENTRAL}.
 
 .Procedure
-. In the *Assets* window, click *Add Asset* in the upper-right corner of the project perspective and select *Case definition*.
+. In the *Assets* window, click *Add Asset* in the upper-right corner of the project perspective and select *Case definition (legacy)*.
 
 . Complete the required information in the *Create new Case definition* window:
 +
@@ -38,7 +38,7 @@ If a prefix is set to something else, such as `IT` for example, the following id
 +
 . Click *Ok* to open the process designer.
 +
-The designer creates a `WorkDefinition` file that includes the work items required for case definition. These appear as usable objects in the process designer *Object Library*, accessible by clicking the image:cases/3898.png[left arrows] in the upper-left corner of the designer.
+The designer uses a `WorkDefinition` file that includes the work items required for case definition. These appear as usable objects in the process designer *Object Library*, accessible by clicking the image:cases/3898.png[left arrows] in the upper-left corner of the designer.
 +
 Verify that the process designer includes the `Milestones` and `Cases` objects by either checking the *Object Library* dock on the left side of the process designer, or by checking the `WorkDefinition` file under *Work Item Definitions* in the *Project Explorer* window on the left side of {CENTRAL}.
 . Define process-level and case-level variables.
@@ -48,7 +48,9 @@ Click the image:cases/3897.png[] arrow on the right side of the designer to open
 .IT_Orders variables
 image::cases/case-variables.png[Editor for IT_Orders variables]
 +
-In the *IT_Orders* sample project, you can see that certain variables are identified as `Case File`. A case file variable is stored in the case file itself and promotes reuse of the case file data rather than copying it across multiple process instances. For example, the `hwSpec` variable is available to all processes within the case and is accessible directly from the case file even after the case instance is closed.
+In the *IT_Orders* sample project, the `hwSpec` variable is an example of a `Case File`. A case file variable is stored in the case file itself and promotes reuse of the case file data rather than copying it across multiple process instances. For example, the `hwSpec` variable is available to all processes within the case and is accessible directly from the case file even after the case instance is closed.
+
+The hwSpec variable is example of a Case File.
 +
 For more information about the case file, see
 ifeval::["{context}" == "case-management-getting-started"]
@@ -93,7 +95,7 @@ In the *IT_Orders* example, the `Prepare hardware spec` user task and the `Miles
 
 . Define a subprocess.
 +
-In the *IT_Orders* example, the `place-order` process is a separate business process that is carried out by the supplier. This is a reusable process that occurs during the course of case execution. 
+In the *IT_Orders* example, the `place-order` process is a separate business process that is carried out by the supplier. This is a reusable process that occurs during the course of case execution.
 +
 .. From the project menu, click *Add Asset* -> *Business Process* to create a new business process. Define the name and package for the new process and click *Ok*.
 .. Define the process that is a subprocess within the case. For example, the *IT_Orders* `Place order` process is a simple user task that applies to the supplier group and receives the relevant order data and case variables directly from the case file.
