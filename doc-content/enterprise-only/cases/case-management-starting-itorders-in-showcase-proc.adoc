@@ -38,5 +38,5 @@ image::cases/case-management-showcase-overview.png[]
 
 [NOTE]
 ====
-Cases can be started and closed using the Showcase application, but they cannot be reopened using this application. You can only reopen a case using a JMS or REST API call.
+Cases can be started and closed using the Showcase application, but they cannot be reopened using this application. You can only reopen a case using a Java Message Service (JMS) or REST API call.
 ====
