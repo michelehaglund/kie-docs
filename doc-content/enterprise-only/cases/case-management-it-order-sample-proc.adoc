@@ -17,4 +17,4 @@ Go to the *IT_Orders* sample project to view the predefined assets.
 . Click image:project-data/dots.png[] in the upper-right corner of the screen and select *Try Samples*.
 . Select *IT_Orders* and click *Ok*.
 
-The *Assets* view of the project opens. Select each example asset to explore how the project is designed to achieve the specified goal or workflow. You can refer back to the *IT_Orders* sample project assets as needed when you create your own case project.
+The *Assets* view of the project opens. Select each example asset to explore how the project is designed to achieve the specified goal or workflow. Be sure to review the *orderhardware* *Business Processes (legacy)* asset as this is the business process that you will create for your new project. This will help you to understand the business process flow that you will create. You can refer back to the *IT_Orders* sample project assets as needed when you create your own case project.
