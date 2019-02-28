@@ -56,7 +56,7 @@ This business rule detects when a file named `invalid.pdf` is uploaded to the ca
 
 +
 [NOTE]
-You can also select the *Build & Install* option to build the project and publish the KJAR file to the configured Maven repository without deploying to a {KIE_SERVER}. This option is equivalent to running `mvn clean install` for your project in the command terminal. In a development environment, you can click *Deploy* to deploy the built KJAR file to a {KIE_SERVER} without aborting any running instances (if applicable), or click *Redeploy* to deploy the built KJAR file and abort any running instances. In a production environment, the *Redeploy* option is disabled and you can click *Deploy* only to deploy the built KJAR file to a new deployment unit (KIE container) on a {KIE_SERVER}.
+You can also select the *Build & Install* option to build the project and publish the KJAR file to the configured Maven repository without deploying to a {KIE_SERVER}. This option is equivalent to executing the `mvn clean install` command for your project in the command terminal. In a development environment, you can click *Deploy* to deploy the built KJAR file to a {KIE_SERVER} without aborting any running instances (if applicable), or click *Redeploy* to deploy the built KJAR file and abort any running instances. In a production environment, the *Redeploy* option is disabled and you can click *Deploy* only to deploy the built KJAR file to a new deployment unit (KIE container) on a {KIE_SERVER}.
 
 +
 To enable development mode in {CENTRAL}, go to project *Settings* -> *General Settings* -> *Version* and toggle the *Development Mode* option. Do not use *Development Mode* or manually add the `SNAPSHOT` version suffix for a production environment.
@@ -71,7 +71,7 @@ image::cases/case-management-validate-document-upload.png[]
 +
 The `validate-document.drl` rule is shown in the rule editor. Click *Save* or close to exit the rule editor.
 
-. Open the Showcase application by either clicking the *Apps launcher* (if it is installed), or go to `http://localhost:8080/rhpam-case-mgmt-showcase/jbpm-cm.html`.
+. Open the Showcase application by either clicking the *Apps launcher* (if it is installed), or go to `/http://localhost:8080/rhpam-case-mgmt-showcase/jbpm-cm.html`.
 . Start a new case for the *IT_Orders* project.
 +
 In this example, Aimee is the case `owner`, Katy is the `manager`, and the supplier group is `supplier`.
