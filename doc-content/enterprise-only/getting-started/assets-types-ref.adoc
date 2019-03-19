@@ -78,10 +78,6 @@ Global variables are used to make application objects available to the rules. Ty
 +
 Decision tables are collections of rules stored in either a spreadsheet or in the {PRODUCT_DM} user interface as guided decision tables.
 
-* Guided Decision Tree
-+
-A Guided Decision Tree simplifies the process of modelling of simple decision trees.
-
 * Guided Decision Table Graph
 +
 A Guided Decision Table Graph is a collection of related guided decision tables that are displayed within a single designer. You can use this designer to better visualize and work with various related decision tables in one location. Additionally, when a condition or an action in one table uses the same data type as a condition or an action in another table, the tables will be physically linked with a line in the table graph designer.
@@ -100,10 +96,6 @@ Guided rule templates provide a reusable rule structure for multiple rules that 
 * Package
 +
 All assets are contained in packages in {CENTRAL}. A package is a folder for rules and also serves as a "namespace".
-
-* Score Card (Spreadsheet)
-+
-
 
 * Solver configuration
 +
