@@ -23,6 +23,8 @@ As a process administrator, you can use {CENTRAL} in {PRODUCT} to manage new, sa
 
 include::{enterprise-dir}/project-data/projects-con.adoc[leveloffset=+1]
 
+include::{enterprise-dir}/project-data/migrating-from-legacy-designer-proc.adoc[leveloffset=+1]
+
 include::{enterprise-dir}/project-data/modify-projects-overview-con.adoc[leveloffset=+1]
 
 include::{enterprise-dir}/project-data/new-project-proc.adoc[leveloffset=+1]

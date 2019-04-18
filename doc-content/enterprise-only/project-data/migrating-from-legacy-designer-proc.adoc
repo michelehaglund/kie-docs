@@ -1,0 +1,28 @@
+[id='migrating-from-legacy-designer-proc']
+
+= Migrating projects from the deprecated legacy process designer
+
+The legacy process designer in {CENTRAL} is deprecated in {PRODUCT} {PRODUCT_VERSION_LONG}. It will be removed in a future {PRODUCT} release. The legacy process designer will not receive any new enhancements or features. Existing users of the legacy process designer are advised to begin migrating projects to the new designer. All new projects should be created using the new process designer.
+
+[NOTE]
+====
+The legacy process designer is disabled by default in {CENTRAL}. To enable the legacy process designer in {CENTRAL}, in the upper-right corner of the window click *Settings* -> *Roles*, select a role from the left panel, click *Editors -> Select Editor -> (Legacy) Process Designer -> Read*, and then click *Save* to save the changes.
+====
+
+.Prerequisites
+* *<MH>Please advise if there are any prerequisites for the migration process.</MH>*
+
+
+.Procedure
+*<MH>Ivo, Walter and Tihomir, have you clarified the steps for migration? After reviewing //https://issues.jboss.org/browse/JBPM-8125 and //https://issues.jboss.org/browse/BAPL-1210, it seems as though the migration process has not been confirmed yet.</MH>*
+
+* Change the extension *.bpmn2 to *.bpmn ( a button in the legacy process designer? Another way to migrate multiple processes / a whole project? )
+* The user should have an option to rollback
+* Parser roundtrip will make sure most of the models will migrate ( at least with some replacements such as a none empty task for a send/receive tasks ) - //https://issues.jboss.org/browse/BAPL-1153
+* [Optional] Possible use of the BPMN diagram "resolution" attribute to make shape attributes' units (locations and sizes) fit as good as possible when migrating
+
+*Note to dev:* I will add the following note to our existing docs and then link them to the procedures in this document so that we don't bulk up all impacted docs with this process.
+[NOTE]
+====
+The legacy process designer in {CENTRAL} is deprecated in {PRODUCT} {PRODUCT_VERSION_LONG}. It will be removed in a future {PRODUCT} release. The legacy process designer will not receive any new enhancements or features. Existing users of the legacy process designer are advised to migrate projects to the new designer. For information about migrating projects to the new designer, see xref:migrating-from-legacy-designer-proc[_Migrating projects from the deprecated legacy process designer_].
+====
