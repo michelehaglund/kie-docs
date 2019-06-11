@@ -1,0 +1,3 @@
+[id='enable-doc-attachments']
+
+= Enabling document attachments in a form or process
