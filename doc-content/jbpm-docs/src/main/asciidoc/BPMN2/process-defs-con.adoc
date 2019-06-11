@@ -1,0 +1,8 @@
+[id='process-definitions']
+
+= Process definitions
+A Process definition is a Business Process Model and Notation (BPMN) 2.0-compliant file that serves as container for a process and its BPMN diagram. The process definition shows all of the available information about the business process. For example, you can check to see if there is a sub process associated with it, or how many users and groups are participating in the selected definition.
+
+After you build and deploy your project containing your business processes you can view the process definitions in the Manage Process Definitions section. 
+
+View process definitions .. the *Manage* menu: *Process Definitions* or *Process Instances*, in {CENTRAL}.

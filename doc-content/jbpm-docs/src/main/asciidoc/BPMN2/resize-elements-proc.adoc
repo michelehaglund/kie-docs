@@ -1,0 +1,2 @@
+[id='resize-elements']
+= Resizing elements

@@ -1,0 +1,86 @@
+[id='assembly_designing-business-processes']
+
+include::_artifacts/document-attributes.adoc[]
+
+= Designing business processes in {CENTRAL}
+// Context attribute is assembly specific and enables module reuse between assemblies.
+:doctype: book
+:imagesdir: _images
+:context: business-processes
+include::_artifacts/author-group.adoc[]
+
+// Purpose statement for the assembly
+As a business processes developer, you can use {CENTRAL} in {PRODUCT} to design business processes to meet specific business requirements. This document describes business processes and the concepts and options for creating them using the process designer in {PRODUCT}.
+
+.Prerequisites
+* {EAP_LONG} {EAP_VERSION} is installed. For details, see https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/{EAP_VERSION}/html-single/installation_guide/[_{EAP_LONG} {EAP_VERSION} Installation Guide_].
+* {PRODUCT} is installed and configured with {KIE_SERVER}. For more information, see {URL_INSTALLING_ON_EAP}[_{INSTALLING_ON_EAP}_].
+//xreflink
+* {PRODUCT} is running and you can log in to {CENTRAL} with the `developer` role. For more information, see {URL_PLANNING_INSTALL}[_{PLANNING_INSTALL}_].
+
+// Modules - concepts, procedures, refs, etc.
+include::{jbpm-dir}/BPMN2/business-process-overview-con.adoc[leveloffset=+1]
+
+include::{jbpm-dir}/BPMN2/process-defs-con.adoc[leveloffset=+1]
+
+include::{jbpm-dir}/BPMN2/process-instance-con.adoc[leveloffset=+1]
+
+include::{jbpm-dir}/BPMN2/role-based-access-con.adoc[leveloffset=+2]
+
+include::{jbpm-dir}/BPMN2/create-import-proc-definitions-proc.adoc[leveloffset=+1]
+
+include::{jbpm-dir}/BPMN2/design-business-process-proc.adoc[leveloffset=+1]
+
+include::{jbpm-dir}/BPMN2/copy-elements-proc.adoc[leveloffset=+2]
+
+include::{jbpm-dir}/BPMN2/resize-elements-proc.adoc[leveloffset=+2]
+
+include::{jbpm-dir}/BPMN2/define-process-form-proc.adoc[leveloffset=+2]
+
+include::{jbpm-dir}/BPMN2/define-process-props-proc.adoc[leveloffset=+2]
+
+include::{jbpm-dir}/BPMN2/validate-process-proc.adoc[leveloffset=+2]
+
+include::{jbpm-dir}/BPMN2/correct-invalid-process-proc.adoc[leveloffset=+2]
+
+include::{jbpm-dir}/BPMN2/execute-business-process-proc.adoc[leveloffset=+1]
+
+include::{jbpm-dir}/BPMN2/business-process-forms-con.adoc[leveloffset=+1]
+
+include::{jbpm-dir}/BPMN2/create-forms-proc.adoc[leveloffset=+2]
+
+include::{jbpm-dir}/BPMN2/set-form-props-proc.adoc[leveloffset=+2]
+
+include::{jbpm-dir}/BPMN2/configure-process-forms-designer-proc.adoc[leveloffset=+2]
+
+include::{jbpm-dir}/BPMN2/add-form-fields-proc.adoc[leveloffset=+2]
+
+include::{jbpm-dir}/BPMN2/config-form-fields-proc.adoc[leveloffset=+2]
+
+include::{jbpm-dir}/BPMN2/create-subforms-proc.adoc[leveloffset=+2]
+
+include::{jbpm-dir}/BPMN2/enable-doc-attachments-proc.adoc[leveloffset=+2]
+
+include::{jbpm-dir}/BPMN2/render-forms-proc.adoc[leveloffset=+2]
+
+include::{jbpm-dir}/BPMN2/modify-ui-style-proc.adoc[leveloffset=+2]
+
+include::{jbpm-dir}/BPMN2/upload-human-task-forms-proc.adoc[leveloffset=+2]
+
+include::{jbpm-dir}/BPMN2/class-model-support-proc.adoc[leveloffset=+2]
+
+include::{jbpm-dir}/BPMN2/business-handlers-tasks-con.adoc[leveloffset=+1]
+
+include::{jbpm-dir}/BPMN2/implement-bus-rule-task-proc.adoc[leveloffset=+2]
+
+include::{jbpm-dir}/BPMN2/implement-remote-rule-task-proc.adoc[leveloffset=+2]
+
+include::{jbpm-dir}/BPMN2/case-proc-views-proc.adoc[leveloffset=+1]
+
+include::{jbpm-dir}/BPMN2/bc-project-to-mavenrepo-proc.adoc[leveloffset=+1]
+
+== Additional resources
+* {URL_GETTING_STARTED_PROCESSES}[_{GETTING_STARTED_PROCESSES}_]
+
+// Versioning info
+include::_artifacts/versioning-information.adoc[]

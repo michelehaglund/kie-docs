@@ -1,0 +1,5 @@
+[id='define-proc-props-form']
+= Defining process properties in {CENTRAL}
+
+_(Include also content from sections Generic Properties of Visualized Process
+Elements and Defining Process Element Properties)_ 

@@ -1,0 +1,58 @@
+[id='execute-bus-proc']
+= Deploying and executing a business process in {CENTRAL}
+
+Executing a business process  - Combine the deploy and execution sections of the Executing a process doc|
+https://access.redhat.com/documentation/en-us/red_hat_process_automation_manager/7.3/html-single/executing_a_business_process_in_business_central/index#executing_process
+
+== Deploying a project
+
+The following chapter instructs you how to build and deploy a new instance of the project business process in {PRODUCT}.
+
+.Prerequisites
+//* The {KIE_SERVER} is deployed and connected to the {CENTRAL}. For more information, see {URL_INSTALLING_ON_EAP}[_{INSTALLING_ON_EAP}_].
+
+.Procedure
+
+. In {CENTRAL}, go to *Menu* -> *Design* -> *Projects*.
+. Click the project that you want to deploy.
+. Click *Deploy*.
++
+[NOTE]
+====
+You can also select the *Build & Install* option to build the project and publish the KJAR file to the configured Maven repository without deploying to a {KIE_SERVER}. In a development environment, you can click *Deploy* to deploy the built KJAR file to a {KIE_SERVER} without stopping any running instances (if applicable), or click *Redeploy* to deploy the built KJAR file and stop any running instances. The next time you deploy or redeploy the built KJAR, the previous deployment unit (KIE container) is automatically updated in the same target {KIE_SERVER}. In a production environment, the *Redeploy* option is disabled and you can click *Deploy* only to deploy the built KJAR file to a new deployment unit (KIE container) on a {KIE_SERVER}.
+
+To configure the {KIE_SERVER} environment mode, set the `org.kie.server.mode` system property to `org.kie.server.mode=development` or `org.kie.server.mode=production`. To configure the deployment behavior for a corresponding project in {CENTRAL}, go to project *Settings* -> *General Settings* -> *Version* and toggle the *Development Mode* option. By default, {KIE_SERVER} and all new projects in {CENTRAL} are in development mode. You cannot deploy a project with *Development Mode* turned on or with a manually added `SNAPSHOT` version suffix to a {KIE_SERVER} that is in production mode.
+====
+
+== Executing the business process
+Now that you have deployed the project, you can execute the project's defined functionality. For this example, you will be acting as the customer (Bill) and fill out the pizza order form. The pizza place employee (Katy) will add the order price and send the order confirmation to your task inbox.
+
+.Prerequisites
+
+//* The {KIE_SERVER} is deployed and connected to the {PRODUCT}. For more information, see {URL_INSTALLING_ON_EAP}[_{INSTALLING_ON_EAP}_].
+* You have deployed the project business process.
+
+.Procedure
+
+. Log in to {CENTRAL} as the customer:
+* *Username*: `Bill`
+* *Password*: `bill`
+. Click *Menu* -> *Manage* -> *Process Instances*.
+. Click *New Process Instance*, select *pizzaPlace.pizzaOrders* from the *Process definition* menu, and click *Start*.
+. Type the following values:
+* *Pizza*: `Large pizza`
+* *Extra Ingredients*: `Anchovies`
+* *Drink*: `Beer`
+. Click *Submit* to start the process instance. After starting the process instance, the *Manage Process Instances* view opens.
+. Click anywhere in the *pizzaOrders* row to view the process details.
+. Click the *Diagram* tab to view the process flow within the process diagram. The state of the process will be highlighted as it moves through each task.
+. Log out and log back in again to {CENTRAL} as the employee:
+* *Username*: `Katy`
+* *Password*: `katy`
+. Click *Menu* -> *Track* -> *Task Inbox*. This will take you to the order form. This is the form that the pizza place employee (Katy) will take ownership of and return an order confirmation containing the order price.
+. Click anywhere in the *Task* row to open the order form.
+. Click *Start*, type the order total in the *Price* field, and click *Complete*.
+. Log out and log back in again to {CENTRAL} as the customer:
+* *Username*: `Bill`
+* *Password*: `bill`
+. Click *Menu* -> *Track* -> *Task Inbox*. This will take you to the order confirmation form containing the order's total price.

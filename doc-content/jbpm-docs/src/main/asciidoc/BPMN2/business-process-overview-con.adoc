@@ -1,0 +1,6 @@
+[id='business_process']
+= Business processes
+
+{CENTRAL} enables you to automate your business processes. A business process is a diagram that describes the order in which a series of steps must be executed and consists of predefined nodes and connections. Each node represents one step in the process while the connections specify how to transition from one node to another.
+
+For example, Concept of processes, process definitions, and process instances. Resources: Processes (community), Process definition (6.4 enterprise), other 7.x process docs.

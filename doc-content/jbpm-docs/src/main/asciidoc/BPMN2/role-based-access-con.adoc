@@ -1,0 +1,8 @@
+[id='role-based-access']
+= Role based access control for branches
+
+BAPL-1110 Role Based Access Control for Branches
+
+With role-based access branches, {CENTRAL} allows users to restrict access for a target branch for a specific collaborator type.
+
+Meet with Paulo Rego for final details. Note that Matthew Stevens is no longer at RH.

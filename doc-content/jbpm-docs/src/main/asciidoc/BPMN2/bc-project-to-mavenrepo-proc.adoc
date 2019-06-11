@@ -1,0 +1,26 @@
+[id='export-project-to-maven']
+
+= Exporting a {CENTRAL} project to an external Maven repository
+
+You can export your existing {CENTRAL} project to an external Maven repository. http://maven.apache.org/[Apache Maven] is a distributed build automation tool used in Java application development to build and manage software projects. You can use Maven to build, publish, and deploy your {PRODUCT} projects.
+
+.Prerequisites
+
+* You have configured the Maven repository with write authentication. Configuration of Maven is performed by modifying the settings.xml file in {CENTRAL} for the project. *<MH> Dev, what are the steps for modifying the settings.xml file?</MH>*
+
+.Procedure
+. In {CENTRAL}, go to *Menu* -> *Design* -> *Projects* and click the project name. The *Assets* view of the project opens.
+. In the top left corner of the window, click image:BPMN2/expand-proj-explorer.png[] to expand the Project Explorer.
+. Click image:BPMN2/gear-icon.png[] to switch to the *Repository View*.
+. Click on the *pom.xml* file and add the following lines to the end of the file before *</project>* and click *Save*:
+
+----
+<distributionManagement>
+<repository>
+<id>maven-DM</id>
+<name>maven-DM</name>
+<url>url_of_external_maven_repo</url>
+<layout>default</layout>
+</repository>
+</distributionManagement>
+----

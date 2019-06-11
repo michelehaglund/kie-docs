@@ -1,0 +1,7 @@
+[id='upload-multiple-task-forms']
+
+= Uploading multiple documents for human task forms
+
+BAPL-1191 There is no way to upload multiple documents for Human Task forms
+
+https://docs.google.com/document/d/10uqxKo1e12Q__XqW8l4Vcd6zXxFKsHVLqYmbR-N90VA/edit

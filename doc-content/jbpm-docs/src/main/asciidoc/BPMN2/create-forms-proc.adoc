@@ -1,0 +1,5 @@
+[id='create-forms']
+= Creating forms in {CENTRAL}
+
+Creating a form in \{CENTRAL\}  _(Include some content from the [Form Modeller |https://access.redhat.com/documentation/en-us/red_hat_jboss_bpm_suite/6.4/html-single/user_guide/index#sect_form_modeler]concept)_  Include info from BXMSDOC-3935
+Document Form modeler support for class models from external dependencies

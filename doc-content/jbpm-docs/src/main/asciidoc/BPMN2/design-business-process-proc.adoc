@@ -1,0 +1,4 @@
+[id='design-bus-proc']
+= Designing a business process in {CENTRAL}
+
+Basic procedure for creating a business process in the designer. Also, at the end, link to the [BPMN ref doc|https://access.redhat.com/documentation/en-us/red_hat_process_automation_manager/7.3/html-single/process_designer_business_process_model_and_notation_bpmn2_reference_guide/index] as an additional resource.)_

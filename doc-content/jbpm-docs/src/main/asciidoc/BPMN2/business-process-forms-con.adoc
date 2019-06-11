@@ -1,0 +1,4 @@
+[id='business-process-forms']
+= Forms in {CENTRAL}
+
+Forms are used for collecting user data for business process. {CENTRAL} provides the option to automatically generate forms, which can then be edited to meet specific business process requirements.
