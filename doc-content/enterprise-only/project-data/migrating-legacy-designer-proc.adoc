@@ -28,7 +28,7 @@ image::project-data/migrate-message.png[Migration confirmation message]
 .Save diagram changes confirmation
 image::project-data/save-changes-migration.png[Save diagram changes confirmation]
 
-If the migration is successful, the business process opens in the new process designer and the business process name's extension changes from `*.bpmn2` to `*.bpmn`.
+If the migration is successful, the business process opens in the new process designer and the business process name's extension changes from *.bpmn2 to *.bpmn.
 
 If the migration is unsuccessful due to an unsupported node type, {Central} will provide the following error message:
 
