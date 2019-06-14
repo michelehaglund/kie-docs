@@ -45,7 +45,5 @@ include::{enterprise-dir}/project-data/delete-branches-proc.adoc[leveloffset=+2]
 
 include::{enterprise-dir}/project-data/build-deploy-branches-proc.adoc[leveloffset=+2]
 
-
-
 //Versioning info
 include::_artifacts/versioning-information.adoc[]

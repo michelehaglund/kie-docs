@@ -1,8 +1,9 @@
-[id='migrating-from-legacy-designer-proc']
-
+[id='migrating-from-legacy-designer-proc_{context}']
 = Migrating projects from the deprecated legacy process designer
 
-The legacy process designer in {CENTRAL} is deprecated in {PRODUCT} {PRODUCT_VERSION_LONG}. It will be removed in a future {PRODUCT} release. The legacy process designer will not receive any new enhancements or features. Existing users of the legacy process designer are advised to begin migrating projects to the new designer. All new projects should be created using the new process designer.
+The legacy process designer in {CENTRAL} is deprecated in {PRODUCT} {PRODUCT_VERSION_LONG}. It will be removed in a future {PRODUCT} release. The legacy process designer will not receive any new enhancements or features. Existing users of the legacy process designer should start migrating projects to the new designer and all new projects should be created using the new process designer.
+
+Only business processes that contain nodes types that are supported in the new designer can be migrated. More node types will be supported in future versions of {PRODUCT}.
 
 [NOTE]
 ====
@@ -10,19 +11,24 @@ The legacy process designer is disabled by default in {CENTRAL}. To enable the l
 ====
 
 .Prerequisites
-* *<MH>Please advise if there are any prerequisites for the migration process.</MH>*
-
+* You have an existing project that was created in the legacy process designer.
 
 .Procedure
-*<MH>Ivo, Walter and Tihomir, have you clarified the steps for migration? After reviewing //https://issues.jboss.org/browse/JBPM-8125 and //https://issues.jboss.org/browse/BAPL-1210, it seems as though the migration process has not been confirmed yet.</MH>*
+. In {CENTRAL}, click *Menu* -> *Design* -> *Projects*.
+. Click on the project you want to migrate, for example *{PROJECT}*.
+. Click *Ok* to open the project's asset list.
+. Click on the project's *Business Process* asset to open it in the legacy process designer.
+. Click *Migrate* -> *Migrate Diagram*. If you have made changes to the diagram prior to migrating, select *Yes* or *No* to confirm whether or not to save your changes.
++
+.Save diagram changes confirmation
+image::project-data/save-changes-migration.png[Save diagram changes confirmation]
++
+.Migration confirmation message
+image::project-data/migrate-message.png[Migration confirmation message]
 
-* Change the extension *.bpmn2 to *.bpmn ( a button in the legacy process designer? Another way to migrate multiple processes / a whole project? )
-* The user should have an option to rollback
-* Parser roundtrip will make sure most of the models will migrate ( at least with some replacements such as a none empty task for a send/receive tasks ) - //https://issues.jboss.org/browse/BAPL-1153
-* [Optional] Possible use of the BPMN diagram "resolution" attribute to make shape attributes' units (locations and sizes) fit as good as possible when migrating
+If the migration is successful, the business process opens in the new process designer and the business process name's extension changes from `*.bpmn2` to `*.bpmn`.
 
-*Note to dev:* I will add the following note to our existing docs and then link them to the procedures in this document so that we don't bulk up all impacted docs with this process.
-[NOTE]
-====
-The legacy process designer in {CENTRAL} is deprecated in {PRODUCT} {PRODUCT_VERSION_LONG}. It will be removed in a future {PRODUCT} release. The legacy process designer will not receive any new enhancements or features. Existing users of the legacy process designer are advised to migrate projects to the new designer. For information about migrating projects to the new designer, see xref:migrating-from-legacy-designer-proc[_Migrating projects from the deprecated legacy process designer_].
-====
+If the migration is unsuccessful due to an unsupported node type, {Central} will provide the following error message:
+
+.Migration failure message
+image::project-data/migrate-fail.png[Migration failure message]
