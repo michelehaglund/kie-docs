@@ -1,8 +1,13 @@
 [id='migrating-from-legacy-designer-proc']
 
-= Migrating projects from the deprecated legacy process designer
+= Migrating business processes to the new designer
 
-The legacy process designer in {CENTRAL} is deprecated in {PRODUCT} {PRODUCT_VERSION_LONG}. It will be removed in a future {PRODUCT} release. The legacy process designer will not receive any new enhancements or features. Existing users of the legacy process designer should start migrating projects to the new designer and all new projects should be created using the new process designer.
+The legacy process designer in {CENTRAL} is deprecated in {PRODUCT} {PRODUCT_VERSION_LONG}. It will be removed in a future {PRODUCT} release. The legacy process designer will not receive any new enhancements or features. Existing users that intend to utilize the functionality in the new designer should start migrating their processes to the new designer. All new processes should be created using the new process designer.
+
+[NOTE]
+====
+The {PROCESS_ENGINE} will continue to support the execution and deployment of business processes generated with the legacy designer in to the {KIE_SERVER}. If you have a legacy business process that is functioning and that you do not intend to change, it is not mandatory to migrate to the new designer at this time.
+====
 
 Only business processes that contain nodes types that are supported in the new designer can be migrated. More node types will be supported in future versions of {PRODUCT}.
 
@@ -12,7 +17,7 @@ The legacy process designer is disabled by default in {CENTRAL}. To enable the l
 ====
 
 .Prerequisites
-* You have an existing project that was created in the legacy process designer.
+* You have an existing project that contains a business process asset that was created in the legacy process designer.
 
 .Procedure
 . In {CENTRAL}, click *Menu* -> *Design* -> *Projects*.
@@ -34,10 +39,3 @@ If the migration is unsuccessful due to an unsupported node type, {Central} will
 
 .Migration failure message
 image::project-data/migrate-fail.png[Migration failure message]
-
-*Note to dev:* I will add the following note to our existing docs and then link them to the procedures in this document so that we don't bulk up all impacted docs with this process.
-
-[NOTE]
-====
-The legacy process designer in {CENTRAL} is deprecated in {PRODUCT} {PRODUCT_VERSION_LONG}. It will be removed in a future {PRODUCT} release. The legacy process designer will not receive any new enhancements or features. Existing users of the legacy process designer are advised to migrate projects to the new designer. For information about migrating projects to the new designer, see xref:migrating-from-legacy-designer-proc[_Migrating projects from the deprecated legacy process designer_].
-====
