@@ -13,7 +13,7 @@ Only business processes that contain nodes types that are supported in the new d
 
 [NOTE]
 ====
-To enable the legacy process designer in {CENTRAL}, in the upper-right corner of the window click *Settings* -> *Roles*, select a role from the left panel, click *Editors -> Select Editor -> (Legacy) Process Designer -> Read*, and then click *Save* to save the changes.
+To enable or disable the legacy process designer in {CENTRAL}, in the upper-right corner of the window click *Settings* -> *Roles*, select a role from the left panel, click *Editors -> Select Editor -> (Legacy) Process Designer -> Read*, and then click *Save* to save the changes.
 ====
 
 .Prerequisites
