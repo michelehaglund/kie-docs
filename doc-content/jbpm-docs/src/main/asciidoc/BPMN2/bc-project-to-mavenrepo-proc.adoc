@@ -1,12 +1,21 @@
 [id='export-project-to-maven']
 
-= Exporting a {CENTRAL} project to an external Maven repository
+= Packaging a {CENTRAL} project for a Maven repository
 
-You can export your existing {CENTRAL} project to an external Maven repository. http://maven.apache.org/[Apache Maven] is a distributed build automation tool used in Java application development to build and manage software projects. You can use Maven to build, publish, and deploy your {PRODUCT} projects.
+Edit a project's `pom.xml` file to package the {CENTRAL} project as a `kjar` file for an external Maven repository. http://maven.apache.org/[Apache Maven] is a distributed build automation tool used in Java application development to build and manage software projects. You can use Maven to build, publish, and deploy your {PRODUCT} projects.
 
 .Prerequisites
 
-* You have configured the Maven repository with write authentication. Configuration of Maven is performed by modifying the settings.xml file in {CENTRAL} for the project. *<MH> Dev, what are the steps for modifying the settings.xml file?</MH>*
+* You have configured the external Maven repository if you intend to deploy your authoring environment on {OPENSHIFT}. For more information, see:
++
+ifdef::PAM[]
+{URL_DEPLOYING_AUTHORING_ON_OPENSHIFT}#template-deploy-optionalmaven-authoring-proc[_{DEPLOYING_AUTHORING_ON_OPENSHIFT}_]
+endif::PAM[]
+ifdef::DM[]
+{URL_DEPLOYING_AUTHORING_MANAGED_ON_OPENSHIFT}#template-deploy-optionalmaven-authoring-proc[_{DEPLOYING_AUTHORING_MANAGED_ON_OPENSHIFT}_]
+endif::DM[]
+{URL_DEPLOYING_OPENSHIFT_OPERATOR}#operator-deploy-kieserver-proc[_{DEPLOYING_OPENSHIFT_OPERATOR}_]
+
 
 .Procedure
 . In {CENTRAL}, go to *Menu* -> *Design* -> *Projects* and click the project name. The *Assets* view of the project opens.

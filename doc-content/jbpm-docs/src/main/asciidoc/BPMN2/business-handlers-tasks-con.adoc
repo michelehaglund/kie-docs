@@ -6,3 +6,6 @@ BXMSDOC-3222 Business rule tasks and decision tasks for integrating decisions fr
  http://mswiderski.blogspot.com/2017/04/control-business-rules-execution-from.html
 
 https://access.redhat.com/solutions/3606541
+
+BXMSDOC-1719
+Missing documentation for Business Rule Task and Decision Task elements
