@@ -19,8 +19,8 @@ endif::DM[]
 
 .Procedure
 . In {CENTRAL}, go to *Menu* -> *Design* -> *Projects* and click the project name. The *Assets* view of the project opens.
-. In the top left corner of the window, click image:BPMN2/expand-proj-explorer.png[] to expand the Project Explorer.
-. Click image:BPMN2/gear-icon.png[] to switch to the *Repository View*.
+. Click on any asset and in the top left corner of the window, click image:BPMN2/expand-proj-explorer.png[] to expand the Project Explorer.
+. Click image:BPMN2/gear-icon.png[] and switch to the *Repository View*.
 . Click on the *pom.xml* file and add the following lines to the end of the file before *</project>* and click *Save*:
 
 ----
