@@ -2,23 +2,23 @@
 
 = Configuring project settings
 
-Starting in {PRODUCT} {PRODUCT_VERSION}, {CENTRAL} contains additional project setting categories in the new process designer.
+Starting with {PRODUCT} {PRODUCT_VERSION}, {CENTRAL} contains additional project setting categories in the new process designer.
 
 .Prerequisites
 * You have created a {CENTRAL} project.
 
 .Procedure
-. To access the project *Settings* tab, in {CENTRAL}, go to *Menu* -> *Design* -> *Projects*.
-. Click on the project name.
+. To access the project *Settings* tab, in {CENTRAL} go to *Menu* -> *Design* -> *Projects*.
+. Click the project name.
 . Click *Settings* to view or modify the following project settings:
 
-* *General Settings* - Enables users to set a project's *Name*, *Description*, *Group ID*, *Artifact ID*, *Version*, and *Development Mode*. It also includes the following options:
+* *General Settings* - Enables users to set the project's *Name*, *Description*, *Group ID*, *Artifact ID*, *Version* (GAV), and *Development Mode* attributes. It also includes the following options:
 ** *URL* - Use to specify a read-only URL for cloning a project as a git repository.
-** *Disable GAV conflict check* - Determines whether to enable or disable the Group ID, Artifact, and Version (GAV) conflict check. Disabling this feature allows projects to have the same GAV values.
+** *Disable GAV conflict check* - Determines whether to enable or disable the GAV conflict check. Disabling this feature enables projects to have the same GAV values.
 ** *Allow child GAV edition* - Allows GAV editions for sub-projects.
 
 * *Dependencies* - Used to add dependencies either manually, by entering the *Group ID*, *Artifact ID*, and *Version* or from a repository project in {CENTRAL}. For each dependency, set select *All* or *None* for the *Package white list* option.
-* *KIE Bases* - The new name for what was previously called *Knowledge bases*. One KIE base must be set as the default. Provide the following details to add a Kie base:
+* *KIE Bases* - The new name for what was previously called *Knowledge bases*. You must specify a KIE base as the default. Provide the following details to add a Kie base:
 ** *Name*
 ** *Included KIE bases*
 ** *Package*
@@ -26,7 +26,7 @@ Starting in {PRODUCT} {PRODUCT_VERSION}, {CENTRAL} contains additional project s
 ** *Event Processing Model* - *Stream* or *Cloud*
 ** *KIE sessions*
 
-* *External Data Objects* - Data objects are not explicitly defined within a project or a project's dependencies that a rule author may require. External data objects are usually provided by the Java runtime. For example, `java.util.List`.
+* *External Data Objects* - Data objects are not explicitly defined within a project or project dependencies that a rule author may require. External data objects are usually provided by the Java runtime, for example, `java.util.List`.
 
 * *Validation* - Maven repositories that are used to check the uniqueness of a project's GAV when creating a new project or module or when installing or deploying a project to a Maven repository.
 
