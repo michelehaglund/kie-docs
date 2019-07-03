@@ -12,18 +12,19 @@ Starting in {PRODUCT} {PRODUCT_VERSION}, {CENTRAL} contains additional project s
 . Click on the project name.
 . Click *Settings* to view or modify the following project settings:
 
-* *General Settings* - Enables users to set a project's *Name*, *Description*, *Group ID*, *Artifact ID*, and *Version* information. It also includes the following options:
+* *General Settings* - Enables users to set a project's *Name*, *Description*, *Group ID*, *Artifact ID*, *Version*, and *Development Mode*. It also includes the following options:
 ** *URL* - Use to specify a read-only URL for cloning a project as a git repository.
 ** *Disable GAV conflict check* - Determines whether to enable or disable the Group ID, Artifact, and Version (GAV) conflict check. Disabling this feature allows projects to have the same GAV values.
 ** *Allow child GAV edition* - Allows GAV editions for sub-projects.
 
-* *Dependencies* - Used to add dependencies either manually, by entering the *Group ID*, *Artifact ID*, and *Version* or from a repository project in {CENTRAL}.
+* *Dependencies* - Used to add dependencies either manually, by entering the *Group ID*, *Artifact ID*, and *Version* or from a repository project in {CENTRAL}. For each dependency, set select *All* or *None* for the *Package white list* option.
 * *KIE Bases* - The new name for what was previously called *Knowledge bases*. One KIE base must be set as the default. Provide the following details to add a Kie base:
 ** *Name*
 ** *Included KIE bases*
 ** *Package*
 ** *Equal Behavior* - *Identity* or *Equality*
 ** *Event Processing Model* - *Stream* or *Cloud*
+** *KIE sessions*
 
 * *External Data Objects* - Data objects are not explicitly defined within a project or a project's dependencies that a rule author may require. External data objects are usually provided by the Java runtime. For example, `java.util.List`.
 
