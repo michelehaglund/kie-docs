@@ -69,6 +69,8 @@ include::{jbpm-dir}/BPMN2/upload-human-task-forms-proc.adoc[leveloffset=+2]
 
 include::{jbpm-dir}/BPMN2/class-model-support-proc.adoc[leveloffset=+2]
 
+include::{jbpm-dir}/BPMN2/embed-proc-task-form-proc.adoc[leveloffset=+2]
+
 include::{jbpm-dir}/BPMN2/business-handlers-tasks-con.adoc[leveloffset=+1]
 
 include::{jbpm-dir}/BPMN2/implement-bus-rule-task-proc.adoc[leveloffset=+2]
@@ -81,6 +83,7 @@ include::{jbpm-dir}/BPMN2/bc-project-to-mavenrepo-proc.adoc[leveloffset=+1]
 
 == Additional resources
 * {URL_GETTING_STARTED_PROCESSES}[_{GETTING_STARTED_PROCESSES}_]
+* {URL_BPMN2_REFERENCE_GUIDE}[_{BPMN2_REFERENCE_GUIDE}_] 
 
 // Versioning info
 include::_artifacts/versioning-information.adoc[]
