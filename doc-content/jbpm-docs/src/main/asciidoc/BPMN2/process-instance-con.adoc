@@ -1,42 +1,17 @@
 [id='process-instance']
 = Process instances
+A process instance is a data structure that represents a particular instance of running of a business process. It has associated context information that can be used and manipulated by the business process.
 
- BAPL-1079 Process instance administration operations
+== Process instance administration
+Process instance administration provides operations for the process engine and the individual process instance. The following process instance operations are available in {CENTRAL}:
 
- JBPM-7489 Include process instance administration operations
-
- == Process instance administration operations
- https://mswiderski.blogspot.com/2016/11/administration-interfaces-in-jbpm-7.html
-
-Process instance administration provides operations for the process engine and the individual process instance. The following operations are available in {CENTRAL}:
-
-* *get process nodes - by process instance id* - this returns all nodes, including all embedded subprocesses that exist in the process instance. Even though the nodes come from process definition it's important to get them via process instance to make sure that given node exists and have valid node id so it can be used with other admin operations successfully
-* *cancel node instance - by process instance id and node instance id* - does exactly what the name suggests - cancels given nodes instance within process instance
-* *retrigger node instance - by process instance id and node instance id* - retrigger by first canceling the active node instance and create new instance of the same type - sort of recreates the node instance
-* *update timer - by process instance id and timer id* - updates timer expiration of active timer. It updates the timer taking into consideration time elapsed since the timer was scheduled. For example: In case timer was initially created with delay of 1 hour and after 30 min it's decided to update it to 2 hours it will then expire in 1,5 hour from the time it was updated. Allows to update
-** *delay* - duration after timer expires
-** *period* - interval between timer expiration - applicable only for cycle timers
-** *repeat limit* - limit the expiration to given number - applicable only for cycle timers
-* *update timer relative to current time - by process instance id and timer id* - similar to regular update time but the update is * relative to the current time - for example: In case timer was initially created with delay of 1 hour and after 30 min it's decided to update it to 2 hours it will then expire in 2 hours from the time it was updated.
-* *list timer instances - by process instance id* - returns all active timers found for given process instance
-* *trigger node - by process instance id and node id* - allows to trigger (instantiate) any node in process instance at any time.
-
-== User task administration operations
-User task administration provides methods to manipulate user and group task assignments, data handling, and time-based automatic notifications and reassignments. The following user task operations are available in {CENTRAL}:
-
-* *add/remove potential owners - by task id* - supports both users and groups with option to remove existing assignment
-* *add/remove excluded owners - by task id* - supports both users and groups with option to remove existing assignment
-* *add/remove business administrators - by task id* - supports both users and groups with option to remove existing assignment
-* *add task inputs - by task id* - modify task input content after task has been created
-* *remove task inputs - by task id* - completely remove task input variable(s)
-* *remove task output - by task id* - completely remove task output variable(s)
-* *schedules new reassignment to given users/groups after given time elapses - by task id* - schedules automatic reassignment based on time expression and state of the task:
-** *reassign if not started* (meaning when task was not moved to InProgress state)
-** *reassign if not completed* (meaning when task was not moved to Completed state)
-* *schedules new email notification to given users/groups after given time elapses - by task id* - schedules automatic notification based on time expression and state of the task:
-** *notify if not started* (meaning when task was not moved to InProgress state)
-** *notify if not completed* (meaning when task was not moved to Completed state)
-* *list scheduled task notifications - by task id* - returns all active task notifications
-* *list scheduled task reassignments - by task id* - returns all active tasks reassignments
-* *cancel task notification - by task id and notification id* - cancels (and unschedules) task notification
-* *cancel task reassignment - by task id and reassignment id* - cancels (and unschedules) task reassignment
+* *get process nodes - by process instance id* - Returns all nodes, including all embedded subprocesses that exist in the process instance. You must retrieve the nodes from the specified process instance to ensure that the node exists and includes a valid ID so that it can be used by other administration operations.
+* *cancel node instance - by process instance id and node instance id* - Cancels a node instance within a process instance using the process and node instance IDs.
+* *retrigger node instance - by process instance id and node instance id* - Re-triggers a node instance by canceling the active node instance and creates a new node instance of the same type using the process and node instance IDs.
+* *update timer - by process instance id and timer id* - Updates the timer expiration of an active timer based on the time elapsed since the timer was scheduled. For example, if a timer was initially created with delay of one hour and after thirty minutes you set it to update in two hours, it will expire in one and a half hours from the time it was updated.
+** *delay* - The duration after the timer expires.
+** *period* - The interval between the timer expiration for cycle timers.
+** *repeat limit* - Limits the expiration for a specified number for cycle timers.
+* *update timer relative to current time - by process instance id and timer id* - Updates the timer expiration of an active timer based on the current time. For example, if a timer was initially created with delay of one hour and after thirty minutes you set it to update in two hours, it will expire in two hours from the time it was updated.
+* *list timer instances - by process instance id* - Returns all active timers for a specified process instance.
+* *trigger node - by process instance id and node id* - Triggers any node in a process instance at any time.
