@@ -17,17 +17,23 @@ As a business processes developer, you can use {CENTRAL} in {PRODUCT} to design 
 * {PRODUCT} is installed and configured with {KIE_SERVER}. For more information, see {URL_INSTALLING_ON_EAP}[_{INSTALLING_ON_EAP}_].
 //xreflink
 * {PRODUCT} is running and you can log in to {CENTRAL} with the `developer` role. For more information, see {URL_PLANNING_INSTALL}[_{PLANNING_INSTALL}_].
+* You are familiar with the BPMN2 elements in process designer. For more information, see {URL_BPMN2_REFERENCE_GUIDE}[_{BPMN2_REFERENCE_GUIDE}_].
 
 // Modules - concepts, procedures, refs, etc.
 include::{jbpm-dir}/BPMN2/business-process-overview-con.adoc[leveloffset=+1]
 
 include::{jbpm-dir}/BPMN2/process-defs-con.adoc[leveloffset=+1]
+include::{jbpm-dir}/BPMN2/create-import-proc-definitions-proc.adoc[leveloffset=+2]
+//BAPL-1153 Designer Parser roundtrip for unsupported elements - Tiago Dolphine and Walter Medvedeo
 
 include::{jbpm-dir}/BPMN2/process-instance-con.adoc[leveloffset=+1]
+//BAPL-1079 Include process instance administration operations
 
-include::{jbpm-dir}/BPMN2/role-based-access-con.adoc[leveloffset=+2]
+include::{jbpm-dir}/BPMN2/user-task-con.adoc[leveloffset=+1]
 
-include::{jbpm-dir}/BPMN2/create-import-proc-definitions-proc.adoc[leveloffset=+1]
+include::{jbpm-dir}/BPMN2/role-based-access-con.adoc[leveloffset=+1]
+include::{jbpm-dir}/BPMN2/define-role-based-access-proc.adoc[leveloffset=+2]
+//BAPL-1110 Role Based Access Control for Branches - Paulo SME and Barbora for QE Draft ready
 
 include::{jbpm-dir}/BPMN2/design-business-process-proc.adoc[leveloffset=+1]
 
@@ -40,14 +46,17 @@ include::{jbpm-dir}/BPMN2/define-process-form-proc.adoc[leveloffset=+2]
 include::{jbpm-dir}/BPMN2/define-process-props-proc.adoc[leveloffset=+2]
 
 include::{jbpm-dir}/BPMN2/validate-process-proc.adoc[leveloffset=+2]
+//BAPL-1217 Designer - View all validation errors
 
 include::{jbpm-dir}/BPMN2/correct-invalid-process-proc.adoc[leveloffset=+2]
 
 include::{jbpm-dir}/BPMN2/execute-business-process-proc.adoc[leveloffset=+1]
+//Executing a business process (Combine the deploy and execution sections of the Executing a process doc).
 
 include::{jbpm-dir}/BPMN2/business-process-forms-con.adoc[leveloffset=+1]
 
 include::{jbpm-dir}/BPMN2/create-forms-proc.adoc[leveloffset=+2]
+//BXMSDOC-3935 Document Form modeler support for class models from external dependencies
 
 include::{jbpm-dir}/BPMN2/set-form-props-proc.adoc[leveloffset=+2]
 
@@ -64,26 +73,30 @@ include::{jbpm-dir}/BPMN2/enable-doc-attachments-proc.adoc[leveloffset=+2]
 include::{jbpm-dir}/BPMN2/render-forms-proc.adoc[leveloffset=+2]
 
 include::{jbpm-dir}/BPMN2/modify-ui-style-proc.adoc[leveloffset=+2]
+//BAPL-1159 [GSS-RFE] Modify the UI style in the Form Modeler
 
 include::{jbpm-dir}/BPMN2/upload-human-task-forms-proc.adoc[leveloffset=+2]
+//BAPL-1191 There is no way to upload multiple documents for Human Task forms
 
 include::{jbpm-dir}/BPMN2/class-model-support-proc.adoc[leveloffset=+2]
+//BAPL-1228 Form modeler support for class models from external dependencies
 
 include::{jbpm-dir}/BPMN2/embed-proc-task-form-proc.adoc[leveloffset=+2]
 
 include::{jbpm-dir}/BPMN2/business-handlers-tasks-con.adoc[leveloffset=+1]
-
 include::{jbpm-dir}/BPMN2/implement-bus-rule-task-proc.adoc[leveloffset=+2]
-
+//BXMSDOC-1719 Missing documentation for Business Rule Task and Decision Task elements
 include::{jbpm-dir}/BPMN2/implement-remote-rule-task-proc.adoc[leveloffset=+2]
+//BXMSDOC-3222 Tech support request for documenting the new rule tasks - https://access.redhat.com/solutions/3606541
 
 include::{jbpm-dir}/BPMN2/case-proc-views-proc.adoc[leveloffset=+1]
 
 include::{jbpm-dir}/BPMN2/bc-project-to-mavenrepo-proc.adoc[leveloffset=+1]
+//Done
 
 == Additional resources
 * {URL_GETTING_STARTED_PROCESSES}[_{GETTING_STARTED_PROCESSES}_]
-* {URL_BPMN2_REFERENCE_GUIDE}[_{BPMN2_REFERENCE_GUIDE}_] 
+* {URL_BPMN2_REFERENCE_GUIDE}[_{BPMN2_REFERENCE_GUIDE}_]
 
 // Versioning info
 include::_artifacts/versioning-information.adoc[]

@@ -1,6 +1,11 @@
 [id='business_process']
 = Business processes
 
-{CENTRAL} enables you to automate your business processes. A business process is a diagram that describes the order in which a series of steps must be executed and consists of predefined nodes and connections. Each node represents one step in the process while the connections specify how to transition from one node to another.
+{CENTRAL} enables you to automate your business processes. A business process is a diagram that describes the order that a series of steps must be executed and consists of predefined nodes and connections. Each node represents one step in the process while the connections specify how to transition from one node to another.
 
-For example, Concept of processes, process definitions, and process instances. Resources: Processes (community), Process definition (6.4 enterprise), other 7.x process docs.
+{PRODUCT} contains the legacy process designer and the new process designer for creating business process diagrams. The new process designer has an improved layout and feature set and continues to be developed. Until all features of the legacy process designer are completely implemented in the new process designer, both designers are available in {CENTRAL} for you to use.
+
+[NOTE]
+====
+The legacy process designer in Business Central is deprecated in Red Hat Process Automation Manager 7.4.0. It will be removed in a future Red Hat Process Automation Manager release. The legacy process designer will not receive any new enhancements or features. If you intend to use the new process designer, start migrating your processes to the new designer. Create all new processes in the new process designer. For information about migrating to the new designer, see see {URL_MANAGING_PROJECTS}#migrating-from-legacy-designer-proc[_{MANAGING_PROJECTS}_].
+====
