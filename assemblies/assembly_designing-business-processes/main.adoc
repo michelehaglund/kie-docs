@@ -10,7 +10,7 @@ include::_artifacts/document-attributes.adoc[]
 include::_artifacts/author-group.adoc[]
 
 // Purpose statement for the assembly
-As a business processes developer, you can use {CENTRAL} in {PRODUCT} to design business processes to meet specific business requirements. This document describes business processes and the concepts and options for creating them using the process designer in {PRODUCT}.
+As a business processes developer, you can use {CENTRAL} in {PRODUCT} to design business processes to meet specific business requirements. This document describes business processes and the concepts and options for creating them using the process designer in {PRODUCT}. Additionally, this document describes each node type that may be used to create a business process and how each node type can be manipulated.
 
 .Prerequisites
 * {EAP_LONG} {EAP_VERSION} is installed. For details, see https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/{EAP_VERSION}/html-single/installation_guide/[_{EAP_LONG} {EAP_VERSION} Installation Guide_].
@@ -21,8 +21,9 @@ As a business processes developer, you can use {CENTRAL} in {PRODUCT} to design 
 
 // Modules - concepts, procedures, refs, etc.
 include::{jbpm-dir}/BPMN2/business-process-overview-con.adoc[leveloffset=+1]
-
+include::{jbpm-dir}/BPMN2/business-process-elements-con.adoc[leveloffset=+1]
 include::{jbpm-dir}/BPMN2/process-defs-con.adoc[leveloffset=+1]
+//include::{jbpm-dir}/BPMN2/process-props-con.adoc[leveloffset=+1]
 include::{jbpm-dir}/BPMN2/create-import-proc-definitions-proc.adoc[leveloffset=+2]
 //BAPL-1153 Designer Parser roundtrip for unsupported elements - Tiago Dolphine and Walter Medvedeo
 
@@ -90,9 +91,17 @@ include::{jbpm-dir}/BPMN2/implement-remote-rule-task-proc.adoc[leveloffset=+2]
 //BXMSDOC-3222 Tech support request for documenting the new rule tasks - https://access.redhat.com/solutions/3606541
 
 include::{jbpm-dir}/BPMN2/case-proc-views-proc.adoc[leveloffset=+1]
+//BAPL-1032 Case Modeler - transition between Case and Process views
 
 include::{jbpm-dir}/BPMN2/bc-project-to-mavenrepo-proc.adoc[leveloffset=+1]
-//Done
+
+include::{jbpm-dir}/BPMN2/define-process-xml-proc.adoc[leveloffset=+1]
+
+include::{jbpm-dir}/BPMN2/adv-concepts-task-con.adoc[leveloffset=+1]
+//BXMSDOC-2573 Document NoSQL support
+
+include::{jbpm-dir}/BPMN2/marshallers-flag-proc.adoc[leveloffset=+2]
+//BXMSDOC-3172 Document Legacy Marshalling Flag
 
 == Additional resources
 * {URL_GETTING_STARTED_PROCESSES}[_{GETTING_STARTED_PROCESSES}_]
