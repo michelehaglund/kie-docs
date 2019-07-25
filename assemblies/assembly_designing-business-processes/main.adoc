@@ -28,8 +28,8 @@ include::{jbpm-dir}/BPMN2/create-import-proc-definitions-proc.adoc[leveloffset=+
 //BAPL-1153 Designer Parser roundtrip for unsupported elements - Tiago Dolphine and Walter Medvedeo
 
 include::{jbpm-dir}/BPMN2/process-instance-con.adoc[leveloffset=+1]
+include::{jbpm-dir}/BPMN2/process-instance-admin-con.adoc[leveloffset=+2]
 //BAPL-1079 Include process instance administration operations
-
 include::{jbpm-dir}/BPMN2/user-task-con.adoc[leveloffset=+1]
 
 include::{jbpm-dir}/BPMN2/role-based-access-con.adoc[leveloffset=+1]

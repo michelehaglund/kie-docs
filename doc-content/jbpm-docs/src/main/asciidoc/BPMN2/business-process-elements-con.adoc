@@ -129,10 +129,6 @@ An end event marks the end of a business process. Your business process may have
 |image:processes/6631.png[]
 |Use the Error end event in your process or subprocess to end the process in an error state and throw a named error, which can be caught by a Catching Intermediate event.
 
-|*Cancel*
-|image:processes/6632.png[]
-|Use the `Cancel` end event to end your process as canceled. Note that if your process comprises any compensations, it completes them and then marks the process as canceled.
-
 |*Compensation*
 |image:processes/6633.png[]
 |Use the `Compensation` end event to end the current process and trigger compensation as the final step.
