@@ -1,7 +1,7 @@
 [id='copy-elements']
 
 = Copying elements
-You can copy individual elements and finished business processes. 
+You can copy individual elements and finished business processes.
 
 .Procedure
 
@@ -15,5 +15,5 @@ You can copy individual elements and finished business processes.
 To copy a business process into the same package:
 
 . Click *Copy*.
-. The *Copy this item* dialogue window appears. Name your copy.
-. Click *Create copy*.
+. Type a new name in the *Make a Copy* window.
+. Click *Make a Copy*.

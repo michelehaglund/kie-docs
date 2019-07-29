@@ -1,11 +1,5 @@
 [id='business-process-forms']
 = Forms in {CENTRAL}
+A form is a layout definition for a page, defined as HTML, that is displayed as a dialog window to the user during process and task instantiation. Task forms acquire data from a user for both the process and task instance execution, whereas process forms take input and output from process variables.
 
-Forms are used for collecting user data for business process. {CENTRAL} provides the option to automatically generate forms, which can then be edited to meet specific business process requirements. Forms acquire data from a human user for both the process instance execution, or the task instance execution:
-
-A process form can take as its input and output process variables. A task form can take as its input Data Input Assignment variables with assignment defined, and as its output Data Output Assignments with assignment defined.
-For example:
-
-With a process form, a user can provide the input parameters needed for process instantiation.
-With a task form, you can use a Human Task to provide input for further process execution.
-The input is then mapped to the task using the data input assignment, which you can then use inside of a task. When the task is completed, the data is mapped as a data output assignment to provide the data to the parent process instance.
+The input is then mapped to the task using the data input assignment, which you can use inside of a task. When the task is completed, the data is mapped as a data output assignment to provide the data to the parent process instance.

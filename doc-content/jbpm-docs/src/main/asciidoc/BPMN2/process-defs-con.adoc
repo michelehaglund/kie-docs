@@ -6,7 +6,6 @@ A Process definition is a Business Process Model and Notation (BPMN) 2.0-complia
 After you build and deploy your project containing your business processes you can view the process definitions by logging in to {PRODUCT} and clicking *Menu* -> *Manage* -> *Process Definitions*.
 
 A Process definition itself defines the [property]``import`` entry, imported Processes, which can be used by the Process in the Process definition, and [property]``relationship`` entries.
-We refer to a Process definition as a business process.
 
 .BPMN2 source of a Process definition
 ====
