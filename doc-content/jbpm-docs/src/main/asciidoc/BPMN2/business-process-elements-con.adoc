@@ -1,16 +1,4 @@
 [id='business_process-elements']
-= What comprises a business process
-
-A business process consists of a collection of nodes that are linked to each other using connections. Each of the nodes represents one step in the overall process, while the connections specify how to transition from one node to the other. Process designer provides a large selection of predefined node types.
-
-A typical business process consists of:
-
-* The header section that comprises global elements such as the name of the process, imports, and variables.
-* The nodes section that contains all the different nodes that are part of the process.
-* The connections section that links these nodes to each other to create a flow chart.
-
-.Business process
-image::processes/1142.png[This image shows the steps of "self evaluation" through the project manager and HR manager.]
 
 //Processes can be created with the following methods:
 
@@ -29,17 +17,17 @@ Executable processes consist of different types of nodes which are connected to 
 
 * Gateways: Represent the forking or merging of workflows during process execution.
 
-[[_sect_events]]
-=== Events
+//[[_sect_events]]
+//=== Events
 
-Events are triggers, which when occur, impact a business process. Events are classified as start events, end events, and intermediate events. A start event indicates the beginning of a business process. An end event indicates the completion of a business process. And intermediate events drive the flow of a business process. Every event has an event ID and a name. You can implement triggers for each of these event types to identify the conditions under which an event is triggered. If the conditions of the triggers are not met, the events are not initialized, and hence the process flow does not complete.
+//Events are triggers, which when occur, impact a business process. Events are classified as start events, end events, and intermediate events. A start event indicates the beginning of a business process. An end event indicates the completion of a business process. And intermediate events drive the flow of a business process. Every event has an event ID and a name. You can implement triggers for each of these event types to identify the conditions under which an event is triggered. If the conditions of the triggers are not met, the events are not initialized, and hence the process flow does not complete.
 
-==== Start Events
+//==== Start Events
 
-A start event is a flow element in a business process that indicates the beginning of a business process flow. The execution of a business process starts at this node, so a process flow can only have one start event. A start event can have only one outgoing connection which connects to another node to take the process flow ahead. Start events are of the following types:
+//A start event is a flow element in a business process that indicates the beginning of a business process flow. The execution of a business process starts at this node, so a process flow can only have one start event. A start event can have only one outgoing connection which connects to another node to take the process flow ahead. Start events are of the following types:
 
-.Types of Start Events in Object Library
-[cols="25%,10%,65%a", frame="all", options="header"]
+//.Types of Start Events in Object Library
+//[cols="25%,10%,65%a", frame="all", options="header"]
 |===
 |Event
 |Icon

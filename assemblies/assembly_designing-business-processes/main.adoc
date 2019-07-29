@@ -21,7 +21,21 @@ As a business processes developer, you can use {CENTRAL} in {PRODUCT} to design 
 
 // Modules - concepts, procedures, refs, etc.
 include::{jbpm-dir}/BPMN2/business-process-overview-con.adoc[leveloffset=+1]
-include::{jbpm-dir}/BPMN2/business-process-elements-con.adoc[leveloffset=+1]
+include::{enterprise-dir}/bpmn/bpmn-con.adoc[leveloffset=+1]
+include::{enterprise-dir}/bpmn/bpmn-support-con.adoc[leveloffset=+1]
+include::{enterprise-dir}/bpmn/bpmn-events-con.adoc[leveloffset=+2]
+include::{enterprise-dir}/bpmn/bpmn-start-events-ref.adoc[leveloffset=+3]
+include::{enterprise-dir}/bpmn/bpmn-intermediate-events-ref.adoc[leveloffset=+3]
+include::{enterprise-dir}/bpmn/bpmn-end-events-ref.adoc[leveloffset=+3]
+include::{enterprise-dir}/bpmn/bpmn-tasks-overview-con.adoc[leveloffset=+2]
+
+include::{enterprise-dir}/bpmn/bpmn-subprocesses-ref.adoc[leveloffset=+2]
+include::{enterprise-dir}/bpmn/bpmn-gateways-ref.adoc[leveloffset=+2]
+
+include::{enterprise-dir}/bpmn/bpmn-connecting-ref.adoc[leveloffset=+2]
+include::{enterprise-dir}/bpmn/bpmn-lanes-ref.adoc[leveloffset=+2]
+include::{enterprise-dir}/bpmn/bpmn-artifacts-ref.adoc[leveloffset=+2]
+
 include::{jbpm-dir}/BPMN2/process-defs-con.adoc[leveloffset=+1]
 //include::{jbpm-dir}/BPMN2/process-props-con.adoc[leveloffset=+1]
 //include::{jbpm-dir}/BPMN2/create-import-proc-definitions-proc.adoc[leveloffset=+2]
@@ -83,6 +97,8 @@ include::{jbpm-dir}/BPMN2/set-marshalling-proc.adoc[leveloffset=+3]
 include::{jbpm-dir}/BPMN2/create-doc-var-proc.adoc[leveloffset=+3]
 
 include::{jbpm-dir}/BPMN2/map-task-vars-proc.adoc[leveloffset=+3]
+
+include::{jbpm-dir}/BPMN2/cust-marshalling-cms-proc.adoc[leveloffset=+4]
 
 //include::{jbpm-dir}/BPMN2/render-forms-proc.adoc[leveloffset=+2]
 
