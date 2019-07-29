@@ -1,11 +1,15 @@
 [id='resize-elements']
 
 = Resizing elements
-You can resize individual elements and finished business processes. 
+You can resize individual elements and finished business processes.
 
 .Procedure
-To resize Elements on the canvas, select the element, and click and pull the blue arrow displayed in the upper left or lower right corner of the element.
-
-To make the size of multiple elements identical, select the Elements and then click the image:processes/5922.png[] icon in the toolbar and then click on *Alignment Same Size*: all elements will be resized to the size of the largest selected Element.
-
-Note that only Activity Elements can be resized.
+. Select the element and click on the red dot on the corner of the element.
+. Drag the red dot to resize the element.
++
+.Resize an element
+image::processes/red-dot-resize.png[Resizing an element]
+. To resize the entire diagram, click the plus or minus sign on the lower right side of the canvasl
++
+.Resize the entire diagram
+image::processes/resize-diagram.png[Resizing the entire diagram]

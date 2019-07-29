@@ -4,4 +4,4 @@
 
 Starting in {PRODUCT} version 7.1, the marshalling component of the process designer is changed to a new and improved version. The marshalling component is responsible for saving and loading the BPMN diagram into the designer. The new save/load backend ships with all new components and features of the editor. If you find any issues, you can temporarily revert to the legacy marshalling backend by setting the `bpmn.marshaller.legacy=true` system property. The default value is `false`.
 
-<MH>Lubomir Terifaj, how and where do they set the `bpmn.marshaller.legacy=true` system property?</MH> 
+*<MH>Lubomir Terifaj, how and where do they set the `bpmn.marshaller.legacy=true` system property?</MH>* 

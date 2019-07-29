@@ -1,5 +1,6 @@
 [id='create-import-process-defs']
 = Creating and importing process definitions
+After you build and deploy your project containing your business processes you can view the process definitions by logging in to {PRODUCT} and clicking *Menu* -> *Manage* -> *Process Definitions*.
 
 [[_creating_a_process]]
 == Creating a process definition
@@ -8,14 +9,15 @@
 * You are logged in to {PRODUCT} with the repository connected.
 
 .Procedure
-. Open the Project Authoring perspective (*Authoring* -> *Project Authoring*).
-. In *Project Explorer* (*Project Authoring* -> *Project Explorer*), navigate to the project where you want to create the Process definition (in the *Project* view, select the respective repository and project in the drop-down lists; in the *Repository* view, navigate to `REPOSITORY/PROJECT/src/main/resources/` directory).
+. Click *Menu* -> *Design* -> *Projects* and select the project where you want to create the process definition
+
+ (in the *Project* view, select the respective repository and project in the drop-down lists; in the *Repository* view, navigate to `REPOSITORY/PROJECT/src/main/resources/` directory).
 +
 
 .Creating packages
 [NOTE]
 ====
-It is recommended to create your resources, including your Process definitions, in a package of a project to allow importing of resources and their referencing. To create a package, do the following:
+It is recommended to create your resources, including your process definitions, in a package of a project to allow importing of resources and their referencing. To create a package, do the following:
 
 . In the *Repository* view of the Project Explorer, navigate to the `REPOSITORY/PROJECT/src/main/resources/` directory.
 . Go to *New Item* -> *Package*.

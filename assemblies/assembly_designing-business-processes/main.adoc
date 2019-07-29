@@ -24,8 +24,8 @@ include::{jbpm-dir}/BPMN2/business-process-overview-con.adoc[leveloffset=+1]
 include::{jbpm-dir}/BPMN2/business-process-elements-con.adoc[leveloffset=+1]
 include::{jbpm-dir}/BPMN2/process-defs-con.adoc[leveloffset=+1]
 //include::{jbpm-dir}/BPMN2/process-props-con.adoc[leveloffset=+1]
-include::{jbpm-dir}/BPMN2/create-import-proc-definitions-proc.adoc[leveloffset=+2]
-//BAPL-1153 Designer Parser roundtrip for unsupported elements - Tiago Dolphine and Walter Medvedeo
+//include::{jbpm-dir}/BPMN2/create-import-proc-definitions-proc.adoc[leveloffset=+2]
+//BAPL-1153 Designer Parser roundtrip for unsupported elements - Tiago Dolphine and Walter Medvedeo -*Moved to 7.5*
 
 include::{jbpm-dir}/BPMN2/process-instance-con.adoc[leveloffset=+1]
 include::{jbpm-dir}/BPMN2/process-instance-admin-con.adoc[leveloffset=+2]
@@ -42,55 +42,71 @@ include::{jbpm-dir}/BPMN2/copy-elements-proc.adoc[leveloffset=+2]
 
 include::{jbpm-dir}/BPMN2/resize-elements-proc.adoc[leveloffset=+2]
 
-include::{jbpm-dir}/BPMN2/define-process-form-proc.adoc[leveloffset=+2]
+//include::{jbpm-dir}/BPMN2/define-process-form-proc.adoc[leveloffset=+2]
 
-include::{jbpm-dir}/BPMN2/define-process-props-proc.adoc[leveloffset=+2]
+//include::{jbpm-dir}/BPMN2/define-process-props-proc.adoc[leveloffset=+2]
 
-include::{jbpm-dir}/BPMN2/validate-process-proc.adoc[leveloffset=+2]
+//include::{jbpm-dir}/BPMN2/validate-process-proc.adoc[leveloffset=+2]
 //BAPL-1217 Designer - View all validation errors
 
-include::{jbpm-dir}/BPMN2/correct-invalid-process-proc.adoc[leveloffset=+2]
+//include::{jbpm-dir}/BPMN2/correct-invalid-process-proc.adoc[leveloffset=+2]
+
+include::{jbpm-dir}/BPMN2/deploy-business-process-proc.adoc[leveloffset=+1]
 
 include::{jbpm-dir}/BPMN2/execute-business-process-proc.adoc[leveloffset=+1]
-//Executing a business process (Combine the deploy and execution sections of the Executing a process doc).
 
 include::{jbpm-dir}/BPMN2/business-process-forms-con.adoc[leveloffset=+1]
 
-include::{jbpm-dir}/BPMN2/create-forms-proc.adoc[leveloffset=+2]
+include::{jbpm-dir}/BPMN2/form-modeler-con.adoc[leveloffset=+2]
+
+include::{jbpm-dir}/BPMN2/create-process-forms-proc.adoc[leveloffset=+2]
 //BXMSDOC-3935 Document Form modeler support for class models from external dependencies
 
-include::{jbpm-dir}/BPMN2/set-form-props-proc.adoc[leveloffset=+2]
+include::{jbpm-dir}/BPMN2/create-task-forms-proc.adoc[leveloffset=+2]
 
-include::{jbpm-dir}/BPMN2/configure-process-forms-designer-proc.adoc[leveloffset=+2]
+include::{jbpm-dir}/BPMN2/create-forms-proc.adoc[leveloffset=+2]
 
-include::{jbpm-dir}/BPMN2/add-form-fields-proc.adoc[leveloffset=+2]
+//include::{jbpm-dir}/BPMN2/set-form-props-proc.adoc[leveloffset=+2]
 
-include::{jbpm-dir}/BPMN2/config-form-fields-proc.adoc[leveloffset=+2]
+//include::{jbpm-dir}/BPMN2/configure-process-forms-designer-proc.adoc[leveloffset=+2]
 
-include::{jbpm-dir}/BPMN2/create-subforms-proc.adoc[leveloffset=+2]
+//include::{jbpm-dir}/BPMN2/add-form-fields-proc.adoc[leveloffset=+2]
+
+//include::{jbpm-dir}/BPMN2/config-form-fields-proc.adoc[leveloffset=+2]
+
+//include::{jbpm-dir}/BPMN2/create-subforms-proc.adoc[leveloffset=+2]
 
 include::{jbpm-dir}/BPMN2/enable-doc-attachments-proc.adoc[leveloffset=+2]
 
-include::{jbpm-dir}/BPMN2/render-forms-proc.adoc[leveloffset=+2]
+include::{jbpm-dir}/BPMN2/set-marshalling-proc.adoc[leveloffset=+3]
 
-include::{jbpm-dir}/BPMN2/modify-ui-style-proc.adoc[leveloffset=+2]
+include::{jbpm-dir}/BPMN2/create-doc-var-proc.adoc[leveloffset=+3]
+
+include::{jbpm-dir}/BPMN2/map-task-vars-proc.adoc[leveloffset=+3]
+
+//include::{jbpm-dir}/BPMN2/render-forms-proc.adoc[leveloffset=+2]
+
+//include::{jbpm-dir}/BPMN2/modify-ui-style-proc.adoc[leveloffset=+2]
 //BAPL-1159 [GSS-RFE] Modify the UI style in the Form Modeler
 
-include::{jbpm-dir}/BPMN2/upload-human-task-forms-proc.adoc[leveloffset=+2]
+//include::{jbpm-dir}/BPMN2/upload-human-task-forms-proc.adoc[leveloffset=+2]
 //BAPL-1191 There is no way to upload multiple documents for Human Task forms
 
-include::{jbpm-dir}/BPMN2/class-model-support-proc.adoc[leveloffset=+2]
+//include::{jbpm-dir}/BPMN2/class-model-support-proc.adoc[leveloffset=+2]
 //BAPL-1228 Form modeler support for class models from external dependencies
 
-include::{jbpm-dir}/BPMN2/embed-proc-task-form-proc.adoc[leveloffset=+2]
+//include::{jbpm-dir}/BPMN2/embed-proc-task-form-proc.adoc[leveloffset=+2]
 
-include::{jbpm-dir}/BPMN2/business-handlers-tasks-con.adoc[leveloffset=+1]
-include::{jbpm-dir}/BPMN2/implement-bus-rule-task-proc.adoc[leveloffset=+2]
+//include::{jbpm-dir}/BPMN2/business-handlers-tasks-con.adoc[leveloffset=+1]
+
+//include::{jbpm-dir}/BPMN2/implement-bus-rule-task-proc.adoc[leveloffset=+2]
 //BXMSDOC-1719 Missing documentation for Business Rule Task and Decision Task elements
-include::{jbpm-dir}/BPMN2/implement-remote-rule-task-proc.adoc[leveloffset=+2]
+
+//include::{jbpm-dir}/BPMN2/implement-remote-rule-task-proc.adoc[leveloffset=+2]
+
 //BXMSDOC-3222 Tech support request for documenting the new rule tasks - https://access.redhat.com/solutions/3606541
 
-include::{jbpm-dir}/BPMN2/case-proc-views-proc.adoc[leveloffset=+1]
+//include::{jbpm-dir}/BPMN2/case-proc-views-proc.adoc[leveloffset=+1]
 //BAPL-1032 Case Modeler - transition between Case and Process views
 
 include::{jbpm-dir}/BPMN2/bc-project-to-mavenrepo-proc.adoc[leveloffset=+1]
