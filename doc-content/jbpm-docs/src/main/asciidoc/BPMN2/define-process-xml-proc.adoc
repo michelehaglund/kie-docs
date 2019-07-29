@@ -1,5 +1,5 @@
 [id='define-proc-xml']
-= Defining processes using XML
+= Process definitions in XML
 
 *<MH>Dev, do we want to elaborate on this approach, or simply show only the process designer process? At least to get this doc out for 7.4. It will continue to grow.</MH>*
 
