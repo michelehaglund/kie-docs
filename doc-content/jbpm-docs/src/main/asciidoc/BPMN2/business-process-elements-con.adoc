@@ -146,29 +146,77 @@ An end event marks the end of a business process. Your business process may have
 ==== Intermediate events
 Intermediate events occur during the execution of a process flow, and they drive the flow of the process. Some specific situations in a process may trigger these intermediate events. Intermediate events can occur in a process with one or no incoming flow and an outgoing flow. Intermediate events can further be classified as:
 
-* Catching intermediate events
 * Throwing intermediate events
-
-[[_catching_intermediate_events]]
-==== Catching intermediate events
-Catching intermediate events comprises intermediate events which implement a response to specific indication of a situation from the main process workflow. Catching intermediate events are of the following types:
-
-* `Message`: Use the `Message` catching intermediate events in your process to implement a reaction to an arriving message. The message that this event is expected to react to, is specified in its properties. It executes the flow only when it receives the specific message.
-* `Timer`: Use the `Timer` intermediate event to delay the workflow execution until a specified point or duration. A `Timer` intermediate event has one incoming flow and one outgoing flow and its execution starts when the incoming flow transfers to the event. When placed on an activity boundary, the execution is triggered at the same time as the activity execution.
-* `Escalation`: Use the `Escalation` catching intermediate event in your process to consume an Escalation object. An `Escalation` catching intermediate event awaits a specific escalation object defined in its properties. Once it receives the object, it triggers execution of its outgoing flow.
-* `Conditional`: Use the `Conditional` intermediate event to execute a workflow when a specific business Boolean condition that it defines, evaluates to true. When placed in the process workflow, a `Conditional` intermediate event has one incoming flow and one outgoing flow and its execution starts when the incoming flow transfers to the event. When placed on an activity boundary, the execution is triggered at the same time as the activity execution. Note that if the event is non-interrupting, it triggers continuously while the condition is true.
-* `Error`: Use the Error catching intermediate event in your process to execute a workflow when it received a specific error object defined in its properties.
-* `Compensation`: Use the `Compensation` intermediate event to handle compensation in case of partially failed operations. A `Compensation` intermediate event is a boundary event that is attached to an activity in a transaction subprocess that may finish with a `Compensation` end event or a `Cancel` end event. The `Compensation` intermediate event must have one outgoing flow that connects to an activity that defines the compensation action needed to compensate for the action performed by the activity.
-* `Signal`: Use the `Signal` catching intermediate event to execute a workflow once a specified signal object defined in its properties is received from the main process or any other process.
+* Catching intermediate events
 
 [[_throwing_intermediate_events]]
 ==== Throwing intermediate events
 
 Throwing intermediate events comprises events which produce a specified trigger in the form of a message, escalation, or signal, to drive the flow of a process. Throwing intermediate events are of the following types:
 
-* `Message`: Use the `Message` throw intermediate event to produce and send a message to a communication partner (such as an element in another process). Once it sends a message, the process execution continues.
-* `Escalation`: Use the `Escalation` throw intermediate event to produce an escalation object. Once it creates an escalation object, the process execution continues. The escalation object can be consumed by an `Escalation` start event or an `Escalation` intermediate catch event, which is looking for this specific escalation object.
-* `Signal`: Use the `Signal` throwing intermediate events to produces a signal object. Once it creates a signal object, the process execution continues. The signal object is consumed by a `Signal` start event or a Signal catching intermediate event, which is looking for this specific signal object.
+.Types of Intermediate Events in Object Library
+[cols="25%,10%,65%a", frame="all", options="header"]
+|===
+|Event
+|Icon
+|Description
+
+|*Intermediate Signal*
+|image:processes/6670.png[]
+|Use the `Intermediate Signal` throwing intermediate event to produces a signal object. Once it creates a signal object, the process execution continues. The signal object is consumed by a `Signal` start event or a Signal catching intermediate event, which is looking for this specific signal object.
+
+|*Intermediate Compensation*
+|image:processes/6671.png[]
+|Use the `Intermediate Compensation` throwing intermediate event to handle compensation in case of partially failed operations.
+
+|*Intermediate Escalation*
+|image:processes/6672.png[]
+|Use the `Intermediate Escalation` throwing event to produce an escalation object. Once it creates an escalation object, the process execution continues. The escalation object can be consumed by an `Intermediate Escalation` start event or an `Intermediate Escalation` catch event, which is looking for this specific escalation object.
+
+|*Intermediate Message*
+|image:processes/6673.png[]
+|Use the `Intermediate Message` throwing intermediate event to produce and send a message to a communication partner (such as an element in another process). Once it sends a message, the process execution continues.
+|===
+
+[[_catching_intermediate_events]]
+==== Catching intermediate events
+Catching intermediate events comprises intermediate events which implement a response to specific indication of a situation from the main process workflow. Catching intermediate events are of the following types:
+
+.Types of Intermediate Events in Object Library
+[cols="25%,10%,65%a", frame="all", options="header"]
+|===
+|Event
+|Icon
+|Description
+
+|*Intermediate Timer*
+|image:processes/6680.png[]
+|Use the `Intermediate Timer` intermediate event to delay the workflow execution until a specified point or duration. A `Intermediate Timer` intermediate event has one incoming flow and one outgoing flow and its execution starts when the incoming flow transfers to the event. When placed on an activity boundary, the execution is triggered at the same time as the activity execution.
+
+|*Intermediate Error*
+|image:processes/6681.png[]
+|Use the Error catching intermediate event in your process to execute a workflow when it received a specific error object defined in its properties.
+
+|*Intermediate Conditional*
+|image:processes/6682.png[]
+|Use the `Intermediate Conditional` intermediate event to execute a workflow when a specific business Boolean condition that it defines, evaluates to true. When placed in the process workflow, a `Intermediate Conditional` intermediate event has one incoming flow and one outgoing flow and its execution starts when the incoming flow transfers to the event. When placed on an activity boundary, the execution is triggered at the same time as the activity execution. Note that if the event is non-interrupting, it triggers continuously while the condition is true.
+
+|*Intermediate Compensation*
+|image:processes/6683.png[]
+|Use the `Intermediate Compensation` intermediate event to handle compensation in case of partially failed operations. A `Intermediate Compensation` intermediate event is a boundary event that is attached to an activity in a transaction subprocess that may finish with a `Intermediate Compensation` end event or a `Cancel` end event. The `Intermediate Compensation` intermediate event must have one outgoing flow that connects to an activity that defines the compensation action needed to compensate for the action performed by the activity.
+
+|*Intermediate Signal*
+|image:processes/6684.png[]
+|Use the `Intermediate Signal` catching intermediate event to execute a workflow once a specified signal object defined in its properties is received from the main process or any other process.
+
+|*Intermediate Escalation*
+|image:processes/6685.png[]
+|Use the `Intermediate Escalation` catching intermediate event in your process to consume an Escalation object. An `Intermediate Escalation` catching intermediate event awaits a specific escalation object defined in its properties. Once it receives the object, it triggers execution of its outgoing flow.
+
+|*Intermediate Message*
+|image:processes/6686.png[]
+|Use the `Intermediate Message` catching intermediate event in your process to implement a reaction to an arriving message. The message that this event is expected to react to, is specified in its properties. It executes the flow only when it receives the specific message.
+|===
 
 [[_sect_activities]]
 === Activities
@@ -189,39 +237,6 @@ A task is an action that is executed inside a business process. Tasks can be of 
 |Icon
 |Description
 
-|*User*
-|image:processes/6607.png[]
-|Use the `User` task activity type in your business process when you require a human actor to execute your task.
-
-* The `User` task defines within it, the type of task that needs to be executed. You must pass the data that a human actor may require to execute this task as the content of the task.
-* The `User` task has one incoming and one outgoing connection. You can use the `User` tasks in combination with `Swimlanes` to assign multiple human tasks to similar human actors.
-
-|*Send*
-|image:processes/6608.png[]
-|Use the `Send` task to send a message.
-
-* A `Send` task has a message associated with it.
-* When a `Send` task is activated, the message data is assigned to the data input property of the `Send` task. A `Send` task completes when this message is sent.
-
-|*Receive*
-|image:processes/6609.png[]
-|Use the `Receive` task in your process when your process is relying on a specific message to continue.
-
-* When a `Receive` task receives the specified message, the data from the message is transferred to the Data Output property of the `Receive` task and the task completes.
-
-|*Manual*
-|image:processes/6610.png[]
-|Use the `Manual` task when you require a task to be executed by a human actor that need not be managed by your process.
-
-* The difference between a `Manual` task and a `User` task is that a `User` task is executed in the context of the process, requires system interaction to accomplish the task, and are assigned to specific human actors. The `Manual` tasks on the other hand, execute without the need to interact with the system and not managed by the process.
-
-|*Service*
-|image:processes/6611.png[]
-|Use the `Service` task in your business process for specifying the tasks use a service (such as a web service) that must execute outside the process engine.
-
-* The `Service` task may use any service such as email server, message logger, or any other automated service.
-* You can specify the required input parameters and expected results of this task in its properties. When the associated work is executed and specified result is received, the `Service` task completes.
-
 |*Business Rule*
 |image:processes/6612.png[]
 |Use the `Business Rule` task when you want a set of rules to be executed as a task in your business process flow.
@@ -231,20 +246,53 @@ A task is an action that is executed inside a business process. Tasks can be of 
 * The set of rules that this task runs are defined in `.drl` format.
 * All the rules that belong to a `Business Rule` task must belong to a specific ruleflow group. You can assign a rule its ruleflow group using the `ruleflow-group` attribute in the header of the rule. So when a `Business Rule` task executes, all the rules that belong to the `ruleflow-group` specified in the `ruleflow-group` property of the task are executed.
 
+|*User*
+|image:processes/6607.png[]
+|Use the `User` task activity type in your business process when you require a human actor to execute your task.
+
+* The `User` task defines within it, the type of task that needs to be executed. You must pass the data that a human actor may require to execute this task as the content of the task.
+* The `User` task has one incoming and one outgoing connection. You can use the `User` tasks in combination with `Swimlanes` to assign multiple human tasks to similar human actors.
+
+|*Service Task*
+|image:processes/6611.png[]
+|Use the `Service Task` in your business process for specifying the tasks use a service (such as a web service) that must execute outside the process engine.
+
+* The `Service Task` may use any service such as email server, message logger, or any other automated service.
+* You can specify the required input parameters and expected results of this task in its properties. When the associated work is executed and specified result is received, the `Service Task` completes.
+
 |*Script*
 |image:processes/6613.png[]
 |Use the `Script` task in your business process when you want a script to be executed within the task.
 
 * A `Script` task has an associated action that contains the action code and the language that the action is written in.
 * When a `Script` task is reached in the process, it executes the action and then continues to the next node.
-* Use a `Script` task in your process to for modeling low level behavior such as manipulating variables. For a complex model, use a `Service` task.
-* Ensure that the script associated with a `Script` task is executed as soon as the task is reached in a business process. If that is not possible, use an asynchronous `Service` task instead.
+* Use a `Script` task in your process to for modeling low level behavior such as manipulating variables. For a complex model, use a `Service Task`.
+* Ensure that the script associated with a `Script` task is executed as soon as the task is reached in a business process. If that is not possible, use an asynchronous `Service Task` instead.
 * Ensure that your script does not contact an external service as the process engine has no visibility of the external services that a script may call.
 * Ensure that any exception that your script may throw must be caught within the script itself.
-
-|*None*
-|image:processes/6614.png[]
-|A `None` task type is an abstract undefined task type.
+//
+// |*Send*
+// |image:processes/6608.png[]
+// |Use the `Send` task to send a message.
+//
+// * A `Send` task has a message associated with it.
+// * When a `Send` task is activated, the message data is assigned to the data input property of the `Send` task. A `Send` task completes when this message is sent.
+//
+// |*Receive*
+// |image:processes/6609.png[]
+// |Use the `Receive` task in your process when your process is relying on a specific message to continue.
+//
+// * When a `Receive` task receives the specified message, the data from the message is transferred to the Data Output property of the `Receive` task and the task completes.
+//
+// |*Manual*
+// |image:processes/6610.png[]
+// |Use the `Manual` task when you require a task to be executed by a human actor that need not be managed by your process.
+//
+// * The difference between a `Manual` task and a `User` task is that a `User` task is executed in the context of the process, requires system interaction to accomplish the task, and are assigned to specific human actors. The `Manual` tasks on the other hand, execute without the need to interact with the system and not managed by the process.
+//
+// |*None*
+// |image:processes/6614.png[]
+// |A `None` task type is an abstract undefined task type.
 |===
 
 [[_subprocesses]]
@@ -258,20 +306,6 @@ A subprocess is a process within another process. When a parent process calls a 
 |Subprocess
 |Icon
 |Description
-
-|*Reusable*
-|image:processes/6615.png[]
-|Use the `Reusable` subprocess to invoke another process from the parent process.
-
-The `Reusable` subprocess is independent from its parent process.
-
-|*Multiple Instances*
-|image:processes/6616.png[]
-|Use the `Multiple Instances` subprocess when you want to execute the contained subprocess elements multiple number of times.
-
-When the engine reaches a `Multiple Instance` subprocess in your process flow, the subprocess instances are executed in a sequential manner.
-
-A `Multiple Instances` subprocess is completed when the condition specified in the `MI completion condition` property is satisfied.
 
 |*Embedded*
 |image:processes/6617.png[]
@@ -289,6 +323,12 @@ You can define a set of activities for this subprocess, but the sequence and num
 
 Use an `Ad-Hoc` subprocesses for example when executing a list of tasks that have no dependencies between them and can be executed in any order.
 
+|*Reusable*
+|image:processes/6615.png[]
+|Use the `Reusable` subprocess to invoke another process from the parent process.
+
+The `Reusable` subprocess is independent from its parent process.
+
 |*Event*
 |image:processes/6619.png[]
 |Use the `Event` subprocess in your process flow when you want to handle events that occur within the boundary of a subprocess. This subprocess becomes active when its start event gets triggered.
@@ -296,6 +336,14 @@ Use an `Ad-Hoc` subprocesses for example when executing a list of tasks that hav
 The `Event` subprocess differs from the other subprocess as they are not a part of the regular process flow and occur only in the context of a subprocess.
 
 An `Event` subprocess can be _interrupting_ or _non-interrupting_. The interrupting `Event` subprocess interrupts the parent process unlike the non-interrupting `Event` subprocess.
+
+|*Multiple Instance*
+|image:processes/6616.png[]
+|Use the `Multiple Instance` subprocess when you want to execute the contained subprocess elements multiple number of times.
+
+When the engine reaches a `Multiple Instance` subprocess in your process flow, the subprocess instances are executed in a sequential manner.
+
+A `Multiple Instance` subprocess is completed when the condition specified in the `MI completion condition` property is satisfied.
 |===
 
 NOTE: Only the `Reusable` subprocess can contain `Swimlanes`.
@@ -309,13 +357,31 @@ Gateways are used to create or synchronize branches in the workflow using a set 
 
 One Gateway cannot have multiple incoming and multiple outgoing flows.
 
-Depending on the gating mechanism you want to apply, you can use the following types of gateways:
+.Types of Gateway in Object Library
+[cols="1,1,3a", frame="all", options="header"]
+|===
+|Subprocess
+|Icon
+|Description
 
-* *Parallel* (AND): in a converging gateway, waits for all incoming flows. In a diverging gateway, takes all outgoing flows simultaneously.
-* *Inclusive* (OR): in a converging gateway, waits for all incoming flows whose condition evaluates to true. In a diverging gateway takes all outgoing flows whose condition evaluates to `true`.
-* *Exclusive* (XOR): in a converging gateway, only the first incoming flow whose condition evaluates to true is chosen. In a diverging gateway only one outgoing flow is chosen.
-* *Event-based*: used only in diverging gateways for reacting to events. See <<_event_based_gateway>>.
-* *Data-based Exclusive*: used in both diverging and converging gateways to make decisions based on available data. See <<_complex_gateway>>.
+|*Parallel* (AND)
+|image:processes/6690.png[]
+|In a converging gateway, waits for all incoming flows. In a diverging gateway, takes all outgoing flows simultaneously.
+
+|*Event*
+|image:processes/6691.png[]
+|used only in diverging gateways for reacting to events. See <<_event_based_gateway>>.
+
+|*Exclusive* (XOR)
+|image:processes/6692.png[]
+|In a converging gateway, only the first incoming flow whose condition evaluates to true is chosen. In a diverging gateway only one outgoing flow is chosen.
+
+|*Inclusive* (OR)
+|image:processes/6693.png[]
+|In a converging gateway, waits for all incoming flows whose condition evaluates to true. In a diverging gateway takes all outgoing flows whose condition evaluates to `true`.
+|===
+
+// * *Data-based Exclusive*: used in both diverging and converging gateways to make decisions based on available data. See <<_complex_gateway>>.
 
 [[_parallel_gateway]]
 ==== Parallel gateways
