@@ -5,7 +5,7 @@
 
 You can create processes directly in XML format using the BPMN 2.0 specifications. The syntax of these XML processes is defined using the BPMN 2.0 XML Schema Definition. The process XML file consists of:
 
-* The process element: This is the top part of the process XML that contains the definition of the different nodes and their properties. The process XML consist of exactly one `<process>` element. This element contains parameters related to the process (its type, name, ID, and package name), and consists of three subsections: a header section (where process-level information like variables, globals, imports, and lanes can be defined), a nodes section that defines each of the nodes in the process, and a connections section that contains the connections between all the nodes in the process.
+* The process element: This is the top part of the process XML that contains the definition of the different nodes and their properties. The process XML consists of exactly one `<process>` element. This element contains parameters related to the process (its type, name, ID, and package name), and consists of three subsections: a header section (where process-level information like variables, globals, imports, and lanes can be defined), a nodes section that defines each of the nodes in the process, and a connections section that contains the connections between all the nodes in the process.
 
 * The BPMNDiagram element: This is the lower part of the process XML that contains all graphical information, like the location of the nodes. In the nodes section, there is a specific element for each node, defining the various parameters and, possibly, sub-elements for that node type.
 

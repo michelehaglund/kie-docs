@@ -1,7 +1,7 @@
 [id='copy-elements']
 
 = Copying elements
-You can copy individual elements and finished business processes.
+You can copy individual elements and business processes.
 
 .Procedure
 

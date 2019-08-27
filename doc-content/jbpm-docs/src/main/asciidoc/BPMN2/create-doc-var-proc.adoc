@@ -1,7 +1,7 @@
 [id='create-doc-var']
 
 = Creating a document variable in the process
-After you set the document marshalling strategy, create a document variable in the related process. This variable is required for the document to be visible in the *Process Instances* view in {CENTRAL}.
+After you set the document marshalling strategy, create a document variable in the related process to upload documents to a human task and for the document or documents to be visible in the *Process Instances* view in {CENTRAL}.
 
 . In {CENTRAL}, go to *Menu* -> *Design* -> *Projects*.
 . Click on your project's name to open the asset view and click on the business process name.
@@ -9,4 +9,4 @@ After you set the document marshalling strategy, create a document variable in t
 . Expand *Process Data* and click image:getting-started/6176.png[] and enter the following values:
 +
 * Name: `document`
-* Custom Type: `org.jbpm.document.Document`
+* Custom Type: `org.jbpm.document.Document` for a single document or `org.jbpm.document.DocumentCollection` for multiple documents

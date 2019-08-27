@@ -34,7 +34,7 @@ include::{enterprise-dir}/bpmn/bpmn-gateways-ref.adoc[leveloffset=+2]
 
 include::{enterprise-dir}/bpmn/bpmn-connecting-ref.adoc[leveloffset=+2]
 include::{enterprise-dir}/bpmn/bpmn-lanes-ref.adoc[leveloffset=+2]
-include::{enterprise-dir}/bpmn/bpmn-artifacts-ref.adoc[leveloffset=+2]
+//include::{enterprise-dir}/bpmn/bpmn-artifacts-ref.adoc[leveloffset=+2] Per Kirill: Designing business processes in Business Central document also describes Groups in artifacts in process designer section, but new designer currently and at least in 7.5 as well not supporting this feature.
 
 include::{jbpm-dir}/BPMN2/process-defs-con.adoc[leveloffset=+1]
 //include::{jbpm-dir}/BPMN2/process-props-con.adoc[leveloffset=+1]
@@ -95,6 +95,7 @@ include::{jbpm-dir}/BPMN2/enable-doc-attachments-proc.adoc[leveloffset=+2]
 include::{jbpm-dir}/BPMN2/set-marshalling-proc.adoc[leveloffset=+3]
 
 include::{jbpm-dir}/BPMN2/create-doc-var-proc.adoc[leveloffset=+3]
+//Also covers BAPL-1191 There is no way to upload multiple documents for Human Task forms
 
 include::{jbpm-dir}/BPMN2/map-task-vars-proc.adoc[leveloffset=+3]
 
@@ -104,9 +105,6 @@ include::{jbpm-dir}/BPMN2/cust-marshalling-cms-proc.adoc[leveloffset=+4]
 
 //include::{jbpm-dir}/BPMN2/modify-ui-style-proc.adoc[leveloffset=+2]
 //BAPL-1159 [GSS-RFE] Modify the UI style in the Form Modeler
-
-//include::{jbpm-dir}/BPMN2/upload-human-task-forms-proc.adoc[leveloffset=+2]
-//BAPL-1191 There is no way to upload multiple documents for Human Task forms
 
 //include::{jbpm-dir}/BPMN2/class-model-support-proc.adoc[leveloffset=+2]
 //BAPL-1228 Form modeler support for class models from external dependencies
@@ -125,7 +123,7 @@ include::{jbpm-dir}/BPMN2/cust-marshalling-cms-proc.adoc[leveloffset=+4]
 //include::{jbpm-dir}/BPMN2/case-proc-views-proc.adoc[leveloffset=+1]
 //BAPL-1032 Case Modeler - transition between Case and Process views
 
-include::{jbpm-dir}/BPMN2/bc-project-to-mavenrepo-proc.adoc[leveloffset=+1]
+//include::{jbpm-dir}/BPMN2/bc-project-to-mavenrepo-proc.adoc[leveloffset=+1] Now in Misha's doc per BXMSDOC-4511
 
 include::{jbpm-dir}/BPMN2/define-process-xml-proc.adoc[leveloffset=+1]
 

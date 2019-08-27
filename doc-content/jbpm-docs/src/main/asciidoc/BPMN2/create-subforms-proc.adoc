@@ -1,7 +1,7 @@
 [id='create-subforms']
 
-= Creating Subforms with simple and complex field types
-Complex Field types is a category of fields in a form. You can use the complex field types to model form properties that are Java Objects.
+= Creating subforms with simple and complex field types
+Complex field types is a category of fields in a form. You can use the complex field types to model form properties that are Java objects.
 Simple subform and Multiple subform are the two types of complex field types. A simple subform represents a single object and a multiple subform represents an object array inside a parent form. Once you add one of these fields into a form, you must configure the form with information on how it must display these objects during execution. For example, if your form has fields representing an object array, you can define a tabular display of these fields in the form. You cannot represent them as simple inputs such as text box, checkbox, text area, and date selector.
 
 .Procedure: To create and insert a subform containing a single object inside a parent form:
