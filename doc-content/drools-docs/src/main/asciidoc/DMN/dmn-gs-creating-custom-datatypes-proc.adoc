@@ -59,7 +59,7 @@ The following tables list the `Violation`, `Driver`, and `Fine` custom data type
 .The tDriver custom data type
 image::dmn/dmn-tDriver-custom-datatype.png[]
 . To create the first nested data type, enter `Name` in the *Name* field of the nested data type, and select *string* from the *Type* list.
-. Click the check mark to the right of the new data type to save your changes..
+. Click the check mark to the right of the new data type to save your changes.
 . For each of the remaining nested data types, click the three vertical dots next to the *tDriver* data type, select *Insert nested field*, and add the following nested data types. Click *Save* for each nested data type you add.
 +
 * *Name* (string)
@@ -84,10 +84,11 @@ image::dmn/dmn-tViolation-custom-datatype.png[]
 
 . To add the following constraints to the `Type` nested data type, click *Edit* -> *Constraints* -> *Enumeration* and add the following constraints. Click the check icon image:dmn/dmn-datatype-constraints-tickmark.png[] to save each enumeration constraint that you add.
 +
-* `"speed"`
-* `"parking"`
-* `"driving under the influence"`
+* `speed`
+* `parking`
+* `driving under the influence`
 
+. Click *OK*.
 . To create the *tFine* custom data type, click *Add* on the *Data Types* tab, enter `tFine` in the *Name* field, select `Structure` from the *Type* list, and click *Save*.
 +
 .The tFine custom data type
@@ -98,4 +99,4 @@ image::dmn/dmn-tFine-custom-datatype.png[]
 * *Amount* (number)
 * *Points* (number)
 
-. Once all the three custom data types are created, click *Save* to open the *Confirm Save* dialog box and click *Save* again.
+. Click *Save*.
