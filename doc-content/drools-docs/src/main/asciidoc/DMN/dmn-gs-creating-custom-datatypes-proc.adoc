@@ -53,11 +53,13 @@ The following tables list the `Violation`, `Driver`, and `Fine` custom data type
 * You created the traffic violations DMN decision requirements diagram (DRDs) in {CENTRAL}.
 
 .Procedure
-. To create the *tDriver* custom data type, click *Add* on the *Data Types* tab, enter `tDriver` in the *Name* field, select `Structure` from the *Type* list, and click *Save*.
+. To create the *tDriver* custom data type, click *Add* on the *Data Types* tab, enter `tDriver` in the *Name* field, and select `Structure` from the *Type* list.
+. Click the check mark to the right of the new data type to save your changes.
 +
 .The tDriver custom data type
 image::dmn/dmn-tDriver-custom-datatype.png[]
-. To create the first nested data type, enter `Name` in the *Name* field of the nested data type, select *String* from the *Type* list and click *Save*.
+. To create the first nested data type, enter `Name` in the *Name* field of the nested data type, and select *string* from the *Type* list.
+. Click the check mark to the right of the new data type to save your changes..
 . For each of the remaining nested data types, click the three vertical dots next to the *tDriver* data type, select *Insert nested field*, and add the following nested data types. Click *Save* for each nested data type you add.
 +
 * *Name* (string)
@@ -66,7 +68,8 @@ image::dmn/dmn-tDriver-custom-datatype.png[]
 * *City* (string)
 * *Points* (number)
 
-. To create the *tViolation* custom data type, click *Add* on the *Data Types* tab, enter `tViolation` in the *Name* field, select `Structure` from the *Type* list, and click *Save*.
+. To create the *tViolation* custom data type, click *Add* on the *Data Types* tab, enter `tViolation` in the *Name* field, and select `Structure` from the *Type* list.
+. Click the check mark to the right of the new data type to save your changes.
 +
 .The tViolation custom data type
 image::dmn/dmn-tViolation-custom-datatype.png[]
