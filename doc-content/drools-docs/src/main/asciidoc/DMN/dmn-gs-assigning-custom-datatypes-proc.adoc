@@ -15,7 +15,7 @@ After you create the DMN custom data types, assign them to the appropriate *DMN 
 +
 * *Data type*: `string`
 * *Question*: `Should the driver be suspended due to points on his driver license?`
-* *Allowed Answers*: `"Yes","No"`
-. Click *Save* to open the *Confirm Save* dialog box and click *Save* again.
+* *Allowed Answers*: `Yes,No`
+. Click *Save*.
 
 You have assigned the custom data types to your DRD's input and decision nodes.
