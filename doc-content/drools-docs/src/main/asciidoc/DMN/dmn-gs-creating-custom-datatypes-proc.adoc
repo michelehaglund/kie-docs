@@ -85,7 +85,7 @@ image::dmn/dmn-tViolation-custom-datatype.png[]
 * `parking`
 * `driving under the influence`
 
-. Click *OK*.
+. Click *OK*, then click the check mark to the right of the *Type* data type to save your changes.
 . To create the `tFine` custom data type, click *Add* on the *Data Types* tab, enter `tFine` in the *Name* field, select `Structure` from the *Type* list, and click *Save*.
 +
 .The tFine custom data type
