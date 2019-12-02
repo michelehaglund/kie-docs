@@ -79,7 +79,7 @@ image::dmn/dmn-tViolation-custom-datatype.png[]
 * `Speed Limit` (number)
 * `Actual Speed` (number)
 
-. Add the following constraints to the `Type` nested data type by clicking the edit icon, click *Add Constraints*, and select *Enumeration* from the *Select constraint type* pull-down menu.
+. To add the following constraints to the `Type` nested data type, click the edit icon, click *Add Constraints*, and select *Enumeration* from the *Select constraint type* pull-down menu.
 +
 * `speed`
 * `parking`
