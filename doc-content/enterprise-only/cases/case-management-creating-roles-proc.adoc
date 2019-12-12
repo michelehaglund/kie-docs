@@ -1,7 +1,7 @@
 [id='case-management-creating-roles-proc-{context}']
 = Creating case roles
 
-*<MH>Dev, in viewing the IT_Orders case project in 7.6, I see that the case definitions are actually referred to as business processes when viewing the sample assets. Should we rework this chapter? If not, I find the below prerequisites and steps confusing.</MH>*
+*<MH>Dev, in viewing the IT_Orders case project in 7.6, I see that the case definitions are actually referred to as business processes when viewing the sample assets. Should we consider a change in the naming of the assets moving forward to avoid confusion. We are using the term "Case definition" as if it will be listed somewhere.</MH>*
 
 You can create and define case roles in the case definition when you design the case in the process designer. Case roles are configured on the case definition level to keep them separate from the actors involved in handling the case instance. Roles can be assigned to user tasks or used as contact references throughout the case lifecycle, but they are not defined in the case as a specific user or group of users.
 
