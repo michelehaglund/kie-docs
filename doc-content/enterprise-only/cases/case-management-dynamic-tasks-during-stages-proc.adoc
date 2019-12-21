@@ -24,10 +24,7 @@ The first stage starts automatically when the case instance is created.
 +
 . As a `manager` user, approve the hardware specification in {CENTRAL} under *Menu* -> *Track* -> *Task Inbox*, then check the progress of the case.
 .. In {CENTRAL}, click *Menu* -> *Manage* -> *Process Instances* and open the active case instance `IT-0000000001`.
-.. Click *Diagram* to see the case progress diagram: *<MH>Dev, I am unable to replicate this diagram. Can you provide me with a new version in Stunner or should I remove it?</MH>*
-+
-image::cases/case-with-stage-diagram-view.png[]
-+
+.. Click *Diagram* to see the case progress.
 . In a web browser, open the following URL:
 +
 `/http://localhost:8080/kie-server/docs`.

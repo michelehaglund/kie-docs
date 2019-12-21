@@ -14,8 +14,6 @@ You can use the process designer to add subcases to your case definition. A subc
 
 For more information about adding a subcase to your case definition, see {URL_GETTING_STARTED_CASES}[_{GETTING_STARTED_CASES}_].
 
-*<MH>Dev, is the below image and parameter list still relevant for 7.6?</MH>*
-
 The *Sub Case Data I/O* window supports the following set of input parameters that enable you to configure and start the subcase:
 
 image::cases/case-management-subcase-dataio.png[]
