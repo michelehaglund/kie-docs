@@ -91,16 +91,3 @@ image::cases/case-management-new-spec-task.png[]
 +
 This is because the first `Prepare hardware spec` task has been completed with the specification file `invalid.pdf`. As a result, the business rule causes the task and file to be discarded, and a new user task created.
 . In the {CENTRAL} *Task Inbox*, repeat steps 12 and 13, but upload the `valid-spec.pdf` file instead of `invalid.pdf`.
-. Log out of {CENTRAL} and log back in again as `Katy`.
-. Go to *Menu* -> *Track* -> *Task Inbox*. There are two `Manager approval` tasks for Katy, one with the `invalid.pdf` hardware specification file, the other with the `valid-spec.pdf` file.
-. Open, claim, and complete each task:
-.. Check the `approve` box for the task that includes the `valid-spec.pdf` file, then click *Complete*.
-.. Do not check the `approve` box on the task with the `invalid.pdf` file, then click *Complete*.
-. Go to *Menu* -> *Manage* -> *Process Instances* and open the *Order for IT hardware* process instance.
-. Open the *Diagram* tab. The `Order rejected` and `Place order` processes are now marked as *Completed*.
-+
-*<MH>Dev, I am unable to replicate this diagram with the milestone highlighted in Stunner. Can you provide me with a new version in Stunner?</MH>*
-+
-image::cases/case-management-two-orders.png[]
-+
-Similarly, the case details page in Showcase lists two `Manager approval` tasks in the *Completed* column.
