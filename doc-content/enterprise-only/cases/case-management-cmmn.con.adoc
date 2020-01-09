@@ -13,6 +13,7 @@ The following CMMN constructs are currently available:
 * Sentries (entry and exit)
 
 The following tasks are not supported:
+
 * Required
 * Repeat
 * Manual activation
