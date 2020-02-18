@@ -14,10 +14,6 @@ The following sections describe each asset type in {PRODUCT} {PRODUCT_VERSION}.
 +
 Business Processes are diagrams that describe the steps necessary to achieve business goals (see the https://access.redhat.com/documentation/en-US/JBoss_Enterprise_BRMS_Platform/5/html-single/BRMS_Business_Process_Management_Guide/index.html[_{PRODUCT} Business Process Management Guide_] for more details).
 
-* Business Process (legacy)
-+
-The legacy process designer in {CENTRAL} is deprecated in {PRODUCT} {PRODUCT_VERSION_LONG}. It will be removed in a future {PRODUCT} release. The legacy process designer will not receive any new enhancements or features. If you intend to use the new process designer, start migrating your processes to the new designer. Create all new processes in the new process designer. For information about migrating to the new designer, see {URL_MANAGING_PROJECTS}#migrating-from-legacy-designer-proc[_{MANAGING_PROJECTS}_].
-
 * Case Management (Preview)
 +
 Case management is an extension of Business Process Management (BPM) that enables you to manage adaptable business processes. Case management provides problem resolution for non-repeatable, unpredictable processes as opposed to the efficiency-oriented approach of BPM for routine, predictable tasks. It manages one-off situations when the process cannot be predicted in advance.
