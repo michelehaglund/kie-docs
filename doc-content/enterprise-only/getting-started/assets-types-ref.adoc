@@ -95,7 +95,7 @@ Test scenarios in {PRODUCT} enable you to validate the functionality of rules, m
 
 * Test Scenario (Legacy)
 +
-Starting in {PRODUCT} {PRODUCT_VERSION}, there is a new default Test Scenario asset. As it's still not fully feature complete, {PRODUCT} {PRODUCT_VERSION} also includes support for the Test Scenario. Thus providing two test scenarios for business processes, the _Test Scenario_, which relies on the new default process designer, and _Test Scenario (legacy)_, which relies on the legacy process designer.
+Because the new default Test Scenario asset is still not fully feature complete, {PRODUCT} {PRODUCT_VERSION} includes support for the legacy Test Scenario.
 
 * Work Item definition
 +
