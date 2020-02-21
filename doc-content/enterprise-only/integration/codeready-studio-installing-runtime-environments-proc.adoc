@@ -27,5 +27,5 @@ endif::DM[]
 . In the name field, enter a name for the new runtime environment.
 . Click *Browse* and navigate to the directory where you extracted the runtime environment files.
 . Click *OK* to register the selected runtime environment in {CODEREADY_STUDIO}.
-. To set the runtime environment as the default Drools run time, select the check box beside the runtime environment name.
+. To set the runtime environment as the default Drools runtime, select the check box beside the runtime environment name.
 . Click *Apply and Close*. If you have existing projects, you are prompted to restart {CODEREADY_STUDIO} to update the runtime environment.

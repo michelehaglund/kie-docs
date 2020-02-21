@@ -1,7 +1,7 @@
 [id='codeready-studio-install-proc']
 = Installing {CODEREADY_STUDIO}
 
-{CODEREADY_STUDIO} is an integrated development environment (IDE) based on Eclipse. It integrates tooling and run time components by combining Eclipse, Eclipse Tooling, and {EAP_LONG}. {CODEREADY_STUDIO} provides plug-ins with tools and interfaces for {PRODUCT}.
+{CODEREADY_STUDIO} is an integrated development environment (IDE) based on Eclipse. It integrates tooling and runtime components by combining Eclipse, Eclipse Tooling, and {EAP_LONG}. {CODEREADY_STUDIO} provides plug-ins with tools and interfaces for {PRODUCT}.
 
 .Procedure
 . Download {CODEREADY_STUDIO}:
