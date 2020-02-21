@@ -95,7 +95,7 @@ Test scenarios in {PRODUCT} enable you to validate the functionality of rules, m
 
 * Test Scenario (Legacy)
 +
-Because the new default Test Scenario asset is still not fully feature complete, {PRODUCT} {PRODUCT_VERSION} includes support for the legacy Test Scenario.
+{PRODUCT} {PRODUCT_VERSION} includes support for the legacy Test Scenario because the default Test Scenario asset is still in development.
 
 * Work Item definition
 +
