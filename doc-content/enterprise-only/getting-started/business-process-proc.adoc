@@ -60,6 +60,15 @@ System.out.println(application.getProperty());
 ----
 .. Expand *Data Assignments* and click image:getting-started/btn_assign.png[] next to *Assignments*.
 .. In the *Validation Data I/O* window, click *Add* and create the following assignments:
+* Data Inputs and Assignements
+** Name: application
+** Data Type: Application [com.myspace.mortgage_app]
+** Source: application
+
+* Data Outputs and Assignements
+** Name: application
+** Data Type: Application [com.myspace.mortgage_app]
+** Target: application
 +
 .Validation Data I/O assignments
 image::getting-started/val-data-io.png[Screen capture of the Validation Data I/O assignments]
@@ -109,6 +118,14 @@ image::getting-started/user_task.png[]
 .. Select *New* from the *Groups* menu, and input `broker`.
 .. Click image:getting-started/btn_assign.png[] next to *Assignments*.
 .. In the *Correct Data Data I/O* window, click *Add* and create the following assignments:
+** Name: application
+** Data Type: Application [com.myspace.mortgage_app]
+** Source: application
+
+* Data Outputs and Assignements
+** Name: application
+** Data Type: Application [com.myspace.mortgage_app]
+** Target: application
 +
 .Correct Data Data I/O assignments
 image::getting-started/correct-data-io.png[Screen capture of the Correct Data Data I/O assignments]
