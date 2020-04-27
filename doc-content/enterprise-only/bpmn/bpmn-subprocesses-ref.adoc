@@ -30,10 +30,10 @@ Reusable subprocesses appear collapsed within the parent process. Configure the 
 
 * *Called Element*: The ID of the subprocess that is called and instantiated by the activity.
 * *Independent*: If selected, the subprocess is started as an independent process, which means that the subprocess is not terminated if the parent process is completed or if the subprocess is canceled. If not selected, the active subprocess is canceled when the parent process is terminated or when the subprocess is canceled. This property is only visible when the *Wait for completion* property is selected.
-* *Abort Parent*: If selected, only non-independent reusable subprocesses can abort the parent process, this relation will be considered for the implementation. *<MH> Dev,  I don't like this description. It does not read clearly and I don't know what non-independent means here. Can you provide a simplified property description? </MH>*
-* *Wait for completion* : If selected, the subprocess will continue if the previous process has completed or aborted its execution; otherwise it will continue immediately after starting the subprocess (so it will not wait for its completion). This property is selected by default. The following rules apply:
-** If the reusable subprocess is independent, the abort parent option is not available.
-** If the reusable subprocess is not independent, then the abort parent option is available.
+* *Abort Parent*: If selected, non-independent, reusable subprocesses can abort the parent process. This property is only visible when the *Independent* property is not selected. The following rules apply:
+** If the reusable subprocess is independent, *Abort parent* is not available.
+** If the reusable subprocess is not independent, *Abort parent* is available.
+* *Wait for completion* : If selected, the subprocess will continue if the previous process has completed or aborted its execution; otherwise it will continue immediately after starting the subprocess and not wait for the process to complete. This property is selected by default.
 * *Is Async*: Select if the task should be invoked asynchronously and cannot be executed instantly.
 * *Multiple Instance*: Select to execute the contained subprocess elements a multiple number of times.
 * *On Entry Action*: A Java or MVEL script that specifies an action at the start of the task.
