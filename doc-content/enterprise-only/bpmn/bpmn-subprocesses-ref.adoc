@@ -30,7 +30,7 @@ Reusable subprocesses appear collapsed within the parent process. Configure the 
 
 * *Called Element*: The ID of the subprocess that is called and instantiated by the activity.
 * *Independent*: If selected, the subprocess is started as an independent process, which means that the subprocess is not terminated if the parent process is completed or if the subprocess is canceled. If not selected, the active subprocess is canceled when the parent process is terminated or when the subprocess is canceled. This property is only visible when the *Wait for completion* property is selected.
-* *Abort Parent*: If selected, non-independent, reusable subprocesses can abort the parent process. This property is only visible when the *Independent* property is not selected. The following rules apply:
+* *Abort Parent*: If selected, non-independent, reusable subprocesses can abort the parent process when there's an error during the execution of the called process instance. For example, when there's an error when trying to invoke the subprocess or when the subprocess instance is aborted. This property is only visible when the *Independent* property is not selected. The following rules apply:
 ** If the reusable subprocess is independent, *Abort parent* is not available.
 ** If the reusable subprocess is not independent, *Abort parent* is available.
 * *Wait for completion* : If selected, the subprocess will continue if the previous process has completed or aborted its execution; otherwise it will continue immediately after starting the subprocess and not wait for the process to complete. This property is selected by default.
