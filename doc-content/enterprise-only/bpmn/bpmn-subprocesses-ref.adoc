@@ -26,16 +26,22 @@ An embedded subprocess encapsulates a part of the process. It must contain a sta
 An ad hoc subprocess or process contains a number of embedded inner activities and is intended to be executed with a more flexible ordering compared to the typical routing of processes. Unlike regular processes, an ad hoc subprocess does not contain a complete, structured BPMN2 diagram description, for example, from start event to end event. Instead, the ad hoc subprocess contains only activities, sequence flows, gateways, and intermediate events. An ad hoc subprocess can also contain data objects and data associations. The activities within the ad hoc subprocesses are not required to have incoming and outgoing sequence flows. However, you can specify sequence flows between some of the contained activities. When used, sequence flows provide the same ordering constraints as in a regular process. To have any meaning, intermediate events must have outgoing sequence flows and they can be triggered multiple times while the ad hoc subprocess is active.
 
 .Reusable subprocess
-Reusable subprocesses appear collapsed within the parent process. Configure the reusable subprocess using the following  properties by clicking image:getting-started/diagram_properties.png[] to open the *Properties* panel and expand *Implementation/Execution*.
+Reusable subprocesses appear collapsed within the parent process. To configure a reusable subprocess, select the parent process, click image:getting-started/diagram_properties.png[], and expand *Implementation/Execution*. Set the following properties:
 
-* *Called Element*: The ID of the subprocess that is called and instantiated by the activity.
-* *Independent*: If selected, the subprocess is started as an independent process, which means that the subprocess is not terminated if the parent process is completed or if the subprocess is canceled. If not selected, the active subprocess is canceled when the parent process is terminated or when the subprocess is canceled. This property is only visible when the *Wait for completion* property is selected.
-* *Abort Parent*: If selected, non-independent, reusable subprocesses can abort the parent process when there's an error during the execution of the called process instance. For example, when there's an error when trying to invoke the subprocess or when the subprocess instance is aborted. This property is only visible when the *Independent* property is not selected. The following rules apply:
+* *Called Element*: The ID of the subprocess that the activity calls and instantiates.
+* *Independent*: If selected, the subprocess is started as an independent process. If not selected, the active subprocess is canceled when the parent process is terminated.
+* *Abort Parent*: If selected, non-independent reusable subprocesses can abort the parent process when there is an error during the execution of the called process instance. For example, when there's an error when trying to invoke the subprocess or when the subprocess instance is aborted. This property is visible only when the *Independant* property is not selected. The following rules apply:
 ** If the reusable subprocess is independent, *Abort parent* is not available.
 ** If the reusable subprocess is not independent, *Abort parent* is available.
-* *Wait for completion* : If selected, the subprocess will continue if the previous process has completed or aborted its execution; otherwise it will continue immediately after starting the subprocess and not wait for the process to complete. This property is selected by default.
+* *Wait for completion*: If selected, the subprocess continues if the previous process completes or is aborted. This property is selected by default.
 * *Is Async*: Select if the task should be invoked asynchronously and cannot be executed instantly.
-* *Multiple Instance*: Select to execute the contained subprocess elements a multiple number of times.
+* *Multiple Instance*: Select to execute the subprocess elements a specified number of times. If selected, the following options are available:
+** *MI Execution mode*: Indicates if the multiple instances execute in parallel or sequentially. If set to *Sequential*, new instances are not created until the previous instance completes.
+** *MI Collection input*: Select a variable that represents a collection of elements for which new instances are created. For example, if the size of collection is three, then three instances of the activity are created.
+** *MI Data Input*: Specifies the name of the variable containing the selected element in the collection. The variable name is used to give the multiple instance node access to the variable value.
+** *MI Collection output*: Optional variable that represents the collection of elements that will gather the output of the multi-instance node.
+** *MI Data Output*: Specifies the name of the variable that is added to the output collection that you selected in the *MI Collection output* property.
+** *MI Completion Condition (mvel)*: MVEL expression that is evaluated on each completed instance to check if the specified multiple instance node can complete. If it evaluates to `true`, all remaining instances are canceled.
 * *On Entry Action*: A Java or MVEL script that specifies an action at the start of the task.
 * *On Exit Action*: A Java or MVEL script that specifies an action at the end of the task.
 * *SLA Due Date*: The date that the service level agreement (SLA) expires.
