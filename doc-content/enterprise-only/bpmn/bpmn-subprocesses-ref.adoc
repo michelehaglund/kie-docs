@@ -37,7 +37,7 @@ Reusable subprocesses appear collapsed within the parent process. To configure a
 * *Is Async*: Select if the task should be invoked asynchronously and cannot be executed instantly.
 * *Multiple Instance*: Select to execute the subprocess elements a specified number of times. If selected, the following options are available:
 ** *MI Execution mode*: Indicates if the multiple instances execute in parallel or sequentially. If set to *Sequential*, new instances are not created until the previous instance completes.
-** *MI Collection input*: Select a variable that represents a collection of elements for which new instances are created. For example, the subprocess is instantiated as many times as the size of the collection.
+** *MI Collection input*: Select a variable that represents a collection of elements for which new instances are created. The subprocess is instantiated as many times as the size of the collection.
 ** *MI Data Input*: Specifies the name of the variable containing the selected element in the collection. The variable is used to access elements in the collection.
 ** *MI Collection output*: Optional variable that represents the collection of elements that will gather the output of the multi-instance node.
 ** *MI Data Output*: Specifies the name of the variable that is added to the output collection that you selected in the *MI Collection output* property.
