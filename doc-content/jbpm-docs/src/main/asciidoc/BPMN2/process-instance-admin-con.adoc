@@ -1,5 +1,8 @@
 [id='process-instance-admin-con']
-= Process instance administration
+= Process instance operations
+
+*<MH>Dev - I am clicking around and do not see where these "operations" are located within a process instance. Is this chapter useful?</MH>*
+
 Process instance administration provides operations for the {PROCESS_ENGINE} and the individual process instance.
 
 The following process instance operations are available in {CENTRAL}:
