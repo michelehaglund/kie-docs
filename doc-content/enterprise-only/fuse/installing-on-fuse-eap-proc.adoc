@@ -9,6 +9,7 @@ Install {FUSE_LONG} 7.6 on {EAP} 7.2.3 to use with {PRODUCT} to deploy integrate
 
 .Prerequisites
 * A {PRODUCT} installation on {EAP_LONG} {EAP_VERSION} is available. For installation instructions, see {URL_INSTALLING_ON_EAP}[_{INSTALLING_ON_EAP}_].
+* A separate instance of {EAP_LONG} 7.2.3 is available.
 
 .Procedure
 . Install {FUSE_LONG} 7.6 on {EAP_LONG} 7.2.3. For installation instructions, see the https://access.redhat.com/documentation/en-us/red_hat_fuse/7.6/html-single/installing_on_jboss_eap/index[_Install Fuse 7.6 on JBoss EAP 7.2_].
