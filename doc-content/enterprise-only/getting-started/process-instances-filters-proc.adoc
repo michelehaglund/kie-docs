@@ -1,6 +1,6 @@
 [id='process-instances-filters-proc']
 = Filtering process instances using default filters
-Filter processes instances by attributes such as *State*, *Errors*, *Filter By*, *Name*, *Start Date*, and *Last update*.
+Filter process instances by attributes such as *State*, *Errors*, *Filter By*, *Name*, *Start Date*, and *Last update*.
 
 .Procedure
 . In {CENTRAL}, go to *Menu* -> *Manage* -> *Process Instances*.
@@ -18,9 +18,9 @@ This pane lists the following process attributes which you can use to filter pro
 +
 
 * *Name*: Filter process instances by definition names.
-* *Definition Id*: Filter process instances by process definition Ids.
-* *Deployment Id*: Filter process instances by process deployment Ids.
-* *Parent Process Instance Id*: Filter process instances by parent process instance Ids.
-* *SLA Compliance*: Filter process instances by SLA Compliance states.
+* *Definition Id*: Filter process instances by process definition IDs.
+* *Deployment Id*: Filter process instances by process deployment IDs.
+* *Parent Process Instance Id*: Filter process instances by parent process instance IDs.
+* *SLA Compliance*: Filter process instances by SLA compliance states.
 * *Start Date*: Filter process instances by creation dates.
 * *Last update*: Filter process instances by last modified dates.
