@@ -54,7 +54,7 @@ endif::PAM[]
 ifdef::DM[]
 * To install {KIE_SERVER} on {JWS} using the deployable ZIP file, download the *{PRODUCT} {PRODUCT_VERSION_LONG} Add Ons* (`{PRODUCT_FILE}-add-ons.zip`) file.
 +
-The ZIP file does not require a graphical user interface so you can install {PRODUCT} using SSH.
+The ZIP file does not require a graphical user interface.
 endif::DM[]
 endif::[]
 
@@ -66,8 +66,6 @@ ifdef::PAM[]
 endif::PAM[]
 ifdef::DM[]
 * To install {KIE_SERVER} on {TOMCAT} using the deployable ZIP file, download the *{PRODUCT} {PRODUCT_VERSION_LONG} Add Ons* (`{PRODUCT_FILE}-add-ons.zip`) file.
-+
-The ZIP file does not require a graphical user interface so you can install {PRODUCT} using SSH.
 endif::DM[]
 endif::[]
 
