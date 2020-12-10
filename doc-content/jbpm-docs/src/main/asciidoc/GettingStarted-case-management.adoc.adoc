@@ -42,6 +42,7 @@ include::{jbpm-dir}/GettingStartedCaseManagement/case-management-creating-manage
 include::{jbpm-dir}/GettingStartedCaseManagement/case-management-milestones-con.adoc[leveloffset=+1]
 include::{jbpm-dir}/GettingStartedCaseManagement/case-management-creating-hardware-spec-ready-proc.adoc[leveloffset=+2]
 include::{jbpm-dir}/GettingStartedCaseManagement/case-management-creating-manager-decision-milestone-proc.adoc[leveloffset=+2]
+
 include::{jbpm-dir}/GettingStartedCaseManagement/case-management-creating-order-placed-milestone-proc.adoc[leveloffset=+2]
 include::{jbpm-dir}/GettingStartedCaseManagement/case-management-creating-order-shipped-milestone-proc.adoc[leveloffset=+2]
 include::{jbpm-dir}/GettingStartedCaseManagement/case-management-creating-delivered-milestone-proc.adoc[leveloffset=+2]
@@ -65,10 +66,10 @@ include::{jbpm-dir}/GettingStartedCaseManagement/case-management-deploy-test-pro
 //include::{enterprise-dir}/cases/case-management-close-case-proc.adoc[leveloffset=+2]
 //include::{enterprise-dir}/cases/case-management-cancel-or-destroy-case-proc.adoc[leveloffset=+1]
 
-== Additional resources
-* {URL_DEVELOPING_PROCESS_SERVICES}#assembly-designing-and-building-cases[_{DESIGNING_CASES}_]
-* {URL_DEVELOPING_PROCESS_SERVICES}#assembly-showcase-application[_{SHOWCASE_APPLICATION_CASE_MANAGEMENT}_]
-* {URL_GETTING_STARTED}#assembly-getting-started-process-services[_{GETTING_STARTED_PROCESSES}_]
+//== Additional resources
+//* {URL_DEVELOPING_PROCESS_SERVICES}#assembly-designing-and-building-cases[_{DESIGNING_CASES}_]
+//* {URL_DEVELOPING_PROCESS_SERVICES}#assembly-showcase-application[_{SHOWCASE_APPLICATION_CASE_MANAGEMENT}_]
+//* {URL_GETTING_STARTED}#assembly-getting-started-process-services[_{GETTING_STARTED_PROCESSES}_]
 
 ifdef::parent-context[:context: {parent-context}]
 ifndef::parent-context[:!context:]
