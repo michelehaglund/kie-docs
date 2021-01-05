@@ -20,8 +20,10 @@ You will then refer to the *Mortgage_Process* sample project included in {CENTRA
 include::GettingStartedBusProc/intro7-con.adoc[leveloffset=+1]
 
 include::{drools-dir}/Examples/decision-examples-central-con.adoc[leveloffset=+1]
+//Sample projects and business assets in Business {CENTRAL}
 
 include::{drools-dir}/Examples/decision-examples-central-proc.adoc[leveloffset=+2]
+//Accessing sample projects and business assets in {CENTRAL}
 
 include::GettingStartedBusProc/new-project-proc.adoc[leveloffset=+1]
 
