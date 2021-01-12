@@ -17,24 +17,23 @@ For more information about the DMN components and implementation in {PRODUCT}, s
 
 // Modules - concepts, procedures, refs, etc.
 
-//include::{drools-dir}/Examples/decision-examples-central-con.adoc[leveloffset=+1]
-https://docs.jboss.org/drools/release/latestFinal/drools-docs/html_single/#decision-examples-central-con_getting-started-decision-services[{PRODUCT_DROOLS} documentation]
+include::../../../../{drools-dir}/Examples/decision-examples-central-con.adoc[leveloffset=+1]
 
-include::{drools-dir}/Examples/decision-examples-central-proc.adoc[leveloffset=+2]
+include::../../../../{drools-dir}/Examples/decision-examples-central-proc.adoc[leveloffset=+2]
 
-include::{drools-dir}/DMN/dmn-gs-new-project-creating-proc.adoc[leveloffset=+1]
+include::../../../../{drools-dir}/DMN/dmn-gs-new-project-creating-proc.adoc[leveloffset=+1]
 
-include::{drools-dir}/DMN/dmn-con.adoc[leveloffset=+1]
-include::{drools-dir}/DMN/dmn-gs-creating-drd-proc.adoc[leveloffset=+2]
-include::{drools-dir}/DMN/dmn-gs-creating-custom-datatypes-proc.adoc[leveloffset=+2]
-include::{drools-dir}/DMN/dmn-gs-assigning-custom-datatypes-proc.adoc[leveloffset=+2]
-include::{drools-dir}/DMN/dmn-gs-defining-decision-logic-proc.adoc[leveloffset=+2]
+include::../../../../{drools-dir}/DMN/dmn-con.adoc[leveloffset=+1]
+include::../../../../{drools-dir}/DMN/dmn-gs-creating-drd-proc.adoc[leveloffset=+2]
+include::../../../../{drools-dir}/DMN/dmn-gs-creating-custom-datatypes-proc.adoc[leveloffset=+2]
+include::../../../../{drools-dir}/DMN/dmn-gs-assigning-custom-datatypes-proc.adoc[leveloffset=+2]
+include::../../../../{drools-dir}/DMN/dmn-gs-defining-decision-logic-proc.adoc[leveloffset=+2]
 
-include::{drools-dir}/AuthoringAssets/test-scenarios-intro-con.adoc[leveloffset=+1]
-include::{drools-dir}/DMN/dmn-gs-testing-test-scenario-proc.adoc[leveloffset=+2]
+include::../../../../{drools-dir}/AuthoringAssets/test-scenarios-intro-con.adoc[leveloffset=+1]
+include::../../../../{drools-dir}/DMN/dmn-gs-testing-test-scenario-proc.adoc[leveloffset=+2]
 
-include::{drools-dir}/DMN/dmn-execution-con.adoc[leveloffset=+1]
-include::{drools-dir}/DMN/dmn-execution-rest-proc.adoc[leveloffset=+2]
+include::../../../../{drools-dir}/DMN/dmn-execution-con.adoc[leveloffset=+1]
+include::../../../../{drools-dir}/DMN/dmn-execution-rest-proc.adoc[leveloffset=+2]
 
 //== Additional resources
 //* {URL_DEVELOPING_DECISION_SERVICES}#assembly-dmn-models[_{DMN_MODELS}_]
