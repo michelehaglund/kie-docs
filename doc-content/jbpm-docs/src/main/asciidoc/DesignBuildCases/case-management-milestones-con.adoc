@@ -1,4 +1,4 @@
-[id='case-management-milestones-con-{context}']
+[id='case-management-milestones-con']
 = Milestones
 
 Milestones are a special service task that can be configured in the case definition designer by adding the milestone node to the process designer palette. When creating a new case definition, a milestone configured as `AdHoc Autostart` is included on the design palette by default. Newly created milestones are not set to `AdHoc Autostart` by default.

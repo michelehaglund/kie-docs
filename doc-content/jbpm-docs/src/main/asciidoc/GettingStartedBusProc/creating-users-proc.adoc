@@ -21,7 +21,7 @@ In {CENTRAL}, you can use groups and roles to control permissions for a collecti
 . Select `Bill` from the user list, and click *Add selected users*.
 . Click *Users*, select `Katy`, and click *Edit* -> *Roles* -> *Add roles*.
 . Select `manager`, click *Add to selected roles*, and click *Save*.
-. Click the *Groups* tab and click *Add to groups*.
+. Click the *Groups* tab, and click *Edit* -> *Groups* -> *Add to groups*.
 . Select `approver` and `kie-server`, and click *Add to selected groups*.
 . Click *Save*.
 . Select `Bill` from the user list, click *Edit* -> *Roles* -> *Add roles*.
