@@ -1,0 +1,519 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" class="chrometwo"><head><title>Designing your decision management architecture for Red Hat Decision Manager</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css"/><meta name="generator" content="publican v4.3.6"/><meta name="description" content="This document describes basic concepts and options for a Red Hat Decision Manager implementation to consider when designing your decision management architecture. To verify the most suitable implementation for your environment, contact your Red Hat Technical Account Manager or Solutions Architect."/><link rel="next" href="#idm139880071395584" title="Preface"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><script type="text/javascript" src="Common_Content/scripts/jquery-1.7.1.min.js"> </script><script type="text/javascript" src="Common_Content/scripts/utils.js"> </script><script type="text/javascript" src="Common_Content/scripts/highlight.js/highlight.pack.js"> </script></head><body><div id="chrometwo"><div id="main"><div xml:lang="en-US" class="book" id="idm139880064873408"><div class="titlepage"><div><div class="producttitle"><span class="productname">Red Hat Decision Manager</span> <span class="productnumber">7.10</span></div><div><h1 class="title">Designing your decision management architecture for Red Hat Decision Manager</h1></div><div><h2 class="subtitle"/></div><div><a href="#idm139880071607776">Legal Notice</a></div><div><div class="abstract"><p class="title"><strong>Abstract</strong></p><div class="para">
+				This document describes basic concepts and options for a Red Hat Decision Manager implementation to consider when designing your decision management architecture. To verify the most suitable implementation for your environment, contact your Red Hat Technical Account Manager or Solutions Architect.
+			</div></div></div></div><hr/></div><div class="toc"><ul class="toc"><li><span class="preface"><a href="#idm139880071395584">Preface</a></span></li><li><span class="preface"><a href="#snip-conscious-language_decision-management-architecture">Making open source more inclusive</a></span></li><li><span class="chapter"><a href="#installation-options-ref_decision-management-architecture">1. Installation environment options for Red Hat Decision Manager</a></span></li><li><span class="chapter"><a href="#decision-authoring-assets-ref_decision-management-architecture">2. Decision-authoring assets in Red Hat Decision Manager</a></span></li><li><span class="chapter"><a href="#project-storage-version-build-options-ref_decision-management-architecture">3. Project storage and build options with Red Hat Decision Manager</a></span></li><li><span class="chapter"><a href="#project-deployment-options-ref_decision-management-architecture">4. Project deployment options with Red Hat Decision Manager</a></span></li><li><span class="chapter"><a href="#project-asset-execution-options-ref_decision-management-architecture">5. Asset execution options with Red Hat Decision Manager</a></span></li><li><span class="chapter"><a href="#architecture-scenarios-ref_decision-management-architecture">6. Example decision management architectures with Red Hat Decision Manager</a></span></li><li><span class="chapter"><a href="#additional_resources">7. Additional resources</a></span></li><li><span class="appendix"><a href="#versioning-information">A. Versioning information</a></span></li><li><span class="appendix"><a href="#author-group">B. Contact information</a></span></li></ul></div><section class="preface" id="idm139880071395584"><div class="titlepage"><div><div><h1 class="title">Preface</h1></div></div></div><p>
+			As a business analyst, system administrator, or business rules developer, the types of Red Hat Decision Manager business assets that you create and the way in which you develop, store, execute, and deploy those assets varies based on the needs of your business automation environment. You can design a decision management architecture that uses Business Central or an external integrated development environment (IDE) for asset development, a built-in or external Git repository for storage and version control, a KIE Server or embedded application for deployment, or other implementation combinations. You can also deploy Red Hat Decision Manager into a Red Hat OpenShift Container Platform environment for an enhanced containerized implementation.
+		</p><p>
+			This document describes basic concepts and options for a Red Hat Decision Manager implementation to consider when designing your decision management architecture. To verify the most suitable implementation for your environment, contact your Red Hat Technical Account Manager or Solutions Architect.
+		</p></section><section class="preface" id="snip-conscious-language_decision-management-architecture"><div class="titlepage"><div><div><h1 class="title">Making open source more inclusive</h1></div></div></div><p>
+			Red Hat is committed to replacing problematic language in our code, documentation, and web properties. We are beginning with these four terms: master, slave, blacklist, and whitelist. Because of the enormity of this endeavor, these changes will be implemented gradually over several upcoming releases. For more details, see <a class="link" href="https://www.redhat.com/en/blog/making-open-source-more-inclusive-eradicating-problematic-language"><span class="emphasis"><em>our CTO Chris Wright’s message</em></span></a>.
+		</p></section><section class="chapter" id="installation-options-ref_decision-management-architecture"><div class="titlepage"><div><div><h1 class="title">Chapter 1. Installation environment options for Red Hat Decision Manager</h1></div></div></div><p>
+			With Red Hat Decision Manager, you can set up a development environment to develop business applications, a runtime environment to run those applications to support decisions, or both.
+		</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+					<span class="strong strong"><strong>Development environment</strong></span>: Typically consists of one Business Central installation and at least one KIE Server installation. You can use Business Central to design decisions and other artifacts, and you can use KIE Server to execute and test the artifacts that you created.
+				</li><li class="listitem">
+					<span class="strong strong"><strong>Runtime environment</strong></span>: Consists of one or more KIE Server instances with or without Business Central. Business Central has an embedded Decision Manager controller. If you install Business Central, use the <span class="strong strong"><strong>Menu</strong></span> → <span class="strong strong"><strong>Deploy</strong></span> → <span class="strong strong"><strong>Execution servers</strong></span> page to create and maintain containers. If you want to automate KIE Server management without Business Central, you can use the headless Decision Manager controller.
+				</li></ul></div><p>
+			You can also cluster both development and runtime environments. A clustered development or runtime environment consists of a unified group or cluster of two or more servers. The primary benefit of clustering Red Hat Decision Manager development environments is high availability and enhanced collaboration, while the primary benefit of clustering Red Hat Decision Manager runtime environments is high availability and load balancing. High availability decreases the chance of data loss when a single server fails. When a server fails, another server fills the gap by providing a copy of the data that was on the failed server. When the failed server comes online again, it resumes its place in the cluster.
+		</p><div class="admonition note"><div class="admonition_header">Note</div><div><p>
+				Clustering of the runtime environment is currently supported on Red Hat JBoss EAP 7.3 and Red Hat OpenShift Container Platform only.
+			</p></div></div><div class="itemizedlist"><p class="title"><strong>Additional resources</strong></p><ul class="itemizedlist" type="disc"><li class="listitem">
+					<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_decision_manager/7.10/html-single/installing_and_configuring_red_hat_decision_manager#assembly-planning"><span class="emphasis"><em>Planning a Red Hat Decision Manager installation</em></span></a>
+				</li><li class="listitem">
+					<a class="link" href="https://access.redhat.com/articles/3354301">Red Hat Decision Manager 7 Supported Configurations</a>
+				</li><li class="listitem">
+					<a class="link" href="https://access.redhat.com/articles/3355791">Red Hat Decision Manager 7 Component Details</a>
+				</li></ul></div></section><section class="chapter" id="decision-authoring-assets-ref_decision-management-architecture"><div class="titlepage"><div><div><h1 class="title">Chapter 2. Decision-authoring assets in Red Hat Decision Manager</h1></div></div></div><p>
+			Red Hat Decision Manager supports several assets that you can use to define business decisions for your decision service. Each decision-authoring asset has different advantages, and you might prefer to use one or a combination of multiple assets depending on your goals and needs.
+		</p><p>
+			The following table highlights the main decision-authoring assets supported in Red Hat Decision Manager projects to help you decide or confirm the best method for defining decisions in your decision service.
+		</p><div class="table" id="idm139880070380240"><p class="title"><strong>Table 2.1. Decision-authoring assets supported in Red Hat Decision Manager</strong></p><div class="table-contents"><table class="gt-4-cols lt-7-rows"><colgroup><col style="width: 20%; " class="col_1"/><col style="width: 40%; " class="col_2"/><col style="width: 20%; " class="col_3"/><col style="width: 20%; " class="col_4"/></colgroup><thead><tr><th align="left" valign="top" id="idm139880070341360" scope="col">Asset</th><th align="left" valign="top" id="idm139880070340272" scope="col">Highlights</th><th align="left" valign="top" id="idm139880070339184" scope="col">Authoring tools</th><th align="left" valign="top" id="idm139880070338096" scope="col">Documentation</th></tr></thead><tbody><tr><td align="left" valign="top" headers="idm139880070341360">
+						<p>
+							Decision Model and Notation (DMN) models
+						</p>
+						</td><td align="left" valign="top" headers="idm139880070340272">
+						<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+									Are decision models based on a notation standard defined by the Object Management Group (OMG)
+								</li><li class="listitem">
+									Use graphical decision requirements diagrams (DRDs) that represent part or all of the overall decision requirements graph (DRG) to trace business decision flows
+								</li><li class="listitem">
+									Use an XML schema that allows the DMN models to be shared between DMN-compliant platforms
+								</li><li class="listitem">
+									Support Friendly Enough Expression Language (FEEL) to define decision logic in DMN decision tables and other DMN boxed expressions
+								</li><li class="listitem">
+									Are optimal for creating comprehensive, illustrative, and stable decision flows
+								</li></ul></div>
+						</td><td align="left" valign="top" headers="idm139880070339184">
+						<p>
+							Business Central or other DMN-compliant editor
+						</p>
+						</td><td align="left" valign="top" headers="idm139880070338096">
+						<p>
+							<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_decision_manager/7.10/html-single/developing_decision_services_in_red_hat_decision_manager#assembly-dmn-models"><span class="emphasis"><em>Designing a decision service using DMN models</em></span></a>
+						</p>
+						</td></tr><tr><td align="left" valign="top" headers="idm139880070341360">
+						<p>
+							Guided decision tables
+						</p>
+						</td><td align="left" valign="top" headers="idm139880070340272">
+						<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+									Are tables of rules that you create in a UI-based table designer in Business Central
+								</li><li class="listitem">
+									Are a wizard-led alternative to spreadsheet decision tables
+								</li><li class="listitem">
+									Provide fields and options for acceptable input
+								</li><li class="listitem">
+									Support template keys and values for creating rule templates
+								</li><li class="listitem">
+									Support hit policies, real-time validation, and other additional features not supported in other assets
+								</li><li class="listitem">
+									Are optimal for creating rules in a controlled tabular format to minimize compilation errors
+								</li></ul></div>
+						</td><td align="left" valign="top" headers="idm139880070339184">
+						<p>
+							Business Central
+						</p>
+						</td><td align="left" valign="top" headers="idm139880070338096">
+						<p>
+							<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_decision_manager/7.10/html-single/developing_decision_services_in_red_hat_decision_manager#assembly-guided-decision-tables"><span class="emphasis"><em>Designing a decision service using guided decision tables</em></span></a>
+						</p>
+						</td></tr><tr><td align="left" valign="top" headers="idm139880070341360">
+						<p>
+							Spreadsheet decision tables
+						</p>
+						</td><td align="left" valign="top" headers="idm139880070340272">
+						<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+									Are XLS or XLSX spreadsheet decision tables that you can upload into Business Central
+								</li><li class="listitem">
+									Support template keys and values for creating rule templates
+								</li><li class="listitem">
+									Are optimal for creating rules in decision tables already managed outside of Business Central
+								</li><li class="listitem">
+									Have strict syntax requirements for rules to be compiled properly when uploaded
+								</li></ul></div>
+						</td><td align="left" valign="top" headers="idm139880070339184">
+						<p>
+							Spreadsheet editor
+						</p>
+						</td><td align="left" valign="top" headers="idm139880070338096">
+						<p>
+							<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_decision_manager/7.10/html-single/developing_decision_services_in_red_hat_decision_manager#assembly-decision-tables"><span class="emphasis"><em>Designing a decision service using spreadsheet decision tables</em></span></a>
+						</p>
+						</td></tr><tr><td align="left" valign="top" headers="idm139880070341360">
+						<p>
+							Guided rules
+						</p>
+						</td><td align="left" valign="top" headers="idm139880070340272">
+						<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+									Are individual rules that you create in a UI-based rule designer in Business Central
+								</li><li class="listitem">
+									Provide fields and options for acceptable input
+								</li><li class="listitem">
+									Are optimal for creating single rules in a controlled format to minimize compilation errors
+								</li></ul></div>
+						</td><td align="left" valign="top" headers="idm139880070339184">
+						<p>
+							Business Central
+						</p>
+						</td><td align="left" valign="top" headers="idm139880070338096">
+						<p>
+							<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_decision_manager/7.10/html-single/developing_decision_services_in_red_hat_decision_manager#assembly-guided-rules"><span class="emphasis"><em>Designing a decision service using guided rules</em></span></a>
+						</p>
+						</td></tr><tr><td align="left" valign="top" headers="idm139880070341360">
+						<p>
+							Guided rule templates
+						</p>
+						</td><td align="left" valign="top" headers="idm139880070340272">
+						<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+									Are reusable rule structures that you create in a UI-based template designer in Business Central
+								</li><li class="listitem">
+									Provide fields and options for acceptable input
+								</li><li class="listitem">
+									Support template keys and values for creating rule templates (fundamental to the purpose of this asset)
+								</li><li class="listitem">
+									Are optimal for creating many rules with the same rule structure but with different defined field values
+								</li></ul></div>
+						</td><td align="left" valign="top" headers="idm139880070339184">
+						<p>
+							Business Central
+						</p>
+						</td><td align="left" valign="top" headers="idm139880070338096">
+						<p>
+							<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_decision_manager/7.10/html-single/developing_decision_services_in_red_hat_decision_manager#assembly-guided-rule-templates"><span class="emphasis"><em>Designing a decision service using guided rule templates</em></span></a>
+						</p>
+						</td></tr><tr><td align="left" valign="top" headers="idm139880070341360">
+						<p>
+							DRL rules
+						</p>
+						</td><td align="left" valign="top" headers="idm139880070340272">
+						<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+									Are individual rules that you define directly in <code class="literal">.drl</code> text files
+								</li><li class="listitem">
+									Provide the most flexibility for defining rules and other technicalities of rule behavior
+								</li><li class="listitem">
+									Can be created in certain standalone environments and integrated with Red Hat Decision Manager
+								</li><li class="listitem">
+									Are optimal for creating rules that require advanced DRL options
+								</li><li class="listitem">
+									Have strict syntax requirements for rules to be compiled properly
+								</li></ul></div>
+						</td><td align="left" valign="top" headers="idm139880070339184">
+						<p>
+							Business Central or integrated development environment (IDE)
+						</p>
+						</td><td align="left" valign="top" headers="idm139880070338096">
+						<p>
+							<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_decision_manager/7.10/html-single/developing_decision_services_in_red_hat_decision_manager#assembly-drl-rules"><span class="emphasis"><em>Designing a decision service using DRL rules</em></span></a>
+						</p>
+						</td></tr><tr><td align="left" valign="top" headers="idm139880070341360">
+						<p>
+							Predictive Model Markup Language (PMML) models
+						</p>
+						</td><td align="left" valign="top" headers="idm139880070340272">
+						<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+									Are predictive data-analytic models based on a notation standard defined by the Data Mining Group (DMG)
+								</li><li class="listitem">
+									Use an XML schema that allows the PMML models to be shared between PMML-compliant platforms
+								</li><li class="listitem">
+									Support Regression, Scorecard, Tree, Mining, and other model types
+								</li><li class="listitem">
+									Can be included with a standalone Red Hat Decision Manager project or imported into a project in Business Central
+								</li><li class="listitem">
+									Are optimal for incorporating predictive data into decision services in Red Hat Decision Manager
+								</li></ul></div>
+						</td><td align="left" valign="top" headers="idm139880070339184">
+						<p>
+							PMML or XML editor
+						</p>
+						</td><td align="left" valign="top" headers="idm139880070338096">
+						<p>
+							<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_decision_manager/7.10/html-single/developing_decision_services_in_red_hat_decision_manager#assembly-pmml-models"><span class="emphasis"><em>Designing a decision service using PMML models</em></span></a>
+						</p>
+						</td></tr></tbody></table></div></div></section><section class="chapter" id="project-storage-version-build-options-ref_decision-management-architecture"><div class="titlepage"><div><div><h1 class="title">Chapter 3. Project storage and build options with Red Hat Decision Manager</h1></div></div></div><p>
+			As you develop a Red Hat Decision Manager project, you need to be able to track the versions of your project with a version-controlled repository, manage your project assets in a stable environment, and build your project for testing and deployment. You can use Business Central for all of these tasks, or use a combination of Business Central and external tools and repositories. Red Hat Decision Manager supports Git repositories for project version control, Apache Maven for project management, and a variety of Maven-based, Java-based, or custom-tool-based build options.
+		</p><p>
+			The following options are the main methods for Red Hat Decision Manager project versioning, storage, and building:
+		</p><div class="table" id="idm139880069448960"><p class="title"><strong>Table 3.1. Project version control options (Git)</strong></p><div class="table-contents"><table class="lt-4-cols lt-7-rows"><colgroup><col style="width: 25%; " class="col_1"/><col style="width: 50%; " class="col_2"/><col style="width: 25%; " class="col_3"/></colgroup><thead><tr><th align="left" valign="top" id="idm139880069443232" scope="col">Versioning option</th><th align="left" valign="top" id="idm139880069442144" scope="col">Description</th><th align="left" valign="top" id="idm139880069441056" scope="col">Documentation</th></tr></thead><tbody><tr><td align="left" valign="top" headers="idm139880069443232">
+						<p>
+							Business Central Git VFS
+						</p>
+						</td><td align="left" valign="top" headers="idm139880069442144">
+						<p>
+							Business Central contains a built-in Git Virtual File System (VFS) that stores all processes, rules, and other artifacts that you create in the authoring environment. Git is a distributed version control system that implements revisions as commit objects. When you commit your changes into a repository, a new commit object in the Git repository is created. When you create a project in Business Central, the project is added to the Git repository connected to Business Central.
+						</p>
+						</td><td align="left" valign="top" headers="idm139880069441056">
+						<p>
+							NA
+						</p>
+						</td></tr><tr><td align="left" valign="top" headers="idm139880069443232">
+						<p>
+							External Git repository
+						</p>
+						</td><td align="left" valign="top" headers="idm139880069442144">
+						<p>
+							If you have Red Hat Decision Manager projects in Git repositories outside of Business Central, you can import them into Red Hat Decision Manager spaces and use Git hooks to synchronize the internal and external Git repositories.
+						</p>
+						</td><td align="left" valign="top" headers="idm139880069441056">
+						<p>
+							<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_decision_manager/7.10/html-single/deploying_and_managing_red_hat_decision_manager_services#git-import-project"><span class="emphasis"><em>Managing projects in Business Central</em></span></a>
+						</p>
+						</td></tr></tbody></table></div></div><div class="table" id="idm139880069426288"><p class="title"><strong>Table 3.2. Project management options (Maven)</strong></p><div class="table-contents"><table class="lt-4-cols lt-7-rows"><colgroup><col style="width: 25%; " class="col_1"/><col style="width: 50%; " class="col_2"/><col style="width: 25%; " class="col_3"/></colgroup><thead><tr><th align="left" valign="top" id="idm139880069420560" scope="col">Management option</th><th align="left" valign="top" id="idm139880069419472" scope="col">Description</th><th align="left" valign="top" id="idm139880069418384" scope="col">Documentation</th></tr></thead><tbody><tr><td align="left" valign="top" headers="idm139880069420560">
+						<p>
+							Business Central Maven repository
+						</p>
+						</td><td align="left" valign="top" headers="idm139880069419472">
+						<p>
+							Business Central contains a built-in Maven repository that organizes and builds project assets that you create in the authoring environment. Maven is a distributed build-automation tool that uses repositories to store Java libraries, plug-ins, and other build artifacts. When building projects and archetypes, Maven dynamically retrieves Java libraries and Maven plug-ins from local or remote repositories to promote shared dependencies across projects.
+						</p>
+						<div class="admonition note"><div class="admonition_header">Note</div><div><p>
+								For a production environment, consider using an external Maven repository configured with Business Central.
+							</p></div></div>
+						</td><td align="left" valign="top" headers="idm139880069418384">
+						<p>
+							NA
+						</p>
+						</td></tr><tr><td align="left" valign="top" headers="idm139880069420560">
+						<p>
+							External Maven repository
+						</p>
+						</td><td align="left" valign="top" headers="idm139880069419472">
+						<p>
+							If you have Red Hat Decision Manager projects in an external Maven repository, such as Nexus or Artifactory, you can create a <a class="link" href="https://maven.apache.org/settings.html"><code class="literal">settings.xml</code> file</a> with connection details and add that file path to the <code class="literal">kie.maven.settings.custom</code> property in your project <code class="literal">standalone-full.xml</code> file.
+						</p>
+						</td><td align="left" valign="top" headers="idm139880069418384">
+						<p>
+							<a class="link" href="https://maven.apache.org/settings.html"><span class="emphasis"><em>Maven Settings Reference</em></span></a>
+						</p>
+						<p>
+							<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_decision_manager/7.10/html-single/deploying_and_managing_red_hat_decision_manager_services#maven-external-configure-proc_packaging-deploying"><span class="emphasis"><em>Packaging and deploying a Red Hat Decision Manager project</em></span></a>
+						</p>
+						</td></tr></tbody></table></div></div><div class="table" id="idm139880069399664"><p class="title"><strong>Table 3.3. Project build options</strong></p><div class="table-contents"><table class="lt-4-cols lt-7-rows"><colgroup><col style="width: 25%; " class="col_1"/><col style="width: 50%; " class="col_2"/><col style="width: 25%; " class="col_3"/></colgroup><thead><tr><th align="left" valign="top" id="idm139880069393904" scope="col">Build option</th><th align="left" valign="top" id="idm139880069392816" scope="col">Description</th><th align="left" valign="top" id="idm139880069391728" scope="col">Documentation</th></tr></thead><tbody><tr><td align="left" valign="top" headers="idm139880069393904">
+						<p>
+							Business Central (KJAR)
+						</p>
+						</td><td align="left" valign="top" headers="idm139880069392816">
+						<p>
+							Business Central builds Red Hat Decision Manager projects stored in either the built-in Maven repository or a configured external Maven repository. Projects in Business Central are packaged automatically as knowledge JAR (KJAR) files with all components needed for deployment when you build the projects.
+						</p>
+						</td><td align="left" valign="top" headers="idm139880069391728">
+						<p>
+							<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_decision_manager/7.10/html-single/deploying_and_managing_red_hat_decision_manager_services#assembly-packaging-deploying"><span class="emphasis"><em>Packaging and deploying a Red Hat Decision Manager project</em></span></a>
+						</p>
+						</td></tr><tr><td align="left" valign="top" headers="idm139880069393904">
+						<p>
+							Standalone Maven project (KJAR)
+						</p>
+						</td><td align="left" valign="top" headers="idm139880069392816">
+						<p>
+							If you have a standalone Red Hat Decision Manager Maven project outside of Business Central, you can edit the project <code class="literal">pom.xml</code> file to package your project as a KJAR file, and then add a <code class="literal">kmodule.xml</code> file with the KIE base and KIE session configurations needed to build the project.
+						</p>
+						</td><td align="left" valign="top" headers="idm139880069391728">
+						<p>
+							<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_decision_manager/7.10/html-single/deploying_and_managing_red_hat_decision_manager_services#project-build-deploy-maven-proc_packaging-deploying"><span class="emphasis"><em>Packaging and deploying a Red Hat Decision Manager project</em></span></a>
+						</p>
+						</td></tr><tr><td align="left" valign="top" headers="idm139880069393904">
+						<p>
+							Embedded Java application (KJAR)
+						</p>
+						</td><td align="left" valign="top" headers="idm139880069392816">
+						<p>
+							If you have an embedded Java application from which you want to build your Red Hat Decision Manager project, you can use a <code class="literal">KieModuleModel</code> instance to programmatically create a <code class="literal">kmodule.xml</code> file with the KIE base and KIE session configurations, and then add all resources in your project to the KIE virtual file system <code class="literal">KieFileSystem</code> to build the project.
+						</p>
+						</td><td align="left" valign="top" headers="idm139880069391728">
+						<p>
+							<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_decision_manager/7.10/html-single/deploying_and_managing_red_hat_decision_manager_services#project-build-deploy-java-proc_packaging-deploying"><span class="emphasis"><em>Packaging and deploying a Red Hat Decision Manager project</em></span></a>
+						</p>
+						</td></tr><tr><td align="left" valign="top" headers="idm139880069393904">
+						<p>
+							CI/CD tool (KJAR)
+						</p>
+						</td><td align="left" valign="top" headers="idm139880069392816">
+						<p>
+							If you use a tool for continuous integration and continuous delivery (CI/CD), you can configure the tool set to integrate with your Red Hat Decision Manager Git repositories to build a specified project. Ensure that your projects are packaged and built as KJAR files to ensure optimal deployment.
+						</p>
+						</td><td align="left" valign="top" headers="idm139880069391728">
+						<p>
+							NA
+						</p>
+						</td></tr><tr><td align="left" valign="top" headers="idm139880069393904">
+						<p>
+							S2I in OpenShift (container image)
+						</p>
+						</td><td align="left" valign="top" headers="idm139880069392816">
+						<p>
+							If you use Red Hat Decision Manager on Red Hat OpenShift Container Platform, you can build your Red Hat Decision Manager projects as KJAR files in the typical way or use Source-to-Image (S2I) to build your projects as container images. S2I is a framework and a tool that allows you to write images that use the application source code as an input and produce a new image that runs the assembled application as an output. The main advantage of using the S2I tool for building reproducible container images is the ease of use for developers.
+						</p>
+						</td><td align="left" valign="top" headers="idm139880069391728">
+						<p>
+							<a class="link" href="https://access.redhat.com/documentation/en-us/openshift_container_platform/3.3/html/creating_images/creating-images-s2i"><span class="emphasis"><em>Creating Images in OpenShift</em></span></a>
+						</p>
+						</td></tr></tbody></table></div></div></section><section class="chapter" id="project-deployment-options-ref_decision-management-architecture"><div class="titlepage"><div><div><h1 class="title">Chapter 4. Project deployment options with Red Hat Decision Manager</h1></div></div></div><p>
+			After you develop, test, and build your Red Hat Decision Manager project, you can deploy the project to begin using the business assets you have created. You can deploy a Red Hat Decision Manager project to a configured KIE Server, to an embedded Java application, or into a Red Hat OpenShift Container Platform environment for an enhanced containerized implementation.
+		</p><p>
+			The following options are the main methods for Red Hat Decision Manager project deployment:
+		</p><div class="table" id="idm139880069991072"><p class="title"><strong>Table 4.1. Project deployment options</strong></p><div class="table-contents"><table class="lt-4-cols lt-7-rows"><colgroup><col style="width: 25%; " class="col_1"/><col style="width: 50%; " class="col_2"/><col style="width: 25%; " class="col_3"/></colgroup><thead><tr><th align="left" valign="top" id="idm139880069985344" scope="col">Deployment option</th><th align="left" valign="top" id="idm139880069984256" scope="col">Description</th><th align="left" valign="top" id="idm139880069983168" scope="col">Documentation</th></tr></thead><tbody><tr><td align="left" valign="top" headers="idm139880069985344">
+						<p>
+							Deployment to an OpenShift environment
+						</p>
+						</td><td align="left" valign="top" headers="idm139880069984256">
+						<p>
+							Red Hat OpenShift Container Platform combines Docker and Kubernetes and enables you to create and manage containers. You can install both Business Central and KIE Server on OpenShift. Red Hat Decision Manager provides templates that you can use to deploy a Red Hat Decision Manager authoring environment, managed server environment, immutable server environment, or trial environment on OpenShift. With OpenShift, components of Red Hat Decision Manager are deployed as separate OpenShift pods. You can scale each of the pods up and down individually, providing as few or as many containers as necessary for a particular component. You can use standard OpenShift methods to manage the pods and balance the load.
+						</p>
+						</td><td align="left" valign="top" headers="idm139880069983168">
+						<p>
+							<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_decision_manager/7.10/html-single/deploying_red_hat_decision_manager_on_red_hat_openshift_container_platform#assembly-openshift-operator"><span class="emphasis"><em>Deploying a Red Hat Decision Manager environment on Red Hat OpenShift Container Platform using Operators</em></span></a>
+						</p>
+						<p>
+							<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_decision_manager/7.10/html-single/deploying_red_hat_decision_manager_on_red_hat_openshift_container_platform#assembly-openshift-templates"><span class="emphasis"><em>Deploying a Red Hat Decision Manager environment on Red Hat OpenShift Container Platform using templates</em></span></a>
+						</p>
+						</td></tr><tr><td align="left" valign="top" headers="idm139880069985344">
+						<p>
+							Deployment to KIE Server
+						</p>
+						</td><td align="left" valign="top" headers="idm139880069984256">
+						<p>
+							KIE Server is the server provided with Red Hat Decision Manager that runs the decision services, process applications, and other deployable assets from a packaged and deployed Red Hat Decision Manager project (KJAR file). These services are consumed at run time through an instantiated KIE container, or <span class="emphasis"><em>deployment unit</em></span>. You can deploy and maintain deployment units in KIE Server using Business Central or using a headless Decision Manager controller with its associated REST API (considered a <span class="emphasis"><em>managed</em></span> KIE Server instance). You can also deploy and maintain deployment units using the KIE Server REST API or Java client API from a standalone Maven project, an embedded Java application, or other custom environment (considered an <span class="emphasis"><em>unmanaged</em></span> KIE Server instance).
+						</p>
+						</td><td align="left" valign="top" headers="idm139880069983168">
+						<p>
+							<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_decision_manager/7.10/html-single/deploying_and_managing_red_hat_decision_manager_services#assembly-packaging-deploying"><span class="emphasis"><em>Packaging and deploying a Red Hat Decision Manager project</em></span></a>
+						</p>
+						<p>
+							<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_decision_manager/7.10/html-single/deploying_and_managing_red_hat_decision_manager_services#assembly-kie-apis"><span class="emphasis"><em>Interacting with Red Hat Decision Manager using KIE APIs</em></span></a>
+						</p>
+						<p>
+							<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_decision_manager/7.10/html-single/managing_red_hat_decision_manager_and_kie_server_settings#assembly-managing-and-monitoring-execution-server"><span class="emphasis"><em>Managing and monitoring KIE Server</em></span></a>
+						</p>
+						</td></tr><tr><td align="left" valign="top" headers="idm139880069985344">
+						<p>
+							Deployment to an embedded Java application
+						</p>
+						</td><td align="left" valign="top" headers="idm139880069984256">
+						<p>
+							If you want to deploy Red Hat Decision Manager projects to your own Java virtual machine (JVM) environment, microservice, or application server, you can bundle the application resources in the project WAR files to create a deployment unit similar to a KIE container. You can also use the core KIE APIs (not KIE Server APIs) to configure a KIE scanner to periodically update KIE containers.
+						</p>
+						</td><td align="left" valign="top" headers="idm139880069983168">
+						<p>
+							<a class="link" href="http://docs.jboss.org/drools/release/latestFinal/kie-api-javadoc/"><span class="emphasis"><em>KIE Public API</em></span></a>
+						</p>
+						</td></tr></tbody></table></div></div></section><section class="chapter" id="project-asset-execution-options-ref_decision-management-architecture"><div class="titlepage"><div><div><h1 class="title">Chapter 5. Asset execution options with Red Hat Decision Manager</h1></div></div></div><p>
+			After you build and deploy your Red Hat Decision Manager project to KIE Server or other environment, you can execute the deployed assets for testing or for runtime consumption. You can also execute assets locally in addition to or instead of executing them after deployment.
+		</p><p>
+			The following options are the main methods for Red Hat Decision Manager asset execution:
+		</p><div class="table" id="idm139880069951568"><p class="title"><strong>Table 5.1. Asset execution options</strong></p><div class="table-contents"><table class="lt-4-cols lt-7-rows"><colgroup><col style="width: 25%; " class="col_1"/><col style="width: 50%; " class="col_2"/><col style="width: 25%; " class="col_3"/></colgroup><thead><tr><th align="left" valign="top" id="idm139880069945808" scope="col">Execution option</th><th align="left" valign="top" id="idm139880069944720" scope="col">Description</th><th align="left" valign="top" id="idm139880069943632" scope="col">Documentation</th></tr></thead><tbody><tr><td align="left" valign="top" headers="idm139880069945808">
+						<p>
+							Execution in KIE Server
+						</p>
+						</td><td align="left" valign="top" headers="idm139880069944720">
+						<p>
+							If you deployed Red Hat Decision Manager project assets to KIE Server, you can use the KIE Server REST API or Java client API to execute and interact with the deployed assets. You can also use Business Central or the headless Decision Manager controller outside of Business Central to manage the configurations and KIE containers in the KIE Server instances associated with your deployed assets.
+						</p>
+						</td><td align="left" valign="top" headers="idm139880069943632">
+						<p>
+							<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_decision_manager/7.10/html-single/deploying_and_managing_red_hat_decision_manager_services#assembly-kie-apis"><span class="emphasis"><em>Interacting with Red Hat Decision Manager using KIE APIs</em></span></a>
+						</p>
+						</td></tr><tr><td align="left" valign="top" headers="idm139880069945808">
+						<p>
+							Execution in an embedded Java application
+						</p>
+						</td><td align="left" valign="top" headers="idm139880069944720">
+						<p>
+							If you deployed Red Hat Decision Manager project assets in your own Java virtual machine (JVM) environment, microservice, or application server, you can use custom APIs or application interactions with core KIE APIs (not KIE Server APIs) to execute assets in the embedded engine.
+						</p>
+						</td><td align="left" valign="top" headers="idm139880069943632">
+						<p>
+							<a class="link" href="http://docs.jboss.org/drools/release/latestFinal/kie-api-javadoc/"><span class="emphasis"><em>KIE Public API</em></span></a>
+						</p>
+						</td></tr><tr><td align="left" valign="top" headers="idm139880069945808">
+						<p>
+							Execution in a local environment for extended testing
+						</p>
+						</td><td align="left" valign="top" headers="idm139880069944720">
+						<p>
+							As part of your development cycle, you can execute assets locally to ensure that the assets you have created in Red Hat Decision Manager function as intended. You can use local execution in addition to or instead of executing assets after deployment.
+						</p>
+						</td><td align="left" valign="top" headers="idm139880069943632">
+						<p>
+							<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_decision_manager/7.10/html-single/developing_decision_services_in_red_hat_decision_manager#assets-executing-proc_drl-rules">"Executing rules" in <span class="emphasis"><em>Designing a decision service using DRL rules</em></span></a>
+						</p>
+						</td></tr></tbody></table></div></div><div class="admonition note"><div class="admonition_header">Smart Router (KIE Server router)</div><div><p>
+				Depending on your deployment and execution environment, you can use a Smart Router to aggregate multiple independent KIE Server instances as though they are a single server. Smart Router is a single endpoint that can receive calls from client applications to any of your services and route each call automatically to the KIE Server that runs the service. For more information about Smart Router, see <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_decision_manager/7.10/html-single/installing_and_configuring_red_hat_decision_manager#clustering-smartrouter-install-proc_clustering-runtime-standalone"><span class="emphasis"><em>Installing and configuring Red Hat Decision Manager in a Red Hat JBoss EAP clustered environment</em></span></a>.
+			</p></div></div></section><section class="chapter" id="architecture-scenarios-ref_decision-management-architecture"><div class="titlepage"><div><div><h1 class="title">Chapter 6. Example decision management architectures with Red Hat Decision Manager</h1></div></div></div><p>
+			The following scenarios illustrate common variations of Red Hat Decision Manager installation, asset authoring, project storage, project deployment, and asset execution in a decision management architecture. Each section summarizes the methods and tools used and the advantages for the given architecture. The examples are basic and are only a few of the many combinations you might consider, depending on your specific goals and needs with Red Hat Decision Manager.
+		</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">Red Hat Decision Manager authoring and managed server environments on OpenShift with Business Central and KIE Server</span></dt><dd><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+								<span class="strong strong"><strong>Installation environment</strong></span>: Red Hat Decision Manager on Red Hat OpenShift Container Platform, using the <code class="literal">rhdm710-authoring.yaml</code> and <code class="literal">rhdm710-kieserver.yaml</code> template files
+							</li><li class="listitem">
+								<span class="strong strong"><strong>Project storage and build environment</strong></span>: External Git repository for project versioning synchronized with the Business Central Git repository using Git hooks, and external Maven repository for project management and building configured with KIE Server
+							</li><li class="listitem">
+								<span class="strong strong"><strong>Asset-authoring tool</strong></span>: Business Central
+							</li><li class="listitem">
+								<span class="strong strong"><strong>Main asset types</strong></span>: Decision Model and Notation (DMN) models for decisions
+							</li><li class="listitem">
+								<span class="strong strong"><strong>Project deployment and execution environment</strong></span>: KIE Server on Red Hat OpenShift Container Platform
+							</li><li class="listitem"><p class="simpara">
+								<span class="strong strong"><strong>Scenario advantages</strong></span>:
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+										Containerized implementation of Red Hat Decision Manager in a cloud-based development environment. Components of Red Hat Decision Manager are deployed as separate OpenShift pods that you can scale up and down individually, providing as few or as many containers as necessary for a particular component. You can use standard OpenShift methods to manage the pods and balance the load.
+									</li><li class="listitem">
+										Access to the repositories, assets, asset designers, and project build options in Business Central.
+									</li><li class="listitem">
+										Standardized asset-authoring approach using DMN for optimal integration and stability.
+									</li><li class="listitem">
+										Access to KIE Server functionality and KIE APIs for asset deployment and execution.
+									</li></ul></div></li></ul></div><div class="figure" id="idm139880070931664"><p class="title"><strong>Figure 6.1. Red Hat Decision Manager on OpenShift with Business Central and KIE Server</strong></p><div class="figure-contents"><div class="mediaobject"><img src="images/_images/KIE/Overview/architecture-BA-on-OpenShift_enterprise.png" alt="architecture BA on OpenShift enterprise"/></div></div></div></dd><dt><span class="term">Red Hat Decision Manager on Red Hat JBoss EAP with Business Central and KIE Server</span></dt><dd><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+								<span class="strong strong"><strong>Installation environment</strong></span>: Red Hat Decision Manager on Red Hat JBoss Enterprise Application Platform
+							</li><li class="listitem">
+								<span class="strong strong"><strong>Project storage and build environment</strong></span>: External Git repository for project versioning synchronized with the Business Central Git repository using Git hooks, and external Maven repository for project management and building configured with KIE Server
+							</li><li class="listitem">
+								<span class="strong strong"><strong>Asset-authoring tool</strong></span>: Business Central
+							</li><li class="listitem">
+								<span class="strong strong"><strong>Main asset types</strong></span>: Decision Model and Notation (DMN) models for decisions
+							</li><li class="listitem">
+								<span class="strong strong"><strong>Project deployment and execution environment</strong></span>: KIE Server
+							</li><li class="listitem"><p class="simpara">
+								<span class="strong strong"><strong>Scenario advantages</strong></span>:
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+										Stable implementation of Red Hat Decision Manager in an on-premise development environment
+									</li><li class="listitem">
+										Access to the repositories, assets, asset designers, and project build options in Business Central
+									</li><li class="listitem">
+										Standardized asset-authoring approach using DMN for optimal integration and stability
+									</li><li class="listitem">
+										Access to KIE Server functionality and KIE APIs for asset deployment and execution
+									</li></ul></div></li></ul></div><div class="figure" id="idm139880070910544"><p class="title"><strong>Figure 6.2. Red Hat Decision Manager on Red Hat JBoss EAP with Business Central and KIE Server</strong></p><div class="figure-contents"><div class="mediaobject"><img src="images/_images/KIE/Overview/architecture-BA-on-eap_enterprise.png" alt="architecture BA on eap enterprise"/></div></div></div></dd><dt><span class="term">Red Hat Decision Manager on Red Hat JBoss EAP with an IDE and KIE Server</span></dt><dd><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+								<span class="strong strong"><strong>Installation environment</strong></span>: Red Hat Decision Manager on Red Hat JBoss Enterprise Application Platform
+							</li><li class="listitem">
+								<span class="strong strong"><strong>Project storage and build environment</strong></span>: External Git repository for project versioning (not synchronized with Business Central) and external Maven repository for project management and building configured with KIE Server
+							</li><li class="listitem">
+								<span class="strong strong"><strong>Asset-authoring tools</strong></span>: Integrated development environment (IDE), such as Red Hat CodeReady Studio, and a spreadsheet editor or a Decision Model and Notation (DMN) modeling tool for other decision formats
+							</li><li class="listitem">
+								<span class="strong strong"><strong>Main asset types</strong></span>: Drools Rule Language (DRL) rules, spreadsheet decision tables, and Decision Model and Notation (DMN) models for decisions
+							</li><li class="listitem">
+								<span class="strong strong"><strong>Project deployment and execution environment</strong></span>: KIE Server
+							</li><li class="listitem"><p class="simpara">
+								<span class="strong strong"><strong>Scenario advantages</strong></span>:
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+										Flexible implementation of Red Hat Decision Manager in an on-premise development environment
+									</li><li class="listitem">
+										Ability to define business assets using an external IDE and other asset-authoring tools of your choice
+									</li><li class="listitem">
+										Access to KIE Server functionality and KIE APIs for asset deployment and execution
+									</li></ul></div></li></ul></div><div class="figure" id="idm139880070890144"><p class="title"><strong>Figure 6.3. Red Hat Decision Manager on Red Hat JBoss EAP with an IDE and KIE Server</strong></p><div class="figure-contents"><div class="mediaobject"><img src="images/_images/KIE/Overview/architecture-BA-with-IDE_enterprise.png" alt="architecture BA with IDE enterprise"/></div></div></div></dd><dt><span class="term">Red Hat Decision Manager with an IDE and an embedded Java application</span></dt><dd><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+								<span class="strong strong"><strong>Installation environment</strong></span>: Red Hat Decision Manager libraries embedded within a custom application
+							</li><li class="listitem">
+								<span class="strong strong"><strong>Project storage and build environment</strong></span>: External Git repository for project versioning (not synchronized with Business Central) and external Maven repository for project management and building configured with your embedded Java application (not configured with KIE Server)
+							</li><li class="listitem">
+								<span class="strong strong"><strong>Asset-authoring tools</strong></span>: Integrated development environment (IDE), such as Red Hat CodeReady Studio, and a spreadsheet editor or a Decision Model and Notation (DMN) modeling tool for other decision formats
+							</li><li class="listitem">
+								<span class="strong strong"><strong>Main asset types</strong></span>: Drools Rule Language (DRL) rules, spreadsheet decision tables, and Decision Model and Notation (DMN) models for decisions
+							</li><li class="listitem">
+								<span class="strong strong"><strong>Project deployment and execution environment</strong></span>: Embedded Java application, such as in a Java virtual machine (JVM) environment, microservice, or custom application server
+							</li><li class="listitem"><p class="simpara">
+								<span class="strong strong"><strong>Scenario advantages</strong></span>:
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+										Custom implementation of Red Hat Decision Manager in an on-premise development environment with an embedded Java application
+									</li><li class="listitem">
+										Ability to define business assets using an external IDE and other asset-authoring tools of your choice
+									</li><li class="listitem">
+										Use of custom APIs to interact with core KIE APIs (not KIE Server APIs) and to execute assets in the embedded engine
+									</li></ul></div></li></ul></div><div class="figure" id="idm139880070869600"><p class="title"><strong>Figure 6.4. Red Hat Decision Manager with an IDE and an embedded Java application</strong></p><div class="figure-contents"><div class="mediaobject"><img src="images/_images/KIE/Overview/architecture-BA-with-custom-app_enterprise.png" alt="architecture BA with custom app enterprise"/></div></div></div></dd></dl></div></section><section class="chapter" id="additional_resources"><div class="titlepage"><div><div><h1 class="title">Chapter 7. Additional resources</h1></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+					<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_decision_manager/7.10/html-single/installing_and_configuring_red_hat_decision_manager#assembly-planning"><span class="emphasis"><em>Planning a Red Hat Decision Manager installation</em></span></a>
+				</li><li class="listitem">
+					<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_decision_manager/7.10/html-single/getting_started_with_red_hat_decision_manager#assembly-getting-started-decision-services"><span class="emphasis"><em>Getting started with decision services</em></span></a>
+				</li><li class="listitem">
+					<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_decision_manager/7.10/html-single/getting_started_with_red_hat_decision_manager#assembly-getting-started-business-optimizer"><span class="emphasis"><em>Getting started with Red Hat Business Optimizer</em></span></a>
+				</li><li class="listitem">
+					<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_decision_manager/7.10/html-single/deploying_and_managing_red_hat_decision_manager_services#assembly-packaging-deploying"><span class="emphasis"><em>Packaging and deploying a Red Hat Decision Manager project</em></span></a>
+				</li></ul></div></section><section class="appendix" id="versioning-information"><div class="titlepage"><div><div><h1 class="title">Appendix A. Versioning information</h1></div></div></div><p>
+			Documentation last updated on Monday, January 18, 2021.
+		</p></section><section class="appendix" id="author-group"><div class="titlepage"><div><div><h1 class="title">Appendix B. Contact information</h1></div></div></div><p>
+			Red Hat Decision Manager documentation team: <a class="link" href="mailto:brms-docs@redhat.com">brms-docs@redhat.com</a>
+		</p></section><div><div xml:lang="en-US" class="legalnotice" id="idm139880071607776"><h1 class="legalnotice">Legal Notice</h1><div class="para">
+		Copyright <span class="trademark"/>© 2021 Red Hat, Inc.
+	</div><div class="para">
+		The text of and illustrations in this document are licensed by Red Hat under a Creative Commons Attribution–Share Alike 3.0 Unported license ("CC-BY-SA"). An explanation of CC-BY-SA is available at <a class="uri" href="http://creativecommons.org/licenses/by-sa/3.0/">http://creativecommons.org/licenses/by-sa/3.0/</a>. In accordance with CC-BY-SA, if you distribute this document or an adaptation of it, you must provide the URL for the original version.
+	</div><div class="para">
+		Red Hat, as the licensor of this document, waives the right to enforce, and agrees not to assert, Section 4d of CC-BY-SA to the fullest extent permitted by applicable law.
+	</div><div class="para">
+		Red Hat, Red Hat Enterprise Linux, the Shadowman logo, the Red Hat logo, JBoss, OpenShift, Fedora, the Infinity logo, and RHCE are trademarks of Red Hat, Inc., registered in the United States and other countries.
+	</div><div class="para">
+		<span class="trademark">Linux</span>® is the registered trademark of Linus Torvalds in the United States and other countries.
+	</div><div class="para">
+		<span class="trademark">Java</span>® is a registered trademark of Oracle and/or its affiliates.
+	</div><div class="para">
+		<span class="trademark">XFS</span>® is a trademark of Silicon Graphics International Corp. or its subsidiaries in the United States and/or other countries.
+	</div><div class="para">
+		<span class="trademark">MySQL</span>® is a registered trademark of MySQL AB in the United States, the European Union and other countries.
+	</div><div class="para">
+		<span class="trademark">Node.js</span>® is an official trademark of Joyent. Red Hat is not formally related to or endorsed by the official Joyent Node.js open source or commercial project.
+	</div><div class="para">
+		The <span class="trademark">OpenStack</span>® Word Mark and OpenStack logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.
+	</div><div class="para">
+		All other trademarks are the property of their respective owners.
+	</div></div></div></div></div></div><script type="text/javascript">
+                        jQuery(document).ready(function() {
+                            initSwitchery();
+                            jQuery('pre[class*="language-"]').each(function(i, block){hljs.highlightBlock(block);});
+                        });
+                    </script></body></html>

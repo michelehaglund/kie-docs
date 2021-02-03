@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE authorgroup [
+<!ENTITY % sgml.features "IGNORE">
+<!ENTITY % xml.features "INCLUDE">
+<!ENTITY % DOCBOOK_ENTS PUBLIC "-//OASIS//ENTITIES DocBook Character Entities V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/dbcentx.mod">
+%DOCBOOK_ENTS;
+]>
+<authorgroup><author><personname><firstname>Enter your first name here.</firstname><surname>Enter your surname here.</surname></personname><affiliation><orgname>Enter your organisation&apos;s name here.</orgname><orgdiv>Enter your organisational division here.</orgdiv></affiliation><email>Enter your email address here.</email></author></authorgroup>

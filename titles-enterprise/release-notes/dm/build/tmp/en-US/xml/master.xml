@@ -1,0 +1,1028 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE book [
+<!ENTITY % BOOK_ENTITIES SYSTEM "master.ent">
+%BOOK_ENTITIES;
+<!ENTITY % sgml.features "IGNORE">
+<!ENTITY % xml.features "INCLUDE">
+<!ENTITY % DOCBOOK_ENTS PUBLIC "-//OASIS//ENTITIES DocBook Character Entities V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/dbcentx.mod">
+%DOCBOOK_ENTS;
+]>
+<book version="5.0" xml:lang="en-US" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<?asciidoc-toc ?><?asciidoc-numbered ?>
+	<info>
+		<title>Release notes for Red Hat Decision Manager 7.10</title>
+		<subtitle></subtitle>
+		 <date>2021-01-26</date>
+		<productname>Red Hat Decision Manager</productname>
+		<productnumber>7.10</productnumber>
+		<abstract>
+			<para>
+				This document contains release notes for Red Hat Decision Manager 7.10.
+			</para>
+		</abstract>
+		<xi:include href="Common_Content/Legal_Notice.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+	</info>
+	<preface>
+		<title>Preface</title>
+		<simpara>
+			These release notes list new features, features in technology preview, known issues, and issues fixed in Red Hat Decision Manager 7.10.
+		</simpara>
+	</preface>
+	<preface xml:id="snip-conscious-language_release-notes">
+		<title>Making open source more inclusive</title>
+		<simpara>
+			Red Hat is committed to replacing problematic language in our code, documentation, and web properties. We are beginning with these four terms: master, slave, blacklist, and whitelist. Because of the enormity of this endeavor, these changes will be implemented gradually over several upcoming releases. For more details, see <link xlink:href="https://www.redhat.com/en/blog/making-open-source-more-inclusive-eradicating-problematic-language"><emphasis>our CTO Chris Wright’s message</emphasis></link>.
+		</simpara>
+	</preface>
+	<chapter xml:id="rn-intro-con">
+		<title>Product overview</title>
+		<simpara>
+			Red Hat Decision Manager is an open-source decision management platform that combines business rules management, complex event processing, Decision Model &amp; Notation (DMN) execution, and Business Optimizer for solving planning problems. It automates business decisions and makes that logic available to the entire business.
+		</simpara>
+		<simpara>
+			Business assets such as rules, decision tables, and DMN models are stored in a central repository. This ensures consistency, transparency, and the ability to audit across the business. Business users can modify business logic without requiring assistance from IT personnel.
+		</simpara>
+		<simpara>
+			Red Hat Decision Manager 7.10 provides increased stability, several fixed issues, and new features.
+		</simpara>
+		<simpara>
+			Red Hat Decision Manager is fully supported on Red Hat OpenShift Container Platform and can be installed on various platforms.
+		</simpara>
+		<note>
+			<simpara>
+				Red Hat Decision Manager requires Java 8 or later.
+			</simpara>
+		</note>
+		<simpara>
+			For information about the support policy for Red Hat Decision Manager, see the <link xlink:href="https://access.redhat.com/articles/3639591"><emphasis>Release maintenance plan for Red Hat Decision Manager 7.x and Red Hat Process Automation Manager 7.x</emphasis></link>.
+		</simpara>
+	</chapter>
+	<chapter xml:id="rn-whats-new-con">
+		<title>New features</title>
+		<simpara>
+			This section highlights new features in Red Hat Decision Manager 7.10.
+		</simpara>
+		<section remap="_business_central" xml:id="business_central">
+			<title>Business Central</title>
+			<section remap="_support_for_multiple_diagrams_in_dmn_models" xml:id="support_for_multiple_diagrams_in_dmn_models">
+				<title>Support for multiple diagrams in DMN models</title>
+				<simpara>
+					For complex DMN models, you can now use the DMN designer in Business Central to design multiple DMN decision requirements diagrams (DRDs) that represent parts of the overall decision requirements graph (DRG) for a DMN decision model. This improvement enables you to better organize DMN decision models with many decision requirements by dividing the model into smaller nested DRDs.
+				</simpara>
+				<simpara>
+					For more information about creating DMN models with multiple diagrams, see <link xlink:href="https://access.redhat.com/documentation/en-us/red_hat_decision_manager/7.10/html-single/developing_decision_services_in_red_hat_decision_manager#assembly-dmn-models"><emphasis>Designing a decision service using DMN models</emphasis></link>.
+				</simpara>
+			</section>
+		</section>
+		<section remap="_decision_engine" xml:id="decision_engine">
+			<title>Decision engine</title>
+			<section remap="_descope_traits_in_decision_engine" xml:id="descope_traits_in_decision_engine">
+				<title>Descope traits in decision engine</title>
+				<simpara>
+					The traits functionality and its specific implementation code is moved to an individual module named <literal>drools-traits</literal>. To use traits, you can import the <literal>drools-traits</literal> module to Maven. The existing implementation is not supported in the executable rule model.
+				</simpara>
+			</section>
+			<section remap="_new_literal_drools_metric_literal_module_for_decision_engine_performance_analysis" xml:id="new_literal_drools_metric_literal_module_for_decision_engine_performance_analysis">
+				<title>New <literal>drools-metric</literal> module for decision engine performance analysis</title>
+				<simpara>
+					A new module named <literal>drools-metric</literal> is added, which can assist in the performance analysis of the decision engine.
+				</simpara>
+				<simpara>
+					For more information, see <link xlink:href="https://access.redhat.com/documentation/en-us/red_hat_decision_manager/7.10/html-single/developing_decision_services_in_red_hat_decision_manager#assembly-drl-rules"><emphasis>Designing a decision service using DRL rules</emphasis></link>.
+				</simpara>
+			</section>
+		</section>
+		<section remap="_red_hat_business_optimizer" xml:id="red_hat_business_optimizer">
+			<title>Red Hat Business Optimizer</title>
+			<section remap="_using_red_hat_business_optimizer_with_spring_boot" xml:id="using_red_hat_business_optimizer_with_spring_boot">
+				<title>Using Red Hat Business Optimizer with Spring Boot</title>
+				<simpara>
+					You can follow the example in <link xlink:href="https://access.redhat.com/documentation/en-us/red_hat_decision_manager/7.10/html-single/developing_solvers_with_red_hat_business_optimizer_in_red_hat_decision_manager#assembly-business-optimizer-springboot">Creating a school timetable using Red Hat Business Optimizer with Spring Boot</link> to create a school timetable.
+				</simpara>
+			</section>
+			<section remap="_employee_rostering_rotation_pattern_redesign" xml:id="employee_rostering_rotation_pattern_redesign">
+				<title>Employee Rostering rotation pattern redesign</title>
+				<simpara>
+					The rotation pattern on the Employee Rostering Rotation window has been redesigned for ease of use. For more information, see <link xlink:href="https://access.redhat.com/documentation/en-us/red_hat_decision_manager/7.10/html-single/developing_solvers_with_red_hat_business_optimizer_in_red_hat_decision_manager#assembly-optimizer-modifying-ER-template-IDE"><emphasis>Running and modifying the employee rostering starter application for Red Hat Business Optimizer using an IDE</emphasis></link>.
+				</simpara>
+			</section>
+		</section>
+		<section remap="_spring_boot" xml:id="spring_boot">
+			<title>Spring Boot</title>
+			<section remap="_self_contained_red_hat_decision_manager_spring_boot_jar_file" xml:id="self_contained_red_hat_decision_manager_spring_boot_jar_file">
+				<title>Self-contained Red Hat Decision Manager Spring Boot JAR file</title>
+				<simpara>
+					You can create a self-contained Red Hat Decision Manager Spring Boot JAR file that contains multiple versions of the same KJAR file.
+				</simpara>
+				<simpara>
+					For more information, see <link xlink:href="https://access.redhat.com/documentation/en-us/red_hat_decision_manager/7.10/html-single/integrating_red_hat_decision_manager_with_other_products_and_components#assembly-springboot-business-apps"><emphasis>Creating Red Hat Decision Manager business applications with Spring Boot</emphasis></link>.
+				</simpara>
+			</section>
+		</section>
+		<section remap="_red_hat_openshift_container_platform" xml:id="red_hat_openshift_container_platform">
+			<title>Red Hat OpenShift Container Platform</title>
+			<section remap="_support_for_red_hat_openshift_container_platform_version_4_6" xml:id="support_for_red_hat_openshift_container_platform_version_4_6">
+				<title>Support for Red Hat OpenShift Container Platform version 4.6</title>
+				<simpara>
+					Red Hat Decision Manager now supports Red Hat OpenShift Container Platform version 4.6. In order to support this version, necessary changes in the operator bundle format are made. Red Hat OpenShift Container Platform version 4.6 provides an extended update support. For more information, see <link xlink:href="https://access.redhat.com/support/policy/updates/openshift-eus?extIdCarryOver=true&amp;sc_cid=701f2000001OH7iAAG">Red Hat OpenShift Extended Update Support (EUS) Overview</link>.
+				</simpara>
+				<important>
+					<simpara>
+						Red Hat Decision Manager 7.10 is supported only on Red Hat OpenShift Container Platform version 3.11 and Red Hat OpenShift Container Platform version 4.6 EUS. Due to the internal changes of the operator and API version, Red Hat OpenShift Container Platform version 4.5 is not supported and this makes an exception to the general support policy for the Red Hat Middleware products. For more information, see <link xlink:href="https://access.redhat.com/articles/5115291">Support of Red Hat Middleware products and components on Red Hat OpenShift</link>.
+					</simpara>
+				</important>
+			</section>
+			<section remap="_support_for_ldap_failover" xml:id="support_for_ldap_failover">
+				<title>Support for LDAP failover</title>
+				<simpara>
+					When using LDAP authentication, Red Hat Decision Manager on Red Hat OpenShift Container Platform now supports failover to a different LDAP server if a server becomes unavailable.
+				</simpara>
+				<simpara>
+					For more information, see <link xlink:href="https://access.redhat.com/documentation/en-us/red_hat_decision_manager/7.10/html-single/deploying_red_hat_decision_manager_on_red_hat_openshift_container_platform#operator-deploy-security-proc_openshift-operator"><emphasis>Deploying a Red Hat Decision Manager environment on Red Hat OpenShift Container Platform using Operators</emphasis></link> and <link xlink:href="https://access.redhat.com/documentation/en-us/red_hat_decision_manager/7.10/html-single/deploying_red_hat_decision_manager_on_red_hat_openshift_container_platform#template-deploy-ldap-openshift-templates-authoring-proc"><emphasis>Deploying a Red Hat Decision Manager environment on Red Hat OpenShift Container Platform using templates</emphasis></link>.
+				</simpara>
+			</section>
+			<section remap="_integration_with_new_versions_of_products" xml:id="integration_with_new_versions_of_products">
+				<title>Integration with new versions of products</title>
+				<simpara>
+					Red Hat Decision Manager on Red Hat OpenShift Container Platform now supports integration with the following new product versions:
+				</simpara>
+				<itemizedlist>
+					<listitem>
+						<simpara>
+							Red Hat AMQ 7.7
+						</simpara>
+					</listitem>
+					<listitem>
+						<simpara>
+							Red Hat AMQ Broker 7.7
+						</simpara>
+					</listitem>
+					<listitem>
+						<simpara>
+							Red Hat Single Sign-On 7.4.1
+						</simpara>
+					</listitem>
+					<listitem>
+						<simpara>
+							Red Hat Data Grid 7.3
+						</simpara>
+					</listitem>
+				</itemizedlist>
+			</section>
+			<section remap="_support_for_deploying_an_unmanaged_kie_server_on_red_hat_openshift_container_platform_using_the_operator" xml:id="support_for_deploying_an_unmanaged_kie_server_on_red_hat_openshift_container_platform_using_the_operator">
+				<title>Support for deploying an unmanaged KIE Server on Red Hat OpenShift Container Platform using the operator</title>
+				<simpara>
+					You can now deploy Red Hat Decision Manager on Red Hat OpenShift Container Platform using the operator with a KIE Server that is not managed by Business Central monitoring.
+				</simpara>
+				<simpara>
+					For more information, see <link xlink:href="https://access.redhat.com/documentation/en-us/red_hat_decision_manager/7.10/html-single/deploying_red_hat_decision_manager_on_red_hat_openshift_container_platform#operator-deploy-central-proc_openshift-operator"><emphasis>Deploying a Red Hat Decision Manager environment on Red Hat OpenShift Container Platform using Operators</emphasis></link>.
+				</simpara>
+			</section>
+		</section>
+	</chapter>
+	<chapter xml:id="rn-support-ref">
+		<title>Support and compatibility</title>
+		<simpara>
+			This section highlights supported version updates in Red Hat Decision Manager 7.10.
+		</simpara>
+		<section remap="_support_for_firefox_78_esr" xml:id="support_for_firefox_78_esr">
+			<title>Support for Firefox 78 ESR</title>
+			<simpara>
+				Red Hat Decision Manager now supports Firefox 78 ESR browser.
+			</simpara>
+		</section>
+		<section remap="_support_for_red_hat_data_grid_7_3" xml:id="support_for_red_hat_data_grid_7_3">
+			<title>Support for Red Hat Data Grid 7.3</title>
+			<simpara>
+				Red Hat Decision Manager now supports Red Hat Data Grid 7.3.
+			</simpara>
+		</section>
+		<section remap="_support_for_amq_streams_1_6" xml:id="support_for_amq_streams_1_6">
+			<title>Support for AMQ Streams 1.6</title>
+			<simpara>
+				Red Hat Decision Manager now supports AMQ Streams 1.6.
+			</simpara>
+		</section>
+		<section remap="_support_for_red_hat_amq_7_7" xml:id="support_for_red_hat_amq_7_7">
+			<title>Support for Red Hat AMQ 7.7</title>
+			<simpara>
+				Red Hat Decision Manager now supports Red Hat AMQ 7.7.
+			</simpara>
+		</section>
+		<section remap="_support_for_high_availability_authoring_on_red_hat_jboss_eap_on_premise" xml:id="support_for_high_availability_authoring_on_red_hat_jboss_eap_on_premise">
+			<title>Support for High-availability authoring on Red Hat JBoss EAP on premise</title>
+			<simpara>
+				Configuration of Business Central on Red Hat JBoss EAP for high-availability (HA) on premise is fully supported.
+			</simpara>
+			<simpara>
+				For more information about installing and configuring Red Hat Decision Manager in a Red Hat JBoss EAP clustered environment, see <link xlink:href="https://access.redhat.com/documentation/en-us/red_hat_decision_manager/7.10/html-single/installing_and_configuring_red_hat_decision_manager#assembly-clustering-eap"><emphasis>Installing and configuring Red Hat Decision Manager in a Red Hat JBoss EAP clustered environment</emphasis></link>.
+			</simpara>
+		</section>
+		<section remap="_support_for_red_hat_jboss_web_server" xml:id="support_for_red_hat_jboss_web_server">
+			<title>Support for Red Hat JBoss Web Server</title>
+			<simpara>
+				You can install Red Hat Decision Manager on Red Hat JBoss Web Server 5.3.0 (Apache Tomcat 9.0.30) and Red Hat JBoss Web Server 5.4.0. when available. For more information about installing Red Hat Decision Manager on Red Hat JBoss Web Server 5.4, see <link xlink:href="https://access.redhat.com/documentation/en-us/red_hat_decision_manager/7.10/html-single/installing_and_configuring_red_hat_decision_manager#assembly-install-on-jws"><emphasis>Installing and configuring Red Hat Decision Manager on Red Hat JBoss Web Server</emphasis></link>.
+			</simpara>
+		</section>
+		<section remap="_red_hat_codeready_studio_integration" xml:id="red_hat_codeready_studio_integration">
+			<title>Red Hat CodeReady Studio integration</title>
+			<simpara>
+				You can now integrate Red Hat CodeReady Studio 12.17 with Red Hat Decision Manager. For more information about integrating Red Hat CodeReady Studio 12.17 with Red Hat Decision Manager, see <link xlink:href="https://access.redhat.com/documentation/en-us/red_hat_decision_manager/7.10/html-single/integrating_red_hat_decision_manager_with_other_products_and_components#assembly-integrating-codeready-studio"><emphasis>Integrating Red Hat CodeReady Studio with Red Hat Decision Manager</emphasis></link>.
+			</simpara>
+		</section>
+		<section remap="_red_hat_fuse_integration" xml:id="red_hat_fuse_integration">
+			<title>Red Hat Fuse integration</title>
+			<simpara>
+				Red Hat Fuse 7.7 is supported on Red Hat JBoss EAP 7.2, whereas Red Hat Decision Manager is supported on Red Hat JBoss EAP 7.3. To ensure a stable deployment environment, install Fuse and Red Hat Decision Manager on different instances of Red Hat JBoss EAP according to the supported Red Hat JBoss EAP versions. For more information, see <link xlink:href="https://access.redhat.com/documentation/en-us/red_hat_decision_manager/7.10/html-single/integrating_red_hat_decision_manager_with_other_products_and_components#assembly-integrating-fuse"><emphasis>Integrating Red Hat Fuse with Red Hat Decision Manager</emphasis></link>
+			</simpara>
+		</section>
+	</chapter>
+	<chapter xml:id="rn-deprecated-issues-ref">
+		<title>Deprecated components</title>
+		<simpara>
+			The components listed in this section have been deprecated.
+		</simpara>
+		<section remap="_legacy_test_scenarios_tool" xml:id="legacy_test_scenarios_tool">
+			<title>Legacy Test Scenarios tool</title>
+			<simpara>
+				The legacy Test Scenarios tool was deprecated in Red Hat Decision Manager 7.3.0. It will be removed in a future Red Hat Decision Manager release. Use the new Test Scenarios designer instead.
+			</simpara>
+		</section>
+		<section remap="_support_for_red_hat_openshift_container_platform_3_x" xml:id="support_for_red_hat_openshift_container_platform_3_x">
+			<title>Support for Red Hat OpenShift Container Platform 3.x</title>
+			<simpara>
+				From Red Hat Decision Manager version 7.5, images and templates for Red Hat OpenShift Container Platform 3.x are deprecated. The deprecated images and templates are not supported with new features but remain available until the end of Red Hat OpenShift Container Platform version 3.x support. For more information about the full support lifecycle phase for Red Hat OpenShift Container Platform version 3.x, see <link xlink:href="https://access.redhat.com/support/policy/updates/openshift_noncurrent">Red Hat OpenShift Container Platform Life Cycle Policy (non-current versions)</link>.
+			</simpara>
+			<simpara>
+				Consider deploying Red Hat Decision Manager using the operator on Red Hat OpenShift Container Platform 4.x.
+			</simpara>
+		</section>
+		<section remap="_legacy_process_designer" xml:id="legacy_process_designer">
+			<title>Legacy process designer</title>
+			<simpara>
+				The legacy process designer in Business Central was deprecated in Red Hat Decision Manager since 7.6.0. The legacy process designer does not receive any new enhancements or features. If you intend to use the new process designer, start migrating your processes to the new designer, and create new processes in the new process designer. For information about migrating projects to the new designer, see <link xlink:href="https://access.redhat.com/documentation/en-us/red_hat_decision_manager/7.10/html-single/deploying_and_managing_red_hat_decision_manager_services#migrating-from-legacy-designer-proc">Managing projects in Business Central</link>.
+			</simpara>
+		</section>
+	</chapter>
+	<chapter xml:id="rn-tech-preview-con">
+		<title>Technology preview</title>
+		<simpara>
+			This section lists features that are in Technology Preview in Red Hat Decision Manager 7.10. Business Central includes an experimental features administration page that is disabled by default. To enable this page, set the value of the <literal>appformer.experimental.features</literal> property to <literal>true</literal>.
+		</simpara>
+		<important>
+			<simpara>
+				These features are for Technology Preview only. Technology Preview features are not supported with Red Hat production service level agreements (SLAs), might not be functionally complete, and Red Hat does not recommend to use them for production. These features provide early access to upcoming product features, enabling customers to test functionality and provide feedback during the development process.
+			</simpara>
+			<simpara>
+				For more information on Red Hat Technology Preview features, see <link xlink:href="https://access.redhat.com/support/offerings/techpreview/">Technology Preview Features Scope</link>.
+			</simpara>
+		</important>
+		<section remap="_deploying_a_high_availability_authoring_environment_on_red_hat_openshift_container_platform_4_x" xml:id="deploying_a_high_availability_authoring_environment_on_red_hat_openshift_container_platform_4_x">
+			<title>Deploying a high-availability authoring environment on Red Hat OpenShift Container Platform 4.x</title>
+			<simpara>
+				You can deploy a high-availability Red Hat Decision Manager authoring environment on Red Hat OpenShift Container Platform 4.x using the operator.
+			</simpara>
+		</section>
+		<section remap="_openshift_operator_installer_wizard" xml:id="openshift_operator_installer_wizard">
+			<title>OpenShift operator installer wizard</title>
+			<simpara>
+				An installer wizard is provided in the OpenShift operator for Red Hat Decision Manager. You can use the wizard to deploy a Red Hat Decision Manager environment on Red Hat OpenShift Container Platform with the operator.
+			</simpara>
+		</section>
+	</chapter>
+	<chapter xml:id="rn-790-known-issues-ref">
+		<title>Known issues in Red Hat Decision Manager 7.10.0</title>
+		<simpara>
+			This section lists known issues with Red Hat Decision Manager 7.10.
+		</simpara>
+		<section remap="_business_central_2" xml:id="business_central_2">
+			<title>Business Central</title>
+			<formalpara>
+				<title>Package list fails to populate default package for imported projects [<link xlink:href="https://issues.redhat.com/browse/RHPAM-3209">RHPAM-3209</link>]</title>
+				<para>
+					Issue: When a project contains many packages, and you try to create a new asset, the list of packages take some time to populate.
+				</para>
+			</formalpara>
+			<simpara>
+				Steps to reproduce:
+			</simpara>
+			<orderedlist numeration="arabic">
+				<listitem>
+					<simpara>
+						Import a project which contains many packages.
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						Go to the project page.
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						Click <emphasis role="strong">Add Asset</emphasis>.
+					</simpara>
+					<simpara>
+						The <emphasis role="strong">Assets</emphasis> window appears.
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						Add any asset in the project.
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						In the pop-up window, check the <emphasis role="strong">Package</emphasis> drop-down list.
+					</simpara>
+					<simpara>
+						You receive <emphasis role="strong">Nothing selected</emphasis> option for some time.
+					</simpara>
+				</listitem>
+			</orderedlist>
+			<simpara>
+				Expected result: Package list is populating default package for imported projects.
+			</simpara>
+			<simpara>
+				Actual result: Package list is not populating default package for imported projects.
+			</simpara>
+			<simpara>
+				Workaround:
+			</simpara>
+			<itemizedlist>
+				<listitem>
+					<simpara>
+						Make sure you have identical paths in both <literal>src/java</literal> and <literal>src/resources</literal>. In your Git repository, insert <literal>.gitkeep</literal> files to retain the empty folder structure.
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						In the asset pop-up window, manually select the <emphasis role="strong">&lt;default&gt;</emphasis> option in the <emphasis role="strong">Package</emphasis> drop-down list..
+					</simpara>
+				</listitem>
+			</itemizedlist>
+			<formalpara>
+				<title>Collection editor is not opening for DRL based test scenarios [<link xlink:href="https://issues.redhat.com/browse/RHDM-1464">RHDM-1464</link>]</title>
+				<para>
+					Issue: DRL based test scenario throws an unexpected error when you open a collection editor for a list of some datatypes.
+				</para>
+			</formalpara>
+			<simpara>
+				Workaround: None.
+			</simpara>
+			<formalpara>
+				<title>You cannot add a deployment unit when you create a container for the first time [<link xlink:href="https://issues.redhat.com/browse/RHPAM-3254">RHPAM-3254</link>]</title>
+				<para>
+					Issue: You cannot add a deployment unit when you create a container for the first time, and you receive an unexpected system error.
+				</para>
+			</formalpara>
+			<simpara>
+				Steps to reproduce:
+			</simpara>
+			<orderedlist numeration="arabic">
+				<listitem>
+					<simpara>
+						In Business Central, go to <emphasis role="strong">Menu → Deploy → Execution Servers</emphasis>.
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						Under <emphasis role="strong">Deployment Units</emphasis>, click <emphasis role="strong">Add Deployment Unit</emphasis>.
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						Enter the GAV values manually.
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						Select the <emphasis role="strong">Start Deployment Unit?</emphasis> check box to start the service.
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						Click <emphasis role="strong">Finish</emphasis>.
+					</simpara>
+					<simpara>
+						You receive an unexpected system error.
+					</simpara>
+				</listitem>
+			</orderedlist>
+			<simpara>
+				Workaround: None.
+			</simpara>
+			<formalpara>
+				<title>The deployment unit fields are missing when you add a new deployment unit [<link xlink:href="https://issues.redhat.com/browse/RHPAM-3213">RHPAM-3213</link>]</title>
+				<para>
+					Issue: When you add a deployment unit, fields that are available under <emphasis role="strong">Add Deployment Unit</emphasis> are missing.
+				</para>
+			</formalpara>
+			<simpara>
+				Steps to reproduce:
+			</simpara>
+			<orderedlist numeration="arabic">
+				<listitem>
+					<simpara>
+						In Business Central, go to <emphasis role="strong">Menu → Deploy → Execution Servers</emphasis>.
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						Under <emphasis role="strong">Deployment Units</emphasis>, click <emphasis role="strong">Add Deployment Unit</emphasis>.
+					</simpara>
+					<simpara>
+						Deployment unit fields are missing.
+					</simpara>
+				</listitem>
+			</orderedlist>
+			<simpara>
+				Workaround: Deployment unit fields appear only if you navigate to <emphasis role="strong">Process Configuration</emphasis> and come back.
+			</simpara>
+		</section>
+		<section remap="_dmn_designer" xml:id="dmn_designer">
+			<title>DMN designer</title>
+			<formalpara>
+				<title>Decision service is missing <literal>inputData</literal> element in model with multiple DRDs [<link xlink:href="https://issues.redhat.com/browse/RHDM-1483">RHDM-1483</link>]</title>
+				<para>
+					Issue: When you reuse a decision component by adding it into a decision service node in a model containing multiple decision requirement diagrams (DRDs), the <literal>inputData</literal> element is missing from the resulting decision service node.
+				</para>
+			</formalpara>
+			<simpara>
+				Steps to reproduce:
+			</simpara>
+			<orderedlist numeration="arabic">
+				<listitem>
+					<simpara>
+						Define multiple decision requirement diagrams (DRDs).
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						In a DRD, define some decisions with inputs.
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						In another DRD, define decision service and reuse the decision components from the previous DRD.
+					</simpara>
+					<simpara>
+						Do not duplicate the inputs.
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						Build and deploy the decision service.
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						Do any of the following tasks:
+					</simpara>
+					<itemizedlist>
+						<listitem>
+							<simpara>
+								Evaluate the decision to see the error reported in the description.
+							</simpara>
+						</listitem>
+						<listitem>
+							<simpara>
+								Verify the DMN source and see that <literal>inputData</literal> element is missing from the decision service .
+							</simpara>
+						</listitem>
+					</itemizedlist>
+				</listitem>
+			</orderedlist>
+			<simpara>
+				Workaround: Add an <literal>inputData</literal> element manually into the resulting <literal>decisionService</literal> element.
+			</simpara>
+			<formalpara>
+				<title>DMN editor does not detect the changes from the Decision Navigator view [<link xlink:href="https://issues.redhat.com/browse/RHDM-1482">RHDM-1482</link>]</title>
+				<para>
+					Issue: DMN editor does not detect changes in the file when a decision requirement diagram (DRD) is renamed or removed from the <emphasis role="strong">Decision Navigator</emphasis> view.
+				</para>
+			</formalpara>
+			<simpara>
+				Steps to reproduce:
+			</simpara>
+			<orderedlist numeration="arabic">
+				<listitem>
+					<simpara>
+						Rename a DRD from the <emphasis role="strong">Decision Navigator</emphasis> view.
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						Click <emphasis role="strong">Save</emphasis>.
+					</simpara>
+					<simpara>
+						You receive <emphasis role="strong">You have no unsaved changes</emphasis> alert window.
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						Close the DMN editor.
+					</simpara>
+					<simpara>
+						You receive <emphasis role="strong">You have no unsaved changes</emphasis> alert window.
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						Reopen the DMN editor.
+					</simpara>
+					<simpara>
+						The name of the DRD is still the same.
+					</simpara>
+				</listitem>
+			</orderedlist>
+			<simpara>
+				Workaround: Make a different change to the file which then enforces save or discard action.
+			</simpara>
+			<formalpara>
+				<title>The constraint value is missing in a decision table [<link xlink:href="https://issues.redhat.com/browse/RHDM-1460">RHDM-1460</link>]</title>
+				<para>
+					Issue: The constraint value is missing while defining a decision table.
+				</para>
+			</formalpara>
+			<simpara>
+				Steps to reproduce:
+			</simpara>
+			<orderedlist numeration="arabic">
+				<listitem>
+					<simpara>
+						Create a DMN file with decision.
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						Define a decision table.
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						Set the first column type as a number.
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						Save the asset.
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						Close the editor.
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						Reopen the asset.
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						Go to the decision table.
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						Select the input with type as a number.
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						Open the <emphasis role="strong">Properties</emphasis> panel.
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						Set the constraint in the <emphasis role="strong">Constraint value</emphasis> field.
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						Select the output column.
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						Select the input column again.
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						Verify that the constraint value is missing.
+					</simpara>
+				</listitem>
+			</orderedlist>
+			<simpara>
+				Workaround: None.
+			</simpara>
+			<formalpara>
+				<title>The undo and redo operations do not work properly when you delete a node in decision requirements graph (DRG) [<link xlink:href="https://issues.redhat.com/browse/RHDM-1459">RHDM-1459</link>]</title>
+				<para>
+					Issue: In a model containing multiple decision requirement diagrams (DRDs), the undo and redo operations do not work properly when you delete a node in the decision requirements graph (DRG).
+				</para>
+			</formalpara>
+			<simpara>
+				Steps to reproduce:
+			</simpara>
+			<orderedlist numeration="arabic">
+				<listitem>
+					<simpara>
+						Move the node to a DRD.
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						Navigate to DRG.
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						Delete the node from the DRG.
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						Undo the changes.
+					</simpara>
+				</listitem>
+			</orderedlist>
+			<simpara>
+				Expected result: You can perform the undo and redo operations in DRG.
+			</simpara>
+			<simpara>
+				Actual result: You receive an error. When you confirm, the DRG is broken.
+			</simpara>
+			<simpara>
+				Workaround: None.
+			</simpara>
+			<formalpara>
+				<title>The undo and redo operations are lost when you switch between the diagrams [<link xlink:href="https://issues.redhat.com/browse/RHDM-1458">RHDM-1458</link>]</title>
+				<para>
+					Issue: In a model containing multiple decision requirement diagrams (DRDs), the undo and redo operations are lost when you switch between the diagrams.
+				</para>
+			</formalpara>
+			<simpara>
+				Steps to reproduce:
+			</simpara>
+			<orderedlist numeration="arabic">
+				<listitem>
+					<simpara>
+						Open a DMN file with two or more decision requirement diagrams (DRDs).
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						Make some changes. For example, move a node in one diagram.
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						Switch to another diagram.
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						Click <emphasis role="strong">Undo</emphasis> or press <emphasis role="strong">Ctrl+Z</emphasis>.
+					</simpara>
+					<simpara>
+						The undo and redo operations are lost and nothing changes.
+					</simpara>
+				</listitem>
+			</orderedlist>
+			<simpara>
+				Workaround: None.
+			</simpara>
+			<formalpara>
+				<title>In Business Central, the DMN editor is unable to save the changes in the Properties panel [<link xlink:href="https://issues.redhat.com/browse/RHDM-1456">RHDM-1456</link>]</title>
+				<para>
+					Issue: When you change the name property in the <emphasis role="strong">Properties</emphasis> panel, try to save the changes, and reopen the editor, the DMN editor is unable to save the changes.
+				</para>
+			</formalpara>
+			<simpara>
+				Steps to reproduce:
+			</simpara>
+			<orderedlist numeration="arabic">
+				<listitem>
+					<simpara>
+						Create a DMN file.
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						Change the name of the DMN file in the <emphasis role="strong">Properties</emphasis> panel.
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						Click <emphasis role="strong">Save</emphasis>.
+					</simpara>
+					<simpara>
+						You receive <emphasis role="strong">You have no unsaved changes</emphasis> alert window.
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						Close the DMN editor.
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						Reopen the asset and check the the <emphasis role="strong">Properties</emphasis> panel.
+					</simpara>
+					<simpara>
+						The changes are not saved.
+					</simpara>
+				</listitem>
+			</orderedlist>
+			<simpara>
+				Workaround: None.
+			</simpara>
+			<formalpara>
+				<title>DMN editor is reporting unsaved changes in the DMN files when there are no changes [<link xlink:href="https://issues.redhat.com/browse/RHDM-1453">RHDM-1453</link>]</title>
+				<para>
+					Issue: When you open a DMN file in Business Central and try to close the file without any changes, the DMN editor reports unsaved changes in the DMN files.
+				</para>
+			</formalpara>
+			<simpara>
+				Steps to reproduce:
+			</simpara>
+			<orderedlist numeration="arabic">
+				<listitem>
+					<simpara>
+						In Business Central, go to <emphasis role="strong">Menu → Design → Projects</emphasis>.
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						Click <emphasis role="strong">Try samples</emphasis>.
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						Open <emphasis role="strong">Traffic_Violation</emphasis> project.
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						Open <emphasis role="strong">Traffic Violation</emphasis> DMN file.
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						Close the editor.
+					</simpara>
+					<simpara>
+						You receive an <emphasis role="strong">Unsaved changes</emphasis> error pop-up.
+					</simpara>
+				</listitem>
+			</orderedlist>
+			<simpara>
+				Workaround: None.
+			</simpara>
+		</section>
+		<section remap="_decision_engine_2" xml:id="decision_engine_2">
+			<title>Decision engine</title>
+			<formalpara>
+				<title><literal>testDoubleNaN</literal> fails after jitting on <literal>TypeCoercionTest</literal> [<link xlink:href="https://issues.redhat.com/browse/RHDM-1470">RHDM-1470</link>]</title>
+				<para>
+					Issue: You receive an <literal>AssertionError</literal> error in <literal>org.drools.modelcompiler.TypeCoercionTest#testDoubleNaN</literal> when a constraint is jitted.
+				</para>
+			</formalpara>
+			<simpara>
+				Steps to reproduce:
+			</simpara>
+			<orderedlist numeration="arabic">
+				<listitem>
+					<simpara>
+						Run the following command in <literal>org.drools.modelcompiler</literal> module:
+					</simpara>
+					
+<screen>mvn clean install -Dtest=org.drools.modelcompiler.TypeCoercionTest#testDoubleNaN* -Ddrools.jittingThreshold=0</screen>
+				</listitem>
+			</orderedlist>
+			<simpara>
+				Workaround: None.
+			</simpara>
+		</section>
+		<section remap="_high_availability_business_central_on_premise" xml:id="high_availability_business_central_on_premise">
+			<title>High-availability Business Central on premise</title>
+			<formalpara>
+				<title>You cannot create multiple processes at the same time [<link xlink:href="https://issues.redhat.com/browse/RHPAM-3202">RHPAM-3202</link>]</title>
+				<para>
+					Issue: When you create multiple processes at the same time, you receive an error message and multiple processes are not created.
+				</para>
+			</formalpara>
+			<simpara>
+				Steps to reproduce:
+			</simpara>
+			<orderedlist numeration="arabic">
+				<listitem>
+					<simpara>
+						Create multiple processes at the same time.
+					</simpara>
+					<simpara>
+						You receive an <emphasis role="strong">Activity not found</emphasis> error.
+					</simpara>
+				</listitem>
+			</orderedlist>
+			<simpara>
+				Workaround: None.
+			</simpara>
+			<formalpara>
+				<title>When you create a project, base-kie-project is created instead of the real name of the project [<link xlink:href="https://issues.redhat.com/browse/RHPAM-3193">RHPAM-3193</link>]</title>
+				<para>
+					Issue: When you create a project, a project with the name <emphasis role="strong">base-kie-project</emphasis> is created instead of the real name of the created project.
+				</para>
+			</formalpara>
+			<simpara>
+				Steps to reproduce:
+			</simpara>
+			<orderedlist numeration="arabic">
+				<listitem>
+					<simpara>
+						Create multiple projects with multiple users in the same space.
+					</simpara>
+					<simpara>
+						The <emphasis role="strong">base-kie-project</emphasis> project is created.
+					</simpara>
+				</listitem>
+			</orderedlist>
+			<simpara>
+				Workaround: Delete and recreate the project or rename the project name from <emphasis role="strong">Settings</emphasis> tab.
+			</simpara>
+			<formalpara>
+				<title>You cannot create multiple projects at the same time [<link xlink:href="https://issues.redhat.com/browse/RHPAM-3192">RHPAM-3192</link>]</title>
+				<para>
+					Issue: When you create multiple projects at the same time, you receive an error message and multiple projects are not created.
+				</para>
+			</formalpara>
+			<simpara>
+				Steps to reproduce:
+			</simpara>
+			<orderedlist numeration="arabic">
+				<listitem>
+					<simpara>
+						Create multiple projects at the same time.
+					</simpara>
+					<simpara>
+						You receive an error.
+					</simpara>
+				</listitem>
+			</orderedlist>
+			<simpara>
+				Workaround: None.
+			</simpara>
+		</section>
+	</chapter>
+	<chapter xml:id="rn-790-fixed-issues-ref">
+		<title>Fixed issues in Red Hat Decision Manager 7.10.0</title>
+		<simpara>
+			Red Hat Decision Manager 7.10.0 provides increased stability and fixed issues listed in this section.
+		</simpara>
+		<section remap="_business_central_3" xml:id="business_central_3">
+			<title>Business Central</title>
+			<itemizedlist>
+				<listitem>
+					<simpara>
+						You cannot save a file when you try to rename the package from the source code [<link xlink:href="https://issues.redhat.com/browse/RHPAM-3119">RHPAM-3119</link>]
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						The wait spinner is not present when you add a deployment unit, manually enter GAV values, and confirm the alert window [<link xlink:href="https://issues.redhat.com/browse/RHPAM-3114">RHPAM-3114</link>]
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						Assets are not properly indexed for clustered Business Central environment [<link xlink:href="https://issues.redhat.com/browse/RHPAM-3089">RHPAM-3089</link>]
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						When you try to add a new deployment unit, you receive multiple error notifications [<link xlink:href="https://issues.redhat.com/browse/RHPAM-3112">RHPAM-3112</link>]
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						Business Central does not remember the last used branch when you log out [<link xlink:href="https://issues.redhat.com/browse/RHPAM-2957">RHPAM-2957</link>]
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						In the <emphasis role="strong">Assets</emphasis> list, there are columns like <literal>Last modified X day ago</literal> and <literal>Created XX weeks ago</literal> but they are the same for all the assets and does not reflect the actual modified or created values [<link xlink:href="https://issues.redhat.com/browse/RHPAM-2865">RHPAM-2865</link>]
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						Package list is not populating correctly for imported projects [<link xlink:href="https://issues.redhat.com/browse/RHDM-1377">RHDM-1377</link>]
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						<literal>java.lang.Number</literal> import remains in the list of imports when deleted [<link xlink:href="https://issues.redhat.com/browse/RHDM-247">RHDM-247</link>]
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						If a project contains DRL files with the queries, the test scenarios designer displays queries in the coverage report [<link xlink:href="https://issues.redhat.com/browse/RHDM-1448">RHDM-1448</link>]
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						When you restart Business Central, the connection between KIE Server and Business Central does not re-establish [<link xlink:href="https://issues.redhat.com/browse/RHPAM-3137">RHPAM-3137</link>]
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						You cannot lock guided decision table asset in Business Central [<link xlink:href="https://issues.redhat.com/browse/RHPAM-2992">RHPAM-2992</link>]
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						When you rename the guided rules used in test scenarios, coverage report displays both original and renamed value of guided rules [<link xlink:href="https://issues.redhat.com/browse/RHDM-1334">RHDM-1334</link>]
+					</simpara>
+				</listitem>
+			</itemizedlist>
+		</section>
+		<section remap="_decision_engine_3" xml:id="decision_engine_3">
+			<title>Decision engine</title>
+			<itemizedlist>
+				<listitem>
+					<simpara>
+						In decision tables, you can terminate the pattern with <literal>@watch</literal> annotation, which is used to customize the properties that the pattern is reactive on [<link xlink:href="https://issues.redhat.com/browse/RHDM-1437">RHDM-1437</link>]
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						The <literal>@watch</literal> annotation does not behave properly when you exclude all the properties but one property [<link xlink:href="https://issues.redhat.com/browse/RHDM-1436">RHDM-1436</link>]
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						Constraint jitting fails When you take a string value from a map and compare it with string literal [<link xlink:href="https://issues.redhat.com/browse/RHDM-1439">RHDM-1439</link>]
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						If the <literal>accumulate</literal> contains more than one accumulating function, you receive an unwanted re-firing of a rule after deserialization [<link xlink:href="https://issues.redhat.com/browse/RHDM-1434">RHDM-1434</link>]
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						Building rules in a default-build target of <literal>kie-maven-plugin</literal> takes a lot of time [<link xlink:href="https://issues.redhat.com/browse/RHDM-1433">RHDM-1433</link>]
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						In MVEL dialect mode, you cannot compile binary operation for <literal>BigDecimal</literal> type values, and you receive a compilation error in the executable model [<link xlink:href="https://issues.redhat.com/browse/RHDM-1421">RHDM-1421</link>]
+					</simpara>
+				</listitem>
+			</itemizedlist>
+		</section>
+		<section remap="_kie_server" xml:id="kie_server">
+			<title>KIE Server</title>
+			<itemizedlist>
+				<listitem>
+					<simpara>
+						MarshallingException occurs during REST request (JSON) unmarshalling in KIE Server [<link xlink:href="https://issues.redhat.com/browse/RHDM-1417">RHDM-1417</link>]
+					</simpara>
+				</listitem>
+			</itemizedlist>
+		</section>
+		<section remap="_installer" xml:id="installer">
+			<title>Installer</title>
+			<itemizedlist>
+				<listitem>
+					<simpara>
+						On Red Hat JBoss EAP, the Red Hat Decision Manager installer adds an additional <literal>$</literal> sign in the vaulted password of database user [<link xlink:href="https://issues.redhat.com/browse/RHPAM-3148">RHPAM-3148</link>]
+					</simpara>
+				</listitem>
+			</itemizedlist>
+		</section>
+		<section remap="_red_hat_openshift_container_platform_2" xml:id="red_hat_openshift_container_platform_2">
+			<title>Red Hat OpenShift Container Platform</title>
+			<itemizedlist>
+				<listitem>
+					<simpara>
+						In monitoring console page, when you create a new page, you receive an <emphasis role="strong">Activity not found</emphasis> error pop-up [<link xlink:href="https://issues.redhat.com/browse/RHPAM-3066">RHPAM-3066</link>]
+					</simpara>
+				</listitem>
+			</itemizedlist>
+		</section>
+	</chapter>
+	<appendix xml:id="versioning-information">
+		<title>Versioning information</title>
+		<simpara>
+			Documentation last updated on Monday, January 18, 2021.
+		</simpara>
+	</appendix>
+	<appendix xml:id="author-group">
+		<title>Contact information</title>
+		<simpara>
+			Red Hat Decision Manager documentation team: <link xlink:href="mailto:brms-docs@redhat.com">brms-docs@redhat.com</link>
+		</simpara>
+	</appendix>
+</book>
+

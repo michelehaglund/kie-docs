@@ -1,0 +1,4 @@
+<!ENTITY PRODUCT "PRODUCT">
+<!ENTITY BOOKID "Release_notes_for_PRODUCT_PRODUCT_VERSION">
+<!ENTITY YEAR "2020">
+<!ENTITY HOLDER "| You need to change the HOLDER entity in the en-US/Release_notes_for_PRODUCT_PRODUCT_VERSION.ent file |">

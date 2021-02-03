@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE appendix [
+<!ENTITY % sgml.features "IGNORE">
+<!ENTITY % xml.features "INCLUDE">
+<!ENTITY % DOCBOOK_ENTS PUBLIC "-//OASIS//ENTITIES DocBook Character Entities V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/dbcentx.mod">
+%DOCBOOK_ENTS;
+]>
+<appendix><title>Revision History</title><revhistory><revision><revnumber>0.0-0</revnumber><date>Mon Oct 26 2020</date><author><personname><firstname>Enter your first name here.</firstname><surname>Enter your surname here.</surname></personname><email>Enter your email address here.</email></author><revdescription><simplelist><member>Initial creation by publican</member></simplelist></revdescription></revision></revhistory></appendix>

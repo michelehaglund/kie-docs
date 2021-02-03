@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE info [
+<!ENTITY % sgml.features "IGNORE">
+<!ENTITY % xml.features "INCLUDE">
+<!ENTITY % DOCBOOK_ENTS PUBLIC "-//OASIS//ENTITIES DocBook Character Entities V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/dbcentx.mod">
+%DOCBOOK_ENTS;
+]>
+<info><title>Release notes for PRODUCT PRODUCT VERSION</title><subtitle>Enter a short description here.</subtitle><productname>PRODUCT</productname><productnumber>{ENTERPRISE_VERSION}</productnumber><edition>0</edition><abstract><para>A short overview and summary of the book&apos;s subject and purpose, traditionally no more than one paragraph long. Note: the abstract will appear in the front matter of your book and will also be placed in the description field of the book&apos;s RPM spec file.</para></abstract><orgname><inlinemediaobject><imageobject><imagedata fileref="Common_Content/images/title_logo.svg" format="SVG"></imagedata></imageobject></inlinemediaobject></orgname><xi:include href="Common_Content/Legal_Notice.xml" xmlns:xi="http://www.w3.org/2001/XInclude"></xi:include><xi:include href="Author_Group.xml" xmlns:xi="http://www.w3.org/2001/XInclude"></xi:include></info>

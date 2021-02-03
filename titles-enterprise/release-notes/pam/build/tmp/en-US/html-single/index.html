@@ -1,0 +1,827 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" class="chrometwo"><head><title>Release notes for Red Hat Process Automation Manager 7.10</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css"/><meta name="generator" content="publican v4.3.6"/><meta name="description" content="This document contains release notes for Red Hat Process Automation Manager 7.10."/><link rel="next" href="#idm139711185027856" title="Preface"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><script type="text/javascript" src="Common_Content/scripts/jquery-1.7.1.min.js"> </script><script type="text/javascript" src="Common_Content/scripts/utils.js"> </script><script type="text/javascript" src="Common_Content/scripts/highlight.js/highlight.pack.js"> </script></head><body><div id="chrometwo"><div id="main"><div xml:lang="en-US" class="book" id="idm139711191804800"><div class="titlepage"><div><div class="producttitle"><span class="productname">Red Hat Process Automation Manager</span> <span class="productnumber">7.10</span></div><div><h1 class="title">Release notes for Red Hat Process Automation Manager 7.10</h1></div><div><h2 class="subtitle"/></div><div><a href="#idm139711193371232">Legal Notice</a></div><div><div class="abstract"><p class="title"><strong>Abstract</strong></p><div class="para">
+				This document contains release notes for Red Hat Process Automation Manager 7.10.
+			</div></div></div></div><hr/></div><div class="toc"><ul class="toc"><li><span class="preface"><a href="#idm139711185027856">Preface</a></span></li><li><span class="preface"><a href="#snip-conscious-language_release-notes">Making open source more inclusive</a></span></li><li><span class="chapter"><a href="#rn-intro-con">1. Product overview</a></span></li><li><span class="chapter"><a href="#rn-whats-new-con">2. New features</a></span><ul><li><span class="section"><a href="#business_central">2.1. Business Central</a></span><ul><li><span class="section"><a href="#support_for_multiple_diagrams_in_dmn_models">2.1.1. Support for multiple diagrams in DMN models</a></span></li><li><span class="section"><a href="#dashbuilder_runtime">2.1.2. Dashbuilder runtime</a></span></li></ul></li><li><span class="section"><a href="#entando_appbuilder">2.2. Entando AppBuilder</a></span></li><li><span class="section"><a href="#process_designer">2.3. Process Designer</a></span><ul><li><span class="section"><a href="#process_designer_updates">2.3.1. Process designer updates</a></span></li><li><span class="section"><a href="#support_for_link_intermediate_events">2.3.2. Support for link intermediate events</a></span></li><li><span class="section"><a href="#ability_to_configure_emails_in_the_task_notification">2.3.3. Ability to configure emails in the task notification</a></span></li></ul></li><li><span class="section"><a href="#decision_engine">2.4. Decision engine</a></span><ul><li><span class="section"><a href="#descope_traits_in_decision_engine">2.4.1. Descope traits in decision engine</a></span></li><li><span class="section"><a href="#new_literal_drools_metric_literal_module_for_decision_engine_performance_analysis">2.4.2. New <code class="literal">drools-metric</code> module for decision engine performance analysis</a></span></li></ul></li><li><span class="section"><a href="#process_engine">2.5. Process engine</a></span><ul><li><span class="section"><a href="#support_for_process_fluent_api">2.5.1. Support for process fluent API</a></span></li><li><span class="section"><a href="#enhanced_search_capabilities">2.5.2. Enhanced search capabilities</a></span></li></ul></li><li><span class="section"><a href="#red_hat_business_optimizer">2.6. Red Hat Business Optimizer</a></span><ul><li><span class="section"><a href="#using_red_hat_business_optimizer_with_spring_boot">2.6.1. Using Red Hat Business Optimizer with Spring Boot</a></span></li><li><span class="section"><a href="#employee_rostering_rotation_pattern_redesign">2.6.2. Employee Rostering rotation pattern redesign</a></span></li></ul></li><li><span class="section"><a href="#spring_boot">2.7. Spring Boot</a></span><ul><li><span class="section"><a href="#replicating_audit_data_in_a_jms_message_broker">2.7.1. Replicating audit data in a JMS message broker</a></span></li><li><span class="section"><a href="#support_for_literal_bytea_literal_column_type">2.7.2. Support for <code class="literal">bytea</code> column type</a></span></li><li><span class="section"><a href="#self_contained_red_hat_process_automation_manager_spring_boot_jar_file">2.7.3. Self-contained Red Hat Process Automation Manager Spring Boot JAR file</a></span></li></ul></li><li><span class="section"><a href="#red_hat_openshift_container_platform">2.8. Red Hat OpenShift Container Platform</a></span><ul><li><span class="section"><a href="#support_for_red_hat_openshift_container_platform_version_4_6">2.8.1. Support for Red Hat OpenShift Container Platform version 4.6</a></span></li><li><span class="section"><a href="#support_for_ldap_failover">2.8.2. Support for LDAP failover</a></span></li><li><span class="section"><a href="#integration_with_new_versions_of_products">2.8.3. Integration with new versions of products</a></span></li><li><span class="section"><a href="#support_for_a_customized_smart_router_image">2.8.4. Support for a customized Smart Router image</a></span></li><li><span class="section"><a href="#logging_level_configuration_for_smart_router">2.8.5. Logging level configuration for Smart Router</a></span></li><li><span class="section"><a href="#support_for_deploying_an_unmanaged_kie_server_on_red_hat_openshift_container_platform_using_the_operator">2.8.6. Support for deploying an unmanaged KIE Server on Red Hat OpenShift Container Platform using the operator</a></span></li></ul></li></ul></li><li><span class="chapter"><a href="#rn-support-ref">3. Support and compatibility</a></span><ul><li><span class="section"><a href="#support_for_firefox_78_esr">3.1. Support for Firefox 78 ESR</a></span></li><li><span class="section"><a href="#support_for_red_hat_data_grid_7_3">3.2. Support for Red Hat Data Grid 7.3</a></span></li><li><span class="section"><a href="#support_for_amq_streams_1_6">3.3. Support for AMQ Streams 1.6</a></span></li><li><span class="section"><a href="#support_for_red_hat_amq_7_7">3.4. Support for Red Hat AMQ 7.7</a></span></li><li><span class="section"><a href="#support_for_high_availability_authoring_on_red_hat_jboss_eap_on_premise">3.5. Support for High-availability authoring on Red Hat JBoss EAP on premise</a></span></li><li><span class="section"><a href="#support_for_red_hat_jboss_web_server">3.6. Support for Red Hat JBoss Web Server</a></span></li><li><span class="section"><a href="#red_hat_codeready_studio_integration">3.7. Red Hat CodeReady Studio integration</a></span></li><li><span class="section"><a href="#red_hat_fuse_integration">3.8. Red Hat Fuse integration</a></span></li></ul></li><li><span class="chapter"><a href="#rn-deprecated-issues-ref">4. Deprecated components</a></span><ul><li><span class="section"><a href="#legacy_test_scenarios_tool">4.1. Legacy Test Scenarios tool</a></span></li><li><span class="section"><a href="#support_for_red_hat_openshift_container_platform_3_x">4.2. Support for Red Hat OpenShift Container Platform 3.x</a></span></li><li><span class="section"><a href="#legacy_process_designer">4.3. Legacy process designer</a></span></li></ul></li><li><span class="chapter"><a href="#rn-tech-preview-con">5. Technology preview</a></span><ul><li><span class="section"><a href="#case_modeler">5.1. Case modeler</a></span></li><li><span class="section"><a href="#prediction_service_api">5.2. Prediction Service API</a></span></li><li><span class="section"><a href="#deploying_a_high_availability_authoring_environment_on_red_hat_openshift_container_platform_4_x">5.3. Deploying a high-availability authoring environment on Red Hat OpenShift Container Platform 4.x</a></span></li><li><span class="section"><a href="#openshift_operator_installer_wizard">5.4. OpenShift operator installer wizard</a></span></li></ul></li><li><span class="chapter"><a href="#rn-790-known-issues-ref">6. Known issues in Red Hat Process Automation Manager 7.10.0</a></span><ul><li><span class="section"><a href="#business_central_2">6.1. Business Central</a></span></li><li><span class="section"><a href="#form_modeler">6.2. Form modeler</a></span></li><li><span class="section"><a href="#process_designer_2">6.3. Process Designer</a></span></li><li><span class="section"><a href="#process_engine_2">6.4. Process engine</a></span></li><li><span class="section"><a href="#dmn_designer">6.5. DMN designer</a></span></li><li><span class="section"><a href="#decision_engine_2">6.6. Decision engine</a></span></li><li><span class="section"><a href="#high_availability_business_central_on_premise">6.7. High-availability Business Central on premise</a></span></li></ul></li><li><span class="chapter"><a href="#rn-790-fixed-issues-ref">7. Fixed issues in Red Hat Process Automation Manager 7.10.0</a></span><ul><li><span class="section"><a href="#business_central_3">7.1. Business Central</a></span></li><li><span class="section"><a href="#process_designer_3">7.2. Process designer</a></span></li><li><span class="section"><a href="#process_engine_3">7.3. Process engine</a></span></li><li><span class="section"><a href="#decision_engine_3">7.4. Decision engine</a></span></li><li><span class="section"><a href="#kie_server">7.5. KIE Server</a></span></li><li><span class="section"><a href="#installer">7.6. Installer</a></span></li><li><span class="section"><a href="#red_hat_openshift_container_platform_2">7.7. Red Hat OpenShift Container Platform</a></span></li></ul></li><li><span class="appendix"><a href="#versioning-information">A. Versioning information</a></span></li><li><span class="appendix"><a href="#author-group">B. Contact information</a></span></li></ul></div><section class="preface" id="idm139711185027856"><div class="titlepage"><div><div><h1 class="title">Preface</h1></div></div></div><p>
+			These release notes list new features, features in technology preview, known issues, and issues fixed in Red Hat Process Automation Manager 7.10.
+		</p></section><section class="preface" id="snip-conscious-language_release-notes"><div class="titlepage"><div><div><h1 class="title">Making open source more inclusive</h1></div></div></div><p>
+			Red Hat is committed to replacing problematic language in our code, documentation, and web properties. We are beginning with these four terms: master, slave, blacklist, and whitelist. Because of the enormity of this endeavor, these changes will be implemented gradually over several upcoming releases. For more details, see <a class="link" href="https://www.redhat.com/en/blog/making-open-source-more-inclusive-eradicating-problematic-language"><span class="emphasis"><em>our CTO Chris Wright’s message</em></span></a>.
+		</p></section><section class="chapter" id="rn-intro-con"><div class="titlepage"><div><div><h1 class="title">Chapter 1. Product overview</h1></div></div></div><p>
+			Red Hat Process Automation Manager is an open-source business automation platform that combines business process management (BPM), case management, business rules management, and resource planning. It enables business and IT users to create, manage, validate, and deploy business processes, cases, and business rules.
+		</p><p>
+			Red Hat Process Automation Manager uses a centralized repository where all resources are stored. This ensures consistency, transparency, and the ability to audit across the business. Business users can modify business logic and business processes without requiring assistance from IT personnel.
+		</p><p>
+			Red Hat Process Automation Manager 7.10 provides increased stability, several fixed issues, and new features.
+		</p><p>
+			Red Hat Process Automation Manager is fully supported on Red Hat OpenShift Container Platform and can be installed on various platforms.
+		</p><div class="admonition note"><div class="admonition_header">Note</div><div><p>
+				Red Hat Process Automation Manager requires Java 8 or later.
+			</p></div></div><p>
+			For information about the support policy for Red Hat Process Automation Manager, see the <a class="link" href="https://access.redhat.com/articles/3639591"><span class="emphasis"><em>Release maintenance plan for Red Hat Decision Manager 7.x and Red Hat Process Automation Manager 7.x</em></span></a>.
+		</p></section><section class="chapter" id="rn-whats-new-con"><div class="titlepage"><div><div><h1 class="title">Chapter 2. New features</h1></div></div></div><p>
+			This section highlights new features in Red Hat Process Automation Manager 7.10.
+		</p><section class="section" id="business_central"><div class="titlepage"><div><div><h2 class="title">2.1. Business Central</h2></div></div></div><section class="section" id="support_for_multiple_diagrams_in_dmn_models"><div class="titlepage"><div><div><h3 class="title">2.1.1. Support for multiple diagrams in DMN models</h3></div></div></div><p>
+					For complex DMN models, you can now use the DMN designer in Business Central to design multiple DMN decision requirements diagrams (DRDs) that represent parts of the overall decision requirements graph (DRG) for a DMN decision model. This improvement enables you to better organize DMN decision models with many decision requirements by dividing the model into smaller nested DRDs.
+				</p><p>
+					For more information about creating DMN models with multiple diagrams, see <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_process_automation_manager/7.10/html-single/developing_decision_services_in_red_hat_process_automation_manager#assembly-dmn-models"><span class="emphasis"><em>Designing a decision service using DMN models</em></span></a>.
+				</p></section><section class="section" id="dashbuilder_runtime"><div class="titlepage"><div><div><h3 class="title">2.1.2. Dashbuilder runtime</h3></div></div></div><p>
+					Dashbuilder runtime is a new add-on standalone web application, distributed as a <code class="literal">WAR</code> to run the dashboards on Red Hat JBoss EAP. If you have access to dashbuilder runtime, you can explore the dashboards created in Business Central. The following list provides a summary of dashbuilder runtime updates:
+				</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+							After creating dashboards using datasets and pages, you can export these dashboards from Business Central using <span class="strong strong"><strong>custom export</strong></span>.
+						</li><li class="listitem">
+							You can import, access, and run the dashboards that are exported from Business Central in dashbuilder runtime.
+						</li><li class="listitem">
+							Dashbuilder runtime accesses the KIE Server REST API to run the queries from imported KIE Server datasets.
+						</li><li class="listitem">
+							Dashbuilder runtime provides embedded capabilities that allow you to set a specific dashboard from an instance of dashbuilder runtime on your web applications.
+						</li><li class="listitem">
+							In Dashbuilder runtime, you can import multiple dashboards in a single dashbuilder runtime instance.
+						</li><li class="listitem">
+							You can create and add external components that can be a part of the dashboard page.
+						</li></ul></div></section></section><section class="section" id="entando_appbuilder"><div class="titlepage"><div><div><h2 class="title">2.2. Entando AppBuilder</h2></div></div></div><p>
+				Entando AppBuilder is now officially removed from the Red Hat Process Automation Manager 7.9. Red Hat Process Automation Manager no longer includes entitlements for Entando AppBuilder. The feature references and documentation is not be available from the 7.9 release.
+			</p></section><section class="section" id="process_designer"><div class="titlepage"><div><div><h2 class="title">2.3. Process Designer</h2></div></div></div><section class="section" id="process_designer_updates"><div class="titlepage"><div><div><h3 class="title">2.3.1. Process designer updates</h3></div></div></div><p>
+					The following list provides a summary of process designer updates:
+				</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+							Ability to add data objects in a process diagram
+						</li><li class="listitem">
+							Ability to add Kafka work item in a process diagram to send events to a Kafka topic
+						</li><li class="listitem">
+							Ability to double-click any diagram node to edit its name using the new inline text editor
+						</li><li class="listitem">
+							Ability to view highlighted syntax when writing a script in Java, JavaScript, and MVEL
+						</li><li class="listitem">
+							Ability to use multiple connections for a task or an event using <code class="literal">jbpm.enable.multi.con</code> system property
+						</li></ul></div><p>
+					For more information, see <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_process_automation_manager/7.10/html-single/developing_process_services_in_red_hat_process_automation_manager#assembly-designing-business-processes"><span class="emphasis"><em>Designing business processes using BPMN models</em></span></a>.
+				</p></section><section class="section" id="support_for_link_intermediate_events"><div class="titlepage"><div><div><h3 class="title">2.3.2. Support for link intermediate events</h3></div></div></div><p>
+					You can now use link events in the process designer to connect different parts of your process. The new link events include an intermediate throwing and catching link event. For more information, see <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_process_automation_manager/7.10/html-single/developing_process_services_in_red_hat_process_automation_manager#assembly-designing-business-processes"><span class="emphasis"><em>Designing business processes using BPMN models</em></span></a>.
+				</p></section><section class="section" id="ability_to_configure_emails_in_the_task_notification"><div class="titlepage"><div><div><h3 class="title">2.3.3. Ability to configure emails in the task notification</h3></div></div></div><p>
+					You can now directly add email addresses to send task notification emails. For more information, see <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_process_automation_manager/7.10/html-single/developing_process_services_in_red_hat_process_automation_manager#assembly-interacting-with-processes"><span class="emphasis"><em>Designing business processes using BPMN models</em></span></a>.
+				</p></section></section><section class="section" id="decision_engine"><div class="titlepage"><div><div><h2 class="title">2.4. Decision engine</h2></div></div></div><section class="section" id="descope_traits_in_decision_engine"><div class="titlepage"><div><div><h3 class="title">2.4.1. Descope traits in decision engine</h3></div></div></div><p>
+					The traits functionality and its specific implementation code is moved to an individual module named <code class="literal">drools-traits</code>. To use traits, you can import the <code class="literal">drools-traits</code> module to Maven. The existing implementation is not supported in the executable rule model.
+				</p></section><section class="section" id="new_literal_drools_metric_literal_module_for_decision_engine_performance_analysis"><div class="titlepage"><div><div><h3 class="title">2.4.2. New <code class="literal">drools-metric</code> module for decision engine performance analysis</h3></div></div></div><p>
+					A new module named <code class="literal">drools-metric</code> is added, which can assist in the performance analysis of the decision engine.
+				</p><p>
+					For more information, see <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_process_automation_manager/7.10/html-single/developing_decision_services_in_red_hat_process_automation_manager#assembly-drl-rules"><span class="emphasis"><em>Designing a decision service using DRL rules</em></span></a>.
+				</p></section></section><section class="section" id="process_engine"><div class="titlepage"><div><div><h2 class="title">2.5. Process engine</h2></div></div></div><section class="section" id="support_for_process_fluent_api"><div class="titlepage"><div><div><h3 class="title">2.5.1. Support for process fluent API</h3></div></div></div><p>
+					You can now create a business process using the process fluent API. Following is a basic example of creating a business process using fluent API:
+				</p><pre class="programlisting language-java">ProcessBuilderFactory factory = ProcessBuilderFactories.get();
+Process process = factory
+    // start process definition
+    .processBuilder(processId)
+    // package and name
+    .packageName(packageName)
+    .name(processName)
+    .setMetadata("pepe", true)
+    // start node
+    .startNode(1).name("Start").done()
+    // script node in Java language that prints "action"
+    .actionNode(2).name("Action")
+    .action(Dialect.JAVA,
+            "System.out.println(\"Action\");").done()
+    // end node
+    .endNode(3).name("End").done()
+    // connections
+    .connection(1, 2)
+    .connection(2, 3)
+    .build();</pre><p>
+					For more information about process fluent API, see <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_process_automation_manager/7.10/html-single/deploying_and_managing_red_hat_process_automation_manager_services#assembly-kie-apis"><span class="emphasis"><em>Interacting with Red Hat Process Automation Manager using KIE APIs</em></span></a>.
+				</p></section><section class="section" id="enhanced_search_capabilities"><div class="titlepage"><div><div><h3 class="title">2.5.2. Enhanced search capabilities</h3></div></div></div><p>
+					Red Hat Process Automation Manager 7.10 provides enhanced search capabilities, including flexible search criteria for tasks, process instances, and cases. For more information, see <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_process_automation_manager/7.10/html-single/developing_process_services_in_red_hat_process_automation_manager#assembly-designing-and-building-cases"><span class="emphasis"><em>Designing and building cases for case management</em></span></a>.
+				</p></section></section><section class="section" id="red_hat_business_optimizer"><div class="titlepage"><div><div><h2 class="title">2.6. Red Hat Business Optimizer</h2></div></div></div><section class="section" id="using_red_hat_business_optimizer_with_spring_boot"><div class="titlepage"><div><div><h3 class="title">2.6.1. Using Red Hat Business Optimizer with Spring Boot</h3></div></div></div><p>
+					You can follow the example in <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_process_automation_manager/7.10/html-single/developing_solvers_with_red_hat_business_optimizer_in_red_hat_process_automation_manager#assembly-business-optimizer-springboot">Creating a school timetable using Red Hat Business Optimizer with Spring Boot</a> to create a school timetable.
+				</p></section><section class="section" id="employee_rostering_rotation_pattern_redesign"><div class="titlepage"><div><div><h3 class="title">2.6.2. Employee Rostering rotation pattern redesign</h3></div></div></div><p>
+					The rotation pattern on the Employee Rostering Rotation window has been redesigned for ease of use. For more information, see <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_process_automation_manager/7.10/html-single/developing_solvers_with_red_hat_business_optimizer_in_red_hat_process_automation_manager#assembly-optimizer-modifying-ER-template-IDE"><span class="emphasis"><em>Running and modifying the employee rostering starter application for Red Hat Business Optimizer using an IDE</em></span></a>.
+				</p></section></section><section class="section" id="spring_boot"><div class="titlepage"><div><div><h2 class="title">2.7. Spring Boot</h2></div></div></div><section class="section" id="replicating_audit_data_in_a_jms_message_broker"><div class="titlepage"><div><div><h3 class="title">2.7.1. Replicating audit data in a JMS message broker</h3></div></div></div><p>
+					You can now replicate KIE Server audit data to a Java Message Service (JMS) message broker, for example, activeMQ or Artemis, After replicating the data, you can dump the data in an external database schema so that you can improve the performance of your Spring Boot application by deleting the audit data from your application schema.
+				</p><p>
+					For more information, see <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_process_automation_manager/7.10/html-single/integrating_red_hat_process_automation_manager_with_other_products_and_components#assembly-springboot-business-apps"><span class="emphasis"><em>Creating Red Hat Process Automation Manager business applications with Spring Boot</em></span></a>.
+				</p></section><section class="section" id="support_for_literal_bytea_literal_column_type"><div class="titlepage"><div><div><h3 class="title">2.7.2. Support for <code class="literal">bytea</code> column type</h3></div></div></div><p>
+					You can now create a PostgreSQL schema that uses the <code class="literal">bytea</code> column type instead of the <code class="literal">oid</code> column type by setting the value of the <code class="literal">org.kie.persistence.postgresql.useBytea</code> property to <code class="literal">true</code>.
+				</p><p>
+					For more information, see <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_process_automation_manager/7.10/html-single/integrating_red_hat_process_automation_manager_with_other_products_and_components#assembly-springboot-business-apps">Creating Red Hat Process Automation Manager business applications with Spring Boot</a>.
+				</p></section><section class="section" id="self_contained_red_hat_process_automation_manager_spring_boot_jar_file"><div class="titlepage"><div><div><h3 class="title">2.7.3. Self-contained Red Hat Process Automation Manager Spring Boot JAR file</h3></div></div></div><p>
+					You can create a self-contained Red Hat Process Automation Manager Spring Boot JAR file that contains multiple versions of the same KJAR file.
+				</p><p>
+					For more information, see <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_process_automation_manager/7.10/html-single/integrating_red_hat_process_automation_manager_with_other_products_and_components#assembly-springboot-business-apps"><span class="emphasis"><em>Creating Red Hat Process Automation Manager business applications with Spring Boot</em></span></a>.
+				</p></section></section><section class="section" id="red_hat_openshift_container_platform"><div class="titlepage"><div><div><h2 class="title">2.8. Red Hat OpenShift Container Platform</h2></div></div></div><section class="section" id="support_for_red_hat_openshift_container_platform_version_4_6"><div class="titlepage"><div><div><h3 class="title">2.8.1. Support for Red Hat OpenShift Container Platform version 4.6</h3></div></div></div><p>
+					Red Hat Process Automation Manager now supports Red Hat OpenShift Container Platform version 4.6. In order to support this version, necessary changes in the operator bundle format are made. Red Hat OpenShift Container Platform version 4.6 provides an extended update support. For more information, see <a class="link" href="https://access.redhat.com/support/policy/updates/openshift-eus?extIdCarryOver=true&amp;sc_cid=701f2000001OH7iAAG">Red Hat OpenShift Extended Update Support (EUS) Overview</a>.
+				</p><div class="admonition important"><div class="admonition_header">Important</div><div><p>
+						Red Hat Process Automation Manager 7.10 is supported only on Red Hat OpenShift Container Platform version 3.11 and Red Hat OpenShift Container Platform version 4.6 EUS. Due to the internal changes of the operator and API version, Red Hat OpenShift Container Platform version 4.5 is not supported and this makes an exception to the general support policy for the Red Hat Middleware products. For more information, see <a class="link" href="https://access.redhat.com/articles/5115291">Support of Red Hat Middleware products and components on Red Hat OpenShift</a>.
+					</p></div></div></section><section class="section" id="support_for_ldap_failover"><div class="titlepage"><div><div><h3 class="title">2.8.2. Support for LDAP failover</h3></div></div></div><p>
+					When using LDAP authentication, Red Hat Process Automation Manager on Red Hat OpenShift Container Platform now supports failover to a different LDAP server if a server becomes unavailable.
+				</p><p>
+					For more information, see <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_process_automation_manager/7.10/html-single/deploying_red_hat_process_automation_manager_on_red_hat_openshift_container_platform#operator-deploy-security-proc_openshift-operator"><span class="emphasis"><em>Deploying a Red Hat Process Automation Manager environment on Red Hat OpenShift Container Platform using Operators</em></span></a> and <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_process_automation_manager/7.10/html-single/deploying_red_hat_process_automation_manager_on_red_hat_openshift_container_platform#template-deploy-ldap-openshift-templates-authoring-proc"><span class="emphasis"><em>Deploying a Red Hat Process Automation Manager environment on Red Hat OpenShift Container Platform using templates</em></span></a>.
+				</p></section><section class="section" id="integration_with_new_versions_of_products"><div class="titlepage"><div><div><h3 class="title">2.8.3. Integration with new versions of products</h3></div></div></div><p>
+					Red Hat Process Automation Manager on Red Hat OpenShift Container Platform now supports integration with the following new product versions:
+				</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+							Red Hat AMQ 7.7
+						</li><li class="listitem">
+							Red Hat AMQ Broker 7.7
+						</li><li class="listitem">
+							Red Hat Single Sign-On 7.4.1
+						</li><li class="listitem">
+							Red Hat Data Grid 7.3
+						</li></ul></div></section><section class="section" id="support_for_a_customized_smart_router_image"><div class="titlepage"><div><div><h3 class="title">2.8.4. Support for a customized Smart Router image</h3></div></div></div><p>
+					Red Hat Process Automation Manager on Red Hat OpenShift Container Platform now supports customized Smart Router images. You can extend Smart Router to provide routing specific to the needs of your environment.
+				</p><p>
+					For more information, see <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_process_automation_manager/7.10/html-single/deploying_red_hat_process_automation_manager_on_red_hat_openshift_container_platform#customimage-smartrouter-proc_openshift-operator"><span class="emphasis"><em>Deploying a Red Hat Process Automation Manager environment on Red Hat OpenShift Container Platform using Operators</em></span></a>.
+				</p></section><section class="section" id="logging_level_configuration_for_smart_router"><div class="titlepage"><div><div><h3 class="title">2.8.5. Logging level configuration for Smart Router</h3></div></div></div><p>
+					You can now configure the logging level for Smart Router when deploying Red Hat Process Automation Manager on Red Hat OpenShift Container Platform.
+				</p><p>
+					For more information, see <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_process_automation_manager/7.10/html-single/deploying_red_hat_process_automation_manager_on_red_hat_openshift_container_platform#operator-deploy-smartrouter-proc_openshift-operator"><span class="emphasis"><em>Deploying a Red Hat Process Automation Manager environment on Red Hat OpenShift Container Platform using Operators</em></span></a>.
+				</p></section><section class="section" id="support_for_deploying_an_unmanaged_kie_server_on_red_hat_openshift_container_platform_using_the_operator"><div class="titlepage"><div><div><h3 class="title">2.8.6. Support for deploying an unmanaged KIE Server on Red Hat OpenShift Container Platform using the operator</h3></div></div></div><p>
+					You can now deploy Red Hat Process Automation Manager on Red Hat OpenShift Container Platform using the operator with a KIE Server that is not managed by Business Central monitoring.
+				</p><p>
+					For more information, see <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_process_automation_manager/7.10/html-single/deploying_red_hat_process_automation_manager_on_red_hat_openshift_container_platform#operator-deploy-central-proc_openshift-operator"><span class="emphasis"><em>Deploying a Red Hat Process Automation Manager environment on Red Hat OpenShift Container Platform using Operators</em></span></a>.
+				</p></section></section></section><section class="chapter" id="rn-support-ref"><div class="titlepage"><div><div><h1 class="title">Chapter 3. Support and compatibility</h1></div></div></div><p>
+			This section highlights supported version updates in Red Hat Process Automation Manager 7.10.
+		</p><section class="section" id="support_for_firefox_78_esr"><div class="titlepage"><div><div><h2 class="title">3.1. Support for Firefox 78 ESR</h2></div></div></div><p>
+				Red Hat Process Automation Manager now supports Firefox 78 ESR browser.
+			</p></section><section class="section" id="support_for_red_hat_data_grid_7_3"><div class="titlepage"><div><div><h2 class="title">3.2. Support for Red Hat Data Grid 7.3</h2></div></div></div><p>
+				Red Hat Process Automation Manager now supports Red Hat Data Grid 7.3.
+			</p></section><section class="section" id="support_for_amq_streams_1_6"><div class="titlepage"><div><div><h2 class="title">3.3. Support for AMQ Streams 1.6</h2></div></div></div><p>
+				Red Hat Process Automation Manager now supports AMQ Streams 1.6.
+			</p></section><section class="section" id="support_for_red_hat_amq_7_7"><div class="titlepage"><div><div><h2 class="title">3.4. Support for Red Hat AMQ 7.7</h2></div></div></div><p>
+				Red Hat Process Automation Manager now supports Red Hat AMQ 7.7.
+			</p></section><section class="section" id="support_for_high_availability_authoring_on_red_hat_jboss_eap_on_premise"><div class="titlepage"><div><div><h2 class="title">3.5. Support for High-availability authoring on Red Hat JBoss EAP on premise</h2></div></div></div><p>
+				Configuration of Business Central on Red Hat JBoss EAP for high-availability (HA) on premise is fully supported.
+			</p><p>
+				For more information about installing and configuring Red Hat Process Automation Manager in a Red Hat JBoss EAP clustered environment, see <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_process_automation_manager/7.10/html-single/installing_and_configuring_red_hat_process_automation_manager#assembly-clustering-eap"><span class="emphasis"><em>Installing and configuring Red Hat Process Automation Manager in a Red Hat JBoss EAP clustered environment</em></span></a>.
+			</p></section><section class="section" id="support_for_red_hat_jboss_web_server"><div class="titlepage"><div><div><h2 class="title">3.6. Support for Red Hat JBoss Web Server</h2></div></div></div><p>
+				You can install Red Hat Process Automation Manager on Red Hat JBoss Web Server 5.3.0 (Apache Tomcat 9.0.30) and Red Hat JBoss Web Server 5.4.0. when available. For more information about installing Red Hat Process Automation Manager on Red Hat JBoss Web Server 5.4, see <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_process_automation_manager/7.10/html-single/installing_and_configuring_red_hat_process_automation_manager#assembly-install-on-jws"><span class="emphasis"><em>Installing and configuring Red Hat Process Automation Manager on Red Hat JBoss Web Server</em></span></a>.
+			</p></section><section class="section" id="red_hat_codeready_studio_integration"><div class="titlepage"><div><div><h2 class="title">3.7. Red Hat CodeReady Studio integration</h2></div></div></div><p>
+				You can now integrate Red Hat CodeReady Studio 12.17 with Red Hat Process Automation Manager. For more information about integrating Red Hat CodeReady Studio 12.17 with Red Hat Process Automation Manager, see <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_process_automation_manager/7.10/html-single/integrating_red_hat_process_automation_manager_with_other_products_and_components#assembly-integrating-codeready-studio"><span class="emphasis"><em>Integrating Red Hat CodeReady Studio with Red Hat Process Automation Manager</em></span></a>.
+			</p></section><section class="section" id="red_hat_fuse_integration"><div class="titlepage"><div><div><h2 class="title">3.8. Red Hat Fuse integration</h2></div></div></div><p>
+				Red Hat Fuse 7.7 is supported on Red Hat JBoss EAP 7.2, whereas Red Hat Process Automation Manager is supported on Red Hat JBoss EAP 7.3. To ensure a stable deployment environment, install Fuse and Red Hat Process Automation Manager on different instances of Red Hat JBoss EAP according to the supported Red Hat JBoss EAP versions. For more information, see <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_process_automation_manager/7.10/html-single/integrating_red_hat_process_automation_manager_with_other_products_and_components#assembly-integrating-fuse"><span class="emphasis"><em>Integrating Red Hat Fuse with Red Hat Process Automation Manager</em></span></a>
+			</p></section></section><section class="chapter" id="rn-deprecated-issues-ref"><div class="titlepage"><div><div><h1 class="title">Chapter 4. Deprecated components</h1></div></div></div><p>
+			The components listed in this section have been deprecated.
+		</p><section class="section" id="legacy_test_scenarios_tool"><div class="titlepage"><div><div><h2 class="title">4.1. Legacy Test Scenarios tool</h2></div></div></div><p>
+				The legacy Test Scenarios tool was deprecated in Red Hat Process Automation Manager 7.3.0. It will be removed in a future Red Hat Process Automation Manager release. Use the new Test Scenarios designer instead.
+			</p></section><section class="section" id="support_for_red_hat_openshift_container_platform_3_x"><div class="titlepage"><div><div><h2 class="title">4.2. Support for Red Hat OpenShift Container Platform 3.x</h2></div></div></div><p>
+				From Red Hat Process Automation Manager version 7.5, images and templates for Red Hat OpenShift Container Platform 3.x are deprecated. The deprecated images and templates are not supported with new features but remain available until the end of Red Hat OpenShift Container Platform version 3.x support. For more information about the full support lifecycle phase for Red Hat OpenShift Container Platform version 3.x, see <a class="link" href="https://access.redhat.com/support/policy/updates/openshift_noncurrent">Red Hat OpenShift Container Platform Life Cycle Policy (non-current versions)</a>.
+			</p><p>
+				Consider deploying Red Hat Process Automation Manager using the operator on Red Hat OpenShift Container Platform 4.x.
+			</p></section><section class="section" id="legacy_process_designer"><div class="titlepage"><div><div><h2 class="title">4.3. Legacy process designer</h2></div></div></div><p>
+				The legacy process designer in Business Central was deprecated in Red Hat Process Automation Manager since 7.6.0. The legacy process designer does not receive any new enhancements or features. If you intend to use the new process designer, start migrating your processes to the new designer, and create new processes in the new process designer. For information about migrating projects to the new designer, see <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_process_automation_manager/7.10/html-single/deploying_and_managing_red_hat_process_automation_manager_services#migrating-from-legacy-designer-proc">Managing projects in Business Central</a>.
+			</p></section></section><section class="chapter" id="rn-tech-preview-con"><div class="titlepage"><div><div><h1 class="title">Chapter 5. Technology preview</h1></div></div></div><p>
+			This section lists features that are in Technology Preview in Red Hat Process Automation Manager 7.10. Business Central includes an experimental features administration page that is disabled by default. To enable this page, set the value of the <code class="literal">appformer.experimental.features</code> property to <code class="literal">true</code>.
+		</p><div class="admonition important"><div class="admonition_header">Important</div><div><p>
+				These features are for Technology Preview only. Technology Preview features are not supported with Red Hat production service level agreements (SLAs), might not be functionally complete, and Red Hat does not recommend to use them for production. These features provide early access to upcoming product features, enabling customers to test functionality and provide feedback during the development process.
+			</p><p>
+				For more information on Red Hat Technology Preview features, see <a class="link" href="https://access.redhat.com/support/offerings/techpreview/">Technology Preview Features Scope</a>.
+			</p></div></div><section class="section" id="case_modeler"><div class="titlepage"><div><div><h2 class="title">5.1. Case modeler</h2></div></div></div><p>
+				Case modeler in Business Central now includes the new process designer. It provides the option to model a case as a sequence of stages that makes it easy to define a case model at high-level. Case modeling supports three types of tasks: human tasks, sub-processes, and sub-cases.
+			</p><p>
+				The case modeler in Red Hat Process Automation Manager 7.10 is a Technology Preview feature and is disabled by default in Business Central.
+			</p><p>
+				To enable the case modeler preview:
+			</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+						In Business Central, select the <span class="strong strong"><strong>Admin</strong></span> icon in the top-right corner of the screen and select <span class="strong strong"><strong>Roles</strong></span>.
+					</li><li class="listitem">
+						Select a role from the left panel.
+					</li><li class="listitem">
+						Click <span class="strong strong"><strong>Editors</strong></span> → <span class="strong strong"><strong>(New) Case Modeler</strong></span> → <span class="strong strong"><strong>Read</strong></span>.
+					</li><li class="listitem">
+						Click <span class="strong strong"><strong>Save</strong></span>.
+					</li></ol></div></section><section class="section" id="prediction_service_api"><div class="titlepage"><div><div><h2 class="title">5.2. Prediction Service API</h2></div></div></div><p>
+				You can use the prediction service API to provide a prediction service that assists with human tasks. The prediction service can use AI. For example, you can use the Predictive Model Markup Language (PMML) models or Statistical Machine Intelligence and Learning Engine (SMILE) to implement the service.
+			</p></section><section class="section" id="deploying_a_high_availability_authoring_environment_on_red_hat_openshift_container_platform_4_x"><div class="titlepage"><div><div><h2 class="title">5.3. Deploying a high-availability authoring environment on Red Hat OpenShift Container Platform 4.x</h2></div></div></div><p>
+				You can deploy a high-availability Red Hat Process Automation Manager authoring environment on Red Hat OpenShift Container Platform 4.x using the operator.
+			</p></section><section class="section" id="openshift_operator_installer_wizard"><div class="titlepage"><div><div><h2 class="title">5.4. OpenShift operator installer wizard</h2></div></div></div><p>
+				An installer wizard is provided in the OpenShift operator for Red Hat Process Automation Manager. You can use the wizard to deploy a Red Hat Process Automation Manager environment on Red Hat OpenShift Container Platform with the operator.
+			</p></section></section><section class="chapter" id="rn-790-known-issues-ref"><div class="titlepage"><div><div><h1 class="title">Chapter 6. Known issues in Red Hat Process Automation Manager 7.10.0</h1></div></div></div><p>
+			This section lists known issues with Red Hat Process Automation Manager 7.10.
+		</p><section class="section" id="business_central_2"><div class="titlepage"><div><div><h2 class="title">6.1. Business Central</h2></div></div></div><div class="formalpara"><p class="title"><strong>Package list fails to populate default package for imported projects [<a class="link" href="https://issues.redhat.com/browse/RHPAM-3209">RHPAM-3209</a>]</strong></p><p>
+					Issue: When a project contains many packages, and you try to create a new asset, the list of packages take some time to populate.
+				</p></div><p>
+				Steps to reproduce:
+			</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+						Import a project which contains many packages.
+					</li><li class="listitem">
+						Go to the project page.
+					</li><li class="listitem"><p class="simpara">
+						Click <span class="strong strong"><strong>Add Asset</strong></span>.
+					</p><p class="simpara">
+						The <span class="strong strong"><strong>Assets</strong></span> window appears.
+					</p></li><li class="listitem">
+						Add any asset in the project.
+					</li><li class="listitem"><p class="simpara">
+						In the pop-up window, check the <span class="strong strong"><strong>Package</strong></span> drop-down list.
+					</p><p class="simpara">
+						You receive <span class="strong strong"><strong>Nothing selected</strong></span> option for some time.
+					</p></li></ol></div><p>
+				Expected result: Package list is populating default package for imported projects.
+			</p><p>
+				Actual result: Package list is not populating default package for imported projects.
+			</p><p>
+				Workaround:
+			</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+						Make sure you have identical paths in both <code class="literal">src/java</code> and <code class="literal">src/resources</code>. In your Git repository, insert <code class="literal">.gitkeep</code> files to retain the empty folder structure.
+					</li><li class="listitem">
+						In the asset pop-up window, manually select the <span class="strong strong"><strong>&lt;default&gt;</strong></span> option in the <span class="strong strong"><strong>Package</strong></span> drop-down list..
+					</li></ul></div><div class="formalpara"><p class="title"><strong>Collection editor is not opening for DRL based test scenarios [<a class="link" href="https://issues.redhat.com/browse/RHDM-1464">RHDM-1464</a>]</strong></p><p>
+					Issue: DRL based test scenario throws an unexpected error when you open a collection editor for a list of some datatypes.
+				</p></div><p>
+				Workaround: None.
+			</p><div class="formalpara"><p class="title"><strong>You cannot add a deployment unit when you create a container for the first time [<a class="link" href="https://issues.redhat.com/browse/RHPAM-3254">RHPAM-3254</a>]</strong></p><p>
+					Issue: You cannot add a deployment unit when you create a container for the first time, and you receive an unexpected system error.
+				</p></div><p>
+				Steps to reproduce:
+			</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+						In Business Central, go to <span class="strong strong"><strong>Menu → Deploy → Execution Servers</strong></span>.
+					</li><li class="listitem">
+						Under <span class="strong strong"><strong>Deployment Units</strong></span>, click <span class="strong strong"><strong>Add Deployment Unit</strong></span>.
+					</li><li class="listitem">
+						Enter the GAV values manually.
+					</li><li class="listitem">
+						Select the <span class="strong strong"><strong>Start Deployment Unit?</strong></span> check box to start the service.
+					</li><li class="listitem"><p class="simpara">
+						Click <span class="strong strong"><strong>Finish</strong></span>.
+					</p><p class="simpara">
+						You receive an unexpected system error.
+					</p></li></ol></div><p>
+				Workaround: None.
+			</p><div class="formalpara"><p class="title"><strong>Unable to navigate from child process instance to parent process instance [<a class="link" href="https://issues.redhat.com/browse/RHPAM-3227">RHPAM-3227</a>]</strong></p><p>
+					Issue: You cannot navigate from child process instance to parent process instance but possible to navigate from parent process instance to child process instance.
+				</p></div><p>
+				Steps to reproduce:
+			</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+						In Business Central, create parent process and child process relationship.
+					</li><li class="listitem">
+						Start the process instance and make it active.
+					</li><li class="listitem">
+						Notice that, you cannot navigate from child process instance to parent process instance.
+					</li></ol></div><p>
+				Expected result: When there is an active process instance, there must be a link to navigate from child process instance to parent process instance and vice-versa.
+			</p><p>
+				Actual result: You cannot navigate from a child process instance to the parent process instance.
+			</p><p>
+				Workaround: None.
+			</p><div class="formalpara"><p class="title"><strong>The deployment unit fields are missing when you add a new deployment unit [<a class="link" href="https://issues.redhat.com/browse/RHPAM-3213">RHPAM-3213</a>]</strong></p><p>
+					Issue: When you add a deployment unit, fields that are available under <span class="strong strong"><strong>Add Deployment Unit</strong></span> are missing.
+				</p></div><p>
+				Steps to reproduce:
+			</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+						In Business Central, go to <span class="strong strong"><strong>Menu → Deploy → Execution Servers</strong></span>.
+					</li><li class="listitem"><p class="simpara">
+						Under <span class="strong strong"><strong>Deployment Units</strong></span>, click <span class="strong strong"><strong>Add Deployment Unit</strong></span>.
+					</p><p class="simpara">
+						Deployment unit fields are missing.
+					</p></li></ol></div><p>
+				Workaround: Deployment unit fields appear only if you navigate to <span class="strong strong"><strong>Process Configuration</strong></span> and come back.
+			</p></section><section class="section" id="form_modeler"><div class="titlepage"><div><div><h2 class="title">6.2. Form modeler</h2></div></div></div><div class="formalpara"><p class="title"><strong><code class="literal">DocumentCollection</code> output parameter does not work in generated forms [<a class="link" href="https://issues.redhat.com/browse/RHPAM-3252">RHPAM-3252</a>]</strong></p><p>
+					Issue: If documents are configured as output variable only, for example, documents are uploaded as a part of the user task, then the input parameter of <code class="literal">DocumentColletion</code> type is not present and the default value <code class="literal">""</code> (empty string) is sent to <code class="literal">DocumentCollection</code>, and also you receive an exception.
+				</p></div><p>
+				Steps to reproduce:
+			</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+						Deploy the project attached in the <a class="link" href="https://issues.redhat.com/browse/RHPAM-3252">RHPAM-3252</a> issue.
+					</li><li class="listitem">
+						Create a new process instance.
+					</li><li class="listitem"><p class="simpara">
+						Enter the following endpoint URL:
+					</p><pre class="screen">http://&lt;host&gt;:&lt;port&gt;/kie-server/services/rest/server/containers/\{containerId}/forms/tasks/\{taskInstanceId}/content\</pre></li></ol></div><p>
+				You receive an exception.
+			</p><p>
+				Workaround: None.
+			</p></section><section class="section" id="process_designer_2"><div class="titlepage"><div><div><h2 class="title">6.3. Process Designer</h2></div></div></div><div class="formalpara"><p class="title"><strong>Data objects in Assignments disappear once you save the process [<a class="link" href="https://issues.redhat.com/browse/RHPAM-3212">RHPAM-3212</a>]</strong></p><p>
+					Issue: Data objects which are present in <span class="strong strong"><strong>Assignments</strong></span> disappear once you save the process.
+				</p></div><p>
+				Steps to reproduce:
+			</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+						Create a data object.
+					</li><li class="listitem">
+						Create a user task.
+					</li><li class="listitem">
+						Click the <span class="strong strong"><strong>Properties</strong></span> icon on the upper-right side of the screen to open the <span class="strong strong"><strong>Properties</strong></span> panel.
+					</li><li class="listitem">
+						Expand <span class="strong strong"><strong>Implementation/Execution</strong></span> and select <span class="strong strong"><strong>Assignments</strong></span> to open the <span class="strong strong"><strong>Data I/O</strong></span> window.
+					</li><li class="listitem">
+						Next to <span class="strong strong"><strong>Data Inputs and Assignments</strong></span>, click <span class="strong strong"><strong>Add</strong></span> and select a <span class="strong strong"><strong>Source</strong></span> value.
+					</li><li class="listitem">
+						Next to <span class="strong strong"><strong>Data Outputs and Assignments</strong></span>, click <span class="strong strong"><strong>Add</strong></span> and select a <span class="strong strong"><strong>Target</strong></span> value.
+					</li><li class="listitem">
+						Close the <span class="strong strong"><strong>Assignments</strong></span> and save the process.
+					</li><li class="listitem">
+						Open the <span class="strong strong"><strong>Assignments</strong></span> sub-section.
+					</li></ol></div><p>
+				Expected result: <span class="strong strong"><strong>Source</strong></span> and <span class="strong strong"><strong>Target</strong></span> fields are empty.
+			</p><p>
+				Actual result: <span class="strong strong"><strong>Source</strong></span> and <span class="strong strong"><strong>Target</strong></span> fields are set to data object.
+			</p><p>
+				Workaround: Deselect the task and then select the task again.
+			</p><div class="formalpara"><p class="title"><strong>A new rule flow group is not reflected in business rule task properties [<a class="link" href="https://issues.redhat.com/browse/RHPAM-3195">RHPAM-3195</a>]</strong></p><p>
+					Issue: When you create a new rule flow group, the change is not reflected in business rule task’s property.
+				</p></div><p>
+				Steps to reproduce:
+			</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p class="simpara">
+						Create a business process.
+					</p><p class="simpara">
+						Do not close the process.
+					</p></li><li class="listitem">
+						Create a <code class="literal">testrule.rdrl</code> file containing <code class="literal">testgroup</code> as ruleflow-group.
+					</li><li class="listitem">
+						Select <span class="strong strong"><strong>Business Rule</strong></span> in created process.
+					</li><li class="listitem">
+						Expand <span class="strong strong"><strong>Implementation/Execution</strong></span> and select <span class="strong strong"><strong>Rule Flow Group</strong></span> drop-down list.
+					</li></ol></div><p>
+				Expected result: The <span class="strong strong"><strong>Rule Flow Group</strong></span> drop-down list contains ruleflow-group that is specified in DRL file. For example, <code class="literal">testgroup</code>.
+			</p><p>
+				Actual result: The <span class="strong strong"><strong>Rule Flow Group</strong></span> drop-down list is empty.
+			</p><p>
+				Workaround: Deselect the business rule task and then select the business rule task again.
+			</p><div class="formalpara"><p class="title"><strong>Edited rule flow group is not reflected in business rule task properties [<a class="link" href="https://issues.redhat.com/browse/RHPAM-3194">RHPAM-3194</a>]</strong></p><p>
+					Issue: When you edit a rule flow group, the change is not reflected in business rule task’s property.
+				</p></div><p>
+				Steps to reproduce:
+			</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p class="simpara">
+						Create a business process.
+					</p><p class="simpara">
+						Do not close the process.
+					</p></li><li class="listitem">
+						Create a <code class="literal">testrule.rdrl</code> file containing <code class="literal">testgroup</code> as ruleflow-group.
+					</li><li class="listitem">
+						Open a <code class="literal">testrule.rdrl</code> file and change the <code class="literal">testgroup</code> to <code class="literal">testgroup-renamed</code>.
+					</li><li class="listitem">
+						Save the changes.
+					</li><li class="listitem">
+						Select <span class="strong strong"><strong>Business Rule</strong></span> in created process.
+					</li><li class="listitem">
+						Expand <span class="strong strong"><strong>Implementation/Execution</strong></span> and select <span class="strong strong"><strong>Rule Flow Group</strong></span> drop-down list.
+					</li></ol></div><p>
+				Expected result: The <span class="strong strong"><strong>Rule Flow Group</strong></span> drop-down list contains edited <code class="literal">testgroup-renamed</code> value.
+			</p><p>
+				Actual result: The <span class="strong strong"><strong>Rule Flow Group</strong></span> drop-down list contains <code class="literal">testgroup</code> value.
+			</p><p>
+				Workaround: Deselect the business rule task and then select the business rule task again.
+			</p><div class="formalpara"><p class="title"><strong>The cursor position is different in Firefox browser when you use an inline text editor [<a class="link" href="https://issues.redhat.com/browse/RHPAM-3171">RHPAM-3171</a>]</strong></p><p>
+					Issue: When you use an inline text editor, the cursor position is different in Firefox browser in comparison with Google Chrome browser and Kogito VSCode extension.
+				</p></div><p>
+				Steps to reproduce: Perform the following steps using both Firefox and Google Chrome browser.
+			</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+						Create any node.
+					</li><li class="listitem">
+						Double-click the node to activate inline text editor.
+					</li></ol></div><p>
+				Expected result: The cursor is on the same position in Firefox browser in comparison with Google Chrome browser.
+			</p><p>
+				Actual result: The cursor is on the different position in Firefox browser in comparison with Google Chrome browser.
+			</p><p>
+				Workaround: None.
+			</p><div class="formalpara"><p class="title"><strong>Editing text using an inline text editor is displayed over <span class="strong strong"><strong>Properties</strong></span> panel or expanded palette [<a class="link" href="https://issues.redhat.com/browse/RHPAM-3172">RHPAM-3172</a>]</strong></p><p>
+					Issue: When you place any task, sub-process, or text annotation in the <span class="strong strong"><strong>Properties</strong></span> panel and start editing its name by using an inline text editor, the text is visible over the <span class="strong strong"><strong>Properties</strong></span> panel.
+				</p></div><p>
+				Steps to reproduce:
+			</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+						Create any node.
+					</li><li class="listitem">
+						Ensure that the <span class="strong strong"><strong>Properties</strong></span> panel is open and tool palette is expanded.
+					</li><li class="listitem">
+						Move the node under the <span class="strong strong"><strong>Properties</strong></span> panel or the expanded area of the tool palette in a way that you can still click on the node.
+					</li><li class="listitem">
+						Double-click the node to activate inline text editor.
+					</li><li class="listitem">
+						Enter any text.
+					</li></ol></div><p>
+				Expected result: The node is not editable or the text is shown next to the <span class="strong strong"><strong>Properties</strong></span> panel or the tool palette and it is entirely visible.
+			</p><p>
+				Actual result: The text is visible over the <span class="strong strong"><strong>Properties</strong></span> panel.
+			</p><p>
+				Workaround: None.
+			</p><div class="formalpara"><p class="title"><strong>You cannot create or open Case Management (Preview) asset [<a class="link" href="https://issues.redhat.com/browse/RHPAM-3281">RHPAM-3281</a>]</strong></p><p>
+					Issue: When you create or open Case Management (Preview) asset, you receive a runtime exception.
+				</p></div><p>
+				Steps to reproduce:
+			</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+						Create a case project.
+					</li><li class="listitem">
+						Create a new Case Management (Preview) asset.
+					</li></ol></div><p>
+				Expected result: You can successfully create or open a Case Management (Preview) asset.
+			</p><p>
+				Actual result: You receive a runtime exception when you create or open a Case Management (Preview) asset.
+			</p><p>
+				Workaround: None.
+			</p><div class="formalpara"><p class="title"><strong>Not all illegal characters are removed from data object name [<a class="link" href="https://issues.redhat.com/browse/RHPAM-3250">RHPAM-3250</a>]</strong></p><p>
+					Issue: When you create a data object with a name containing illegal characters, you receive a warning message after saving, closing, and saving it again.
+				</p></div><p>
+				Steps to reproduce:
+			</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+						Create a data object with <code class="literal">~!@#$%^&amp;*()_+`10-={}[]:"|;'\&lt;&gt;?,./°ľščťžýáíéúä!ô§ň</code> name.
+					</li><li class="listitem">
+						Save, close, and reopen the process.
+					</li><li class="listitem">
+						Move the node and save the process again.
+					</li></ol></div><p>
+				Expected result: All illegal characters are removed when the process is saved and reopened.
+			</p><p>
+				Actual result: You receive a warning message.
+			</p><p>
+				Workaround: None.
+			</p><div class="formalpara"><p class="title"><strong>Scrolling of the Properties panel stops when the cursor is over a script area [<a class="link" href="https://issues.redhat.com/browse/RHPAM-3208">RHPAM-3208</a>]</strong></p><p>
+					Issue: When the cursor is over a script area, scrolling of the <span class="strong strong"><strong>Properties</strong></span> panel stops.
+				</p></div><p>
+				Steps to reproduce:
+			</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+						Create a user task.
+					</li><li class="listitem">
+						Expand <span class="strong strong"><strong>Implementation/Execution</strong></span> section.
+					</li><li class="listitem">
+						Scroll down and keep scrolling until it stops.
+					</li></ol></div><p>
+				Expected result: Scrolling stops working when the scrollbar is at the bottom of the page.
+			</p><p>
+				Actual result: Scrolling stops working when the cursor is over the <span class="strong strong"><strong>On Entry Action</strong></span> field.
+			</p><p>
+				Workaround: If the cursor is outside the text area, the main scrollbar is always activated.
+			</p><div class="formalpara"><p class="title"><strong>Text area used for script task is cropped and shifted [<a class="link" href="https://issues.redhat.com/browse/RHPAM-3207">RHPAM-3207</a>]</strong></p><p>
+					Issue: Text area used for script task is cropped and shifted when you enter many lines of code. Also, the vertical scrollbar is shifted.
+				</p></div><p>
+				Steps to reproduce:
+			</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+						Create a script task.
+					</li><li class="listitem">
+						Expand <span class="strong strong"><strong>Implementation/Execution</strong></span> section.
+					</li><li class="listitem">
+						In <span class="strong strong"><strong>Script</strong></span> text area, enter many lines of code.
+					</li></ol></div><p>
+				Expected result: Text area used for script task is not cropped and shifted.
+			</p><p>
+				Actual result: Text area used for script task is cropped and shifted.
+			</p><p>
+				Workaround: None.
+			</p><div class="formalpara"><p class="title"><strong>When an inline text editor is active, you cannot activate any property immediately [<a class="link" href="https://issues.redhat.com/browse/RHPAM-3198">RHPAM-3198</a>]</strong></p><p>
+					Issue: It is not possible to activate any property immediately in the <span class="strong strong"><strong>Properties</strong></span> panel when an inline editor is active.
+				</p></div><p>
+				Steps to reproduce:
+			</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+						Create any node.
+					</li><li class="listitem">
+						Ensure that <span class="strong strong"><strong>Properties</strong></span> panel is open.
+					</li><li class="listitem">
+						Double-click on the node to activate the inline text editor.
+					</li><li class="listitem">
+						Click on any property from the <span class="strong strong"><strong>Properties</strong></span> panel.
+					</li></ol></div><p>
+				Expected result: You can edit the property when an inline text editor is active.
+			</p><p>
+				Actual result: You cannot edit the property when an inline text editor is active.
+			</p><p>
+				Workaround: When you follow the steps to reproduce, click on the property again.
+			</p><div class="formalpara"><p class="title"><strong>You cannot use an inline text editor when a node is near the left canvas border [<a class="link" href="https://issues.redhat.com/browse/RHPAM-3167">RHPAM-3167</a>]</strong></p><p>
+					Issue: You cannot use an inline text editor when a node is near the left canvas border. This issue is applicable to events, gateways, and data object.
+				</p></div><p>
+				Steps to reproduce:
+			</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+						Create any node.
+					</li><li class="listitem">
+						Place it near to the left canvas border.
+					</li><li class="listitem">
+						Double-click on the node.
+					</li></ol></div><p>
+				Expected result: An inline text editor is active and you can edit the node name.
+			</p><p>
+				Actual result: An inline text editor is not active and you cannot edit the node name.
+			</p><p>
+				Workaround: None.
+			</p><div class="formalpara"><p class="title"><strong>The edited node is see-through when you use an inline text editor [<a class="link" href="https://issues.redhat.com/browse/RHPAM-3166">RHPAM-3166</a>]</strong></p><p>
+					Issue: The edited node is see-through when you use an inline text editor.
+				</p></div><p>
+				Steps to reproduce:
+			</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+						Create an embedded subprocess.
+					</li><li class="listitem">
+						Change the name of the subprocess to a long text. For example, over 300 characters.
+					</li><li class="listitem">
+						Create any node inside the subprocess and place it over the text of the subprocess.
+					</li><li class="listitem">
+						Edit the node name using an inline text editor.
+					</li></ol></div><p>
+				Expected result: The text is readable and the edited node is not see-through.
+			</p><p>
+				Actual result: The text is not readable because the edited node is see-through.
+			</p><p>
+				Workaround: None.
+			</p></section><section class="section" id="process_engine_2"><div class="titlepage"><div><div><h2 class="title">6.4. Process engine</h2></div></div></div><div class="formalpara"><p class="title"><strong>When the SLA on user task is executed, you receive <code class="literal">No session found for context</code> error [<a class="link" href="https://issues.redhat.com/browse/RHPAM-3233">RHPAM-3233</a>]</strong></p><p>
+					Issue: When the service level agreement (SLA) on user task is executed on container with <code class="literal">PER_PROCESS_INSTANCE</code> runtime strategy, you receive <code class="literal">No session found for context</code> error.
+				</p></div><p>
+				Steps to reproduce:
+			</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+						Clone the <a class="link" href="https://github.com/kiegroup/droolsjbpm-integration">droolsjbpm-integration</a> project.
+					</li><li class="listitem">
+						Open <code class="literal">SLAComplianceIntegrationTest.java</code> file from the cloned project.
+					</li><li class="listitem">
+						Comment out all the tests except <code class="literal">testSLAonUserTaskViolated()</code>.
+					</li><li class="listitem"><p class="simpara">
+						Open the terminal on <code class="literal">kie-server-integ-tests-jbpm/</code> folder and execute the test using following command:
+					</p><pre class="screen">mvn clean install -Pwildfly -Dit.test=SLAComplianceIntegrationTest</pre></li><li class="listitem"><p class="simpara">
+						Check the logs on the terminal.
+					</p><p class="simpara">
+						Once the test execution starts, you receive a <code class="literal">No session found for context</code> error.
+					</p></li></ol></div></section><section class="section" id="dmn_designer"><div class="titlepage"><div><div><h2 class="title">6.5. DMN designer</h2></div></div></div><div class="formalpara"><p class="title"><strong>Decision service is missing <code class="literal">inputData</code> element in model with multiple DRDs [<a class="link" href="https://issues.redhat.com/browse/RHDM-1483">RHDM-1483</a>]</strong></p><p>
+					Issue: When you reuse a decision component by adding it into a decision service node in a model containing multiple decision requirement diagrams (DRDs), the <code class="literal">inputData</code> element is missing from the resulting decision service node.
+				</p></div><p>
+				Steps to reproduce:
+			</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+						Define multiple decision requirement diagrams (DRDs).
+					</li><li class="listitem">
+						In a DRD, define some decisions with inputs.
+					</li><li class="listitem"><p class="simpara">
+						In another DRD, define decision service and reuse the decision components from the previous DRD.
+					</p><p class="simpara">
+						Do not duplicate the inputs.
+					</p></li><li class="listitem">
+						Build and deploy the decision service.
+					</li><li class="listitem"><p class="simpara">
+						Do any of the following tasks:
+					</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+								Evaluate the decision to see the error reported in the description.
+							</li><li class="listitem">
+								Verify the DMN source and see that <code class="literal">inputData</code> element is missing from the decision service .
+							</li></ul></div></li></ol></div><p>
+				Workaround: Add an <code class="literal">inputData</code> element manually into the resulting <code class="literal">decisionService</code> element.
+			</p><div class="formalpara"><p class="title"><strong>DMN editor does not detect the changes from the Decision Navigator view [<a class="link" href="https://issues.redhat.com/browse/RHDM-1482">RHDM-1482</a>]</strong></p><p>
+					Issue: DMN editor does not detect changes in the file when a decision requirement diagram (DRD) is renamed or removed from the <span class="strong strong"><strong>Decision Navigator</strong></span> view.
+				</p></div><p>
+				Steps to reproduce:
+			</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+						Rename a DRD from the <span class="strong strong"><strong>Decision Navigator</strong></span> view.
+					</li><li class="listitem"><p class="simpara">
+						Click <span class="strong strong"><strong>Save</strong></span>.
+					</p><p class="simpara">
+						You receive <span class="strong strong"><strong>You have no unsaved changes</strong></span> alert window.
+					</p></li><li class="listitem"><p class="simpara">
+						Close the DMN editor.
+					</p><p class="simpara">
+						You receive <span class="strong strong"><strong>You have no unsaved changes</strong></span> alert window.
+					</p></li><li class="listitem"><p class="simpara">
+						Reopen the DMN editor.
+					</p><p class="simpara">
+						The name of the DRD is still the same.
+					</p></li></ol></div><p>
+				Workaround: Make a different change to the file which then enforces save or discard action.
+			</p><div class="formalpara"><p class="title"><strong>The constraint value is missing in a decision table [<a class="link" href="https://issues.redhat.com/browse/RHDM-1460">RHDM-1460</a>]</strong></p><p>
+					Issue: The constraint value is missing while defining a decision table.
+				</p></div><p>
+				Steps to reproduce:
+			</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+						Create a DMN file with decision.
+					</li><li class="listitem">
+						Define a decision table.
+					</li><li class="listitem">
+						Set the first column type as a number.
+					</li><li class="listitem">
+						Save the asset.
+					</li><li class="listitem">
+						Close the editor.
+					</li><li class="listitem">
+						Reopen the asset.
+					</li><li class="listitem">
+						Go to the decision table.
+					</li><li class="listitem">
+						Select the input with type as a number.
+					</li><li class="listitem">
+						Open the <span class="strong strong"><strong>Properties</strong></span> panel.
+					</li><li class="listitem">
+						Set the constraint in the <span class="strong strong"><strong>Constraint value</strong></span> field.
+					</li><li class="listitem">
+						Select the output column.
+					</li><li class="listitem">
+						Select the input column again.
+					</li><li class="listitem">
+						Verify that the constraint value is missing.
+					</li></ol></div><p>
+				Workaround: None.
+			</p><div class="formalpara"><p class="title"><strong>The undo and redo operations do not work properly when you delete a node in decision requirements graph (DRG) [<a class="link" href="https://issues.redhat.com/browse/RHDM-1459">RHDM-1459</a>]</strong></p><p>
+					Issue: In a model containing multiple decision requirement diagrams (DRDs), the undo and redo operations do not work properly when you delete a node in the decision requirements graph (DRG).
+				</p></div><p>
+				Steps to reproduce:
+			</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+						Move the node to a DRD.
+					</li><li class="listitem">
+						Navigate to DRG.
+					</li><li class="listitem">
+						Delete the node from the DRG.
+					</li><li class="listitem">
+						Undo the changes.
+					</li></ol></div><p>
+				Expected result: You can perform the undo and redo operations in DRG.
+			</p><p>
+				Actual result: You receive an error. When you confirm, the DRG is broken.
+			</p><p>
+				Workaround: None.
+			</p><div class="formalpara"><p class="title"><strong>The undo and redo operations are lost when you switch between the diagrams [<a class="link" href="https://issues.redhat.com/browse/RHDM-1458">RHDM-1458</a>]</strong></p><p>
+					Issue: In a model containing multiple decision requirement diagrams (DRDs), the undo and redo operations are lost when you switch between the diagrams.
+				</p></div><p>
+				Steps to reproduce:
+			</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+						Open a DMN file with two or more decision requirement diagrams (DRDs).
+					</li><li class="listitem">
+						Make some changes. For example, move a node in one diagram.
+					</li><li class="listitem">
+						Switch to another diagram.
+					</li><li class="listitem"><p class="simpara">
+						Click <span class="strong strong"><strong>Undo</strong></span> or press <span class="strong strong"><strong>Ctrl+Z</strong></span>.
+					</p><p class="simpara">
+						The undo and redo operations are lost and nothing changes.
+					</p></li></ol></div><p>
+				Workaround: None.
+			</p><div class="formalpara"><p class="title"><strong>In Business Central, the DMN editor is unable to save the changes in the Properties panel [<a class="link" href="https://issues.redhat.com/browse/RHDM-1456">RHDM-1456</a>]</strong></p><p>
+					Issue: When you change the name property in the <span class="strong strong"><strong>Properties</strong></span> panel, try to save the changes, and reopen the editor, the DMN editor is unable to save the changes.
+				</p></div><p>
+				Steps to reproduce:
+			</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+						Create a DMN file.
+					</li><li class="listitem">
+						Change the name of the DMN file in the <span class="strong strong"><strong>Properties</strong></span> panel.
+					</li><li class="listitem"><p class="simpara">
+						Click <span class="strong strong"><strong>Save</strong></span>.
+					</p><p class="simpara">
+						You receive <span class="strong strong"><strong>You have no unsaved changes</strong></span> alert window.
+					</p></li><li class="listitem">
+						Close the DMN editor.
+					</li><li class="listitem"><p class="simpara">
+						Reopen the asset and check the the <span class="strong strong"><strong>Properties</strong></span> panel.
+					</p><p class="simpara">
+						The changes are not saved.
+					</p></li></ol></div><p>
+				Workaround: None.
+			</p><div class="formalpara"><p class="title"><strong>DMN editor is reporting unsaved changes in the DMN files when there are no changes [<a class="link" href="https://issues.redhat.com/browse/RHDM-1453">RHDM-1453</a>]</strong></p><p>
+					Issue: When you open a DMN file in Business Central and try to close the file without any changes, the DMN editor reports unsaved changes in the DMN files.
+				</p></div><p>
+				Steps to reproduce:
+			</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+						In Business Central, go to <span class="strong strong"><strong>Menu → Design → Projects</strong></span>.
+					</li><li class="listitem">
+						Click <span class="strong strong"><strong>Try samples</strong></span>.
+					</li><li class="listitem">
+						Open <span class="strong strong"><strong>Traffic_Violation</strong></span> project.
+					</li><li class="listitem">
+						Open <span class="strong strong"><strong>Traffic Violation</strong></span> DMN file.
+					</li><li class="listitem"><p class="simpara">
+						Close the editor.
+					</p><p class="simpara">
+						You receive an <span class="strong strong"><strong>Unsaved changes</strong></span> error pop-up.
+					</p></li></ol></div><p>
+				Workaround: None.
+			</p></section><section class="section" id="decision_engine_2"><div class="titlepage"><div><div><h2 class="title">6.6. Decision engine</h2></div></div></div><div class="formalpara"><p class="title"><strong><code class="literal">testDoubleNaN</code> fails after jitting on <code class="literal">TypeCoercionTest</code> [<a class="link" href="https://issues.redhat.com/browse/RHDM-1470">RHDM-1470</a>]</strong></p><p>
+					Issue: You receive an <code class="literal">AssertionError</code> error in <code class="literal">org.drools.modelcompiler.TypeCoercionTest#testDoubleNaN</code> when a constraint is jitted.
+				</p></div><p>
+				Steps to reproduce:
+			</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p class="simpara">
+						Run the following command in <code class="literal">org.drools.modelcompiler</code> module:
+					</p><pre class="screen">mvn clean install -Dtest=org.drools.modelcompiler.TypeCoercionTest#testDoubleNaN* -Ddrools.jittingThreshold=0</pre></li></ol></div><p>
+				Workaround: None.
+			</p></section><section class="section" id="high_availability_business_central_on_premise"><div class="titlepage"><div><div><h2 class="title">6.7. High-availability Business Central on premise</h2></div></div></div><div class="formalpara"><p class="title"><strong>You cannot create multiple processes at the same time [<a class="link" href="https://issues.redhat.com/browse/RHPAM-3202">RHPAM-3202</a>]</strong></p><p>
+					Issue: When you create multiple processes at the same time, you receive an error message and multiple processes are not created.
+				</p></div><p>
+				Steps to reproduce:
+			</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p class="simpara">
+						Create multiple processes at the same time.
+					</p><p class="simpara">
+						You receive an <span class="strong strong"><strong>Activity not found</strong></span> error.
+					</p></li></ol></div><p>
+				Workaround: None.
+			</p><div class="formalpara"><p class="title"><strong>When you create a project, base-kie-project is created instead of the real name of the project [<a class="link" href="https://issues.redhat.com/browse/RHPAM-3193">RHPAM-3193</a>]</strong></p><p>
+					Issue: When you create a project, a project with the name <span class="strong strong"><strong>base-kie-project</strong></span> is created instead of the real name of the created project.
+				</p></div><p>
+				Steps to reproduce:
+			</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p class="simpara">
+						Create multiple projects with multiple users in the same space.
+					</p><p class="simpara">
+						The <span class="strong strong"><strong>base-kie-project</strong></span> project is created.
+					</p></li></ol></div><p>
+				Workaround: Delete and recreate the project or rename the project name from <span class="strong strong"><strong>Settings</strong></span> tab.
+			</p><div class="formalpara"><p class="title"><strong>You cannot create multiple projects at the same time [<a class="link" href="https://issues.redhat.com/browse/RHPAM-3192">RHPAM-3192</a>]</strong></p><p>
+					Issue: When you create multiple projects at the same time, you receive an error message and multiple projects are not created.
+				</p></div><p>
+				Steps to reproduce:
+			</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p class="simpara">
+						Create multiple projects at the same time.
+					</p><p class="simpara">
+						You receive an error.
+					</p></li></ol></div><p>
+				Workaround: None.
+			</p></section></section><section class="chapter" id="rn-790-fixed-issues-ref"><div class="titlepage"><div><div><h1 class="title">Chapter 7. Fixed issues in Red Hat Process Automation Manager 7.10.0</h1></div></div></div><p>
+			Red Hat Process Automation Manager 7.10.0 provides increased stability and fixed issues listed in this section.
+		</p><section class="section" id="business_central_3"><div class="titlepage"><div><div><h2 class="title">7.1. Business Central</h2></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+						You cannot save a file when you try to rename the package from the source code [<a class="link" href="https://issues.redhat.com/browse/RHPAM-3119">RHPAM-3119</a>]
+					</li><li class="listitem">
+						The wait spinner is not present when you add a deployment unit, manually enter GAV values, and confirm the alert window [<a class="link" href="https://issues.redhat.com/browse/RHPAM-3114">RHPAM-3114</a>]
+					</li><li class="listitem">
+						Assets are not properly indexed for clustered Business Central environment [<a class="link" href="https://issues.redhat.com/browse/RHPAM-3089">RHPAM-3089</a>]
+					</li><li class="listitem">
+						When you try to add a new deployment unit, you receive multiple error notifications [<a class="link" href="https://issues.redhat.com/browse/RHPAM-3112">RHPAM-3112</a>]
+					</li><li class="listitem">
+						Business Central does not remember the last used branch when you log out [<a class="link" href="https://issues.redhat.com/browse/RHPAM-2957">RHPAM-2957</a>]
+					</li><li class="listitem">
+						In the <span class="strong strong"><strong>Assets</strong></span> list, there are columns like <code class="literal">Last modified X day ago</code> and <code class="literal">Created XX weeks ago</code> but they are the same for all the assets and does not reflect the actual modified or created values [<a class="link" href="https://issues.redhat.com/browse/RHPAM-2865">RHPAM-2865</a>]
+					</li><li class="listitem">
+						Package list is not populating correctly for imported projects [<a class="link" href="https://issues.redhat.com/browse/RHDM-1377">RHDM-1377</a>]
+					</li><li class="listitem">
+						<code class="literal">java.lang.Number</code> import remains in the list of imports when deleted [<a class="link" href="https://issues.redhat.com/browse/RHDM-247">RHDM-247</a>]
+					</li><li class="listitem">
+						If a project contains DRL files with the queries, the test scenarios designer displays queries in the coverage report [<a class="link" href="https://issues.redhat.com/browse/RHDM-1448">RHDM-1448</a>]
+					</li><li class="listitem">
+						When you restart Business Central, the connection between KIE Server and Business Central does not re-establish [<a class="link" href="https://issues.redhat.com/browse/RHPAM-3137">RHPAM-3137</a>]
+					</li><li class="listitem">
+						You cannot lock guided decision table asset in Business Central [<a class="link" href="https://issues.redhat.com/browse/RHPAM-2992">RHPAM-2992</a>]
+					</li><li class="listitem">
+						When you rename the guided rules used in test scenarios, coverage report displays both original and renamed value of guided rules [<a class="link" href="https://issues.redhat.com/browse/RHDM-1334">RHDM-1334</a>]
+					</li><li class="listitem">
+						An error message about missing KIE Server configuration on dashbuilder runtime must be improved [<a class="link" href="https://issues.redhat.com/browse/RHPAM-3058">RHPAM-3058</a>]
+					</li><li class="listitem">
+						When you remove parent process instance details from the process list, you receive an error message [<a class="link" href="https://issues.redhat.com/browse/RHPAM-3102">RHPAM-3102</a>]
+					</li><li class="listitem">
+						When you skip a task from task event listener, you receive <code class="literal">BAMTaskEventListener</code> warning [<a class="link" href="https://issues.redhat.com/browse/RHPAM-3100">RHPAM-3100</a>]
+					</li><li class="listitem">
+						To avoid large memory retention, make the <code class="literal">LRUCache</code> file configurable [<a class="link" href="https://issues.redhat.com/browse/RHPAM-2808">RHPAM-2808</a>]
+					</li><li class="listitem">
+						When more than one KIE Servers are connected with different IDs, you receive an unexpected system error [<a class="link" href="https://issues.redhat.com/browse/RHPAM-3134">RHPAM-3134</a>]
+					</li></ul></div></section><section class="section" id="process_designer_3"><div class="titlepage"><div><div><h2 class="title">7.2. Process designer</h2></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+						Case management properties are missing in a case definition [<a class="link" href="https://issues.redhat.com/browse/RHPAM-3131">RHPAM-3131</a>]
+					</li><li class="listitem">
+						If you use the <code class="literal">^</code> character in the subject of a user task notification an error occurs [<a class="link" href="https://issues.redhat.com/browse/RHPAM-2763">RHPAM-2763</a>]
+					</li><li class="listitem">
+						Called element in a reusable subprocess is not populated [<a class="link" href="https://issues.redhat.com/browse/RHPAM-2760">RHPAM-2760</a>]
+					</li><li class="listitem">
+						Ruleflow group is not populated [<a class="link" href="https://issues.redhat.com/browse/RHPAM-2740">RHPAM-2740</a>]
+					</li><li class="listitem">
+						If you migrate a process from the legacy process designer to the new process designer, you receive an incorrect warning about node being ignored [<a class="link" href="https://issues.redhat.com/browse/RHPAM-2452">RHPAM-2452</a>]
+					</li><li class="listitem">
+						In the process modeler, the <span class="strong strong"><strong>Service Tasks</strong></span> name is changed to <span class="strong strong"><strong>Custom Tasks</strong></span> [<a class="link" href="https://issues.redhat.com/browse/RHPAM-3008">RHPAM-3008</a>]
+					</li><li class="listitem">
+						The leap days are not validated in timer events [<a class="link" href="https://issues.redhat.com/browse/RHPAM-2987">RHPAM-2987</a>]
+					</li><li class="listitem">
+						When try you implement <code class="literal">catch-all</code> errors using an event subprocess, and if the value of <code class="literal">ErrorRef</code> for the error start event is empty, you receive build errors [<a class="link" href="https://issues.redhat.com/browse/RHPAM-3093">RHPAM-3093</a>]
+					</li></ul></div></section><section class="section" id="process_engine_3"><div class="titlepage"><div><div><h2 class="title">7.3. Process engine</h2></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+						When you implement the interface, EventEmitter fails to execute the methods [<a class="link" href="https://issues.redhat.com/browse/RHPAM-3126">RHPAM-3126</a>]
+					</li><li class="listitem">
+						When you upgrade Red Hat Process Automation Manager from 7.7.0 to 7.8.0, the <code class="literal">userTaskService.saveContent</code> does not work [<a class="link" href="https://issues.redhat.com/browse/RHPAM-3123">RHPAM-3123</a>]
+					</li><li class="listitem">
+						You can execute the process with multiple Sources (throw link event) with the same link name and you can use only one Target (catch link event) for the same link name across the subprocess level [<a class="link" href="https://issues.redhat.com/browse/RHPAM-3132">RHPAM-3132</a>]
+					</li><li class="listitem">
+						Define jBPM datasource as <code class="literal">@Primary</code> to avoid the failure of <code class="literal">entityManagerFactory</code> in <code class="literal">JBPMAutoConfiguration</code> [<a class="link" href="https://issues.redhat.com/browse/RHPAM-3072">RHPAM-3072</a>]
+					</li><li class="listitem">
+						A business process with <code class="literal">required</code> variable tag should not be accepted using REST API [<a class="link" href="https://issues.redhat.com/browse/RHPAM-3048">RHPAM-3048</a>]
+					</li><li class="listitem">
+						The main process fails due to subprocess exception handling transaction rollback [<a class="link" href="https://issues.redhat.com/browse/RHPAM-2982">RHPAM-2982</a>]
+					</li><li class="listitem">
+						When you dynamically add a new node to a process instance, the execution of the process fails with a runtime exception [<a class="link" href="https://issues.redhat.com/browse/RHPAM-3188">RHPAM-3188</a>]
+					</li></ul></div></section><section class="section" id="decision_engine_3"><div class="titlepage"><div><div><h2 class="title">7.4. Decision engine</h2></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+						In decision tables, you can terminate the pattern with <code class="literal">@watch</code> annotation, which is used to customize the properties that the pattern is reactive on [<a class="link" href="https://issues.redhat.com/browse/RHDM-1437">RHDM-1437</a>]
+					</li><li class="listitem">
+						The <code class="literal">@watch</code> annotation does not behave properly when you exclude all the properties but one property [<a class="link" href="https://issues.redhat.com/browse/RHDM-1436">RHDM-1436</a>]
+					</li><li class="listitem">
+						Constraint jitting fails When you take a string value from a map and compare it with string literal [<a class="link" href="https://issues.redhat.com/browse/RHDM-1439">RHDM-1439</a>]
+					</li><li class="listitem">
+						If the <code class="literal">accumulate</code> contains more than one accumulating function, you receive an unwanted re-firing of a rule after deserialization [<a class="link" href="https://issues.redhat.com/browse/RHDM-1434">RHDM-1434</a>]
+					</li><li class="listitem">
+						Building rules in a default-build target of <code class="literal">kie-maven-plugin</code> takes a lot of time [<a class="link" href="https://issues.redhat.com/browse/RHDM-1433">RHDM-1433</a>]
+					</li><li class="listitem">
+						In MVEL dialect mode, you cannot compile binary operation for <code class="literal">BigDecimal</code> type values, and you receive a compilation error in the executable model [<a class="link" href="https://issues.redhat.com/browse/RHDM-1421">RHDM-1421</a>]
+					</li></ul></div></section><section class="section" id="kie_server"><div class="titlepage"><div><div><h2 class="title">7.5. KIE Server</h2></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+						MarshallingException occurs during REST request (JSON) unmarshalling in KIE Server [<a class="link" href="https://issues.redhat.com/browse/RHDM-1417">RHDM-1417</a>]
+					</li></ul></div></section><section class="section" id="installer"><div class="titlepage"><div><div><h2 class="title">7.6. Installer</h2></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+						On Red Hat JBoss EAP, the Red Hat Process Automation Manager installer adds an additional <code class="literal">$</code> sign in the vaulted password of database user [<a class="link" href="https://issues.redhat.com/browse/RHPAM-3148">RHPAM-3148</a>]
+					</li></ul></div></section><section class="section" id="red_hat_openshift_container_platform_2"><div class="titlepage"><div><div><h2 class="title">7.7. Red Hat OpenShift Container Platform</h2></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+						In monitoring console page, when you create a new page, you receive an <span class="strong strong"><strong>Activity not found</strong></span> error pop-up [<a class="link" href="https://issues.redhat.com/browse/RHPAM-3066">RHPAM-3066</a>]
+					</li><li class="listitem">
+						When you try to configure an external Red Hat Single Sign-On configuration, you receive <code class="literal">SSL required for: EXTERNAL</code> error message [<a class="link" href="https://issues.redhat.com/browse/RHPAM-2804">RHPAM-2804</a>]
+					</li><li class="listitem">
+						Missing support for <code class="literal">xa-pool</code> configuration of <code class="literal">is-same-rm-override</code> field [<a class="link" href="https://issues.redhat.com/browse/RHPAM-3071">RHPAM-3071</a>]
+					</li><li class="listitem">
+						In Red Hat OpenShift Container Platform, when you create a secure connection between Business Central and KIE Server, an incorrect URL is generated [<a class="link" href="https://issues.redhat.com/browse/RHPAM-3162">RHPAM-3162</a>]
+					</li></ul></div></section></section><section class="appendix" id="versioning-information"><div class="titlepage"><div><div><h1 class="title">Appendix A. Versioning information</h1></div></div></div><p>
+			Documentation last updated on Monday, January 18, 2021.
+		</p></section><section class="appendix" id="author-group"><div class="titlepage"><div><div><h1 class="title">Appendix B. Contact information</h1></div></div></div><p>
+			Red Hat Process Automation Manager documentation team: <a class="link" href="mailto:brms-docs@redhat.com">brms-docs@redhat.com</a>
+		</p></section><div><div xml:lang="en-US" class="legalnotice" id="idm139711193371232"><h1 class="legalnotice">Legal Notice</h1><div class="para">
+		Copyright <span class="trademark"/>© 2021 Red Hat, Inc.
+	</div><div class="para">
+		The text of and illustrations in this document are licensed by Red Hat under a Creative Commons Attribution–Share Alike 3.0 Unported license ("CC-BY-SA"). An explanation of CC-BY-SA is available at <a class="uri" href="http://creativecommons.org/licenses/by-sa/3.0/">http://creativecommons.org/licenses/by-sa/3.0/</a>. In accordance with CC-BY-SA, if you distribute this document or an adaptation of it, you must provide the URL for the original version.
+	</div><div class="para">
+		Red Hat, as the licensor of this document, waives the right to enforce, and agrees not to assert, Section 4d of CC-BY-SA to the fullest extent permitted by applicable law.
+	</div><div class="para">
+		Red Hat, Red Hat Enterprise Linux, the Shadowman logo, the Red Hat logo, JBoss, OpenShift, Fedora, the Infinity logo, and RHCE are trademarks of Red Hat, Inc., registered in the United States and other countries.
+	</div><div class="para">
+		<span class="trademark">Linux</span>® is the registered trademark of Linus Torvalds in the United States and other countries.
+	</div><div class="para">
+		<span class="trademark">Java</span>® is a registered trademark of Oracle and/or its affiliates.
+	</div><div class="para">
+		<span class="trademark">XFS</span>® is a trademark of Silicon Graphics International Corp. or its subsidiaries in the United States and/or other countries.
+	</div><div class="para">
+		<span class="trademark">MySQL</span>® is a registered trademark of MySQL AB in the United States, the European Union and other countries.
+	</div><div class="para">
+		<span class="trademark">Node.js</span>® is an official trademark of Joyent. Red Hat is not formally related to or endorsed by the official Joyent Node.js open source or commercial project.
+	</div><div class="para">
+		The <span class="trademark">OpenStack</span>® Word Mark and OpenStack logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.
+	</div><div class="para">
+		All other trademarks are the property of their respective owners.
+	</div></div></div></div></div></div><script type="text/javascript">
+                        jQuery(document).ready(function() {
+                            initSwitchery();
+                            jQuery('pre[class*="language-"]').each(function(i, block){hljs.highlightBlock(block);});
+                        });
+                    </script></body></html>
