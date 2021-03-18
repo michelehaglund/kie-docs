@@ -116,7 +116,7 @@ image::BPMN2/ReusableSubProcess.png[]
 
 Represents the invocation of another process from within this process.
 A subprocess node should have one incoming connection and one outgoing connection.
-When a Reusable Sub-Process node is reached in the process, the {PROCESS_ENGINE} will start the process with the given id.
+When a Reusable subprocess node is reached in the process, the {PROCESS_ENGINE} will start the process with the given id.
 It contains the following properties:
 
 * __Id__: The id of the node (which is unique within one node container).
@@ -157,10 +157,10 @@ It contains the following properties:
 .Embedded subprocess
 image::BPMN2/EmbeddedSubProcess.png[]
 
-A Sub-Process is  a node that can contain other nodes so that it acts as a node container.
+A subprocess is  a node that can contain other nodes so that it acts as a node container.
 This allows not only the embedding of a part of the process within such a subprocess node, but also the definition of additional variables that are accessible for all nodes inside this container.
 A subprocess should have one incoming connection and one outgoing connection.
-It should also contain one start node that defines where to start (inside the Sub-Process) when you reach the subprocess.
+It should also contain one start node that defines where to start (inside the subprocess) when you reach the subprocess.
 It should also contain one or more end events.
 Note that, if you use a terminating event node inside a subprocess, you are terminating just that subprocess.
 A subprocess ends when there are no more active nodes inside the subprocess.

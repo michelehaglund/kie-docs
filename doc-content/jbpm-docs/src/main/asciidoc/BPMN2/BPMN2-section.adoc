@@ -49,10 +49,10 @@ The full set of elements and attributes that are supported can be found below, b
 *** Manual Task
 *** Send Task
 *** Receive Task
-*** Reusable Sub-Process (Call Activity)
-*** Embedded Sub-Process
-*** Event Sub-Process
-*** Ad-Hoc Sub-Process
+*** Reusable subprocess (Call Activity)
+*** Embedded subprocess
+*** Event subprocess
+*** Ad-Hoc subprocess
 *** Data-Object
 ** Gateways
 +
@@ -74,7 +74,7 @@ The full set of elements and attributes that are supported can be found below, b
 
 ** Java type language
 ** Process properties
-** Embedded Sub-Process properties
+** Embedded subprocess properties
 ** Activity properties
 * _Connecting objects_
 +

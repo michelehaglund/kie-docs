@@ -10,7 +10,7 @@ For storing runtime data, during the execution of the process, process variables
 A variable is defined by a name and a data type.
 This could be a basic data type, such as boolean, int, or String, or any kind of Object subclass (it must implement Serializable interface).  Variables can be defined inside a variable __scope__.
 The top-level scope is the variable scope of the process itself.
-Subscopes can be defined using a Sub-Process.
+Subscopes can be defined using a subprocess.
 Variables that are defined in a subscope are only accessible for nodes within that scope.
 
 Whenever a variable is accessed, the process will search for the appropriate variable scope that defines the variable.
@@ -258,7 +258,7 @@ Timers can be used in two ways inside a process:
   Its activation starts the timer, and when it triggers, once or repeatedly, it activates the Timer node's successor.
   Subsequently, the outgoing connection of a timer with a positive period is triggered multiple times.
   Canceling a Timer node also cancels the associated timer, after which no more triggers will occur.
-* Timers can be associated with a Sub-Process or tasks as a boundary event.
+* Timers can be associated with a subprocess or tasks as a boundary event.
 
 === Update timer within running process instance
 

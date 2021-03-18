@@ -1002,7 +1002,7 @@ In such a case, consider the following:
 
 * Does the implementation catch all exceptions the code could return?
 * Does the implementation complete or abort the work item after an exception has been caught or uses a mechanisms to retry the process later (in some cases, incomplete process instances might be acceptable)?
-* Does the implementation define any other actions that need to be taken when an exception is caught? Would it be beneficial to interact with other technical systems? Should a Sub-Process be triggered to handle the exception?
+* Does the implementation define any other actions that need to be taken when an exception is caught? Would it be beneficial to interact with other technical systems? Should a subprocess be triggered to handle the exception?
 
 
 [IMPORTANT]
@@ -1016,7 +1016,7 @@ Depending on how your Process definition, calling WorkItemManager.completeWorkIt
 
 [[_service_task_handlers]]
 ==== Service Task handlers
-The following example uses a Throwing Error Intermediate Event to throw an error. An Error Event Sub-Process then catches and handles the error.
+The following example uses a Throwing Error Intermediate Event to throw an error. An Error Event subprocess then catches and handles the error.
 
 When the Throwing Error Intermediate Event throws an error, the process instance is interrupted:
 
@@ -1025,7 +1025,7 @@ When the Throwing Error Intermediate Event throws an error, the process instance
 
 The process starts with a start event and continues to the Throw Exception service task. The task produces an exception, which is propagated as a signal object through the process instance and caught by the subprocess start event in the Exception Handler event subprocess. The workflow continues to the Handle Exception task and the process instance finishes with the subprocess end event.
 
-.Process with an exception handling Event Sub-Process
+.Process with an exception handling Event subprocess
 image::processes/3389.png[]
 
 The following XML is a representation of the process. It contains elements and IDs that are referenced in <<_exception_handling_classes>>.
