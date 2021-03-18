@@ -86,6 +86,6 @@ It also improves the performance and user experience by adding support for image
 
 Also some other issues has been fixed. The most relevant ones are:
 
-* Fixed issues when changing between different element types, restricted the available morphing types for tasks, sub-processes and events
+* Fixed issues when changing between different element types, restricted the available morphing types for tasks, subprocesses and events
 * Fixed issues related to boundary events
-* Fixed issues when saving properties for the _ad-hoc_ and _multiple instance_ sub-process
+* Fixed issues when saving properties for the _ad-hoc_ and _multiple instance_ subprocess

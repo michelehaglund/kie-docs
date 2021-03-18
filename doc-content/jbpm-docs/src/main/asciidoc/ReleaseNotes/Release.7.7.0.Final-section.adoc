@@ -90,9 +90,9 @@ image:ReleaseNotes/StunnerToolbar-7.0.0.png[align="center", title="Toolbar re-de
 ** Form generation capabilities
 ** BPMN2
 *** Support for service tasks
-*** Support for event sub-process
-*** Support for ad-hoc sub-process
-*** Support for multiple instance sub-process
+*** Support for event subprocess
+*** Support for ad-hoc subprocess
+*** Support for multiple instance subprocess
 *** Support for parallel gateway
 *** Shapes re-design
 *** Icons re-design

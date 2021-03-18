@@ -532,7 +532,7 @@ Error code defined as a String unique within the process.
 === Compensation
 
 
-Compensation is a mechanism that allows you to handle business exceptions that might occur in a process or sub-process, that is in a business transaction. Its purpose is to compensate for a failed transaction, where the transaction is presented by the process or sub-process, and then continues the execution using the regular flow path.
+Compensation is a mechanism that allows you to handle business exceptions that might occur in a process or subprocess, that is in a business transaction. Its purpose is to compensate for a failed transaction, where the transaction is presented by the process or subprocess, and then continues the execution using the regular flow path.
 Note that compensation is triggered only after the execution of the transaction has finished and that either with a Compensation End Event or with a Cancel End Event.
 
 [NOTE]
@@ -550,14 +550,14 @@ Consider implementing handling of business exceptions in the following cases:
 
 If a business transaction finishes with a Compensation End Event, the Event produces a request for compensation handling.
 The compensation request is identified by ID and can be consumed only by the respective Compensation Intermediate Event placed on the boundary of the transaction Elements and Compensation Start Event.
-The Compensation Intermediate Event is connected with an Association Flow to the activity that defines the compensation, such as a sub-process or task.
+The Compensation Intermediate Event is connected with an Association Flow to the activity that defines the compensation, such as a subprocess or task.
 The execution flow either waits for the compensation activity to finish or resumes depending on the [property]``Wait for completion`` property set on the Compensation End Event of the business transaction that is being compensated.
 
-If a business transaction contains an event sub-process that starts with a Compensation Start Event, the Event Sub-Process is run as well if compensation is triggered.
+If a business transaction contains an event subprocess that starts with a Compensation Start Event, the Event Sub-Process is run as well if compensation is triggered.
 
-The activity to which the Compensation Intermediate Event points may be a sub-process. Note that the sub-process must start with the Compensation Start Event.
+The activity to which the Compensation Intermediate Event points may be a subprocess. Note that the subprocess must start with the Compensation Start Event.
 
-If running over a multi-instance sub-process, compensation mechanism of individual instances do not influence each other.
+If running over a multi-instance subprocess, compensation mechanism of individual instances do not influence each other.
 
 [[_timing]]
 == Timing
@@ -676,15 +676,15 @@ If no start event can be triggered, the process is never instantiated.
 ===== None Start Event
 
 
-The None Start Event is a start event without a trigger condition. A process or a sub-process can contain at most one None Start Event, which is triggered on process or sub-process start by default, and the outgoing flow is taken immediately.
+The None Start Event is a start event without a trigger condition. A process or a subprocess can contain at most one None Start Event, which is triggered on process or subprocess start by default, and the outgoing flow is taken immediately.
 
-When used in a sub-process, the execution is transferred from the parent process into the sub-process and the None Start Event is triggered. That means that the token is taken from the parent sub-process activity and the None Start Event of the sub-process generates a token.
+When used in a subprocess, the execution is transferred from the parent process into the subprocess and the None Start Event is triggered. That means that the token is taken from the parent subprocess activity and the None Start Event of the subprocess generates a token.
 
 [[_message_start_event]]
 ===== Message Start Event
 
 
-A process or an event sub-process can contain multiple Message Start Events, which are triggered by a particular message.
+A process or an event subprocess can contain multiple Message Start Events, which are triggered by a particular message.
 The process instance with a Message Start Event only starts its execution from this event after it has received the respective message. After the message is received, the process is instantiated and its Message Start Event is executed immediately (its outgoing Flow is taken).
 
 As a message can be consumed by an arbitrary number of processes and process elements, including no elements, one message can trigger multiple Message Start Events and therefore instantiate multiple Processes.
@@ -703,7 +703,7 @@ The Timer Start Event is a Start Event with a timing mechanism. For more informa
 
 A process can contain multiple Timer Start Events, which are triggered at the start of the process, after which the timing mechanism is applied.
 
-When used in a sub-process, the execution is transferred from the parent process into the sub-process and the Timer Start Event is triggered. The token is taken from the parent sub-process activity and the Timer Start Event of the sub-process is triggered and waits for the timer to trigger.
+When used in a subprocess, the execution is transferred from the parent process into the subprocess and the Timer Start Event is triggered. The token is taken from the parent subprocess activity and the Timer Start Event of the subprocess is triggered and waits for the timer to trigger.
 Once the time defined by the timing definition has been reached, the outgoing flow is taken.
 
 [float]
@@ -761,7 +761,7 @@ A language of the `Expression` attribute.
 ===== Error Start Event
 
 
-A process or sub-process can contain multiple Error Start Events, which are triggered when an Error object with a particular `ErrorRef` property is received.
+A process or subprocess can contain multiple Error Start Events, which are triggered when an Error object with a particular `ErrorRef` property is received.
 The error object can be produced by an Error End Event, and it signalizes an incorrect process ending. The process instance with the Error Start Event starts execution after it has received the respective error object. The Error Start Event is executed immediately upon receiving the error object, which means its outgoing Flow is taken.
 
 [float]
@@ -774,7 +774,7 @@ A code of the expected error object.
 ===== Compensation Start Event
 
 
-A Compensation Start Event is used to start a Compensation Event sub-process when using a sub-process as the target activity of a Compensation Intermediate Event.
+A Compensation Start Event is used to start a Compensation Event subprocess when using a subprocess as the target activity of a Compensation Intermediate Event.
 
 [[_signal_start_event]]
 ===== Signal Start Event
@@ -899,9 +899,9 @@ A language of the `Expression` attribute.
 ===== Compensation Intermediate Event
 
 
-A compensation intermediate event is a boundary event attached to an activity in a transaction sub-process. It can finish with a compensation end event or a cancel end event. The compensation intermediate event must be associated with a flow, which is connected to the compensation activity.
+A compensation intermediate event is a boundary event attached to an activity in a transaction subprocess. It can finish with a compensation end event or a cancel end event. The compensation intermediate event must be associated with a flow, which is connected to the compensation activity.
 
-The activity associated with the boundary compensation intermediate event is executed if the transaction sub-process finishes with the compensation end event. The execution continues with the respective flow.
+The activity associated with the boundary compensation intermediate event is executed if the transaction subprocess finishes with the compensation end event. The execution continues with the respective flow.
 
 [[_message_intermediate_event]]
 ===== Message Intermediate Event
@@ -1055,7 +1055,7 @@ During runtime, an end event finishes the process workflow. The end event can fi
 ===== Simple End Event
 
 
-The Simple End Event finishes the incoming workflow, that means it consumes the incoming token. Any other running workflows in the process or sub-process remain uninfluenced.
+The Simple End Event finishes the incoming workflow, that means it consumes the incoming token. Any other running workflows in the process or subprocess remain uninfluenced.
 
 .Terminate property on Simple End Event
 [IMPORTANT]
@@ -1083,7 +1083,7 @@ The Terminate End Event finishes all execution flows in the specified process in
 [[_error_end_event]]
 ===== Throwing Error End Event
 
-The Throwing Error End Event finishes the incoming workflow, that means consumes the incoming token, and produces an error object. Any other running workflows in the process or sub-process remain uninfluenced.
+The Throwing Error End Event finishes the incoming workflow, that means consumes the incoming token, and produces an error object. Any other running workflows in the process or subprocess remain uninfluenced.
 
 [float]
 ===== Attributes
@@ -1094,18 +1094,18 @@ The reference code of the produced error object.
 [[_cancel_end_event]]
 ===== Cancel End Event
 
-The Cancel End Event triggers compensation events defined for the namespace, and the process or sub-process finishes as `CANCELED`.
+The Cancel End Event triggers compensation events defined for the namespace, and the process or subprocess finishes as `CANCELED`.
 
 [[_compensation_end_event]]
 ===== Compensation End Event
 
-A Compensation End Event is used to finish a transaction sub-process and trigger the compensation defined by the Compensation Intermediate Event attached to the boundary of the sub-process activities.
+A Compensation End Event is used to finish a transaction subprocess and trigger the compensation defined by the Compensation Intermediate Event attached to the boundary of the subprocess activities.
 
 [[_signal_end_event]]
 ===== Signal End Event
 
 
-A throwing Signal End Event is used to finish a process or sub-process flow. When the execution flow enters the element, the execution flow finishes and produces a signal identified by its [property]``SignalRef`` property.
+A throwing Signal End Event is used to finish a process or subprocess flow. When the execution flow enters the element, the execution flow finishes and produces a signal identified by its [property]``SignalRef`` property.
 
 === Scope of Events
 
@@ -1237,12 +1237,12 @@ This is opposed to the execution semantics of other elements that defined the pr
 
 An activity can be:
 
-* A sub-process; compound, can be broken down into multiple process elements.
+* A subprocess; compound, can be broken down into multiple process elements.
 * A task; atomic, represents a single unit of work.
 
 An activity in Red Hat JBoss BPM Suite expects one incoming and one outgoing flow. If you want to design an activity with multiple incoming and multiple outgoing flows, set the  system property `jbpm.enable.multi.con` to `true`. For more information about system properties, see chapter https://access.redhat.com/documentation/en-us/red_hat_jboss_bpm_suite/6.4/html/administration_and_configuration_guide/configuration_properties#system_properties[System Properties] of the _{PRODUCT} Administration and Configuration Guide_.
 
-Activities share properties `ID` and `Name`. Note that activities, that is all tasks and sub-processes, have additional properties specific for the given activity or task type.
+Activities share properties `ID` and `Name`. Note that activities, that is all tasks and subprocesses, have additional properties specific for the given activity or task type.
 
 [[_sect_activity_mechanisms]]
 === Activity Mechanisms
@@ -1263,7 +1263,7 @@ Every multiple-instance activity has the [property]``Collection Expression`` att
 
 "`A Call Activity identifies a point in the Process where a global Process or a Global Task is used. The Call Activity acts as a 'wrapper' for the invocation of a global Process or Global Task within the execution. The activation of a call Activity results in the transfer of control to the called global Process or Global Task. footnote:[Business Process Model and Notation (BPMN). Version 2.0, OMG Document Number: formal/2011-01-03 http://www.omg.org/spec/BPMN/2.0]`"
 
-A call activity, that is a Reusable sub-process, represents an invocation of a process from within a process. The activity must have one incoming and one outgoing flow.
+A call activity, that is a Reusable subprocess, represents an invocation of a process from within a process. The activity must have one incoming and one outgoing flow.
 
 When the execution flow reaches the activity, the activity creates an instance of a process with the defined ID.
 
@@ -1653,25 +1653,25 @@ image::Script_Task_JavaScript.png[]
 
 "`A Sub-Process is an Activity whose internal details have been modeled using Activities, Gateways, Events, and Sequence Flows. A Sub-Process is a graphical object within a Process, but it also can be 'opened up'to show a lower-level Process. footnote:[Business Process Model and Notation (BPMN). Version 2.0, OMG Document Number: formal/2011-01-03 http://www.omg.org/spec/BPMN/2.0]`"
 
-You can understand a sub-process as a compound activity or a __process in a process__.
-When reached during execution, the element context is instantiated and the encapsulated process triggered. Note that, if you use a Terminating End Event inside a sub-process, the entire process instance that contains the sub-process is terminated, not just the sub-process. A sub-process ends when there are no more active elements in it.
+You can understand a subprocess as a compound activity or a __process in a process__.
+When reached during execution, the element context is instantiated and the encapsulated process triggered. Note that, if you use a Terminating End Event inside a subprocess, the entire process instance that contains the subprocess is terminated, not just the subprocess. A subprocess ends when there are no more active elements in it.
 
-The following sub-process types are supported:
+The following subprocess types are supported:
 
-* Ad-Hoc sub-process, which has no strict element execution order.
-* Embedded sub-process, which is a part of the parent process execution and shares its data.
-* Reusable sub-process, which is independent from its parent process.
-* Event sub-process, which is only triggered on a start event or a timer.
+* Ad-Hoc subprocess, which has no strict element execution order.
+* Embedded subprocess, which is a part of the parent process execution and shares its data.
+* Reusable subprocess, which is independent from its parent process.
+* Event subprocess, which is only triggered on a start event or a timer.
 
 
-Note that any sub-process type can be a multi-instance sub-process.
+Note that any subprocess type can be a multi-instance subprocess.
 
 ==== Embedded Sub-Process
 
 
-An embedded sub-process encapsulates a part of the process.
+An embedded subprocess encapsulates a part of the process.
 
-It must contain a start event and at least one end event. Note that the element allows you to define local sub-process variables, that are accessible to all elements inside this container.
+It must contain a start event and at least one end event. Note that the element allows you to define local subprocess variables, that are accessible to all elements inside this container.
 
 [[_adhoc_sub_process]]
 ==== AdHoc Sub-Process
@@ -1688,16 +1688,16 @@ AdHocCompletionCondition::
 When this condition evaluates to `true`, the execution finishes.
 
 AdHocOrdering::
-Enables you to choose paralel or sequential execution of elements inside of the sub-process.
+Enables you to choose paralel or sequential execution of elements inside of the subprocess.
 
 Variable Definitions::
-Enables you to define process variables available only for elements of the sub-process.
+Enables you to define process variables available only for elements of the subprocess.
 --
 
 [[_multiple_instances]]
 ==== Multi-instance Sub-Process
 
-A Multiple Instances Sub-Process is instantiated multiple times when its execution is triggered. The instances are created in a sequential manner, that means a new sub-process instance is created only after the previous instance has finished.
+A Multiple Instances Sub-Process is instantiated multiple times when its execution is triggered. The instances are created in a sequential manner, that means a new subprocess instance is created only after the previous instance has finished.
 
 A Multiple Instances Sub-Process has one incoming connection and one outgoing connection.
 
@@ -1705,13 +1705,13 @@ A Multiple Instances Sub-Process has one incoming connection and one outgoing co
 ==== Attributes
 --
 MI collection input::
-A collection to be iterated through. It is used to create individual instances of given activity. The sub-process will be run with each element of this collection.
+A collection to be iterated through. It is used to create individual instances of given activity. The subprocess will be run with each element of this collection.
 
 MI collection output::
-A collection of the sub-process execution results.
+A collection of the subprocess execution results.
 
 MI completion condition::
-An MVEL expression evaluated at the end of every instance. When evaluated as `true`, the sub-process is evaluated as finished and the sub-process's outgoing flow is taken. Possible remaining sub-process instances are cancelled.
+An MVEL expression evaluated at the end of every instance. When evaluated as `true`, the subprocess is evaluated as finished and the subprocess's outgoing flow is taken. Possible remaining subprocess instances are cancelled.
 
 MI data input::
 A variable name for each element from the collection that will be used in the process.
@@ -1723,18 +1723,18 @@ An optional variable name for the collection of the results.
 ==== Event Sub-Process
 
 
-An event sub-process becomes active when its start event gets triggered. It can interrupt the parent process context or run in parallel to it.
+An event subprocess becomes active when its start event gets triggered. It can interrupt the parent process context or run in parallel to it.
 
-With no outgoing or incoming connections, only an event or a timer can trigger the sub-process. The sub-process is not part of the regular control flow.
-Although self-contained, it is executed in the context of the bounding sub-process.
+With no outgoing or incoming connections, only an event or a timer can trigger the subprocess. The subprocess is not part of the regular control flow.
+Although self-contained, it is executed in the context of the bounding subprocess.
 
-Use an event sub-process within a process flow to handle events that happen outside of the main process flow.
+Use an event subprocess within a process flow to handle events that happen outside of the main process flow.
 For example, while booking a flight, two events may occur:
 
 * Cancel booking (interrupting).
 * Check booking status (non-interrupting).
 
-Both these events can be modeled using the event sub-process.
+Both these events can be modeled using the event subprocess.
 
 [[_sect_user_task]]
 === User Task
@@ -1991,7 +1991,7 @@ Any object in the BPMN diagram that is not a part of the process workflow is an 
 [[_data_objects]]
 === Data Objects
 
-Data objects are visualizations of process or sub-process variables. Note that not every process or sub-process variable must be depicted as a data object in the BPMN diagram. Data Objects have separate visualization properties and variable properties.
+Data objects are visualizations of process or subprocess variables. Note that not every process or subprocess variable must be depicted as a data object in the BPMN diagram. Data Objects have separate visualization properties and variable properties.
 
 
 :sectnums:

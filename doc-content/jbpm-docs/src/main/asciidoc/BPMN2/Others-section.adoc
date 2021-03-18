@@ -39,11 +39,11 @@ Changing the value of a variable in a script can be done through the knowledge c
 ----
 kcontext.setVariable(variableName, value);
 ----
-* Service tasks (and reusable sub-processes) can pass the value of process variables to the outside world (or another process instance) by mapping the variable to an outgoing parameter.
+* Service tasks (and reusable subprocesses) can pass the value of process variables to the outside world (or another process instance) by mapping the variable to an outgoing parameter.
   For example, the parameter mapping of a service task could define that the value of the process variable x should be mapped to a task parameter y right before the service is being invoked.
   You can also inject the value of process variable into a hard-coded parameter String using ``__\#{expression}__``.
   For example, the description of a human task could be defined as `You need to contact person #{person.getName()}` (where person is a process variable), which will replace this expression by the actual name of the person when the service needs to be invoked.
-  Similarly results of a service (or reusable sub-process) can also be copied back to a variable using a result mapping.
+  Similarly results of a service (or reusable subprocess) can also be copied back to a variable using a result mapping.
 * Various other nodes can also access data.
   Event nodes for example can store the data associated to the event in a variable, etc.
   Check the properties of the different node types for more information.

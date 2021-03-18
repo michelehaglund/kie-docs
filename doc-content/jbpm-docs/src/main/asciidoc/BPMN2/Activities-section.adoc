@@ -109,23 +109,23 @@ A user task should define the type of task that needs to be executed (using prop
 The task for example does not have access to process variables.
 Check out the chapter on human tasks to get more detail on how to pass data between human tasks and the process instance.
 
-== Reusable sub-process
+== Reusable subprocess
 
-.Reusable sub-process - Call activity
+.Reusable subprocess - Call activity
 image::BPMN2/ReusableSubProcess.png[]
 
 Represents the invocation of another process from within this process.
-A sub-process node should have one incoming connection and one outgoing connection.
+A subprocess node should have one incoming connection and one outgoing connection.
 When a Reusable Sub-Process node is reached in the process, the {PROCESS_ENGINE} will start the process with the given id.
 It contains the following properties:
 
 * __Id__: The id of the node (which is unique within one node container).
 * __Name__: The display name of the node.
 * __ProcessId__: The id of the process that should be executed.
-* _Wait for completion_ (by default true): If this property is true, this sub-process node will only continue if the child process that was started has terminated its execution (completed or aborted); otherwise it will  continue immediately after starting the subprocess (so it will not wait for its completion).
-* _Independent_ (by default true): If this property is true, the child process is started as an independent process, which means that the child process will not be terminated if this parent process is completed (or this sub-process node is canceled for some other reason); otherwise the active sub-process will be canceled on termination of the parent process (or cancellation of the sub-process node).  Note that you can only set independent to "false" only when "Wait for completion" is set to true.
+* _Wait for completion_ (by default true): If this property is true, this subprocess node will only continue if the child process that was started has terminated its execution (completed or aborted); otherwise it will  continue immediately after starting the subprocess (so it will not wait for its completion).
+* _Independent_ (by default true): If this property is true, the child process is started as an independent process, which means that the child process will not be terminated if this parent process is completed (or this subprocess node is canceled for some other reason); otherwise the active subprocess will be canceled on termination of the parent process (or cancellation of the subprocess node).  Note that you can only set independent to "false" only when "Wait for completion" is set to true.
 * __On-entry and on-exit actions__: Actions that are  executed upon entry or exit of this node, respectively.
-* __Parameter in/out mapping__: A sub-process node can also define in- and out-mappings for variables.
+* __Parameter in/out mapping__: A subprocess node can also define in- and out-mappings for variables.
   The variables given in the "in" mapping will be used as parameters (with the associated  parameter name) when starting the process.
   The variables of the child process that are defined for the "out" mappings will be copied to the variables of this process when the child process has been completed.
   Note that you can use "out" mappings only when "Wait for completion" is set to true.
@@ -152,31 +152,31 @@ It contains the following properties:
 * __Name__: The display name of the node.
 * __RuleFlowGroup__: The name of the ruleflow group that represents the set of rules of this RuleFlowGroup node.
 
-== Embedded sub-process
+== Embedded subprocess
 
-.Embedded sub-process
+.Embedded subprocess
 image::BPMN2/EmbeddedSubProcess.png[]
 
 A Sub-Process is  a node that can contain other nodes so that it acts as a node container.
-This allows not only the embedding of a part of the process within such a sub-process node, but also the definition of additional variables that are accessible for all nodes inside this container.
-A sub-process should have one incoming connection and one outgoing connection.
-It should also contain one start node that defines where to start (inside the Sub-Process) when you reach the sub-process.
+This allows not only the embedding of a part of the process within such a subprocess node, but also the definition of additional variables that are accessible for all nodes inside this container.
+A subprocess should have one incoming connection and one outgoing connection.
+It should also contain one start node that defines where to start (inside the Sub-Process) when you reach the subprocess.
 It should also contain one or more end events.
-Note that, if you use a terminating event node inside a sub-process, you are terminating just that sub-process.
-A sub-process ends when there are no more active nodes inside the sub-process.
+Note that, if you use a terminating event node inside a subprocess, you are terminating just that subprocess.
+A subprocess ends when there are no more active nodes inside the subprocess.
 It contains the following properties:
 
 * __Id__: The id of the node (which is unique within one node container).
 * __Name__: The display name of the node.
 * __Variables__: Additional variables can be defined to store data during the execution of this node.
 
-== Multi-instance sub-process
+== Multi-instance subprocess
 
-.Multi-instance sub-process
+.Multi-instance subprocess
 image::BPMN2/MultipleInstances.png[]
 
-A Multiple Instance sub-process is a special kind of sub-process that allows you to execute the contained process segment multiple times, once for each element in a collection.
-A  multiple instance sub-process should have one incoming connection and one outgoing connection.
+A Multiple Instance subprocess is a special kind of subprocess that allows you to execute the contained process segment multiple times, once for each element in a collection.
+A  multiple instance subprocess should have one incoming connection and one outgoing connection.
 It waits until the embedded process fragment is completed for each of the elements in the given collection before continuing.
 It contains the following properties:
 
@@ -184,10 +184,10 @@ It contains the following properties:
 * __Name__: The display name of the node.
 * __CollectionExpression__: The name of a variable that represents the collection of elements that should be iterated over.
   The collection variable should be an array or of type ``java.util.Collection``.
-  If the collection expression evaluates to null or an empty collection, the multiple instances sub-process will be completed immediately and follow its outgoing connection.
+  If the collection expression evaluates to null or an empty collection, the multiple instances subprocess will be completed immediately and follow its outgoing connection.
 * __VariableName__: The name of the variable to contain the current element from the collection.
   This gives nodes within the composite node access to the selected element.
-* __CollectionOutput__: The name of a variable that represents a collection of elements that will gather all output of the multi instance sub process
+* __CollectionOutput__: The name of a variable that represents a collection of elements that will gather all output of the multi instance subprocess
 * __OutputVariableName__: The name of the variable to contain the current output from the multi instance activity
 * __CompletionCondition__: MVEL expression that will be evaluated on each instance completion to check if given multi instance activity can already be completed.
   In case it evaluates to true all other remaining instances within multi instance activity will be canceled.

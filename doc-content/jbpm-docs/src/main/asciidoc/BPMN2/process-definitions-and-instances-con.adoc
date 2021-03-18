@@ -35,7 +35,7 @@ A process definition also defines the `import` entry for imported processes that
 
 After you have created, configured, and deployed your project that includes your business processes, you can view the list of all the process definitions in {CENTRAL} *Menu* → *Manage* → *Process Definitions*. You can refresh the list of deployed process definitions at any time by clicking the refresh button in the upper-right corner.
 
-The process definition list shows all the available process definitions that are deployed into the platform. Click any of the process definitions listed to show the corresponding process definition details. This displays information about the process definition, such as if there is a sub-process associated with it, or how many users and groups exist in the process definition. The *Diagram* tab in the process definition details page contains the BPMN2-based diagram of the process definition.
+The process definition list shows all the available process definitions that are deployed into the platform. Click any of the process definitions listed to show the corresponding process definition details. This displays information about the process definition, such as if there is a subprocess associated with it, or how many users and groups exist in the process definition. The *Diagram* tab in the process definition details page contains the BPMN2-based diagram of the process definition.
 
 Within each selected process definition, you can start a new process instance for the process definition by clicking the *New Process Instance* button in the upper-right corner. Process instances that you start from the available process definitions are listed in *Menu* -> *Manage* -> *Process Instances*.
 

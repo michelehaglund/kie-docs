@@ -32,7 +32,7 @@ It contains the following properties:
   When a process instance is terminated, it means its state is set to completed and all other nodes  that might still be active (on parallel paths) in this process instance are canceled.
   Non-terminating end events are simply end for this path (execution of this branch will end here), but other parallel paths can still continue.
   A process instance will automatically complete if there are no more active paths inside that process instance (for example, if a process instance reaches a non-terminating end node but there are no more active branches inside the process instance, the process instance will be completed anyway).  Terminating end events are visualized using a full circle inside the event node, non-terminating event nodes are empty.
-  Note that, if you use a terminating event node inside a sub-process, you are terminating just that sub-process and top level continues.
+  Note that, if you use a terminating event node inside a subprocess, you are terminating just that subprocess and top level continues.
 
 === Throwing error event
 
@@ -85,7 +85,7 @@ The Timer Event contains the following properties:
   Expr in this case could be a process variable, or a more complex expression based on a process variable (e.g.
   myVariable.getValue()).
 
-Timer events could also be specified as boundary events on sub-processes and tasks that are not automatic tasks like script task that have no wait state as timer will not have a change to fire before task completion.
+Timer events could also be specified as boundary events on subprocesses and tasks that are not automatic tasks like script task that have no wait state as timer will not have a change to fire before task completion.
 
 === Catching signal event
 
@@ -114,8 +114,8 @@ This will trigger all (active) signal event nodes in the given process instance 
 Data related to the event can be passed using the data parameter.
 If the event node specifies a variable name, this data will be copied to that variable when the event occurs.
 
-It is also possible to use event nodes inside sub-processes.
-These event nodes will however only be active when the sub-process is active.
+It is also possible to use event nodes inside subprocesses.
+These event nodes will however only be active when the subprocess is active.
 
 You can also generate a signal from inside a process instance.
 A script (in a script task or using on entry or on exit actions) can use

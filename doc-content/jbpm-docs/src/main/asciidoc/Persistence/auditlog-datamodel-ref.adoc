@@ -153,7 +153,7 @@ Whenever a node instance is entered from one of its incoming connections or is e
 |
 
 |``nodeContainerId``
-|The identifier of the container, if the node is inside an embedded sub-process node 
+|The identifier of the container, if the node is inside an embedded subprocess node 
 |
 
 |``referenceId``

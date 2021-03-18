@@ -14,7 +14,7 @@ Every process has the following properties:
 = Data
 Throughout the execution of a process, data can be retrieved, stored, passed on, and used. To store runtime data during the execution of the process, process variables are used. A variable is defined with a name and a data type. A basic data type could include the following: boolean, int, String, or any kind of object subclass.
 
-Variables can be defined inside a variable scope. The top-level scope is the variable scope of the process itself. Sub-scopes can be defined using a sub-process. Variables that are defined in a sub-scope are only accessible for nodes within that scope.
+Variables can be defined inside a variable scope. The top-level scope is the variable scope of the process itself. Sub-scopes can be defined using a subprocess. Variables that are defined in a sub-scope are only accessible for nodes within that scope.
 
 Whenever a variable is accessed, the process will search for the appropriate variable scope that defines the variable. Nesting variable scopes are allowed. A node will always search for a variable in its parent container; if the variable cannot be found, the node will look in the parent's parent container, and so on, until the process instance itself is reached. If the variable cannot be found, a read access yields null, and a write access produces an error message. All of this occurs with the process continuing execution.
 
@@ -50,14 +50,14 @@ Process Compilation error : Process com.myteam.scripttask.ScriptTaskBP(ScriptTas
 ----
 ====
 
-* Service tasks (and reusable sub-processes) can pass the value of process variables to the outside world (or another process instance) by mapping the variable to an outgoing parameter. For example, the parameter mapping of a service task could define that the value of the process variable `x` should be mapped to a task parameter `y` just before the service is invoked. You can also inject the value of the process variable into a hard-coded parameter String using `#{expression}`. For example, the description of a human task could be defined as the following:
+* Service tasks (and reusable subprocesses) can pass the value of process variables to the outside world (or another process instance) by mapping the variable to an outgoing parameter. For example, the parameter mapping of a service task could define that the value of the process variable `x` should be mapped to a task parameter `y` just before the service is invoked. You can also inject the value of the process variable into a hard-coded parameter String using `#{expression}`. For example, the description of a human task could be defined as the following:
 +
 [source]
 ----
 You need to contact person #{person.getName()}
 ----
 +
-Where `person` is a process variable. This will replace this expression with the actual name of the person when the service needs to be invoked. Similar results of a service (or reusable sub-process) can also be copied back to a variable using result mapping.
+Where `person` is a process variable. This will replace this expression with the actual name of the person when the service needs to be invoked. Similar results of a service (or reusable subprocess) can also be copied back to a variable using result mapping.
 
 * Various other nodes can also access data. Event nodes, for example, can store the data associated to the event in a variable. Check the properties of the different node types for more information.
 
@@ -235,7 +235,7 @@ Repeatable intervals - R/PT1S - fires every second, no limit.
 In addition to the above mentioned configuration options, you can specify timers using process variable that consists of string representation of either delay and period or ISO8601 date format. By specifying `#{variable}`, the engine dynamically extracts process variable and uses it as timer expression. The timer service is responsible for making sure that timers get triggered at the appropriate times. You can cancel timers so that they are no longer triggered. You can use timers in the following ways inside a process:
 
 * You can add a timer event to a process flow. The process activation starts the timer, and when it triggers, once or repeatedly, it activates the timer node's successor. Subsequently, the outgoing connection of a timer with a positive period is triggered multiple times. Canceling a Timer node also cancels the associated timer, after which no more triggers occur.
-* You can associate timer with a sub-process or tasks as a boundary event.
+* You can associate timer with a subprocess or tasks as a boundary event.
 
 [float]
 [[_updating_timer_within_a_running_process_instance]]
@@ -1023,7 +1023,7 @@ When the Throwing Error Intermediate Event throws an error, the process instance
 . Execution of the process instance stops: no other parts of the process are executed.
 . The process instance finishes as ABORTED.
 
-The process starts with a start event and continues to the Throw Exception service task. The task produces an exception, which is propagated as a signal object through the process instance and caught by the sub-process start event in the Exception Handler event sub-process. The workflow continues to the Handle Exception task and the process instance finishes with the sub-process end event.
+The process starts with a start event and continues to the Throw Exception service task. The task produces an exception, which is propagated as a signal object through the process instance and caught by the subprocess start event in the Exception Handler event subprocess. The workflow continues to the Handle Exception task and the process instance finishes with the subprocess end event.
 
 .Process with an exception handling Event Sub-Process
 image::processes/3389.png[]

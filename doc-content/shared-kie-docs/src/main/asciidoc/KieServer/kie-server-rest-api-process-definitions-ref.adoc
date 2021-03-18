@@ -225,7 +225,7 @@ Returns all user tasks for a specified process. The response also contains maps 
 
 == [GET] /server/containers/{containerId}/processes/definitions/{processId}/subprocesses
 
-Returns a list of reusable sub-processes for a specified process.
+Returns a list of reusable subprocesses for a specified process.
 
 .Request parameters
 [cols="25%,45%,15%,15%", frame="all", options="header"]
@@ -241,7 +241,7 @@ Returns a list of reusable sub-processes for a specified process.
 |Required
 
 |`processId`
-|ID of the process for which you are retrieving sub-processes
+|ID of the process for which you are retrieving subprocesses
 |String
 |Required
 |===

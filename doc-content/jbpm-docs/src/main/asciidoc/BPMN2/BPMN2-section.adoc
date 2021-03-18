@@ -20,7 +20,7 @@ The BPMN 2.0 specification defines three main types of nodes:
   This could be a start event (that is used to indicate the start of the process), end events (that define the end of the process, or of that subflow) and intermediate events (that indicate events that might occur during the execution of the process).
 * __Activities__: These define the different actions that need to be performed during the execution of the process.
   Different types of tasks exist, depending on  the type of activity you are trying to model (e.g.
-  human task, service task, etc.) and activities could also be nested (using different types of sub-processes).
+  human task, service task, etc.) and activities could also be nested (using different types of subprocesses).
 * __Gateways__: Can be used to define multiple paths in the process.
   Depending on the type of gateway, these might indicate parallel execution, choice, etc.
 

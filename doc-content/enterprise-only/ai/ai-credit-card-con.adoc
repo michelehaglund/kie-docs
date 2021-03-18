@@ -46,7 +46,7 @@ The *Diagram* tab contains the BPMN diagram that shows the decision paths that t
 
 image:ai/bpmn.png[]
 
-The *Decision Task* task contains the rules that determine whether the dispute will be automatically charged back to Joe's account (*Milestone 1*) or whether more investigation is required (*Milestone 2*) based on the values of the `caseFile_cardholderRiskRating` and the `caseFile_disputeRiskRating` variables. If Joe's dispute matches the criteria for automatic approval, *Milestone 1* is followed and the disputed amount is charged back to his account. This sub-process is very lean and efficient. If Joe's dispute requires manual evaluation, the sub-process in *Milestone 2* is started, which will require some human actor involvement and will take more resources to process.
+The *Decision Task* task contains the rules that determine whether the dispute will be automatically charged back to Joe's account (*Milestone 1*) or whether more investigation is required (*Milestone 2*) based on the values of the `caseFile_cardholderRiskRating` and the `caseFile_disputeRiskRating` variables. If Joe's dispute matches the criteria for automatic approval, *Milestone 1* is followed and the disputed amount is charged back to his account. This subprocess is very lean and efficient. If Joe's dispute requires manual evaluation, the subprocess in *Milestone 2* is started, which will require some human actor involvement and will take more resources to process.
 
 In this case, the *Decision Task* task decided to process Joe's dispute automatically so it followed *Milestone 1: Automatic Chargeback*.
 

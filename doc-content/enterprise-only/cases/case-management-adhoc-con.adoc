@@ -9,7 +9,7 @@ Dynamic tasks are defined during the case execution and are not present in the c
 
 Dynamic tasks can be user or service activities, while ad hoc tasks can be any type of task. For more information about task types, see "BPMN2 tasks in process designer" in {URL_DEVELOPING_PROCESS_SERVICES}#assembly-designing-business-processes[_{DESIGNING_BUSINESS_PROCESSES}_].
 
-Dynamic processes are any reusable sub-process from a case project.
+Dynamic processes are any reusable subprocess from a case project.
 
 Ad hoc nodes with no incoming connections are configured in the node's `AdHoc Autostart` property and are triggered automatically when the case instance is started.
 
