@@ -8,7 +8,7 @@ A sub-process must have at least one incoming connection and one outgoing connec
 
 The following sub-process types are supported in {PRODUCT}:
 
-* Embedded sub-process: A sub-process that is a part of the parent process execution and shares the parent process data, along with declaring its own local sub-process variables. 
+* Embedded sub-process: A sub-process that is a part of the parent process execution and shares the parent process data, along with declaring its own local sub-process variables.
 * Ad hoc sub-process: A sub-process that has no strict element execution order.
 * Reusable sub-process: A sub-process that is independent of its parent process.
 * Event sub-process: A sub-process that is only triggered on a start event or a timer.
@@ -16,7 +16,7 @@ The following sub-process types are supported in {PRODUCT}:
 
 In the following example, the Place order sub-process checks whether sufficient stock is available to place the order and updates the stock information if the order can be placed. The customer is then notified through the main process based on whether or not the order was placed.
 
-image:BPMN2/sub-process.png[]
+image:BPMN2/subprocess.png[]
 
 .Embedded sub-process
 
