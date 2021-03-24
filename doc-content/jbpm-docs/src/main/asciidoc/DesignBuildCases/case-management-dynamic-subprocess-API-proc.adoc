@@ -1,4 +1,4 @@
-[id='case-management-dynamic-sub-process-API-proc']
+[id='case-management-dynamic-subprocess-API-proc']
 = Creating a dynamic sub-process using the {KIE_SERVER} REST API
 
 When creating a dynamic sub-process, only optional data is provided. There are no special parameters as there are when creating dynamic tasks.
