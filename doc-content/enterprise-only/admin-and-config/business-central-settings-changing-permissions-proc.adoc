@@ -25,5 +25,5 @@ You cannot add an exception to the {CENTRAL} resource type.
 ====
 Any changes that you make to roles or groups affect all of the users associated with that role or group.
 
-If a user is a member of multiple groups that have the same priority and the groups have conflicting permission settings, the positive permissions override the negative permissions. For large group assignments, you can verify the permission settings in {CENTRAL} by clicking the *Admin* icon in the top-right corner, select *Users*, and view each user's group assignments and permissions.
+If a user is a member of multiple groups that have the same priority and the groups have conflicting permission settings, the positive permissions override the negative permissions. You can verify the permission settings in {CENTRAL} by clicking the *Admin* icon in the top-right corner, select *Users*, and view each user's group assignments and permissions.
 ====
