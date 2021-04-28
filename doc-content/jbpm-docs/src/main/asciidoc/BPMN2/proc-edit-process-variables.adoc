@@ -1,7 +1,7 @@
 [id='proc-edit-process-variables_{context}']
-= Editing process variable data types
+= Editing process variable values
 
-After starting a process instance, you can edit process variable data types in {CENTRAL}.
+After starting a process instance, you can edit process variable values in {CENTRAL}.
 
 .Prerequisites
 * You have created a project in {CENTRAL} and have started a process instance.
@@ -11,5 +11,5 @@ After starting a process instance, you can edit process variable data types in {
 . Select the *Process Variables* tab and click *Edit* for the variable name that you want to edit.
 . Add or change the *Variable Value* and click *Save*.
 
-.Variable data type edit button in {CENTRAL}
-image::BPMN2/edit-actionVars.png[Process variable edit button in {CENTRAL}]
+.Variable value edit button in {CENTRAL}
+image::BPMN2/edit-actionVars.png[Process variable value edit button]
