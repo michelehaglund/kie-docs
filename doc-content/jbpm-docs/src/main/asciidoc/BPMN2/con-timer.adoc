@@ -4,7 +4,7 @@
 You can use timers to trigger logic after a certain period or to repeat specific actions at regular intervals. Timers wait for a predefined amount of time before triggering once or repeatedly.
 
 == Selecting the correct timer for your environment
-{PRODUCT} supports two types of timers, including:
+{PRODUCT} supports two types of timers:
 
 * Quartz: Recommended for use on Spring Boot and Tomcat
 * EJB: Recommended for use with {EAP}, both on-premise and {OPENSHIFT}
