@@ -3,6 +3,12 @@
 
 You can use timers to trigger logic after a certain period or to repeat specific actions at regular intervals. Timers wait for a predefined amount of time before triggering once or repeatedly.
 
+== Selecting the correct timer for your environment
+{PRODUCT} supports two types of timers, including:
+
+* Quartz: Recommended for use on Spring Boot and Tomcat
+* EJB: Recommended for use with {EAP}, both on-premise and {OPENSHIFT}
+
 == Configuration of timers with delay and period
 
 You can set a timer with delay and a certain period. The delay specifies the waiting time after the node activation, and the period defines the time between the subsequent trigger activation. The period value `0` results in a one-shot timer. You can specify the delay and period expression in `[\#d][#h][#m][#s][#[ms]]` form, indicating the number of days, hours, minutes, seconds, and milliseconds (default). For example, the expression `1h` indicates one hour waiting time before triggering the timer again.
