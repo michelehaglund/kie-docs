@@ -9,6 +9,14 @@ You can use timers to trigger logic after a certain period or to repeat specific
 * Quartz: Recommended for use on Spring Boot and Tomcat
 * EJB: Recommended for use with {EAP}, both on-premise and {OPENSHIFT}
 
+[NOTE]
+====
+Do not use timers for the following business strategies:
+* Timers as your process polling strategy. For example, instead of directly calling the external service and adding a 1 second timer, use {FUSE} to register an asynchronous route. Use the {FUSE} callback to fire an event for the process to move on once the expected response is received. Create a work item handler as part of your business strategy outside of your Business Process Model and Notation (BPMN) process model and move the timer to the work item handler.
+
+* Timers to enforce safe points or commits during process execution. Timers are designed to represent a period of time (duration) in a business process and not for enforcing engine-specific behavior.
+====
+
 == Configuration of timers with delay and period
 
 You can set a timer with delay and a certain period. The delay specifies the waiting time after the node activation, and the period defines the time between the subsequent trigger activation. The period value `0` results in a one-shot timer. You can specify the delay and period expression in `[\#d][#h][#m][#s][#[ms]]` form, indicating the number of days, hours, minutes, seconds, and milliseconds (default). For example, the expression `1h` indicates one hour waiting time before triggering the timer again.
