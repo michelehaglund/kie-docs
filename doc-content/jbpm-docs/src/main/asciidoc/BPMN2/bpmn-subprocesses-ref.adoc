@@ -51,12 +51,11 @@ Reusable sub-processes appear collapsed within the parent process. To configure 
 .Reusable sub-process properties
 image::BPMN2/subproc-props.png[A screenshot of sub-process properties]
 
-[NOTE]
-====
-You can open the sub-process in a new editor in {CENTRAL} from the main business process by clicking the *Place order* task and clicking the *Open Sub-process* task icon.
+
+You can open the sub-process in a new editor in {CENTRAL} by clicking the *Place order* task in the main process and then clicking the *Open Sub-process* task icon.
 
 image::cases/open-sub-proc.png[]
-====
+
 
 [[_event_sub_process]]
 .Event sub-process
