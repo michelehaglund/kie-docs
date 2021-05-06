@@ -1,7 +1,7 @@
 [id='proc-edit-process-variables_{context}']
 = Editing process variable values
 
-After starting a process instance, you can edit process variable values in {CENTRAL}.
+After starting a process instance, you can edit process variable values in {CENTRAL}. The supported variables types are: Boolean, Float, Integer, and Enums.
 
 .Prerequisites
 * You have created a project in {CENTRAL} and have started a process instance.
