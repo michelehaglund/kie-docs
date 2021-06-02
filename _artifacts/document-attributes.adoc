@@ -1,5 +1,5 @@
 
-:REBUILT: Monday, May 31, 2021
+:REBUILT: Tuesday, May 25, 2021
 
 
 :ENTERPRISE_VERSION: 7.11
@@ -101,14 +101,12 @@ endif::OP[]
 :EAP_VERSION_LONG: 7.3.0
 :FUSE: Fuse
 :FUSE_LONG: Red Hat Fuse
-:FUSE_VERSION: 7.9
-:FUSE_EAP_VERSION: 7.4
-:SPRING_BOOT_VERSION: 2.3.4
+:FUSE_VERSION: 7.8
+:FUSE_EAP_VERSION: 7.3.2
 :JWS: Red Hat JBoss Web Server
 :JWS_VERSION: 5.4
 :JWS_VERSION_LONG: 5.4.0
 :KOGITO: Kogito
-:KOGITO_VERSION_LONG: 1.5.0.redhat-00002
 :TOMCAT: Apache Tomcat
 :TOMCAT_VERSION: 9.0
 :OPENSHIFT: Red Hat OpenShift Container Platform
@@ -193,17 +191,12 @@ endif::OP[]
 :MANAGING_PROCESSES: Managing and monitoring business processes in {CENTRAL}
 :DESIGNING_CASES: Designing and building cases for case management
 :SHOWCASE_APPLICATION_CASE_MANAGEMENT: Using the Showcase application for case management
-:CUSTOM_TASKS_AND_HANDLERS: Custom tasks and work item handlers
+:CUSTOM_TASKS_AND_HANDLERS: Custom tasks and work item handlers in {CENTRAL}
 :PROCESS_ENGINE_DOC: {PROCESS_ENGINE_CAP} in {PRODUCT}
 
-:RUNNING_ROSTER_FOR_PLANNER_OPENSHIFT: Deploying and using {PLANNER} on {OPENSHIFT}: an employee rostering starter example
-:RUNNING_ROSTER_FOR_PLANNER_IDE: Using {PLANNER} in an IDE: an employee rostering example
-:RUNNING_VRP_FOR_PLANNER: Deploying and using the {PLANNER} vehicle route planning starter application
-:PLANNER_QUARKUS_TIMETABLE: {PLANNER} on {QUARKUS}: a school time table quick start guide
-:PLANNER_VACCINATION: {PLANNER} on {QUARKUS}: a vaccination appointment scheduler quick start guide
-:PLANNER_SPRINGBOOT_TIMETABLE: {PLANNER} on Spring Boot: a school time table quick start guide
-:PLANNER_JAVA: {PLANNER} with Java solvers: a cloud balancing quick start guide
-:PLANNER8_MIGRATION: Upgrading your {PLANNER} projects to OptaPlanner 8
+:RUNNING_ROSTER_FOR_PLANNER_OPENSHIFT: Deploying and using the employee rostering starter application for {PLANNER} on {OPENSHIFT}
+:RUNNING_ROSTER_FOR_PLANNER_IDE: Running and modifying the employee rostering starter application for {PLANNER} using an IDE
+:RUNNING_VRP_FOR_PLANNER: Deploying and using the vehicle route planning starter application for {PLANNER}
 
 :PACKAGING_DEPLOYING_PROJECT: Packaging and deploying a {PRODUCT} project
 :MANAGING_ASSETS: Managing assets in {CENTRAL}
